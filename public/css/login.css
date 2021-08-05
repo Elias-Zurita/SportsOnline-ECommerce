@@ -1,0 +1,79 @@
+* {box-sizing: border-box;} 
+
+body {font-family: 'Exo 2', sans-serif; background-color: rgb(82, 77, 77);}  /* tipo de letra Exo 2 para todo el sitio web */
+header{background-color: white;}
+.sports-online, .ayuda, .atencionCliente, .redes {font-weight: bold;}
+
+a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de etiqueta a */
+
+.main-header {display: flex;justify-content: space-between; align-items: center;}
+
+.logo {width: 180px; height: 120px;}
+
+.right-navbar{display: flex; text-align: end;}
+.right-navbar li {margin-right: 9px;}
+.right-navbar a{color:black;}
+.barra-de-busqueda {text-align: end;}
+.barra-de-busqueda input {width: 10vw; height: 1.5vw;}
+.right-navbar a:hover{color:blue;}
+
+.cajaMarcas{width: 100vw;}
+.caja-categorias, .caja-categorias a{background-color: rgb(219, 54, 54); color:black; width: 100% ; height: 40px; margin-inline-end: 30px;align-items: center}
+.caja-categorias {display: flex; align-content: center; justify-content: space-between;}
+.categorias li{justify-content: space-between ;}
+.categorias {display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; font-weight: bold; width: 100%;}
+.categorias a{align-items:center;}
+
+.navega, .lanzamientos{font-weight: bold; font-size: x-large;}
+
+.fotosMarcas {display: flex; flex-direction: row; flex-wrap: wrap; background-color: black; justify-content: space-between; margin:auto; width:100%;}
+.fotosMarcas div{margin-right: 50px;}
+
+.productos{display:flex;width: 25%; justify-content: flex-start;}
+.productos div{width: 25vw; justify-content: space-between; width: 100vw;}
+.mujerHombre{display: flex; flex-direction: row ; width:90vw; align-items: center; justify-content: space-between;}
+
+.hombre, .mujer{height: 100%;width: 50vw; padding: 10px;}
+.camiseta img, .zapatillaHombre img, .zapatillaMujer img, .bolsoNike img {height: 67%;width: 25vw; padding: 5px;}
+.camiseta, .zapatillaHombre, .zapatillaMujer, .bolsoNike {width: 25vw; padding: 7px;}
+.camiseta h2, .zapatillaHombre h2, .zapatillaMujer h2, .bolsoNike h2 {width: 25vw; padding: 7px; font-size: 17px; color:black; text-align: left;}
+.filasImagenes{display: block;}
+
+.suscribite{border:black solid;}
+.suscribite h2{text-align: center;}
+.botonSuscripcion{display:flex; justify-content: center; margin-bottom: 12px;}
+
+footer {margin-top: 70px; background-color: black; color: white; width:100%;}
+
+.cajas-footer {justify-content: space-between;}
+.cajas-footer2 {justify-content: space-between; margin-top: 50px;}
+.cajas-footer a{color: white}
+
+.cajas-footer, .cajas-footer2 {display: flex; color: white}  /* transforma en cajas de bloque las clases del footer y las pone una al lado de la otra */
+
+.politica a{color: white;}
+.termino a{color:white;}
+.parte1 {margin-top: 15px; color: white}
+.redes {margin-bottom: 7px; margin-inline-end: 40px;}
+
+.fa-facebook-square{color: #19599f;}
+.fa-instagram{color: rgb(216, 81, 205);}
+.fa-twitter-square{color:rgba(42, 109, 255, 0.863);}
+
+.inicioSesion{font-weight: bold; color: red;}
+.formularioLog{margin-bottom: 8px; margin-top: 0px; text-align: center; flex-wrap: wrap; color: white;
+     background-color: rgb(73, 70, 70); height: 100%; padding: 0%;}
+.control-formulario label{margin: 7px; display: block; font-weight: bold; font-size: large;}
+.control-formulario input {width: 12.5vw; height: 1.5vw;} /* cambia el tamaño para ingresar usuario y contraseña */
+.olvido{font-weight: bold;margin: 10px;}
+.login {margin: 7px;}
+.login button {font-size: medium;}
+.loginFacebook {margin: 10px;}
+.loginFacebook button {background-color: #19599f;  width: 12.5vw; height: 2vw;}
+.fa-facebook {color:white; flex-wrap: wrap;}
+.botonFace {color: white; font-size: large;}
+.loginGoogle {margin: 10px}
+.loginGoogle button {background-color: #Ce3a30; width: 12.5vw; height: 2vw;}
+.botonGoogle {color: white; font-size: large}
+.fa-google {color: white; flex-wrap: wrap;}
+.crearCuenta {margin: 10px; font-weight: bold;}

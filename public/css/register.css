@@ -1,0 +1,577 @@
+* {box-sizing: border-box;} 
+
+body {font-family: 'Exo 2', sans-serif; background-color: rgb(82, 77, 77);}  /* tipo de letra Exo 2 para todo el sitio web */
+header{background-color: white;}
+.sports-online, .ayuda, .atencionCliente, .redes {font-weight: bold;}
+
+a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de etiqueta a */
+
+.main-header {display: flex;justify-content: space-between; align-items: center;}
+
+.logo {width: 180px; height: 120px;}
+
+.right-navbar{display: flex; text-align: end;}
+.right-navbar li {margin-right: 9px;}
+.right-navbar a{color:black;}
+.barra-de-busqueda {text-align: end;}
+.barra-de-busqueda input {width: 10vw; height: 1.5vw;}
+.right-navbar a:hover{color:blue;}
+
+.cajaMarcas{width: 100vw;}
+.caja-categorias, .caja-categorias a{background-color: rgb(219, 54, 54); color:black; width: 100%; height: 40px; margin-inline-end: 30px;align-items: center}
+.caja-categorias {display: flex; align-content: center; justify-content: space-between;}
+.categorias li{justify-content: space-between ;}
+.categorias {display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; font-weight: bold; width: 100%;}
+.categorias a{align-items:center;}
+
+.navega, .lanzamientos{font-weight: bold; font-size: x-large;}
+
+.fotosMarcas {display: flex; flex-direction: row; flex-wrap: wrap; background-color: black; justify-content: space-between; margin:auto; width:100%;}
+.fotosMarcas div{margin-right: 50px;}
+
+.productos{display:flex;width: 25%; justify-content: flex-start;}
+.productos div{width: 25vw; justify-content: space-between; width: 100vw;}
+.mujerHombre{display: flex; flex-direction: row ; width:90vw; align-items: center; justify-content: space-between;}
+
+.hombre, .mujer{height: 100%;width: 50vw; padding: 10px;}
+.camiseta img, .zapatillaHombre img, .zapatillaMujer img, .bolsoNike img {height: 67%;width: 25vw; padding: 5px;}
+.camiseta, .zapatillaHombre, .zapatillaMujer, .bolsoNike {width: 25vw; padding: 7px;}
+.camiseta h2, .zapatillaHombre h2, .zapatillaMujer h2, .bolsoNike h2 {width: 25vw; padding: 7px; font-size: 17px; color:black; text-align: left;}
+.filasImagenes{display: block;}
+
+.suscribite{border:black solid;}
+.suscribite h2{text-align: center;}
+.botonSuscripcion{display:flex; justify-content: center; margin-bottom: 12px;}
+
+footer {margin-top: 70px; background-color: black; color: white; width:100%;}
+
+.cajas-footer {justify-content: space-between;}
+.cajas-footer2 {justify-content: space-between; margin-top: 50px;}
+.cajas-footer a{color: white}
+
+.cajas-footer, .cajas-footer2 {display: flex; color: white}  /* transforma en cajas de bloque las clases del footer y las pone una al lado de la otra */
+
+.politica a{color: white;}
+.termino a{color:white;}
+.parte1 {margin-top: 15px; color: white}
+.redes {margin-bottom: 7px; margin-inline-end: 40px;}
+
+.fa-facebook-square{color: #19599f;}
+.fa-instagram{color: rgb(216, 81, 205);}
+.fa-twitter-square{color:rgba(42, 109, 255, 0.863);}
+
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+ 
+  body {
+    margin: 0;
+  }
+ 
+  main {
+    display: block;
+  }
+ 
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+ 
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+ 
+  a {
+    background-color: transparent;
+  }
+ 
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+ 
+  b,
+  strong {
+    font-weight: bolder;
+  }
+ 
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+ 
+  small {
+    font-size: 80%;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+ 
+  img {
+    border-style: none;
+  }
+ 
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: 'Exo 2', sans-serif; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+ 
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+ 
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+ 
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+ 
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+ 
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+ 
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+ 
+  progress {
+    vertical-align: baseline;
+  }
+
+  textarea {
+    overflow: auto;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+  details {
+    display: block;
+  }
+
+  summary {
+    display: list-item;
+  }
+
+  template {
+    display: none;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;      
+}
+
+a {/* LOGIN (ADRIAN) */
+    color: black;
+    text-decoration: none;
+}
+
+article{/* LOGIN (ADRIAN) */
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    font-size: medium;
+}
+
+button {/* LOGIN (ADRIAN) */
+    background-color: lightgray;
+    border: none;
+    font-weight: 400;
+    margin: 15px;
+    min-width: 50%;
+    padding: 2% 10%;
+    
+    
+}
+
+form {/* LOGIN (ADRIAN) */
+    display: block;
+    padding: 5% 0 5% 0;
+    text-align: center;
+    
+
+}
+
+.info {/* LOGIN (ADRIAN) */
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+input {/* LOGIN (ADRIAN) */
+    height: fit-content;
+}
+h2 {/* LOGIN (ADRIAN) */
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: italic;
+}
+
+h3 {/* LOGIN (ADRIAN) */
+    font-size: 1em;
+    font-weight: 300;
+}
+
+label {/* LOGIN (ADRIAN) */
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    margin: 15px;
+    padding: 0 5%;
+}
+
+label a {/* LOGIN (ADRIAN) */
+    text-decoration: underline;
+}
+
+label p {/* LOGIN (ADRIAN) */
+    min-width: 28%;
+    text-align: left;
+}
+
+label span, form span {/* LOGIN (ADRIAN) */
+    color: red;
+}
+
+.login {/* LOGIN (ADRIAN) */
+    margin-bottom: 15px;
+}
+
+#main-header-footer {
+    position: fixed;
+    background-color:#DEDBDB;
+    padding: 8px;    
+    display: flex;
+    width: 100vw;
+    overflow-y: scroll;
+}
+.main-header {
+    left: 0;
+    top: 0;  
+}
+.main-header-opciones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-header-search-carrito-login,
+.main-header-menu {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+#main-header-search {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid gray;
+    width: 150px;
+    height: 30px;
+    justify-content: flex-start;
+    border-radius: 50px;    
+}
+#main-header-search a {
+    margin:8px;
+}
+#search {
+    border:0;
+    height: calc(100% - 4px);
+    width: 70%;
+    border-radius: 50px;
+    font-size: 14px;
+}
+#search:focus {
+    outline-width: 0;
+}
+#iconos-shopping-user {
+    font-size: 25px;
+    margin: 0 15px;
+}
+.main-footer {
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
+}
+.main-footer-1er {
+    display: flex;
+    justify-content: space-between;
+}
+.main-footer-2do ul {
+    display:flex;
+    justify-content: space-evenly;
+}
+.main-footer  .main-logo {
+    display: none;
+}
+.main-logo {
+    height:80px;
+    width:150px;
+}
+.main-footer-menu01,.main-footer-menu02 {
+    border-right: solid rgb(143, 143, 143) 2px;
+}
+.main-footer-menu01, .main-footer-menu02, 
+.main-footer-menu03 {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+.main-header-menu-navbar {
+    width: 100%;
+}
+.main-header-menu-navbar ul{
+    display: flex;
+    width: 100%;
+}
+.main-header-menu-navbar li {
+    width: 33%;
+}
+.main-header-menu-navbar  ul, .main-footer-menu01-navbar  ul,
+.main-footer-menu02-navbar  ul, .main-footer-menu03-navbar  ul,
+.main-footer-2do ul {
+    list-style: none;
+    margin: 5px;
+    padding: 0 0 0 10px;
+    text-align: center;
+}
+.main-header-menu-navbar  a, .main-footer-menu01-navbar  a,
+.main-footer-menu02-navbar  a, .main-footer-menu03-navbar  a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 5px 0px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    min-width: 100px;
+}
+.main-header-menu-navbar  a {
+    min-width: 80px;
+}
+.main-footer-2do a {
+    font-size: 20px;
+}
+.main-footer-2do {
+    border-top: solid rgb(143, 143, 143) 2px;
+}
+.main-header-menu-navbar a:hover, .main-footer-menu01-navbar a:hover,
+.main-footer-menu02-navbar a:hover, .main-footer-menu03-navbar a:hover {
+    background-color: rgb(54,224,224);
+}
+#Tipografia_footer {
+    font-size:10px;
+}
+#main-footer-separador {
+    padding: 1px;
+    width: 100vw;
+}
+
+#section-path-nav {
+    position: fixed;
+    margin-top: 100px;
+    padding: 5px;
+}
+#section-path-nav h3 {
+    background-color: rgb(54, 224, 224);
+    width: 50px;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.signup {/* LOGIN (ADRIAN) */
+    margin-top: 10px;
+}
+
+.subtitle {/* LOGIN (ADRIAN) */
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+@media (min-width: 500px) {
+    label {/* LOGIN (ADRIAN) */
+        padding: 0 20%;
+    }
+    .main-footer  .main-logo {
+        display:block;
+    }
+    #main-header-search {
+        width: 65%;
+    }
+    #search {
+        width: 80%;
+    }
+    #Tipografia_footer {
+        font-size:13px;
+    }
+    #tnc {/* LOGIN (ADRIAN) */
+        margin: auto 0;
+    }
+    #tnc p {/* LOGIN (ADRIAN) */
+        width: 100%;
+        text-align: right;
+    }
+}
+@media (min-width: 700px) {
+
+    button {/* LOGIN (ADRIAN) */
+        background-color: lightgray;
+        border: none;
+        font-size: 1.3em;
+        min-width: 50%;
+        padding: 2% 10%;
+        
+        
+    }
+    h2 {/* LOGIN (ADRIAN) */
+        font-size: 1.5em;
+    }
+    h3 {/* LOGIN (ADRIAN) */
+        font-size: 1.3em;
+    }
+    label {/* LOGIN (ADRIAN) */
+        display:flex;
+        justify-content: space-between;
+        margin: 20px;
+        padding: 0 8%;
+        
+    }
+    .login {/* LOGIN (ADRIAN) */
+        display: flex;
+        min-height: 10vh;
+        margin-bottom: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-header-opciones {
+        flex-direction: row-reverse;
+    }
+    .main-header-search-carrito-login,
+    .main-header-menu {
+        padding: 15px;
+    }
+    .main-header-search-carrito-login {
+        justify-content: flex-end;
+    }
+    .main-header-menu-navbar a {
+        font-size: 15px;
+    }
+    #iconos-shopping-user {
+        padding: 0 10px;
+    }
+    #main-header-footer {
+        padding: 8px 30px;
+    }
+    #section-path-nav {
+        padding: 5px 30px;
+    }
+    .main-footer-redes a {
+        font-size: 25px;
+    }
+    p {/* LOGIN (ADRIAN) */
+        font-size: 1.2em;
+    }
+    .signup {/* LOGIN (ADRIAN) */
+        display: flex;
+        margin-bottom: 100px;
+        margin-top: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    #section-path-nav {
+        margin-top: 110px;
+    }
+}
