@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<form action="/home.html" method="POST" class="formularioLog">
+    <div class="inicioSesion">
+    <h2>Iniciar sesión</h2>
+    </div>
+
+    <div class="control-formulario">
+    <label for="nombreUsuario">Usuario</label>
+    <input type="text" name="nombreUsuario" id="nombreUsuario" class="control-especifico">
+    </div>
+    
+    <div class="control-formulario">
+    <label for="contraseña">Contraseña</label>
+    <input type="password" name="contraseña" id="contraseña" class="control-especifico">
+    </div>
+
+    <div class="olvido">
+        <a href="">¿Olvidaste tu contraseña?</a>
+    </div>
+    
+    <div class="login">
+    <button type="submit" class="botones">Ingresar</button>
+    </div>
+
+    <div class="loginFacebook">
+    <button type="submit" class="botonFace"><i class="fab fa-facebook"></i> | Ingresar con Facebook</button>
+    </div>
+
+    <div class="loginGoogle">
+    <button type="submit" class="botonGoogle"><i class="fab fa-google"></i> | Ingresar con Google</button>
+    </div>
+
+    <div class="crearCuenta">
+    <a href="\register.html">Crea tu cuenta</a>
+    </div>
+    </form>
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>
