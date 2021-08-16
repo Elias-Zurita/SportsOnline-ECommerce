@@ -1,0 +1,18 @@
+
+.inicioSesion{font-weight: bold; color: red;}
+.formularioLog{margin-bottom: 8px; margin-top: 0px; text-align: center; flex-wrap: wrap; color: white;
+     background-color: rgb(73, 70, 70); height: 100%; padding: 0%;}
+.control-formulario label{margin: 7px; display: block; font-weight: bold; font-size: large;}
+.control-formulario input {width: 12.5vw; height: 1.5vw;} /* cambia el tamaño para ingresar usuario y contraseña */
+.olvido{font-weight: bold;margin: 10px;}
+.login {margin: 7px;}
+.login button {font-size: medium;}
+.loginFacebook {margin: 10px;}
+.loginFacebook button {background-color: #19599f;  width: 12.5vw; height: 2vw;}
+.fa-facebook {color:white; flex-wrap: wrap;}
+.botonFace {color: white; font-size: large;}
+.loginGoogle {margin: 10px}
+.loginGoogle button {background-color: #Ce3a30; width: 12.5vw; height: 2vw;}
+.botonGoogle {color: white; font-size: large}
+.fa-google {color: white; flex-wrap: wrap;}
+.crearCuenta {margin: 10px; font-weight: bold;}
