@@ -49,7 +49,7 @@ objetivos en línea con la misión y la declaración de visión.
 SportsOnline…estamos donde vos estes
 
 
----------------------------------------------------------------------------------------------------------------------------------
+------------------
 
 
 BREVE DESCRIPCIÓN DE LOS INTEGRANTES DEL EQUIPO
@@ -86,8 +86,6 @@ musica rock, hincha de River.
  andar en rollers y salir a correr.
 
 
----------------------------------------------------------------------------------------------------------------------------------
-
 
 5 SITIOS DE REFERENCIA	
 
@@ -108,3 +106,30 @@ https://www.stockcenter.com.ar/
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+
+SPRINT 2:
+
+Resultado de retrospectiva:
+
+Cuando empezamos con el sprint n1, nos reunimos y rápidamente nos pusimos de acuerdo en crear una Ecommerce Deportiva.
+Nos organizamos repartiendonos las tareas en donde cada uno, tuvo que hacer un wireframe. 
+Lo hicimos con bastante tiempo de anticipación y consideramos que llegamos muy bien con la primer entrega.
+
+El segundo sprint lo empezamos mas llegando a la fecha de entrega ya que se nos junto con el trabajo de Mercado Liebre.
+
+De igual manera nos dividimos las tareas segun el wireframe que hizo cada uno.
+
+ELIAS: HTML del home + HMTL del Login
+
+SOFI: HTML del register + Trello
+
+MARCO: HTML del carrito de compras + Subir todo a Github
+
+ADRIANA: HTML de la descripcion del producto + Texto de retrospectiva.
+
+Surgieron algunos improvistos y dudas en el armado del mismo, seguimos trabajandolo para tener el sitio web que imaginamos y poder cumplir con todos los objetivos.
+
+Creemos que una buena forma de trabajar en equipo es si logramos:
+
+- Sostener reuniones productivas. Después de cada juntada, todos sabemos bien qué pasos seguir. Durante las reuniones se generan nuevas ideas y estrategias para producir.
+- Escucharnos. Todos estamos en la misma página y cuando surge un problema estamos dispuestos a apoyar y ayudar. Además, escuchamos activamente las opiniones de los demás y ayudamos a ofrecer soluciones.
