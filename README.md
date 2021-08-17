@@ -133,3 +133,20 @@ Creemos que una buena forma de trabajar en equipo es si logramos:
 
 - Sostener reuniones productivas. Después de cada juntada, todos sabemos bien qué pasos seguir. Durante las reuniones se generan nuevas ideas y estrategias para producir.
 - Escucharnos. Todos estamos en la misma página y cuando surge un problema estamos dispuestos a apoyar y ayudar. Además, escuchamos activamente las opiniones de los demás y ayudamos a ofrecer soluciones.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sprint 3:
+
+Resultado de la retrospectiva.
+Habiendo corregido y  mejorado el sprint 2, seguimos avanzando.
+
+En el grupo identificamos quien es el organizado y el que nos va guiando a todo el equipo.
+Pudimos implementar el motor de templates, separar las vistas en carpetas, separar los componentes repetidos en archivos parciales y trabajamos en la creacion y edicion de productos.
+
+Tuvimos que seguir modificando los html para que nos queden como los Wireframe que habiamos hecho en el sprint 1, fue un tema que nos costo a parte del equipoy tenemos que seguir retocando los mismos. 
+
+Identificamos la manera de trabajar juntos en un visual studio en el que todos participamos y agregamos nuestro granito de arena.
+Cada vez se pone mas complejo y hay muchoque estudiar y practicar.
+
