@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <%- include('../partials/head.ejs') %> <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+    <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+    <main>
+        <div class="masterContainer"> <!-- Version Desktop Inicio -->
+            <div class="container">
+                <div class="box">BOX 1</div>
+                <div class="box">BOX 2</div>
+                <div class="box">BOX 3</div>
+            </div>
+            <div class="mainBox">
+                <img class="img" src="/img/zapatilla adidas mujer.jpeg">
+            </div>
+            <div class="container1">
+                <p class="detailProduct">Nombre de Producto</p>
+                <p class="detailProduct">Precio</p>
+                <p class="detailProduct">Color</p>
+                <div class="container2">
+                    <div class="box1">1</div>
+                    <div class="box1">2</div>
+                    <div class="box1">3</div>
+                </div>
+                <p class="detailProduct">Envios y Devoluciones</p>
+                <p class="detailProduct">Seleccione su talla</p>
+                <div class="container3">
+                    <div class="box1">1</div>
+                    <div class="box1">2</div>
+                    <div class="box1">3</div>
+                </div>
+                <button type="submit">COMPRAR</button>
+                <div class="subBox1">
+                    <p></p>
+                </div>
+                <div class="subBox2">CaracteristicasTecnicas</div>
+                <div class="subBox2">Envios y Devoluciones</div>
+                <div class="subBox2">Contactános</div>
+            </div>
+        </div> <!-- Version Desktop Fin -->
+        <div class="masterContainerM"> <!-- Version Mobile Inicio -->
+            <p>Nombre del Producto</p>
+            <div class="mainBoxM">
+                <img class="img" src="/img/fotoP.jpg">
+            </div>
+            <div class="miniContainer">
+                <div class="box1M">1</div>
+                <div class="box1M">2</div>
+                <div class="box1M">3</div>
+                <div class="box1M">4</div>
+                <div class="box1M">5</div>
+            </div>
+            <div class="descProM">Color: IdColor</div>
+            <div class="colorContainer">
+                <div class="box2M">1</div>
+                <div class="box2M">2</div>
+                <div class="box2M">3</div>
+                <div class="box2M">4</div>
+                <div class="box2M">5</div>
+                <div class="box2M">6</div>
+            </div>    
+            <div class="descProM">Seleccione una Talla</div>   
+            <div class="tallaContainer">
+                <div class="box3M">1</div>
+                <div class="box3M">2</div>
+                <div class="box3M">3</div>
+                <div class="box3M">4</div>
+                <div class="box3M">5</div>
+                <div class="box3M">6</div>
+            </div>  
+            <div class="descProductM">
+                <p>Detalles de Producto</p>
+            </div>
+        <div>          
+           <ul class="ListaCollapse">
+             <li> <a onclick="this.parentElement.classList.toggle('active');"> Caracteristicas Tecnicas <i class= "flechita fas fa-chevron-down"></i></a>
+                    <div class="info">  
+                    </div>
+                </li>
+                <li><a onclick="this.parentElement.classList.toggle('active');">Evio y Devoluciones <i class="flechita fas fa-chevron-down"></i></a>
+                    <div class="info">
+                        <p></p>
+                    </div>
+                </li>
+                    <div class="info">
+                    </div>
+                </li>
+             </ul>         
+        </div> 
+        </div> 
+    </main>
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+
+</html>

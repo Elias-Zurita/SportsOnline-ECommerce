@@ -1,0 +1,236 @@
+.img{
+    width: 85%;
+    height: 85%;
+}
+
+.masterContainer{ /* masterContainer contiene todas las cajas */
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: black solid 1px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.container { /* container: es padre de box contiene vistas miniatura de galeria producto*/
+    display: flex;
+    width: 10%;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 0.5%;
+    border: solid 1px black; 
+}
+
+.box{ /* box es para ubicar miniaturas de las imagenes producto */
+    background-color: white;
+    display: flex;
+    height: 90%;
+    width: 90%;
+    color: black;
+    border: solid 1px black;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 1%; 
+}
+
+.mainBox{ /* mainBox es para la foto mas grande del producto */
+    display: flex;
+    width: 90%;
+    height: auto;
+    border: solid 1px black;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* margin: 1%; */
+    font-size: 50px;
+}
+
+.container1 { /* container1: es padre de subBox */
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    margin: 1%;  
+}
+
+.container2{ /* contendor para cajitas selector de colores */
+    display: flex;
+    flex-direction: row; 
+    box-sizing: border-box;  
+}
+
+.box1{ /* Cajas de colores y tallas */
+    background-color: white;
+    width: 70%;
+    height: 70%;
+    border: solid black 1px;
+    border-radius: 3px;
+    align-items: left;
+    text-align: center;
+    justify-content: center;
+    margin: 1%;    
+}
+
+.container3{ /* contiene cajas de las tallas */
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.subBox1 { /* caja para detalles de producto */
+    
+    width: 100%;
+    height: 90%;
+    border: solid 1px black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    box-sizing: border-box;
+    font-size: 100%;
+    padding: 1%;
+}
+
+
+
+.subBox2 { /* caract tec, envio y devoluciones y mas info */
+    background-color: white;
+    width: 100%;
+    height: 10%;
+    border: solid 1px black;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1.2%;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.container1 button{ /* Boton para compra */
+    border-radius: 5px;
+    margin: 1%;
+    width: 100%;
+    background-color: #d2c0b4;
+    color: #fff;
+    border: 1px solid #d2c0b4;
+    transition: all 0.2s ease;
+}
+.container1 button:hover{
+    background-color: rgb(63, 35, 3);
+}
+
+.masterContainerM{
+    display: none;
+}
+
+/* Version DESKTOP */
+
+/* Version MOBILE */
+
+@media (max-width: 779px){
+    .masterContainer{
+        display: none;
+    }
+
+    .masterContainerM{ /* Contenedor Ppal */
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border: black solid 1px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .mainBoxM{ /* Caja para Imagen de Producto */
+        width: 100%;
+        height: 90%;
+        border: solid 1px black;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .miniContainer{ /* Contenedor de miniaturas */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .box1M{ /* Imagenes miniatura para carrusel */
+        margin: 1%;
+        width: 10%;
+        height: 90%;
+        border: solid black 1px;
+        border-radius: 5px;  
+    }
+
+    .colorContainer{ /* Contenedor para selector de colores */
+        flex-direction: row;
+        display: flex;
+    }
+
+    .box2M{ /* Selector de colores */
+        width: 70%;
+        height: 70%;
+        border: solid black 1px;
+        border-radius: 5px;
+        align-items: left;
+        text-align: center;
+        justify-content: center;
+        margin: 0.5%;
+    }
+
+    .descProM{ /* titulo Color del producto */
+        display: flex;
+        text-align: left;
+    }
+
+    .tallaContainer{ /* contenedor de tallas */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .box3M{ /* Selector de tallas */
+        width: 10%;
+        height: 90%;
+        border: solid 1px black;
+        margin: 0.5%;
+        border-radius: 5px;
+    }
+    .ListaCollapse li .info{
+      display: none;  
+    }
+    .ListaCollapse li.active .info{
+        display: block;
+    }
+
+    .ListaCollapse {
+        margin: auto;
+        padding: 0;
+
+    }
+    ul li{
+        list-style: none;
+    }
+
+    .descProductM{
+        display: flex;
+        text-align: justify;
+        padding: 1%;
+        margin: 1%;
+        border-radius: 5px;
+    }
+
+    .containerDespleg{
+        display: block;
+    }
+
+}
