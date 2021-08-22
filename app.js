@@ -19,16 +19,16 @@ app.get("/register.html", (req,res)=> {
     res.render(path.resolve(__dirname,"./src/views/register.html")); //Sirve para que se muestre todo lo realizado en el register.html //
 })
 
-app.get("/carrito", (req,res)=> {
-    res.render(path.resolve(__dirname,"./src/views/products/productCart.ejs")); //Sirve para que se muestre todo lo realizado en el carrito.ejs//
+app.get("/productCart.html", (req,res)=> {
+    res.render(path.resolve(__dirname,"./src/views/products/productCart")); //Sirve para que se muestre todo lo realizado en el carrito.ejs//
 })
 
 app.get("/creacion", (req,res)=> {
     res.render(path.resolve(__dirname,"./src/views/users/creation.ejs")); //Sirve para que se muestre todo lo realizado en el carrito.ejs//
 })
 
-app.get("/detalle", (req,res)=> {
-    res.render(path.resolve(__dirname,"./src/views/products/details.ejs")); //Sirve para que se muestre todo lo realizado en el detalle.html //
+app.get("/details.html", (req,res)=> {
+    res.render(path.resolve(__dirname,"./src/views/products/details")); //Sirve para que se muestre todo lo realizado en el detalle.html //
 })
 
 app.get("/login.html", (req,res)=> {
