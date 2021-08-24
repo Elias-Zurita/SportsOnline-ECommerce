@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<form action="/home.html" method="POST" class="formularioLog">
+    <div class="inicioSesion">
+    <h2>¡Crea tu producto!</h2>
+    </div>
+
+    <div class="Foto"><img src="/tu-imagen.jpg" alt="Producto"></div>
+
+    <div class="control-formulario">
+    <label for="nombreDeProducto">Nombre de Producto</label>
+    <input type="text" name="nombreDeProducto" id="nombreDeProducto" class="control-especifico">
+    </div>
+    
+    <div class="control-formulario">
+    <label for="descripción">Descripción</label>
+    <input type="text" name="descripción" id="descripción" class="control-especifico">
+    </div>
+
+    <div class="control-formulario">
+        <label for="categoria">Categoria</label>
+        <input type="text" name="categoria" id="categoria" class="control-especifico">
+        </div>
+
+    <div class="control-formulario">
+        <label for="precio">Precio</label>
+        <input type="text" name="precio" id="precio" class="control-especifico">
+        </div>
+
+    
+    <div class="sube">
+    <button type="submit" class="botones">Subir tu producto</button>
+    </div>
+
+    <div>
+
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>
