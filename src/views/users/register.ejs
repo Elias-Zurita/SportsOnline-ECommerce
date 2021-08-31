@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs') %> 
+<head>
+  <%- include('../partials/header.ejs') %>
+    <meta charset="UTF-8">
+    <title>SportsOnline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.google.com/specimen/Exo+2?query=exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="\css\register.css">
+
+</head>
+
+<body>
+    
+<header>
+
+    <div class="topHeader">
+    <form action="#" method="GET" id="searchBar">
+         </form>
+  
+            <h1 class="principal-row">Creá tu cuenta</h1>
+                <form action="" method="POST" enctype="multipart/form-data"></form>
+                    <div class="container-fluid col-3 mt-5">
+                       
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" placeholder="" name="username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Apellido: </label>
+                        <input type="text" class="form-control" placeholder="" name="lastname">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email: </label>
+                        <input type="email" class="form-control" placeholder="" name="email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Domicilio: </label>
+                        <input type="email" class="form-control" placeholder="" name="domicilio">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Contraseña: </label>
+                        <input type="password" class="form-control" placeholder="" name="pass">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Repetir contraseña: </label>
+                        <input type="password" class="form-control" placeholder="" name="pass2">
+                      </div>
+                      
+                      <div class="row">
+                      <button type="submit" class="btn btn-success col-4 mt-5">Registrarse</button>
+                    </div>
+                                            <input class="robot" type="checkbox" checked="" name="No soy un robot" id="No-robot">
+                        <label class="required" for="terminos-registro">
+                        No soy un robot  
+                    </label>
+                </div>
+                    </form>
+        
+                  
+                    <%- include('../partials/footer.ejs') %>
+               
+            </body>
+            </html>
