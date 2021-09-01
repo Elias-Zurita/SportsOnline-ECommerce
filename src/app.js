@@ -4,10 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const mainRoutes = require('./routes/mainRoutes');
-const usersRoutes = require('./routes/users');
-const productsRoutes = require('./routes/products');
-
 var app = express();
 
 // view engine setup
@@ -19,6 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
+
+const mainRoutes = require('./routes/main');
+const usersRoutes = require('./routes/users');
+const productsRoutes = require('./routes/products');
 
 app.use('/', mainRoutes);
 app.use("/users", usersRoutes);
