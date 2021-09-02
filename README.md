@@ -148,5 +148,22 @@ Pudimos implementar el motor de templates, separar las vistas en carpetas, separ
 Tuvimos que seguir modificando los html para que nos queden como los Wireframe que habiamos hecho en el sprint 1, fue un tema que nos costo a parte del equipoy tenemos que seguir retocando los mismos. 
 
 Identificamos la manera de trabajar juntos en un visual studio en el que todos participamos y agregamos nuestro granito de arena.
-Cada vez se pone mas complejo y hay muchoque estudiar y practicar.
+Cada vez se pone mas complejo y hay mucho que estudiar y practicar.
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sprint 4:
+
+Resultado de la retrospectiva.
+Quedamos satisfechos con la entrega del sprint 3, seguimos avanzando con el sprint 4.
+
+Empezamos a tener mas comunicacion con el grupo y por eso llegamos a gusto con la entrega.
+Logramos tener resuelta la parte visual de nuestro sitio y ahora comenzamos a darle vida al mismmo, con todos los formularios y acciones, para que trabajen con productos y usuarios.
+
+Para esta entrega entendimos que lo mejor era reunirnos en 'reuniones daily', no todos los dias, pero mas comunicados y hablamos por chat muy seguido. Es mas facil poder ver donde estabamos cada uno.
+
+Definimos los campos de los productos y pudimos implementar la herramienta para generar el JSON.
+Definimos los campos necesarios para los usuarios y generamos archivo JSON.
+
+Pudimos implementar todos los metodos necesarios para poder trabajar con la fuente de datos JSON de los productos que creamos.
