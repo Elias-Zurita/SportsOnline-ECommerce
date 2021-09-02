@@ -106,14 +106,11 @@ https://www.stockcenter.com.ar/
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-
 SPRINT 2:
 
 Resultado de retrospectiva:
 
-Cuando empezamos con el sprint n1, nos reunimos y rápidamente nos pusimos de acuerdo en crear una Ecommerce Deportiva.
-Nos organizamos repartiendonos las tareas en donde cada uno, tuvo que hacer un wireframe. 
-Lo hicimos con bastante tiempo de anticipación y consideramos que llegamos muy bien con la primer entrega.
+Cuando empezamos con el Sprint n1, nos reunimos y rápidamente nos pusimos de acuerdo en crear una Ecommerce Deportiva. Nos organizamos repartiendonos las tareas en donde cada uno, tuvo que hacer un wireframe. Lo hicimos con bastante tiempo de anticipación y consideramos que llegamos muy bien con la primer entrega.
 
 El segundo sprint lo empezamos mas llegando a la fecha de entrega ya que se nos junto con el trabajo de Mercado Liebre.
 
@@ -131,39 +128,32 @@ Surgieron algunos improvistos y dudas en el armado del mismo, seguimos trabajand
 
 Creemos que una buena forma de trabajar en equipo es si logramos:
 
-- Sostener reuniones productivas. Después de cada juntada, todos sabemos bien qué pasos seguir. Durante las reuniones se generan nuevas ideas y estrategias para producir.
-- Escucharnos. Todos estamos en la misma página y cuando surge un problema estamos dispuestos a apoyar y ayudar. Además, escuchamos activamente las opiniones de los demás y ayudamos a ofrecer soluciones.
-
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sostener reuniones productivas. Después de cada juntada, todos sabemos bien qué pasos seguir. Durante las reuniones se generan nuevas ideas y estrategias para producir. Escucharnos. Todos estamos en la misma página y cuando surge un problema estamos dispuestos a apoyar y ayudar. Además, escuchamos activamente las opiniones de los demás y ayudamos a ofrecer soluciones.
 
 Sprint 3:
 
-Resultado de la retrospectiva.
-Habiendo corregido y  mejorado el sprint 2, seguimos avanzando.
+Resultado de la retrospectiva: Habiendo corregido y mejorado el sprint 2, seguimos avanzando.
 
-En el grupo identificamos quien es el organizado y el que nos va guiando a todo el equipo.
-Pudimos implementar el motor de templates, separar las vistas en carpetas, separar los componentes repetidos en archivos parciales y trabajamos en la creacion y edicion de productos.
+En el grupo identificamos quien es el organizado y el que nos va guiando a todo el equipo. Pudimos implementar el motor de templates, separar las vistas en carpetas, separar los componentes repetidos en archivos parciales y trabajamos en la creacion y edicion de productos.
 
-Tuvimos que seguir modificando los html para que nos queden como los Wireframe que habiamos hecho en el sprint 1, fue un tema que nos costo a parte del equipoy tenemos que seguir retocando los mismos. 
+Tuvimos que seguir modificando los html para que nos queden como los Wireframe que habiamos hecho en el sprint 1, fue un tema que nos costo a parte del equipoy tenemos que seguir retocando los mismos.
 
-Identificamos la manera de trabajar juntos en un visual studio en el que todos participamos y agregamos nuestro granito de arena.
-Cada vez se pone mas complejo y hay mucho que estudiar y practicar.
-
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Identificamos la manera de trabajar juntos en un visual studio en el que todos participamos y agregamos nuestro granito de arena. Cada vez se pone mas complejo y hay mucho que estudiar y practicar.
 
 Sprint 4:
 
-Resultado de la retrospectiva.
+Resultado de la retrospectiva:
+
 Quedamos satisfechos con la entrega del sprint 3, seguimos avanzando con el sprint 4.
 
-Empezamos a tener mas comunicacion con el grupo y por eso llegamos a gusto con la entrega.
-Logramos tener resuelta la parte visual de nuestro sitio y ahora comenzamos a darle vida al mismmo, con todos los formularios y acciones, para que trabajen con productos y usuarios.
+Empezamos a tener mas comunicacion con el grupo y por eso llegamos a gusto con la entrega. Logramos tener resuelta la parte visual de nuestro sitio y ahora comenzamos a darle vida al mismmo, con todos los formularios y acciones, para que trabajen con productos y usuarios.
 
 Para esta entrega entendimos que lo mejor era reunirnos en 'reuniones daily', no todos los dias, pero mas comunicados y hablamos por chat muy seguido. Es mas facil poder ver donde estabamos cada uno.
 
-Definimos los campos de los productos y pudimos implementar la herramienta para generar el JSON.
-Definimos los campos necesarios para los usuarios y generamos archivo JSON.
+Definimos los campos de los productos y pudimos implementar la herramienta para generar el JSON. Definimos los campos necesarios para los usuarios y generamos archivo JSON.
 
 Pudimos implementar todos los metodos necesarios para poder trabajar con la fuente de datos JSON de los productos que creamos.
+
+Implementamos técnicas de trabajo en el grupo para fomentar la participación. Una estrategia que facilita el desarrollo de un clima de confianza, despierta el interés por el trabajo en grupo, ayuda a compartir los conocimientos, nos motiva y facilita la convivencia.
+
+Seguimos avanzando!
