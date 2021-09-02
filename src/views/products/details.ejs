@@ -15,12 +15,15 @@
                 <div class="box">BOX 3</div>
             </div>
             <div class="mainBox">
-                <img class="img" src="/img/zapatilla adidas mujer.jpeg">
+                <img class="img" src=" <%= products.img %>">
             </div>
             <div class="container1">
-                <p class="detailProduct">Nombre de Producto</p>
-                <p class="detailProduct">Precio</p>
-                <p class="detailProduct">Color</p>
+                <p class="detailProduct">id: <%= products.id %></p>
+                <p class="detailProduct">Nombre de Producto: <%= products.nombre %> </p>
+                <p class="detailProduct">Descripcion: <%= products.descripcion %></p>
+                <p class="detailProduct">Categoria: <%= products.categoria %></p>
+                <p class="detailProduct">Marca: <%= products.marca %></p>
+                <p class="detailProduct">Precio: $<%= products.precio %></p>
                 <div class="container2">
                     <div class="box1">1</div>
                     <div class="box1">2</div>

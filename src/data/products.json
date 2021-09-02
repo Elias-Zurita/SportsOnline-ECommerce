@@ -33,5 +33,46 @@
         "categoria": "indumentaria",
         "marca": "nike",
         "precio": "4000"
+    },
+
+    {
+        "id":5,
+        "nombre": "Pelota Real Madrid",
+        "descripcion": "saraza",
+        "categoria": "Pelotas",
+        "marca": "Adidas",
+        "precio": "4000",
+        "img": "/img/products/Pelota Adidas real madrid.jpg"
+    },
+    
+    {
+        "id":6,
+        "nombre": "Pelota UCL Aniversario",
+        "descripcion": "saraza",
+        "categoria": "Pelotas",
+        "marca": "Adidas",
+        "precio": "4000",
+        "img": "/img/products/Pelota Adidas aniversario.jpg"
+    },
+    
+    {
+        "id":7,
+        "nombre": "Pelota UCL",
+        "descripcion": "saraza",
+        "categoria": "Pelotas",
+        "marca": "Adidas",
+        "precio": "4000",
+        "img": "/img/products/Pelota adidas ucl.jpg"
+    },
+    
+    {
+        "id":8,
+        "nombre": "Pelota Uniforia",
+        "descripcion": "saraza",
+        "categoria": "Pelotas",
+        "marca": "Adidas",
+        "precio": "4000",
+        "img": "/img/products/Pelota adidas uniforia.jpg"
     }
+    
 ]

@@ -13,9 +13,6 @@ const controller = {
     productCart : (req, res) =>{
         res.render("products/productCart") // renderiza el carrito de compras //
     },
-    details : (req, res) =>{
-        res.render("products/details") // renderiza el detalle del producto //
-    },
     creation : (req, res) =>{
         res.render("products/creation")   // renderiza el formulario de creacion //
     },
@@ -23,7 +20,15 @@ const controller = {
         let products = findAll();
         res.render ('products/productsList', {products}) // renderiza el listado de productos //
     },
-    
+    details : (req, res) =>{
+        let products = findAll();
+        let productsEncontrado = products.find(function(products){
+            return products.id == req.params.id //renderiza el producto que se pida por id //            
+        })
+
+        res.render("products/details", {products: productsEncontrado}) // renderiza el detalle del producto pedido por id //
+    },
+
 }
 
 module.exports = controller;
