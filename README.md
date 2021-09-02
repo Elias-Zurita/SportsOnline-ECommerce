@@ -77,7 +77,7 @@ musica rock, hincha de River.
 
 
 
--Adriana Tisminetzky de 31 años de nacionalidad Argentina, actualmente residiendo en Estados Unidos. Arquitecta y mamá de Thiago de 
+- Adriana Tisminetzky de 31 años de nacionalidad Argentina, actualmente residiendo en Estados Unidos. Arquitecta y mamá de Thiago de 
 5 meses de edad. Apasionada de los de los nuevos desafíos y de las nuevas oportunidades.
 
 
@@ -87,20 +87,21 @@ musica rock, hincha de River.
 
 
 
-5 SITIOS DE REFERENCIA	
+5 SITIOS DE REFERENCIA:	
 
+1-
 https://www.solodeportes.com.ar/
+
 2-	
-
 https://www.sportline.com.ar/
+
 3-	
-
 https://www.opensports.com.ar/
+
 4-	
-
 http://www.factorydeportivo.com.ar/
-5-	
 
+5-	
 https://www.stockcenter.com.ar/
 
 
