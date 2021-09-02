@@ -1,38 +1,42 @@
 [
     {
         "id":1,
-        "nombre": "camiseta",
+        "nombre": "Camiseta de Futbol Seleccion Argentina",
         "descripcion": "saraza",
-        "categoria": "indumentaria",
-        "marca": "adidas",
-        "precio": "5000"
+        "categoria": "Indumentaria",
+        "marca": "Adidas",
+        "precio": "9000",
+        "img": "/img/camiseta argentina.jpeg"
     },
     
     {
         "id":2,
-        "nombre": "zapatilla",
+        "nombre": "Zapatilla Run Falcon",
         "descripcion": "saraza",
-        "categoria": "calzado",
-        "marca": "adidas",
-        "precio": "7000"
+        "categoria": "Calzado",
+        "marca": "Adidas",
+        "precio": "7000",
+        "img": "/img/zapatilla adidas.jpeg"
     },
     
     {
         "id":3,
-        "nombre": "zapatilla",
+        "nombre": "Pelota Capitano",
         "descripcion": "saraza",
-        "categoria": "calzado",
-        "marca": "nike",
-        "precio": "9000"
+        "categoria": "Pelotas",
+        "marca": "Adidas",
+        "precio": "3000",
+        "img": "/img/products/Pelota adidas capitano.jpg"
     },
 
     {
         "id":4,
-        "nombre": "bolso",
+        "nombre": "Raqueta Aero Drive",
         "descripcion": "saraza",
-        "categoria": "indumentaria",
-        "marca": "nike",
-        "precio": "4000"
+        "categoria": "Raquetas",
+        "marca": "Babolat",
+        "precio": "34000",
+        "img": "/img/Raqueta Aero Drive.jpg"
     },
 
     {
