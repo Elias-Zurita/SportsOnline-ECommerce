@@ -156,4 +156,4 @@ Pudimos implementar todos los metodos necesarios para poder trabajar con la fuen
 
 Implementamos técnicas de trabajo en el grupo para fomentar la participación. Una estrategia que facilita el desarrollo de un clima de confianza, despierta el interés por el trabajo en grupo, ayuda a compartir los conocimientos, nos motiva y facilita la convivencia.
 
-Seguimos avanzando!
+ Seguimos avanzando!
