@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "nombre": "camiseta",
+        "descripcion": "saraza",
+        "categoria": "indumentaria",
+        "marca": "adidas",
+        "precio": "5000"
+    },
+    
+    {
+        "id":2,
+        "nombre": "zapatilla",
+        "descripcion": "saraza",
+        "categoria": "calzado",
+        "marca": "adidas",
+        "precio": "7000"
+    },
+    
+    {
+        "id":3,
+        "nombre": "zapatilla",
+        "descripcion": "saraza",
+        "categoria": "calzado",
+        "marca": "nike",
+        "precio": "9000"
+    },
+
+    {
+        "id":4,
+        "nombre": "bolso",
+        "descripcion": "saraza",
+        "categoria": "indumentaria",
+        "marca": "nike",
+        "precio": "4000"
+    }
+]

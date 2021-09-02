@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD  -->
+    <body>
+    <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER  -->
+        <main>
+            <h1>Listado de Usuarios</h1>
+            
+            <div class = "cajaDeUsuario">
+                <% users.forEach (function(users){ %>  <!-- para cada auto -->
+                    <img class= "FotoDePerfil" src="" alt="">
+                    <ul>
+                        <li>Nombre:<%= users.nombre %> </li> 
+                        <li>Email:<%= users.email %></li> 
+                        <li>Domicilio:<%= users.domicilio %></li> 
+                    </ul>
+            </div>
+                <% } ) %>
+        </main>
+    <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
+    </body>
+</html>

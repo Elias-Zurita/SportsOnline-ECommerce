@@ -1,0 +1,29 @@
+[
+    {   
+        "id":1,
+        "nombre": "Elias Zurita",
+        "email": "eliass.zurita@gmail.com",
+        "domicilio":"Maestro Angel D'elia 1039"
+    },
+    
+    {   
+        "id":2,
+        "nombre": "Marco Pontiz",
+        "email": "marco.pontiz@gmail.com",
+        "domicilio":"San Martin 320"
+    },
+    
+    {   
+        "id":3,
+        "nombre": "Adriana Tisminetzky ",
+        "email": "adriana.tisminetzky @gmail.com",
+        "domicilio":"Bill Clinton 450"
+    },
+
+    {   
+        "id":4,
+        "nombre": "Sofia Sassone",
+        "email": "sofi.sassone@gmail.com",
+        "domicilio":"Sarmiento 890"
+    }
+]

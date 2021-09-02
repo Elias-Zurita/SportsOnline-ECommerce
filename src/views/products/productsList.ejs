@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+<main>
+    <h1>Listado de Productos</h1>
+    <div class="cajaDeProducto">
+        <% products.forEach (function(products){ %>  <!-- para cada auto -->
+            <img class= "FotoDelProducto" src="/img/products/Pelota Adidas aniversario.jpg" alt="">
+            <ul>
+                <li>Nombre:<%= products.nombre %> </li> 
+                <li>Descripcion:<%= products.descripcion %></li> 
+                <li>Categoria:<%= products.categoria %></li> 
+                <li>Marca:<%= products.marca %></li> 
+                <li>Precio:$<%= products.precio %></li> 
+            </ul>
+        <% }) %>
+    </div>
+</main>
+
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+</body>
+</html>
