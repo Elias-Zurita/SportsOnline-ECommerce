@@ -9,12 +9,14 @@ function findAll() {
     return data // devuelve data (la info de los productos) //
 }
 
+function writeJson(array){   // le sobreescribe info al JSON data //
+    let arrayJSON = JSON.stringify(array)  // Convierte el array en JSON  //
+    return fs.writeFileSync(path.join(__dirname, "../data/products.json"), arrayJSON);
+}
+
 const controller = {
     productCart : (req, res) =>{
         res.render("products/productCart") // renderiza el carrito de compras //
-    },
-    creation : (req, res) =>{
-        res.render("products/creation")   // renderiza el formulario de creacion //
     },
     list: (req, res) =>{
         let products = findAll();
@@ -28,6 +30,24 @@ const controller = {
 
         res.render("products/details", {products: productsEncontrado}) // renderiza el detalle del producto pedido por id //
     },
+    create : (req, res) =>{
+        res.render("products/create")   // renderiza el formulario de creacion //
+    },
+    store: function(req,res) {
+        let products = findAll();
+        let newProduct = {  // Creacion de un producto //
+            id: products.lenght + 1,  // devuelve la cantidad de elementos que se tienen //
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            categoria: req.body.categoria,
+            marca: req.body.marca,
+            precio: req.body.precio,
+        }
+        let productsActualizados = [...products, newProduct]  // mete los datos de newproducts en un products//
+
+        writeJson(productsActualizados);
+        res.redirect("/products/list");
+    }
 
 }
 

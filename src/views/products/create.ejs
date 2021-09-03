@@ -7,7 +7,7 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/home.html" method="POST" class="formularioLog">
+<form action="/products/create" method="POST" class="formularioLog">
     <div class="inicioSesion">
     <h2>¡Crea tu producto!</h2>
     </div>
@@ -16,18 +16,23 @@
 
     <div class="control-formulario">
     <label for="nombreDeProducto">Nombre de Producto</label>
-    <input type="text" name="nombreDeProducto" id="nombreDeProducto" class="control-especifico">
+    <input type="text" name="nombre" id="nombreDeProducto" class="control-especifico">
     </div>
     
     <div class="control-formulario">
     <label for="descripción">Descripción</label>
-    <input type="text" name="descripción" id="descripción" class="control-especifico">
+    <input type="text" name="descripcion" id="descripción" class="control-especifico">
     </div>
 
     <div class="control-formulario">
         <label for="categoria">Categoria</label>
         <input type="text" name="categoria" id="categoria" class="control-especifico">
         </div>
+
+        <div class="control-formulario">
+            <label for="categoria">Marca</label>
+            <input type="text" name="marca" id="marca" class="control-especifico">
+            </div>
 
     <div class="control-formulario">
         <label for="precio">Precio</label>
@@ -39,8 +44,7 @@
     <button type="submit" class="botones">Subir tu producto</button>
     </div>
 
-    <div>
-
+</form>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
