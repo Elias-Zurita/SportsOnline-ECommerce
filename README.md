@@ -77,7 +77,7 @@ musica rock, hincha de River.
 
 
 
--Adriana Tisminetzky de 31 años de nacionalidad Argentina, actualmente residiendo en Estados Unidos. Arquitecta y mamá de Thiago de 
+- Adriana Tisminetzky de 31 años de nacionalidad Argentina, actualmente residiendo en Estados Unidos. Arquitecta y mamá de Thiago de 
 5 meses de edad. Apasionada de los de los nuevos desafíos y de las nuevas oportunidades.
 
 
@@ -87,66 +87,21 @@ musica rock, hincha de River.
 
 
 
-5 SITIOS DE REFERENCIA	
+5 SITIOS DE REFERENCIA:	
 
+1-
 https://www.solodeportes.com.ar/
+
 2-	
-
 https://www.sportline.com.ar/
+
 3-	
-
 https://www.opensports.com.ar/
+
 4-	
-
 http://www.factorydeportivo.com.ar/
-5-	
 
+5-	
 https://www.stockcenter.com.ar/
 
-
----------------------------------------------------------------------------------------------------------------------------------
-
-
-SPRINT 2:
-
-Resultado de retrospectiva:
-
-Cuando empezamos con el sprint n1, nos reunimos y rápidamente nos pusimos de acuerdo en crear una Ecommerce Deportiva.
-Nos organizamos repartiendonos las tareas en donde cada uno, tuvo que hacer un wireframe. 
-Lo hicimos con bastante tiempo de anticipación y consideramos que llegamos muy bien con la primer entrega.
-
-El segundo sprint lo empezamos mas llegando a la fecha de entrega ya que se nos junto con el trabajo de Mercado Liebre.
-
-De igual manera nos dividimos las tareas segun el wireframe que hizo cada uno.
-
-ELIAS: HTML del home + HMTL del Login
-
-SOFI: HTML del register + Trello
-
-MARCO: HTML del carrito de compras + Subir todo a Github
-
-ADRIANA: HTML de la descripcion del producto + Texto de retrospectiva.
-
-Surgieron algunos improvistos y dudas en el armado del mismo, seguimos trabajandolo para tener el sitio web que imaginamos y poder cumplir con todos los objetivos.
-
-Creemos que una buena forma de trabajar en equipo es si logramos:
-
-- Sostener reuniones productivas. Después de cada juntada, todos sabemos bien qué pasos seguir. Durante las reuniones se generan nuevas ideas y estrategias para producir.
-- Escucharnos. Todos estamos en la misma página y cuando surge un problema estamos dispuestos a apoyar y ayudar. Además, escuchamos activamente las opiniones de los demás y ayudamos a ofrecer soluciones.
-
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Sprint 3:
-
-Resultado de la retrospectiva.
-Habiendo corregido y  mejorado el sprint 2, seguimos avanzando.
-
-En el grupo identificamos quien es el organizado y el que nos va guiando a todo el equipo.
-Pudimos implementar el motor de templates, separar las vistas en carpetas, separar los componentes repetidos en archivos parciales y trabajamos en la creacion y edicion de productos.
-
-Tuvimos que seguir modificando los html para que nos queden como los Wireframe que habiamos hecho en el sprint 1, fue un tema que nos costo a parte del equipoy tenemos que seguir retocando los mismos. 
-
-Identificamos la manera de trabajar juntos en un visual studio en el que todos participamos y agregamos nuestro granito de arena.
-Cada vez se pone mas complejo y hay muchoque estudiar y practicar.
 
