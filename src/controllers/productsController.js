@@ -11,7 +11,7 @@ function findAll() {
 
 function writeJson(array){   // le sobreescribe info al JSON data //
     let arrayJSON = JSON.stringify(array)  // Convierte el array en JSON  //
-    return fs.writeFileSync(path.join(__dirname, "../data/products.json"), arrayJSON);
+    return fs.writeFileSync(path.join(__dirname, "../data/products.json"), arrayJSON);  
 }
 
 const controller = {
@@ -31,7 +31,10 @@ const controller = {
         res.render("products/details", {products: productsEncontrado}) // renderiza el detalle del producto pedido por id //
     },
     create : (req, res) =>{
-        res.render("products/create")   // renderiza el formulario de creacion //
+        res.render("products/create")   // renderiza el formulario de creacion de producto //
+    },
+    edit: (req,res) =>{
+        res.render("products/productEditForm") // renderiza el formulario de edicion de producto //
     },
     store: function(req,res) {
         let products = findAll();
