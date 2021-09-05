@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+    <div class="titulo">
+    <h2>EDICION DE PRODUCTOS</h2>
+    </div>
+
+    <div class="Foto"><img src="<%= product.img %>" alt="fotoDelProducto"></div>
+
+    <div class="control-formulario">
+    <label for="nombreDeProducto">Nombre de Producto</label>
+    <input type="text" value= "<%= product.nombre %>" name="nombre" id="nombreDeProducto" class="control-especifico">
+    </div>
+    
+    <div class="control-formulario">
+    <label for="descripción">Descripción</label>
+    <input type="text" value= "<%= product.descripcion %>" name="descripcion" id="descripción" class="control-especifico">
+    </div>
+
+    <div class="control-formulario">
+        <label for="categoria">Categoria</label>
+        <input type="text" value= "<%= product.categoria %>" name="categoria" id="categoria" class="control-especifico">
+        </div>
+
+        <div class="control-formulario">
+            <label for="categoria">Marca</label>
+            <input type="text" value= "<%= product.marca %>" name="marca" id="marca" class="control-especifico">
+            </div>
+
+    <div class="control-formulario">
+        <label for="precio">Precio</label>
+        <input type="text" value= "<%= product.precio %>" name="precio" id="precio" class="control-especifico">
+        </div>
+
+    
+    <div class="sube">
+    <button type="submit" class="botones">EDITAR PRODUCTO</button>
+    </div>
+
+</form>
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>
