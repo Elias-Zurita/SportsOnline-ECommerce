@@ -33,30 +33,6 @@ const controller = {
     create : (req, res) =>{
         res.render("products/create")   // renderiza el formulario de creacion de producto //
     },
-    edit: function (req,res) {  // edicion de productos //
-        let products = findAll // trae todos los productos //
-        let productEncontrado = products.find(function(product){ // Encuentra UN producto //
-            return product.id == req.params.id 
-        })
-        res.render("products/productEditForm", {product: productEncontrado}) // renderiza el formulario de edicion de producto //
-    },
-    update: function (req, res) {
-        let products = findAll();
-        let productsActualizados = products.map(function(products){ // busca en el array el elemento al que va a editar y le sobrescribe la info //
-            if (products.id == req.params.id){ //si el producto es igual al parametro que nos llega por ruta actualiza los datos //
-                product.nombre = req.body.nombre
-                product.descripcion = req.body.descripcion
-                product.categoria = req.body.categoria
-                product.marca = req.body.marca
-                product.precio = req.body.precio
-                product.img = req.body.img
-            }
-            return product
-        }) 
-        writeJson(productsActualizados); // modifica el producto //
-
-        res.redirect("/products/details/"+req.params.id) // redirecciona a la pagina de detalle del producto editado //
-    },
     store: function(req,res) {
         let products = findAll();
         let newProduct = {  // Creacion de un producto //
@@ -71,8 +47,41 @@ const controller = {
 
         writeJson(productsActualizados);
         res.redirect("/products/list");
-    }
+    },
+    edit: function (req,res) {  // edicion de productos //
+        let products = findAll() // trae todos los productos //
+        let productEncontrado = products.find(function(product){ // Encuentra UN producto //
+            return product.id == req.params.id 
+        })
+        res.render("products/productEditForm", {product: productEncontrado}) // renderiza el formulario de edicion de producto //
+    },
+    update: function (req, res) {
+        let products = findAll();
+        let productsActualizados = products.map(function(product){ // busca en el array el elemento al que va a editar y le sobrescribe la info //
+            if (product.id == req.params.id){ //si el producto es igual al parametro que nos llega por ruta actualiza los datos //
+                product.nombre = req.body.nombre
+                product.descripcion = req.body.descripcion
+                product.categoria = req.body.categoria
+                product.marca = req.body.marca
+                product.precio = req.body.precio
+                product.img = req.body.img
+            }
+            return product
+        }) 
+        writeJson(productsActualizados); // modifica el producto //
 
+        res.redirect("/products/details/"+req.params.id) // redirecciona a la pagina de detalle del producto editado //
+    },
+    destroy: function (req,res){
+        let products = findAll()
+        let dataNueva = products.filter(function(products){
+            return products.id != req.params.id
+        })
+
+        writeJson(dataNueva)
+
+        res.redirect("/products/list")
+    }
 }
 
 module.exports = controller;

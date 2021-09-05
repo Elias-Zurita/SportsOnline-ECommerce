@@ -44,7 +44,11 @@
     <button type="submit" class="botones">EDITAR PRODUCTO</button>
     </div>
 
-</form>
+   </form>
+
+    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+         <button type="submit">ELIMINAR PRODUCTO</button>
+    </form>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
