@@ -1,6 +1,7 @@
 [
     {   
         "id":1,
+        "img": "/img/fotosDePerfil/Elias.jpg",
         "nombre": "Elias Zurita",
         "email": "eliass.zurita@gmail.com",
         "domicilio":"Maestro Angel D'elia 1039"
@@ -8,6 +9,7 @@
     
     {   
         "id":2,
+        "img": "/img/fotosDePerfil/Marco.JPG",
         "nombre": "Marco Pontiz",
         "email": "marco.pontiz@gmail.com",
         "domicilio":"San Martin 320"
@@ -15,6 +17,7 @@
     
     {   
         "id":3,
+        "img": "/img/fotosDePerfil/Adri.jpg",
         "nombre": "Adriana Tisminetzky ",
         "email": "adriana.tisminetzky @gmail.com",
         "domicilio":"Bill Clinton 450"
@@ -22,6 +25,7 @@
 
     {   
         "id":4,
+        "img": "/img/fotosDePerfil/Sofi.jpg",
         "nombre": "Sofia Sassone",
         "email": "sofi.sassone@gmail.com",
         "domicilio":"Sarmiento 890"

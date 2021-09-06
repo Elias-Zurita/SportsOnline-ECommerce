@@ -1,1 +1,2 @@
-.cajaDeUsuario {border: blueviolet solid;}
+.cajaDeUsuario {display: block; width: 25%;border: blueviolet solid;}
+.cajaDeUsuario img {text-align: center;}

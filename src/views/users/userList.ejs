@@ -7,8 +7,10 @@
             <h1>Listado de Usuarios</h1>
             
             <div class = "cajaDeUsuario">
-                <% users.forEach (function(users){ %>  <!-- para cada auto -->
-                    <img class= "FotoDePerfil" src="" alt="">
+                <% users.forEach (function(users){ %>  <!-- para cada usuario -->
+                <div class="cajaFotoDePerfil">
+                    <img class= "FotoDePerfil" src="<%= users.img %>" alt="Foto de perfil">
+                </div>
                     <ul>
                         <li>Nombre:<%= users.nombre %> </li> 
                         <li>Email:<%= users.email %></li> 
