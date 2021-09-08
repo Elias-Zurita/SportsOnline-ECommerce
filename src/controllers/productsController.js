@@ -10,7 +10,7 @@ function findAll() {
 }
 
 function writeJson(array){   // le sobreescribe info al JSON data //
-    let arrayJSON = JSON.stringify(array)  // Convierte el array en JSON  //
+    let arrayJSON = JSON.stringify(array, null," ")  // Convierte el array en JSON  //  se agrega null y las comillas para que quede un espacio //
     return fs.writeFileSync(path.join(__dirname, "../data/products.json"), arrayJSON);  
 }
 
@@ -36,7 +36,7 @@ const controller = {
     store: function(req,res) {
         let products = findAll();
         let newProduct = {  // Creacion de un producto //
-            id: products.lenght + 1,  // devuelve la cantidad de elementos que se tienen //
+            id: products.length + 1,  // devuelve la cantidad de elementos que se tienen //
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             categoria: req.body.categoria,
@@ -64,8 +64,7 @@ const controller = {
                 product.categoria = req.body.categoria
                 product.marca = req.body.marca
                 product.precio = req.body.precio
-                product.img = req.body.img
-            }
+                }
             return product
         }) 
         writeJson(productsActualizados); // modifica el producto //

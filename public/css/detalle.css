@@ -26,8 +26,8 @@
 .box{ /* box es para ubicar miniaturas de las imagenes producto */
     background-color: white;
     display: flex;
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 95%;
     color: black;
     border: solid 1px black;
     border-radius: 5px;
@@ -97,8 +97,8 @@
 
 
 
-.subBox2 { /* caract tec, envio y devoluciones y mas info */
-    background-color: white;
+.subBox2{ /* EDITAR PRODUCTO */
+    background-color: #d2c0b4;
     width: 100%;
     height: 10%;
     border: solid 1px black;
@@ -115,6 +115,7 @@
     border-radius: 5px;
     margin: 1%;
     width: 100%;
+    height: 30%;
     background-color: #d2c0b4;
     color: #fff;
     border: 1px solid #d2c0b4;

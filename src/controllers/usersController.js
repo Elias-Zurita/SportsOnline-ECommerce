@@ -9,6 +9,11 @@ function findAll() {
     return data // devuelve data (la info de los usuarios) //
 }
 
+function writeJson(array){   // le sobreescribe info al JSON data //
+    let arrayJSON = JSON.stringify(array, null, "  ")  // Convierte el array en JSON (string)  //
+    return fs.writeFileSync(path.join(__dirname, "../data/users.json"), arrayJSON);  
+}
+
 const controller = {
     login: (req, res) =>{
     res.render('users/login')   // renderiza el login //
@@ -16,6 +21,22 @@ const controller = {
     register: (req, res) =>{
         res.render('users/register')   // renderiza el register //
     },
+    createUser: function(req,res) {
+        let users = findAll();
+        let newUser = {  // Registro de un nuevo usuario //
+            id: users.length + 1,  // devuelve la cantidad de elementos que se tienen //
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            domicilio: req.body.domicilio,
+            email: req.body.email,
+            contraseña: req.body.contraseña,
+            }
+        let usersActualizados = [...users, newUser]  // mete los datos de newUser en users//
+
+        writeJson(usersActualizados);
+        res.redirect("/users/list");
+    },
+
     list: (req, res) =>{
         let users = findAll();
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //

@@ -11,44 +11,37 @@
     <div class="titulo">
     <h2>EDICION DE PRODUCTOS</h2>
     </div>
-
-    <div class="Foto"><img src="<%= product.img %>" alt="fotoDelProducto"></div>
-
-    <div class="control-formulario">
-    <label for="nombreDeProducto">Nombre de Producto</label>
-    <input type="text" value= "<%= product.nombre %>" name="nombre" id="nombreDeProducto" class="control-especifico">
-    </div>
-    
-    <div class="control-formulario">
-    <label for="descripción">Descripción</label>
-    <input type="text" value= "<%= product.descripcion %>" name="descripcion" id="descripción" class="control-especifico">
-    </div>
-
-    <div class="control-formulario">
-        <label for="categoria">Categoria</label>
-        <input type="text" value= "<%= product.categoria %>" name="categoria" id="categoria" class="control-especifico">
-        </div>
+    <div class= "caja-master">
+        <div class="Foto"><img src="<%= product.img %>" alt="fotoDelProducto"></div>
 
         <div class="control-formulario">
+            <label for="nombreDeProducto">Nombre de Producto</label>
+            <input type="text" value= "<%= product.nombre %>" name="nombre" id="nombreDeProducto">
+       
+            <label for="categoria">Categoria</label>
+            <input type="text" value= "<%= product.categoria %>" name="categoria" id="categoria">
+        
             <label for="categoria">Marca</label>
-            <input type="text" value= "<%= product.marca %>" name="marca" id="marca" class="control-especifico">
-            </div>
+            <input type="text" value= "<%= product.marca %>" name="marca" id="marca">
 
-    <div class="control-formulario">
-        <label for="precio">Precio</label>
-        <input type="text" value= "<%= product.precio %>" name="precio" id="precio" class="control-especifico">
+            <label for="precio">Precio</label>
+            <input type="text" value= "<%= product.precio %>" name="precio" id="precio">
+
+                <div class="descripcion">
+                    <label for="descripción">Descripción</label>
+                    <textarea name="descripcion" type="text" rows= "15" cols= "50" id="descripción"><%= product.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
+                </div>
+        
+                
+            <button class ="botones" type="submit">GUARDAR PRODUCTO</button>
+        
+            </form> <!--  Cierre del formulario de edicion -->
+
+            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                <button class= "botones" type="submit">ELIMINAR PRODUCTO</button>
+            </form>
         </div>
-
-    
-    <div class="sube">
-    <button type="submit" class="botones">EDITAR PRODUCTO</button>
     </div>
-
-   </form>
-
-    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-         <button type="submit">ELIMINAR PRODUCTO</button>
-    </form>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 

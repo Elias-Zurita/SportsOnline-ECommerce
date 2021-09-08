@@ -1,0 +1,26 @@
+.caja-master {display: flex; border: burlywood;}
+
+.control-formulario {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.descripcion {
+    width: 100%;
+    height: 90%;
+    border: solid 1px black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    box-sizing: border-box;
+    font-size: 100%;
+    padding: 1%;
+    text-align: left;
+}
+
+.botones {
+    transition: all 0.2s ease;
+    border-color: royalblue;
+}

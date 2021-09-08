@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer'); // Es una libreria que se usa para poder subir archivos al sitio (como fotos de productos)
 
 const productsController = require("../controllers/productsController");
 
