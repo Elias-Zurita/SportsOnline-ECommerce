@@ -16,3 +16,10 @@
 .botonGoogle {color: white; font-size: large}
 .fa-google {color: white; flex-wrap: wrap;}
 .crearCuenta {margin: 10px; font-weight: bold;}
+
+/* Desde aca para abajo es de creacion de producto */
+
+.subirProducto button {font-size: xx-large;} /* Edita solo el boton de subir producto */
+.botonesCreacion {display: flex; align-items: center; flex-direction: column; padding-top: 1%;transition: all 0.2s ease; } /* Edita los dos botones de creacion de producto */
+.botonesCreacion button:hover{background-color: rgb(63, 35, 3); /* selecciono la caja botonesCreacion y de ahi al boton que le pongo hover (transicion a marron) */
+ }
