@@ -24,7 +24,7 @@
 
             <form action="/users/register" method="POST" class="formularioLog">
               <h2>CREACION DE PRODUCTO NUEVO!</h2>
-                                  
+                                             
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nombre: </label>
                         <input type="text" class="form-control" placeholder="" name="username">
@@ -34,12 +34,12 @@
                         <input type="text" class="form-control" placeholder="" name="lastname">
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email: </label>
-                        <input type="email" class="form-control" placeholder="" name="email">
+                        <label for="exampleFormControlInput1" class="form-label">Domicilio: </label>
+                        <input type="text" class="form-control" placeholder="" name="domicilio">
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Domicilio: </label>
-                        <input type="email" class="form-control" placeholder="" name="domicilio">
+                        <label for="exampleFormControlInput1" class="form-label">Email: </label>
+                        <input type="email" class="form-control" placeholder="" name="email">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Contraseña: </label>
@@ -51,14 +51,19 @@
                       </div>
                       
                       <div class="row">
+                        <button type="submit" class="btn btn-success col-4 mt-5">Sube tu foto de perfil</button>
+                      </div>
+
+                      <div class="row">
                       <button type="submit" class="btn btn-success col-4 mt-5">Registrarse</button>
                     </div>
+                   
                                             <input class="robot" type="checkbox" checked="" name="No soy un robot" id="No-robot">
                         <label class="required" for="terminos-registro">
                         No soy un robot  
                     </label>
                 </div>
-                    </form>
+               </form>
         
                   
                     <%- include('../partials/footer.ejs') %>
