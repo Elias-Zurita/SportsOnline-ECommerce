@@ -13,9 +13,13 @@
                 </div>
                     <ul>
                         <li>Nombre:<%= users.nombre %> </li> 
+                        <li>Apellido:<%= users.apellido%> </li> 
                         <li>Email:<%= users.email %></li> 
                         <li>Domicilio:<%= users.domicilio %></li> 
                     </ul>
+                    <form action="/users/delete/<%= users.id %>?_method=DELETE" method="POST">
+                        <button class= "botones" type="submit">ELIMINAR USUARIO</button>
+                    </form>
             </div>
                 <% } ) %>
         </main>

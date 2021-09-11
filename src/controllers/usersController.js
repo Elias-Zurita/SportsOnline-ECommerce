@@ -41,6 +41,16 @@ const controller = {
         let users = findAll();
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //
     },
+    destroy: function (req,res){
+        let users = findAll()
+        let dataNueva = users.filter(function(users){
+            return users.id != req.params.id
+        })
+
+        writeJson(dataNueva)
+
+        res.redirect("/users/list")
+    },
 }
 
 module.exports = controller;

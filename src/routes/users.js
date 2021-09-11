@@ -8,5 +8,6 @@ router.get("/login", usersController.login);
 router.get("/register", usersController.register);
 router.post("/register", usersController.createUser);
 router.get("/list", usersController.list);    // al ingresar a "/list" va al "controller.list" //
+router.delete("/delete/:id", usersController.destroy);
 
 module.exports = router;
