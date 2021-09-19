@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "/img/fotosDePerfil/Elias.jpg",
+    "img": "Elias.jpg",
     "nombre": "Elias",
     "apellido": "Zurita",
     "domicilio": "Maestro Angel D'elia 1039",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "img": "/img/fotosDePerfil/Marco.JPG",
+    "img": "Marco.JPG",
     "nombre": "Marco",
     "apellido": "Pontiz",
     "domicilio": "San Martin 320",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "img": "/img/fotosDePerfil/Adri.jpg",
+    "img": "Adri.jpg",
     "nombre": "Adriana",
     "apellido": "Tisminetzky",
     "domicilio": "Bill Clinton 450",
@@ -28,11 +28,19 @@
   },
   {
     "id": 4,
-    "img": "/img/fotosDePerfil/Sofi.jpg",
+    "img": "Sofi.jpg",
     "nombre": "Sofia",
     "apellido": "Sassone",
     "domicilio": "Sarmiento 890",
     "email": "sofi.sassone@gmail.com",
     "contraseña": ""
+  },
+  {
+    "id": 5,
+    "img": "foto1632081068127.jpg",
+    "nombre": "Laureano",
+    "apellido": "Roldan",
+    "domicilio": "Las Heras 3260",
+    "email": "lroldan@gmail.com"
   }
 ]

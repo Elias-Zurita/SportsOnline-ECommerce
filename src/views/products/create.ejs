@@ -7,10 +7,10 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/products/create" method="POST" class="formularioLog">
+<form action="/products/create" method="POST" class="formularioLog" enctype="multipart/form-data">
     <h2>CREACION DE PRODUCTO NUEVO!</h2>
 
-    <div class="control-formulario">
+        <div class="control-formulario">
     <label for="nombreDeProducto">Nombre de Producto</label>
     <input type="text" name="nombre" id="nombreDeProducto" class="control-especifico">
     </div>
@@ -37,7 +37,7 @@
     
         <div class="botonesCreacion">
             <div class="subirFotoProducto">
-                <button type="submit" class="botones">SUBIR IMAGEN DEL PRODUCTO</button>
+                <input type="file" name= "imagen" id= "img" class="botones">SUBIR IMAGEN DEL PRODUCTO
             </div>
     <br>    
             <div class="subirProducto">
@@ -45,8 +45,8 @@
             </div>
         </div>
     
-
 </form>
+
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 

@@ -37,6 +37,7 @@ const controller = {
         let products = findAll();
         let newProduct = {  // Creacion de un producto //
             id: products.length + 1,  // devuelve la cantidad de elementos que se tienen //
+            img: req.file.filename,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             categoria: req.body.categoria,

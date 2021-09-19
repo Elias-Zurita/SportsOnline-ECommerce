@@ -1,69 +1,38 @@
 [
  {
-  "id": 1,
-  "nombre": "Camiseta de Futbol Seleccion Argentina",
-  "descripcion": "sxaxas\r\n\r\naSsaxsa\r\n\r\n\r\n\r\nassaa",
-  "categoria": "Indumentaria",
-  "marca": "Adidas",
-  "precio": "555",
-  "img": "/img/camiseta argentina.jpeg"
- },
- {
   "id": 2,
-  "nombre": "Zapatilla Run Falcon",
-  "descripcion": "saraza",
-  "categoria": "Calzado",
+  "img": "imagen1632079279400.jpeg",
+  "nombre": "Camiseta",
+  "descripcion": "Seleccion Argentina",
+  "categoria": "Futbol",
   "marca": "Adidas",
-  "precio": "9999"
+  "precio": "10000"
  },
  {
   "id": 3,
-  "nombre": "Pelota Capitano",
-  "descripcion": "saraza",
-  "categoria": "Pelotas",
-  "marca": "Adidas",
-  "precio": "3000",
-  "img": "/img/products/Pelota adidas capitano.jpg"
+  "img": "imagen1632079322371.jpg",
+  "nombre": "Pelota",
+  "descripcion": "US OPEN",
+  "categoria": "Tenis",
+  "marca": "Wilson",
+  "precio": "300"
  },
  {
   "id": 4,
-  "nombre": "Raqueta Aero Drive",
-  "descripcion": "saraza",
-  "categoria": "Raquetas",
-  "marca": "Babolat",
-  "precio": "5000"
+  "img": "imagen1632079387683.jpg",
+  "nombre": "Pelota",
+  "descripcion": "Adidas Aniversario",
+  "categoria": "Futbol",
+  "marca": "Adidas",
+  "precio": "2000"
  },
  {
   "id": 5,
-  "nombre": "Pelota Real Madrid",
-  "descripcion": "saraza",
-  "categoria": "Pelotas",
-  "marca": "penalty",
-  "precio": "4000",
-  "img": "/img/products/Pelota Adidas real madrid.jpg"
- },
- {
-  "id": null,
-  "nombre": "Pelota",
-  "descripcion": "Basket",
-  "categoria": "NBA",
-  "marca": "Jordan",
-  "precio": "5000"
- },
- {
-  "id": 7,
-  "nombre": "Camiseta",
-  "descripcion": "Racinh",
-  "categoria": "asdsa",
-  "marca": "sadsa",
-  "precio": "51531"
- },
- {
-  "id": 8,
-  "nombre": "sdvds",
-  "descripcion": "sdvds",
-  "categoria": "dvsdvs",
-  "marca": "sdvsd",
-  "precio": "23432"
+  "img": "imagen1632079419116.jpg",
+  "nombre": "Camiseta ",
+  "descripcion": "PSG",
+  "categoria": "Futbol",
+  "marca": "Nike",
+  "precio": "8000"
  }
 ]

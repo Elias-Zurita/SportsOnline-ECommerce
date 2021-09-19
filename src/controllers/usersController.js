@@ -25,6 +25,7 @@ const controller = {
         let users = findAll();
         let newUser = {  // Registro de un nuevo usuario //
             id: users.length + 1,  // devuelve la cantidad de elementos que se tienen //
+            img: req.file.filename,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             domicilio: req.body.domicilio,
