@@ -1,6 +1,7 @@
 const { json } = require("express");
-const fs = require ("fs"); 
+const fs = require ("fs");  // declara la libreria fs para usar fileSync despues (para leer archivos) //
 const path = require("path");
+const bcryptjs = require ("bcryptjs"); // declara la libreria bcryptjs para encriptar las contraseñas (requiere instalacion) //
 
 function findAll() {
     let usersJson =  fs. readFileSync(path.join(__dirname, "../data/users.json"))   // Lee el archivo user.json donde estan los usuarios  //
@@ -15,6 +16,7 @@ function writeJson(array){   // le sobreescribe info al JSON data //
 }
 
 const controller = {
+
     login: (req, res) =>{
     res.render('users/login')   // renderiza el login //
     },
@@ -29,8 +31,9 @@ const controller = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             domicilio: req.body.domicilio,
+            categoria: req.body.categoria,
             email: req.body.email,
-            contraseña: req.body.contraseña,
+            contraseña: bcryptjs.hashSync (req.body.contraseña, 10) // Encripta la contraseña en el archivo de Data Users //
             }
         let usersActualizados = [...users, newUser]  // mete los datos de newUser en users//
 
@@ -52,7 +55,24 @@ const controller = {
 
         res.redirect("/users/list")
     },
+
+    // Desde aca arranca el sprint 5 //
+
+    findByPK: function (id) {                // metodo para buscar un usuario por ID (la funcion recibe un id //
+        let allUsers = this.findAll();     // obtiene todos los usuarios //   
+        let userFound = allUsers.find (oneUser => oneUser.id === id)  // Si el usuario es el mismo al pedido lo retorna //
+        return userFound
+    }, 
+
+    findByField: function (field, text) {                // metodo para buscar un usuario por un campo especifico (en field el campo ej email, y en text el mail buscado)//
+        let allUsers = this.findAll();     // obtiene todos los usuarios //   
+        let userFound = allUsers.find (oneUser => oneUser[field] === text)  // Si el usuario es el mismo al pedido lo retorna //
+        return userFound
+    }
+
+    // Aca termina el sprint 5 //
 }
 
 module.exports = controller;
+
 

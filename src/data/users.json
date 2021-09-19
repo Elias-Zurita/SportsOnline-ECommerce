@@ -37,10 +37,12 @@
   },
   {
     "id": 5,
-    "img": "foto1632081068127.jpg",
-    "nombre": "Laureano",
+    "img": "foto1632087768599.png",
+    "nombre": "Ñoqui",
     "apellido": "Roldan",
-    "domicilio": "Las Heras 3260",
-    "email": "lroldan@gmail.com"
+    "domicilio": "asdsa",
+    "categoria": "ñoqui",
+    "email": "sonrisa@roldan",
+    "contraseña": "$2a$10$FknFDv9/PRqTSy1C0/f3ReqMU2ojjucTBQhaQP1HX9KIVv.di4BIi"
   }
 ]

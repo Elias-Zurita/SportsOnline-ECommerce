@@ -16,6 +16,7 @@
                         <li>Apellido:<%= users.apellido %></li> 
                         <li>Email:<%= users.email %></li> 
                         <li>Domicilio:<%= users.domicilio %></li> 
+                        <li>Categoria:<%= users.categoria %></li> 
                     </ul>
                     <form action="/users/delete/<%= users.id %>?_method=DELETE" method="POST">
                         <button class= "botones" type="submit">ELIMINAR USUARIO</button>
