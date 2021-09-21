@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');         // declara como motor de vistas a EJS //
 app.use(methodOverride('_method')); // Usa el methodOverride. Para poder usarlo ademas de declararlo (const..) y poner ahora el app.use hay que instalarlo por terminal //
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));  // captura la info que recibe desde un formulario con POST //
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {body} = require ("express-validator")
 
 // ----------------------------------codigo para subir un archivo -------------------------------------------//
 
@@ -18,14 +19,27 @@ const storage = multer.diskStorage({   // Lugar para guardar las imagenes que su
 
 const upload = multer ({storage}) // Ejecucion de multer (para subir archivos) //
 
-// ----------------------------------codigo para subir un archivo -------------------------------------------//
+// ----------------------------------codigo para subir un archivo que deberia ir como middleware -------------------------------------//
 
 const usersController = require("../controllers/usersController");
 
-router.get("/login", usersController.login);
-router.get("/register", usersController.register);
-router.post("/register", upload.single("foto-perfil"), usersController.createUser); // Procesa el registro de usuarios y sube la foto de perfil desde el name del input en el html de Register //
+const validations =[
+    body ("nombre").notEmpty().withMessage("Tienes que escribir un nombre"), // valida el nombre ("NAME" en formulario de register) no este vacio //
+    body ("apellido").notEmpty().withMessage("Tienes que escribir un apellido"),
+    body ("domicilio").notEmpty().withMessage("Tienes que escribir un domicilio"),
+    body ("email").notEmpty().withMessage("Tienes que escribir un email"),
+    body ("categoria").notEmpty().withMessage("Tienes que escribir una categoria"),
+    body ("contraseña").notEmpty().withMessage("Tienes que escribir una contraseña"),
+]
+
+router.get("/login", usersController.login);   // Formulario de registro  //
+
+router.get("/register", usersController.register);  // Procesa el formulario de registro //
+
+router.post("/register", upload.single("foto-perfil"), validations, usersController.createUser);  // Procesa el registro de usuarios y sube la foto de perfil desde el name del input en el html de Register //
+
 router.get("/list", usersController.list);    // al ingresar a "/list" va al "controller.list" //
+
 router.delete("/delete/:id", usersController.destroy);
 
 module.exports = router;
