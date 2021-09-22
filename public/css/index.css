@@ -37,7 +37,7 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 
 
 .camiseta img, .zapatillaHombre img, .pelotaCapitano img, .bolsoNike img {height: 67%;width: 25vw; padding: 5px;}
-.camiseta, .zapatillaHombre, .pelotaCapitano, .bolsoNike {width: 25vw; padding: 7px;}
+.camiseta, .zapatillaHombre, .pelotaCapitano, .bolsoNike {width: 25vw; padding: 7px; display: flex;}
 .camiseta h2, .zapatillaHombre h2, .pelotaCapitano h2, .bolsoNike h2 {width: 25vw; padding: 7px; font-size: 17px; color:black; text-align: left;}
 .filasImagenes{display: block;}
 
