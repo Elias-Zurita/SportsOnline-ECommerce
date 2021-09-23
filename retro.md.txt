@@ -55,3 +55,20 @@ Pudimos implementar todos los metodos necesarios para poder trabajar con la fuen
 Implementamos técnicas de trabajo en el grupo para fomentar la participación. Una estrategia que facilita el desarrollo de un clima de confianza, despierta el interés por el trabajo en grupo, ayuda a compartir los conocimientos, nos motiva y facilita la convivencia.
 
 Seguimos avanzando!
+
+
+
+
+Sprint 5:
+
+Resultado de la retrospectiva:
+
+Despues de la reunion que tuvimos con Zoe y los profesores, pudimos lograr reunirnos con el equipo y separar claras tareas. Pensamos que vino muy bien para el equipo esa charla clara!
+Trabajar en equipo implica Compromiso.
+También es necesario que exista Liderazgo, Armonía, Responsabilidad, Creatividad, Voluntad, Organización y Cooperación entre cada uno de los miembros.
+
+Seguimos mejorando las vistas poniendole amor para que se vea linda y tenemos que seguir con la misma y seguimos avanzando con las tareas pedidas.
+
+Logramos implementar la entidad de usuarios, replicamos la estructura de archivos y directorios. Implementamos el registro de usuarios, el login de usuarios, rutas de huespedes y de usuarios.
+
+Cada vez se torna mas complejo y un desafio mas grande. 
