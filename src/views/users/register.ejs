@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <%- include('../partials/head.ejs') %> 
-  <head>
-    <%- include('../partials/header.ejs') %>
-    <meta charset="UTF-8">
-    <title>SportsOnline</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.google.com/specimen/Exo+2?query=exo+2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="\css\register.css">
 
-  </head>
+  <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
   <body>
-    
-<header>
+
+  <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
 
     <div class="topHeader">
-      <form action="#" method="GET" id="searchBar"></form>
-        <form action="/users/register" method="POST" class="formularioLog" enctype="multipart/form-data"> <!-- Formulario para crear usuario. Ademas tienen el "enctype=multipart..."" para subir imagen -->
-          <h2 class="h-2">CREA TU CUENTA!</h2>
+    
+      <form action="/users/register" method="POST" class="formularioLog" enctype="multipart/form-data"> <!-- Formulario para crear usuario. Ademas tienen el "enctype=multipart..."" para subir imagen -->
+        <h2 class="h-2">CREA TU CUENTA!</h2>
           
-          <video muted autoplay loop>
-            <source src="/video/Login Video.mp4">
-          </video>
+        <video muted autoplay loop>
+          <source src="/video/Login Video.mp4">
+        </video>
 
           <div class="capa"></div>
 
-                    <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Nombre: </label>
-                  <input type="text" class="form-control" placeholder="" name="nombre">
-              
-              
-              
-                <label for="exampleFormControlInput1" class="form-label">Apellido: </label>
-                  <input type="text" class="form-control" placeholder="" name="apellido">
-                  
-              
-                  
-                <label for="exampleFormControlInput1" class="form-label">Domicilio: </label>
-                  <input type="text" class="form-control" placeholder="" name="domicilio">
-              
-              
-              
-                <label for="exampleFormControlInput1" class="form-label">Email: </label>
-                  <input type="email" class="form-control" placeholder="" name="email">
-                 
-
-                  
-                <label for="exampleFormControlInput1" class="form-label">Categoria: </label>
-                  <input type="text" class="form-control" placeholder="" name="categoria">
-              
-              
-              
-                <label for="exampleFormControlInput1" class="form-label">Contraseña: </label>
-                  <input type="password" class="form-control" placeholder="" name="contraseña">
-                  
-              
-                
-                <label for="exampleFormControlInput1" class="form-label">Repetir contraseña: </label>
-                  <input type="password" class="form-control" placeholder="" name="">
+          <div class="mb-3">
+            <label>Nombre:</label>
+              <input type="text" name="nombre" class="form-control">
+                <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                  <div class="text-danger">
+                    <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
                   </div>
-              </div>
-                      
+                <% } %>  
+ 
+            <label>Apellido:</label>
+              <input type="text" name="apellido" class="form-control">
+                <% if (locals.errors && errors.apellido) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                  <div class="text-danger">
+                    <p><%= errors.apellido.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                  </div>
+                <% } %>  
+                                  
+            <label>Domicilio:</label>
+              <input type="text" name="domicilio" class="form-control">
+                <% if (locals.errors && errors.domicilio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en domicilio -->
+                  <div class="text-danger">
+                    <p><%= errors.domicilio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de domicilio -->
+                  </div>
+                <% } %>  
+                
+            <label>Email: </label>
+              <input type="email" name="email" class="form-control">
+                <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
+                  <div class="text-danger">
+                    <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
+                  </div>
+                <% } %>  
+                     
+            <label>Categoria:</label>
+              <input type="text" name="categoria" class="form-control">
+                <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                  <div class="text-danger">
+                    <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                  </div>
+                <% } %>  
+                                
+            <label>Contraseña: </label>
+              <input type="password" class="form-control" name="contraseña">
+                <% if (locals.errors && errors.contraseña) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en contraseña -->
+                  <div class="text-danger">
+                    <p><%= errors.contraseña.msg %></p> <!-- muestra el mensaje que debe llenar el campo de contraseña -->
+                  </div>
+                <% } %>  
+                     
+            <label>Repetir contraseña: </label>
+              <input type="password" class="form-control" name="">
+          </div>
+    </div>        
+              
               <div class="row">
                 <label for="exampleFormControlInput1" class="form-label">Sube tu imagen de perfil: </label>
                   <input type="file" name= "foto-perfil" id="img" class="form-control">  <!-- El name "foto-perfil" es importante usarlo en el archivo de routes users -->
@@ -76,7 +86,7 @@
                   <label class="required" for="terminos-registro">No soy un robot</label>
               </div>
             
-        </form>
+      </form>
         
                   
     <%- include('../partials/footer.ejs') %>

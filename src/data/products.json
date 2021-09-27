@@ -1,6 +1,6 @@
 [
  {
-  "id": 2,
+  "id": 1,
   "img": "imagen1632079279400.jpeg",
   "nombre": "Camiseta",
   "descripcion": "Seleccion Argentina",
@@ -9,7 +9,7 @@
   "precio": "10000"
  },
  {
-  "id": 3,
+  "id": 2,
   "img": "imagen1632079322371.jpg",
   "nombre": "Pelota",
   "descripcion": "US OPEN",
@@ -18,21 +18,21 @@
   "precio": "300"
  },
  {
-  "id": 4,
+  "id": 3,
   "img": "imagen1632079387683.jpg",
   "nombre": "Pelota",
-  "descripcion": "Adidas Aniversario",
+  "descripcion": "Adidas Aniversario naranja",
   "categoria": "Futbol",
   "marca": "Adidas",
   "precio": "2000"
  },
  {
-  "id": 5,
+  "id": 4,
   "img": "imagen1632079419116.jpg",
   "nombre": "Camiseta ",
   "descripcion": "PSG",
   "categoria": "Futbol",
-  "marca": "Nike",
+  "marca": "Jordan",
   "precio": "8000"
  }
 ]

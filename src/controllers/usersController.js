@@ -28,20 +28,20 @@ const controller = {
         
         //---------------- sprint 5 -------------//
         
-        const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req); // Campos que tuvieron error //
 
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
+		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de registro de nuevo //
+			return res.render('users/register', {
+				errors: resultValidation.mapped(),  // Le pasa a la vista de register los errores que se señalaron en users (routes) //
+                oldData:req.body
+            });
 		}
 
         //---------------- sprint 5 -------------//
 
-        let users = findAll();
+        let users = findAll(); // Obtengo todos los usuarios //
         let newUser = {  // Registro de un nuevo usuario //
-            id: users.length + 1,  // devuelve la cantidad de elementos que se tienen //
+            id: users.length + 1,  // devuelve la cantidad de usuarios que se tienen //
             img: req.file.filename,
             nombre: req.body.nombre,
             apellido: req.body.apellido,

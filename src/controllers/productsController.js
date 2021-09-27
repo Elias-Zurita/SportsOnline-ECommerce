@@ -36,7 +36,7 @@ const controller = {
     store: function(req,res) {
         let products = findAll();
         let newProduct = {  // Creacion de un producto //
-            id: products.length + 1,  // devuelve la cantidad de elementos que se tienen //
+            id: products.length + 1,  // cuenta la cantidad de elementos que se tienen y le suma uno //
             img: req.file.filename,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
