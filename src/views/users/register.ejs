@@ -96,12 +96,12 @@
                   <label>Sube tu imagen de perfil: </label>
                     <input 
                       type="file"
-                      name= "fotoperfil"
+                      name= "avatar"
                       id="img"
-                      class="form-control">  <!-- El name "foto-perfil" es importante usarlo en el archivo de routes users -->
-                      <% if (locals.errors && errors.fotoperfil) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en contraseña -->
+                      class="form-control">  <!-- El name "avatar" es importante usarlo en el archivo de routes users -->
+                      <% if (locals.errors && errors.avatar) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en subir avatar -->
                         <div class="text-danger">
-                          <p><%= errors.fotoperfil.msg %></p> <!-- muestra el mensaje que debe llenar el campo de contraseña -->
+                          <p><%= errors.avatar.msg %></p> <!-- muestra el mensaje que debe llenar el subir un avatar -->
                         </div>
                       <% } %>  
                 </div>

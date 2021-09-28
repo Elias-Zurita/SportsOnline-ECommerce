@@ -34,6 +34,15 @@ const controller = {
         res.render("products/create")   // renderiza el formulario de creacion de producto //
     },
     store: function(req,res) {
+        const resultValidation = validationResult(req); // Campos que tuvieron error //
+
+		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de create de nuevo //
+			return res.render('products/create', {
+				errors: resultValidation.mapped(),  // Le pasa a la vista de create los errores que se señalaron en validateProductsMiddleware //
+                oldData:req.body
+            });
+		}
+
         let products = findAll();
         let newProduct = {  // Creacion de un producto //
             id: products.length + 1,  // cuenta la cantidad de elementos que se tienen y le suma uno //

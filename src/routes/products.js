@@ -1,34 +1,35 @@
 const express = require('express');
 const router = express.Router();
 
+// Controller //
 const productsController = require("../controllers/productsController");
 
-// ----------------------------------codigo para subir un archivo -------------------------------------------//
+// Middlewares //
+const uploadFile = require('../middlewares/multerMiddlewareProducts');
+const validations = require('../middlewares/validateProductsMiddleware');
 
-const path = require ('path')
-const multer = require('multer'); // Es una libreria que se usa para poder subir archivos al sitio (como fotos de productos)
-
-const storage = multer.diskStorage({   // Lugar para guardar las imagenes que suban de los productos //
-    destination: (req, file, cb) => {  
-        cb (null, path.join(__dirname, "../../public/img/products"))
-    }, 
-    filename: (req, file, cb) => { // Propiedad que guarda el nombre de la imagen // 
-        const newFilename = "imagen" + Date.now() + path.extname (file.originalname); // Esto es para que este sea el nuevo nombre del archivo, el cual va a ser "imagen y el horario en mili segundos (Datenow) con su extension gracias a extname" //
-        cb (null, newFilename); 
-    } 
-}); 
-
-const upload = multer ({storage}) // Ejecucion de multer (para subir archivos) //
-
-// ----------------------------------codigo para subir un archivo -------------------------------------------//
-
+// Formulario de carrito de compras //
 router.get("/productCart", productsController.productCart);
+
+// Formulario de listado de productos //
 router.get("/list", productsController.list);
+
+// Formulario de detalle de producto //
 router.get("/details/:id", productsController.details);
+
+// Formulario de creacion de producto //
 router.get("/create", productsController.create);
-router.post("/create", upload.single("imagen"), productsController.store)
+
+// Procesa la creacion de producto //
+router.post("/create", uploadFile.single("imagen"), validations, productsController.store)
+
+// Formulario de edicion de producto //
 router.get("/edit/:id", productsController.edit); 
+
+// Procesa la actualizacion del producto //
 router.put("/edit/:id", productsController.update);
+
+// Elimina el producto //
 router.delete("/delete/:id", productsController.destroy);
 
 module.exports = router;

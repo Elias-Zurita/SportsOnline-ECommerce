@@ -18,36 +18,19 @@ function writeJson(array){   // le sobreescribe info al JSON data //
 
 const controller = {
 
-    login: (req, res) =>{
-    res.render('users/login')   // renderiza el login //
-    },
-    loginProcess: (req,res) =>{
-        const resultValidation = validationResult(req); // Campos que tuvieron error //
-
-		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de login de nuevo //
-			return res.render('users/login', {
-				errors: resultValidation.mapped(),  // Le pasa a la vista de login los errores que se señalaron en users (routes) //
-                oldData:req.body
-            });
-		}
-    },
     register: (req, res) =>{
         res.render('users/register')   // renderiza el register //
     },
-    createUser: function(req,res) {
-        
-        //---------------- sprint 5 -------------//
-        
+
+    processRegister: function(req,res) {
         const resultValidation = validationResult(req); // Campos que tuvieron error //
 
 		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de registro de nuevo //
 			return res.render('users/register', {
-				errors: resultValidation.mapped(),  // Le pasa a la vista de register los errores que se señalaron en users (routes) //
+				errors: resultValidation.mapped(),  // Le pasa a la vista de register los errores que se señalaron en validateRegisterMiddleware //
                 oldData:req.body
             });
 		}
-
-        //---------------- sprint 5 -------------//
 
         let users = findAll(); // Obtengo todos los usuarios //
         let newUser = {  // Registro de un nuevo usuario //
@@ -70,6 +53,10 @@ const controller = {
     list: (req, res) =>{
         let users = findAll();
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //
+    },
+
+    login: (req, res) =>{
+        res.render('users/login')   // renderiza el login //
     },
 
     profile: (req, res) => {

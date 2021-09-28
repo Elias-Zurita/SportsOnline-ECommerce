@@ -7,39 +7,93 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/products/create" method="POST" class="formularioLog" enctype="multipart/form-data">
-    <h2>CREACION DE PRODUCTO NUEVO!</h2>
+    <form action="/products/create" method="POST" class="formularioLog" enctype="multipart/form-data">
+        <h2>CREACION DE PRODUCTO NUEVO!</h2>
 
         <div class="control-formulario">
-    <label for="nombreDeProducto">Nombre de Producto</label>
-    <input type="text" name="nombre" id="nombreDeProducto" class="control-especifico">
-    </div>
+            <label for="nombreDeProducto">Nombre de Producto</label>
+                <input
+                    type="text"
+                    name="nombre"
+                    id="nombreDeProducto"
+                    class="control-especifico">
+                    <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                        <div class="text-danger">
+                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
+                        </div>
+                    <% } %>  
+        </div>
     
-    <div class="control-formulario">
-    <label for="descripción">Descripción</label>
-    <input type="text" name="descripcion" id="descripción" class="control-especifico">
-    </div>
-
-    <div class="control-formulario">
-        <label for="categoria">Categoria</label>
-        <input type="text" name="categoria" id="categoria" class="control-especifico">
+        <div class="control-formulario">
+            <label for="descripción">Descripción</label>
+                <input type="text" 
+                name="descripcion" 
+                id="descripción" 
+                class="control-especifico">
+                <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
+                    <div class="text-danger">
+                        <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
+                    </div>
+                <% } %>  
         </div>
 
         <div class="control-formulario">
-            <label for="categoria">Marca</label>
-            <input type="text" name="marca" id="marca" class="control-especifico">
-            </div>
+            <label for="categoria">Categoria</label>
+                <input type="text" 
+                name="categoria" 
+                id="categoria" 
+                class="control-especifico">
+                <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                    <div class="text-danger">
+                        <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                    </div>
+                <% } %>  
+        </div>
 
-    <div class="control-formulario">
-        <label for="precio">Precio</label>
-        <input type="text" name="precio" id="precio" class="control-especifico">
+        <div class="control-formulario">
+            <label for="marca">Marca</label>
+               <input 
+               type="text" 
+               name="marca" 
+               id="marca" 
+               class="control-especifico">
+               <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en marca -->
+                <div class="text-danger">
+                    <p><%= errors.marca.msg %></p> <!-- muestra el mensaje que debe llenar el campo de marca -->
+                </div>
+            <% } %>  
+        </div>
+
+        <div class="control-formulario">
+            <label for="precio">Precio</label>
+                <input 
+                type="text" 
+                name="precio" 
+                id="precio" 
+                class="control-especifico">
+                <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
+                    <div class="text-danger">
+                        <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->
+                    </div>
+                <% } %>  
         </div>
     
         <div class="botonesCreacion">
             <div class="subirFotoProducto">
-                <input type="file" name= "imagen" id= "img" class="botones">SUBIR IMAGEN DEL PRODUCTO
+                <input 
+                type="file" 
+                name= "imagen" 
+                id= "img" 
+                class="botones">SUBIR IMAGEN DEL PRODUCTO
+                <% if (locals.errors && errors.imagen) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en imagen -->
+                    <div class="text-danger">
+                        <p><%= errors.imagen.msg %></p> <!-- muestra el mensaje que debe subir una imagen -->
+                    </div>
+                <% } %>  
             </div>
-    <br>    
+
+                <br>    
+            
             <div class="subirProducto">
                 <button type="submit" class="botones">SUBIR PRODUCTO</button>
             </div>
