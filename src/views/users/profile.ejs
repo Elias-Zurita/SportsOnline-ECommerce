@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+    <h2>Bienvenido!</h2>
+    
+        <ul>
+            <li> <img class= "FotoDePerfil" src="/img/fotosDePerfil/<%= users.img %>" alt="Foto de perfil"></li>
+            <li>Nombre:<%= users.nombre %></li> 
+            <li>Apellido:<%= users.apellido %></li> 
+            <li>Email:<%= users.email %></li> 
+            <li>Domicilio:<%= users.domicilio %></li> 
+            <li>Categoria:<%= users.categoria %></li> 
+        </ul>
+
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>

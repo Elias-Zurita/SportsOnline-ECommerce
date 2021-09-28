@@ -34,5 +34,14 @@
   "categoria": "Futbol",
   "marca": "Jordan",
   "precio": "8000"
+ },
+ {
+  "id": 5,
+  "img": "imagen1632789192013.jpg",
+  "nombre": "sdvds",
+  "descripcion": "sdvds",
+  "categoria": "sdv",
+  "marca": "dsvds",
+  "precio": "23"
  }
 ]

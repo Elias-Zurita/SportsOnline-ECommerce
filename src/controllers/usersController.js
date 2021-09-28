@@ -21,6 +21,16 @@ const controller = {
     login: (req, res) =>{
     res.render('users/login')   // renderiza el login //
     },
+    loginProcess: (req,res) =>{
+        const resultValidation = validationResult(req); // Campos que tuvieron error //
+
+		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de login de nuevo //
+			return res.render('users/login', {
+				errors: resultValidation.mapped(),  // Le pasa a la vista de login los errores que se señalaron en users (routes) //
+                oldData:req.body
+            });
+		}
+    },
     register: (req, res) =>{
         res.render('users/register')   // renderiza el register //
     },
@@ -54,13 +64,18 @@ const controller = {
         let usersActualizados = [...users, newUser]  // mete los datos de newUser en users//
 
         writeJson(usersActualizados);
-        res.redirect("/users/list");
+        res.redirect("/users/login");
     },
 
     list: (req, res) =>{
         let users = findAll();
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //
     },
+
+    profile: (req, res) => {
+		return res.render("Profile");
+	},
+
     destroy: function (req,res){
         let users = findAll()
         let dataNueva = users.filter(function(users){

@@ -7,30 +7,54 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/home.html" method="POST" class="formularioLog">
+<form method="POST" action= "/users/login" class="formularioLog">
     <div class="inicioSesion">
-    <h2>INICIAR SESIÓN</h2>
+        <h2>INICIAR SESIÓN</h2>
     </div>
 
     <div class="control-formulario">
-    <label for="nombreUsuario">Correo Electrónico</label>
-    <input type="text" name="nombreUsuario" id="nombreUsuario" class="control-especifico">
+        <label for="nombreUsuario">Correo Electrónico</label>
+            <input 
+                type="text" 
+                name="email" 
+                id="nombreUsuario" 
+                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>">  
+                <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
+                    <div class="text-danger">
+                      <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
+                    </div>
+                  <% } %>  
     </div>
     
     <div class="control-formulario">
-    <label for="contraseña">Contraseña</label>
-    <input type="password" name="contraseña" id="contraseña" class="control-especifico">
+        <label for="contraseña">Contraseña</label>
+            <input type="password" 
+            name="contraseña" 
+            id="contraseña" 
+            class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>">
+            <% if (locals.errors && errors.contraseña) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en contraseña -->
+                <div class="text-danger">
+                  <p><%= errors.contraseña.msg %></p> <!-- muestra el mensaje que debe llenar el campo de contraseña -->
+                </div>
+              <% } %>  
     </div>
   
     <br>
+    
     <div class="olvido">
-        <a href="">¿Olvidaste tu contraseña?</a>
+    <a href="">¿Olvidaste tu contraseña?</a>
     </div>
+    
     <br>
+
     <div class="botonDeLogin">
     <button type="submit" class="botonIngresar"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
     </div>
-        
+
+</form>
+
+<div class="formularioLog">
+
     <div class="loginFacebook">
     <button type="submit" class="botonFace"><i class="fab fa-facebook"></i> | Ingresar con Facebook</button>
     </div>
@@ -40,9 +64,10 @@
     </div>
 
     <div class="crearCuenta">
-    <a href="/users/register"><button type="button" class= "botonCreaTuCuenta"><i class="fas fa-user-plus"></i> | Crea tu cuenta</button></a>
+    <a href="/users/register"><button type="submit" class= "botonCreaTuCuenta"><i class="fas fa-user-plus"></i> | Crea tu cuenta</button></a>
     </div>
-    </form>
+
+</div>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
