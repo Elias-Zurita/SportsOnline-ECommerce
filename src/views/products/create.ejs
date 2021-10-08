@@ -15,7 +15,6 @@
                 <input
                     type="text"
                     name="nombre"
-                    id="nombreDeProducto"
                     class="control-especifico">
                     <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
                         <div class="text-danger">
@@ -28,7 +27,6 @@
             <label for="descripción">Descripción</label>
                 <input type="text" 
                 name="descripcion" 
-                id="descripción" 
                 class="control-especifico">
                 <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
                     <div class="text-danger">
@@ -41,7 +39,6 @@
             <label for="categoria">Categoria</label>
                 <input type="text" 
                 name="categoria" 
-                id="categoria" 
                 class="control-especifico">
                 <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
                     <div class="text-danger">
@@ -55,7 +52,6 @@
                <input 
                type="text" 
                name="marca" 
-               id="marca" 
                class="control-especifico">
                <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en marca -->
                 <div class="text-danger">
@@ -69,7 +65,6 @@
                 <input 
                 type="text" 
                 name="precio" 
-                id="precio" 
                 class="control-especifico">
                 <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
                     <div class="text-danger">
@@ -83,7 +78,6 @@
                 <input 
                 type="file" 
                 name= "imagen" 
-                id= "img" 
                 class="botones">SUBIR IMAGEN DEL PRODUCTO
                 <% if (locals.errors && errors.imagen) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en imagen -->
                     <div class="text-danger">

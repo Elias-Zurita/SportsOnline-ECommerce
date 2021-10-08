@@ -19,13 +19,13 @@ app.use(express.urlencoded({ extended: false }));  // captura la info que recibe
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
 
-const mainRoutes = require('./routes/main');
-const usersRoutes = require('./routes/users');
-const productsRoutes = require('./routes/products');
+const mainRoutes = require('./routes/mainRoutes');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 app.use('/', mainRoutes);
-app.use("/users", usersRoutes);
-app.use("/products", productsRoutes);
+app.use("/users", userRoutes);
+app.use("/products", productRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

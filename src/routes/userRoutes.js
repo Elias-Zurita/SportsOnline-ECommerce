@@ -5,7 +5,7 @@ const router = express.Router();
 const usersController = require("../controllers/usersController");
 
 // Middlewares
-const uploadFile = require('../middlewares/multerMiddleware');
+const uploadFile = require('../middlewares/multerMiddlewareUsers');
 
 const validations = require('../middlewares/validateRegisterMiddleware');
 
@@ -18,8 +18,13 @@ router.post("/register", uploadFile.single("avatar"), validations, usersControll
 // Formulario de login  //
 router.get("/login", usersController.login);   
 
+// Procesa el Formulario de login  //
+router.post("/login", validations, usersController.loginProcess);   
+
 // Formulario de listado de usuarios //
+/*
 router.get("/list", usersController.list);    
+*/
 
 // Eliminacion de usuario //
 router.delete("/delete/:id", usersController.destroy);

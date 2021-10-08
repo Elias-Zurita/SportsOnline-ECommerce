@@ -1,28 +1,22 @@
-const { json } = require("express");
-const fs = require ("fs");  // declara la libreria fs para usar fileSync despues (para leer archivos) //
-const path = require("path");
-const bcryptjs = require ("bcryptjs"); // declara la libreria bcryptjs para encriptar las contraseñas (requiere instalacion) //
-const {validationResult} = require("express-validator");
+const bcryptjs = require ("bcryptjs"); // declara la libreria bcryptjs para encriptar las contraseñas (requiere instalacion) 
+const {validationResult} = require("express-validator"); // requiere la libreria instalada para las validaciones de datos
+const User = require("../models/User") // Requiere el archivo User.js de models con las funcionalidades
 
+/* TODO ESTO RENDERIZA EL LISTADO DE USUARIOS
 function findAll() {
-    let usersJson =  fs. readFileSync(path.join(__dirname, "../data/users.json"))   // Lee el archivo user.json donde estan los usuarios  //
+    let usersJson =  fs. readFileSync(path.join(__dirname, "../database/users.json"))   // Lee el archivo user.json donde estan los usuarios  //
 
     let data = JSON.parse(usersJson) // declara "data" para parsear la informacion de los usuarios (toma el texto del array userJson) //
     return data // devuelve data (la info de los usuarios) //
 }
-
-function writeJson(array){   // le sobreescribe info al JSON data //
-    let arrayJSON = JSON.stringify(array, null, "  ")  // Convierte el array en JSON (string)  //
-    return fs.writeFileSync(path.join(__dirname, "../data/users.json"), arrayJSON);  
-}
-
+*/ 
 const controller = {
 
     register: (req, res) =>{
         res.render('users/register')   // renderiza el register //
     },
 
-    processRegister: function(req,res) {
+    processRegister: (req,res) => {
         const resultValidation = validationResult(req); // Campos que tuvieron error //
 
 		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de registro de nuevo //
@@ -31,34 +25,85 @@ const controller = {
                 oldData:req.body
             });
 		}
+/*
+        let userInDB = User.findByField("email, req.body.email") // Busca si hay un usuario ya registrado con ese mail en la base de datos
+      
+        if (userInDB) {
+            return res.render('users/register', {  // Si esta registrado renderiza nuevamente Register con el msj de validacion
+				errors: {
+                    email: {
+                        msg: 'Este email ya se encuentra registrado'
+                    }
+                }, 
+                oldData: req.body // Mantiene la info que se envio anteriormente
+            });
+        }
+*/
+        console.log (req.body)
 
-        let users = findAll(); // Obtengo todos los usuarios //
-        let newUser = {  // Registro de un nuevo usuario //
-            id: users.length + 1,  // devuelve la cantidad de usuarios que se tienen //
-            img: req.file.filename,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            domicilio: req.body.domicilio,
-            categoria: req.body.categoria,
-            email: req.body.email,
-            contraseña: bcryptjs.hashSync (req.body.contraseña, 10) // Encripta la contraseña en el archivo de Data Users //
-            }
-                          
-        let usersActualizados = [...users, newUser]  // mete los datos de newUser en users//
+        let userToCreate = {
+            ...req.body,
+            contraseña: bcryptjs.hashSync(req.body.contraseña,10),  // Encripta la contraseña en el archivo de users.json //
+            avatar: req.file.filename
+        }
 
-        writeJson(usersActualizados);
-        res.redirect("/users/login");
+        User.create(userToCreate);
+        
+        return res.redirect("/users/login");
     },
 
+    /* LISTADO DE USUARIOS
     list: (req, res) =>{
         let users = findAll();
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //
     },
+    */ 
 
+    // campo nuevo para loguear------------------------------------------------------//
+    findByField: function (field, text) {
+		let users = this.findAll();
+		let userFound = users.find(oneUser => oneUser[field] === text);
+		return userFound;
+	},
+    // campo nuevo para loguear------------------------------------------------------//
     login: (req, res) =>{
         res.render('users/login')   // renderiza el login //
     },
+    loginProcess: function(req,res) {
+console.log (User)
 
+        const resultValidation = validationResult(req); // Campos que tuvieron error //
+
+		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de login de nuevo //
+			return res.render('users/login', {
+				errors: resultValidation.mapped(),  // Le pasa a la vista de login los errores que se señalaron en validateRegisterMiddleware //
+                oldData:req.body
+            });
+		}
+    
+        let userToLogin = user.findByField("email", req.body.email) // tengo dudas si funcionara por que meti users como todo los usuarios y javi usa "USER" de sus modelos que lo exporta con todos los metodos
+        if (userToLogin){
+            let laContraseñaEsCorrecta = bcryptjs.compareSync(rec.body.contraseña, userToLogin.contraseña)
+            if (userToLogin.contraseña) {
+                return res.send ("Ok, contraseña valida")
+            }
+        
+        return res.render ("login", {
+            errors: {
+                email: {
+                    msg: "las credenciales son invalidas"
+                }
+            }
+        })
+    }
+        return res.render ("login", {
+            errors: {
+                email: {
+                    msg: "El email no se encuentra registrado"
+                }
+            }
+        })
+    },
     profile: (req, res) => {
 		return res.render("Profile");
 	},

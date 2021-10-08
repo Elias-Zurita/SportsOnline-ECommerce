@@ -1,9 +1,10 @@
 const { json } = require("express");
-const fs = require ("fs"); 
+const fs = require ("fs");  // declara la libreria fs para usar fileSync despues (para leer archivos) 
 const path = require("path");
+const {validationResult} = require("express-validator");
 
 function findAll() {
-    let productsJson =  fs. readFileSync(path.join(__dirname, "../data/products.json"))   // Lee el archivo products.json donde estan los productos  //
+    let productsJson =  fs. readFileSync(path.join(__dirname, "../database/products.json"))   // Lee el archivo products.json donde estan los productos  //
 
     let data = JSON.parse(productsJson) // declara "data" para parsear la informacion de los productos (toma el texto del array productsJson) //
     return data // devuelve data (la info de los productos) //
@@ -11,7 +12,7 @@ function findAll() {
 
 function writeJson(array){   // le sobreescribe info al JSON data //
     let arrayJSON = JSON.stringify(array, null," ")  // Convierte el array en JSON  //  se agrega null y las comillas para que quede un espacio //
-    return fs.writeFileSync(path.join(__dirname, "../data/products.json"), arrayJSON);  
+    return fs.writeFileSync(path.join(__dirname, "../database/products.json"), arrayJSON);  
 }
 
 const controller = {
