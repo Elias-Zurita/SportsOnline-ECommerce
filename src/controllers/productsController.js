@@ -1,7 +1,7 @@
 const { json } = require("express");
 const fs = require ("fs");  // declara la libreria fs para usar fileSync despues (para leer archivos) 
 const path = require("path");
-const {validationResult} = require("express-validator");
+const {validationResult} = require("express-validator"); // requiere la libreria instalada para las validaciones de datos
 
 function findAll() {
     let productsJson =  fs. readFileSync(path.join(__dirname, "../database/products.json"))   // Lee el archivo products.json donde estan los productos  //

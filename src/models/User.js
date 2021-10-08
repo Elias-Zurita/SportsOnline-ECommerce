@@ -40,8 +40,7 @@ const User = {
 			...userData                   // Mete los datos nuevos 
 		}
 		allUsers.push(newUser);           // Agrega datos del newUser
-		return fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, 4));    // null, " " hace que se agregue como JSON (ordenado)
-		
+		return fs.writeFileSync(path.join(__dirname, this.fileName), JSON.stringify(allUsers, null, 4));    // null, " " hace que se agregue como JSON (ordenado)
 	},
 
 	delete: function (id) {              // Eliminacion de un usuario

@@ -4,9 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override'); // Es una libreria que se usa para que pueda utilizar los metodos PUT y DELETE (editar y eliminar) //
-
+const session = require("express-session") // Es una libreria que se usa para las sesiones (requiere instalacion)
 
 var app = express();
+
+app.use(session({
+  secret:"Shh, es un secreto",
+  resave: false,                  // Propiedades de session que se deben setear como false
+  saveUninitialized: false,       // Propiedades de session que se deben setear como false
+}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  // Define la ubicacion de la carpeta de views   //
@@ -19,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));  // captura la info que recibe
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
 
+// Routers
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');

@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "id": 1,
+        "nombre": "Elias",
+        "apellido": "Zurita",
+        "domicilio": "asdsa",
+        "email": "eliass.zurita@gmail.com",
+        "categoria": "asda",
+        "contraseña": "$2a$10$15xlpNy8ZWhuALEBK8IGN.2EKwPpQc4qR8Dz.oHU6LU9xkieoinwS",
+        "No soy un robot": "on",
+        "avatar": "avatar1633720567406.jpg"
+    }
+]

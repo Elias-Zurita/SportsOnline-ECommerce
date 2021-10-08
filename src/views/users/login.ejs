@@ -19,7 +19,7 @@
                 name="email" 
                 id="nombreUsuario" 
                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.email: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando -->
+                value="<%= locals.oldData ? oldData.email: null %>">    
                 <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
                     <div class="text-danger">
                       <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->

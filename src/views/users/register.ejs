@@ -48,7 +48,7 @@
               <input 
                 type="text" 
                 name="domicilio" 
-                class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>"
+                class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>" 
                 value="<%= locals.oldData ? oldData.domicilio: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
                 <% if (locals.errors && errors.domicilio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en domicilio -->
                   <div class="text-danger">
