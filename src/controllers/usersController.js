@@ -109,7 +109,7 @@ const controller = {
 	},
 
     logout: (req, res) => {
-        req.session.destroy();    // Borra lo que se encuentra dentro de la sesion
+        req.session.destroy();    // Borra lo que se encuentra dentro de la sesion (la cierra)
         return res.redirect("/")  // Redirije al index
     },
 

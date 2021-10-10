@@ -8,11 +8,15 @@ const session = require("express-session") // Es una libreria que se usa para la
 
 var app = express();
 
-app.use(session({
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
+app.use(session({                 // Inicializacion de sesion
   secret:"Shh, es un secreto",
   resave: false,                  // Propiedades de session que se deben setear como false
   saveUninitialized: false,       // Propiedades de session que se deben setear como false
 }))
+
+app.use(userLoggedMiddleware) // Es importante que vaya despues de la inicializacion de la sesion
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  // Define la ubicacion de la carpeta de views   //

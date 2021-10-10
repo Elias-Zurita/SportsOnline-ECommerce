@@ -10,34 +10,26 @@
 </div>
 
 <div class="caja-busqueda">
-  
-    <% if (locals.isLogged) { %> 
-        <div class="userHeader">
-    <ul type="None">
-        <li><img src="/img/avatar/<%= locals.userLogged.avatar%>"></li>
-        <div class= "nombreDeUsuario">
-            <li><a href="/users/profile"><%= locals.userLogged.nombre%></a></li> <!-- No funciona(no muestra ni el nombre ni la imagen del usuario logueado) -->
-        </div>
-    </ul>
-</div>
-<% } else { %>
+    <% if (locals.isLogged){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
+        
     <div class="userHeader">
         <ul type="None">
-            <li><img src="/img/avatar/persona.png"></li>
+            <li><img src="/img/avatar/<%= locals.userLogged.avatar %>"></li>
             <div class= "nombreDeUsuario">
-                <li><a href="/users/profile">Usuario</a></li>
+                <li><a href="/users/profile"><%= locals.userLogged.nombre %><%= locals.userLogged.apellido %></a></li>
                 <li><a href="/users/logout">Cerrar sesión</a></li>
+                <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
             </div>
         </ul>
     </div>
-    <% } %>
-
+   <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
 
     <ul class="right-navbar" type="None">
         <li><a href="/users/register">Crear cuenta</a></li>
         <li><a href="/users/login">Iniciar sesión</a></li>
         <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
     </ul>
+    <% } %>
 
 <nav class="barra-de-busqueda">
 <input type="search" placeholder="Buscar productos, marcas y más"> <i class="fas fa-search"></i> 
