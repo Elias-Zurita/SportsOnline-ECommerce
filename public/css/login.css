@@ -6,6 +6,8 @@
 .control-formulario input {width: 12.5vw; height: 1.5vw;} /* cambia el tamaño para ingresar usuario y contraseña */
 .olvido a{font-weight: bold;margin: 10px; color:white; font-size: large;}
 .olvido a:hover{color: #ffee00; font-size: large; font-weight: bolder;}
+.recordarUsuario label{display: flex; align-items: center;}
+.recordarme {font-size: large; font-weight: bolder; margin: 10px;}
 .login {margin: 7px; }
 .botonIngresar {background-color:rgb(45, 156, 142); width: 12.5vw; height: 2vw; color: white; font-size: large;}
 .fa-sign-in-alt{color: white; font-size: large;}
@@ -26,7 +28,6 @@
 .loginFacebook button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
 .loginGoogle button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
 .crearCuenta button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
-
 /*TRANSICIONES EN BOTONES */
 
 /* Desde aca para abajo es de creacion de producto */

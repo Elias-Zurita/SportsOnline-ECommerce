@@ -9,5 +9,16 @@
         "contraseña": "$2a$10$15xlpNy8ZWhuALEBK8IGN.2EKwPpQc4qR8Dz.oHU6LU9xkieoinwS",
         "No soy un robot": "on",
         "avatar": "avatar1633720567406.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Anto",
+        "apellido": "chanchoni",
+        "domicilio": "araoz",
+        "email": "antonellaperlotti@gmail.com",
+        "categoria": "puerca",
+        "contraseña": "$2a$10$RIdsYFeQeKaqJBD9/ICXJuHdyBCtE11BHw9RCJkpH6vnyJgNljaTG",
+        "No soy un robot": "on",
+        "avatar": "avatar1633886839941.jpg"
     }
 ]

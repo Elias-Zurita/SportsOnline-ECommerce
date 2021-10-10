@@ -83,6 +83,11 @@ const controller = {
             if (isOkThePassword){
                 delete userToLogin.contraseña; // elimina la contraseña de lo que se visualiza en la consola o en inspeccionar  
                 req.session.userLogged = userToLogin
+                
+                if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
+                    res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2} )    // la cookie va a dejar logueado al usuario por 2 minutos (1000 milisegundos x 2) por mas que cierre el navegador
+                }
+                
                 return res.redirect ("/users/profile") // Accion que hace cuando la contraseña es correcta
             }
             return res.render('users/login', { // si la contraseña ingresada es incorrecta renderiza nuevamente con el msj de validacion
@@ -103,12 +108,14 @@ const controller = {
 	},
 
     profile: (req, res) => {
+
 		return res.render("users/profile", {
             user: req.session.userLogged // La vista del profile va a recibir los datos del usuario logueado
         });
 	},
 
     logout: (req, res) => {
+        res.clearCookie("userEmail"); // Destruye la cookie para poder desloguearse
         req.session.destroy();    // Borra lo que se encuentra dentro de la sesion (la cierra)
         return res.redirect("/")  // Redirije al index
     },

@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override'); // Es una libreria que se usa para que pueda utilizar los metodos PUT y DELETE (editar y eliminar) //
-const session = require("express-session") // Es una libreria que se usa para las sesiones (requiere instalacion)
+const session = require("express-session") // Es una libreria que se usa para las sesiones (requiere instalacion) y guarda en el servidor 
+const cookies = require("cookie-parser") // Es una libreria que se usa para guardar en el navegador usado y en el servidor (en este caso lo uso para dejar logueado por un tiempo "X" al usuario)
 
 var app = express();
 
@@ -15,6 +16,8 @@ app.use(session({                 // Inicializacion de sesion
   resave: false,                  // Propiedades de session que se deben setear como false
   saveUninitialized: false,       // Propiedades de session que se deben setear como false
 }))
+
+app.use(cookies())
 
 app.use(userLoggedMiddleware) // Es importante que vaya despues de la inicializacion de la sesion
 
