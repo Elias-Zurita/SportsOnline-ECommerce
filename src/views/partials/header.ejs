@@ -10,6 +10,29 @@
 </div>
 
 <div class="caja-busqueda">
+  
+    <% if (locals.isLogged) { %> 
+        <div class="userHeader">
+    <ul type="None">
+        <li><img src="/img/avatar/<%= locals.userLogged.avatar%>"></li>
+        <div class= "nombreDeUsuario">
+            <li><a href="/users/profile"><%= locals.userLogged.nombre%></a></li> <!-- No funciona(no muestra ni el nombre ni la imagen del usuario logueado) -->
+        </div>
+    </ul>
+</div>
+<% } else { %>
+    <div class="userHeader">
+        <ul type="None">
+            <li><img src="/img/avatar/persona.png"></li>
+            <div class= "nombreDeUsuario">
+                <li><a href="/users/profile">Usuario</a></li>
+                <li><a href="/users/logout">Cerrar sesión</a></li>
+            </div>
+        </ul>
+    </div>
+    <% } %>
+
+
     <ul class="right-navbar" type="None">
         <li><a href="/users/register">Crear cuenta</a></li>
         <li><a href="/users/login">Iniciar sesión</a></li>

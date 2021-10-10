@@ -108,6 +108,11 @@ const controller = {
         });
 	},
 
+    logout: (req, res) => {
+        req.session.destroy();    // Borra lo que se encuentra dentro de la sesion
+        return res.redirect("/")  // Redirije al index
+    },
+
     destroy: function (req,res){
         let users = findAll()
         let dataNueva = users.filter(function(users){

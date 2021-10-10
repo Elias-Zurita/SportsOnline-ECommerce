@@ -10,6 +10,11 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 
 .logo {width: 180px; height: 120px;}
 
+.userHeader ul{display: flex; align-items: center; margin-right: 9px; text-align: end;}
+.userHeader li{align-items: end; margin-right: 9px; text-align: end;}
+.userHeader img {width:50px;height: 50px; border-radius: 100%; } /* estilo a la foto del usuario */
+.nombreDeUsuario{text-align: end;margin-right: 9px;color:black; font-weight: bold}
+.nombreDeUsuario a:hover{color:red; font-weight: bold;font-size: large} /* el estilo que le da al apoyar el puntero sobre los campos */
 .right-navbar{display: flex; text-align: end;}
 .right-navbar li {margin-right: 9px;}
 .right-navbar a{color:black; font-weight: bold;}
