@@ -30,11 +30,9 @@ router.get("/profile", authMiddleware, usersController.profile); // El authMiddl
 router.get("/logout", usersController.logout); // Cerrar sesion
 
 // Formulario de listado de usuarios------------------------------------------------------------------------- 
-/*
 router.get("/list", usersController.list);    
-*/
 
-// Eliminacion de usuario 
+// Eliminacion de usuario (NO ESTA FUNCIONANDO)
 router.delete("/delete/:id", usersController.destroy);
 
 // Formulario de Perfil del usuario 

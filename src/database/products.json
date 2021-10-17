@@ -19,29 +19,11 @@
  },
  {
   "id": 3,
-  "img": "imagen1632079387683.jpg",
-  "nombre": "Pelota",
-  "descripcion": "Adidas Aniversario naranja",
-  "categoria": "Futbol",
-  "marca": "Adidas",
-  "precio": "2000"
- },
- {
-  "id": 4,
-  "img": "imagen1632079419116.jpg",
-  "nombre": "Camiseta ",
-  "descripcion": "PSG",
-  "categoria": "Futbol",
-  "marca": "Jordan",
-  "precio": "8000"
- },
- {
-  "id": 5,
-  "img": "imagen1632789192013.jpg",
-  "nombre": "sdvds",
-  "descripcion": "sdvds",
-  "categoria": "sdv",
-  "marca": "dsvds",
-  "precio": "23"
+  "img": "imagen1634484166076.jpg",
+  "nombre": "Aero Drive",
+  "descripcion": "Raqueta",
+  "categoria": "Tenis",
+  "marca": "Babolat",
+  "precio": "15000"
  }
 ]

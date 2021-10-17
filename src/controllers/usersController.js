@@ -50,12 +50,10 @@ const controller = {
         return res.redirect("/users/login");
     },
 
-    /* LISTADO DE USUARIOS
     list: (req, res) =>{
-        let users = findAll();
+        let users = User.findAll(); // encuentra todos los usuarios con el metodo usado en models
         res.render ('users/userList', {users}) // renderiza el listado de usuarios //
     },
-    */ 
     
     login: (req, res) =>{
         console.log(req.session)
@@ -120,8 +118,9 @@ const controller = {
         return res.redirect("/")  // Redirije al index
     },
 
+    // ESTE METODO NO ESTA FUNCIONANDO
     destroy: function (req,res){
-        let users = findAll()
+        let users = User.findAll()
         let dataNueva = users.filter(function(users){
             return users.id != req.params.id
         })
@@ -130,6 +129,7 @@ const controller = {
 
         res.redirect("/users/list")
     },
+
 }
 
 module.exports = controller;

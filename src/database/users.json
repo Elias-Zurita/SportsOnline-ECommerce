@@ -20,5 +20,16 @@
         "contraseña": "$2a$10$RIdsYFeQeKaqJBD9/ICXJuHdyBCtE11BHw9RCJkpH6vnyJgNljaTG",
         "No soy un robot": "on",
         "avatar": "avatar1633886839941.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Jensito",
+        "apellido": "Marrano",
+        "domicilio": "Huergo 3813",
+        "email": "jensitocapo@gmail.com",
+        "categoria": "Capo",
+        "contraseña": "$2a$10$7BHk3YsjHKA6yMczWPZLHOhlzHTfxqMEXo0faX292vrhxmRyFkNdG",
+        "No soy un robot": "on",
+        "avatar": "avatar1634484380140.jpg"
     }
 ]
