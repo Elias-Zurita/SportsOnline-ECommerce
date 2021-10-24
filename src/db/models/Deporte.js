@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = "Producto";
+    let alias = "Deporte";
 
     let cols = {
         id: {
@@ -13,11 +13,18 @@ module.exports = function(sequelize, dataTypes){
     }
     
     let config = {
-        tableName: "sports",
-        timestamps: false // es false ya que la tabla no se llama igual que el modelo (uno esta en ingles y el otro español)
+        tableName: "Deporte",
+        timestamps: true // es true ya que la tabla  se llama igual que el modelo
     }
 
     let Deporte = sequelize.define(alias,cols,config); 
+
+    Deporte.associate = function(models){
+        Deporte.hasMany(models.Producto, {   // el deporte tiene muchos productos
+            as: "Producto",
+            foreignKey: "deporte_id"
+        })
+    }
 
     return Deporte
 }
