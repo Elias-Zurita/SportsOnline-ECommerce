@@ -2,8 +2,8 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": "elias123",
-    "database": "sportsonline_db",
+    "password": "null",
+    "database": "sportsOnline_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
