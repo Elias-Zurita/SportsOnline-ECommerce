@@ -38,8 +38,9 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 .productos div{width: 25vw; justify-content: space-between; width: 100vw;}
 .mujerHombre{display: flex; flex-direction: row ; width:90vw; align-items: center; justify-content: space-between;}
 
-.hombre, .mujer{height: 100%;width: 50vw; padding: 10px;}
+.hombre, .mujer{height: 100%; width: 50vw; padding: 3px;}
 
+.seccionHombre{height: 755px;}
 
 .camiseta img, .zapatillaHombre img, .pelotaCapitano img, .bolsoNike img {height: 67%;width: 25vw; padding: 5px;}
 .camiseta, .zapatillaHombre, .pelotaCapitano, .bolsoNike {width: 25vw; padding: 7px; display: flex;}
