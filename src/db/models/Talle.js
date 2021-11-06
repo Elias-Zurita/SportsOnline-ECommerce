@@ -7,7 +7,7 @@ module.exports = function(sequelize, dataTypes){
                 primaryKey: true,
                 autoIncrement : true
             },
-            numero: {
+            talle: {
                 type: dataTypes.INTEGER
             },
         }

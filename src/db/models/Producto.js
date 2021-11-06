@@ -7,26 +7,32 @@ module.exports = function(sequelize, dataTypes){
                 primaryKey: true,
                 autoIncrement : true
             },
+            nombre: {
+                type: dataTypes.STRING
+            },
             precio: {
                 type: dataTypes.INTEGER
             },
             descripcion: {
                 type: dataTypes.STRING
             },
-            genero_id: {
-                type: dataTypes.STRING 
+            imagen:{
+                type: dataTypes.STRING
             },
             talle_id:{
                 type: dataTypes.INTEGER
             },
+            genero_id: {
+                type: dataTypes.INTEGER 
+            },
             deporte_id:{
-                type: dataTypes.STRING
+                type: dataTypes.INTEGER
             },
             marca_id:{
-                type: dataTypes.STRING
+                type: dataTypes.INTEGER
             },
             categoria_id:{
-                type: dataTypes.STRING
+                type: dataTypes.INTEGER
             },
         }
         
@@ -38,11 +44,6 @@ module.exports = function(sequelize, dataTypes){
         let Producto = sequelize.define(alias,cols,config); 
     
         Producto.associate = function(models){
-            Producto.belongsTo(models.Genero, {   // el producto tiene un solo genero
-                as: "Genero",
-                foreignKey: "genero_id"
-            });
-
             Producto.belongsToMany(models.Talle, {   // un talle tiene muchos productos, y producto tiene muchos talles
                 as: "Talle",
                 through: "producto_talle",   // nombre de la tabla pivot 
@@ -50,20 +51,25 @@ module.exports = function(sequelize, dataTypes){
                 otherKey: "talle_id",
                 timestamps: false
             });
-
-            Producto.belongsTo(models.Categoria, {   // el producto tiene una sola categoria
-                as: "Categoria",
-                foreignKey: "categoria_id"
+            
+            Producto.belongsTo(models.Genero, {   // el producto tiene un solo genero
+                as: "Genero",
+                foreignKey: "genero_id"
             });
 
             Producto.belongsTo(models.Deporte, {   // el producto tiene un solo deporte
                 as: "Deporte",
                 foreignKey: "deporte_id"
             });
-                
+
             Producto.belongsTo(models.Marca, {   // el producto tiene una sola marca
                 as: "Marca",
                 foreignKey: "marca_id"
+            });
+
+            Producto.belongsTo(models.Categoria, {   // el producto tiene una sola categoria
+                as: "Categoria",
+                foreignKey: "categoria_id"
             });
         }
 

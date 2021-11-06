@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = "Genero";
+    let alias = "Perfil";
     
         let cols = {
             id: {
@@ -13,18 +13,18 @@ module.exports = function(sequelize, dataTypes){
         }
         
         let config = {
-            tableName: "Genero",
+            tableName: "Perfil",
             timestamps: true // es true ya que la tabla se llama igual que el modelo
         }
     
-        let Genero = sequelize.define(alias,cols,config); 
+        let Perfil = sequelize.define(alias,cols,config); 
     
-        Genero.associate = function(models){
-            Genero.hasMany(models.Producto, {   // el genero tiene muchos productos
-                as: "Producto",
-                foreignKey: "genero_id"
+        Perfil.associate = function(models){
+            Perfil.hasMany(models.Usuarios, {   // el perfil tiene muchos usuarios
+                as: "Usuario",
+                foreignKey: "perfil_id"
             })
         }
 
-        return Genero
+        return Perfil
     }
