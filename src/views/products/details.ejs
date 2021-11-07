@@ -18,34 +18,30 @@
                 <img class="img" src="/img/products/<%= products.img %>">
             </div>
             <div class="container1">
-                <p class="detailProduct">id: <%= products.id %></p>
                 <p class="detailProduct">Nombre de Producto: <%= products.nombre %> </p>
                 <p class="detailProduct">Descripcion: <%= products.descripcion %></p>
                 <p class="detailProduct">Categoria: <%= products.categoria %></p>
                 <p class="detailProduct">Marca: <%= products.marca %></p>
                 <p class="detailProduct">Precio: $<%= products.precio %></p>
-                <div class="container2">
-                    <div class="box1">1</div>
-                    <div class="box1">2</div>
-                    <div class="box1">3</div>
-                </div>
+                
                 <p class="detailProduct">Envios y Devoluciones</p>
                 <p class="detailProduct">Seleccione su talla</p>
                 <div class="container3">
-                    <div class="box1">1</div>
-                    <div class="box1">2</div>
-                    <div class="box1">3</div>
                 </div>
-                <button type="submit">COMPRAR</button>
+                <button class="BotonDeCompra" type="submit">Añadir al carrito de compra</button>
                 <div class="subBox1">
-                    <p></p>
+                    <p>Camiseta Oficial de la Seleción de Argentina</p>
+                </div>
                 </div>
 
-                
-                <a href="/products/edit/<%= products.id %>"><button type="button" class="subBox2">EDITAR PRODUCTO</button></a>
-            
-                       </div>
         </div> <!-- Version Desktop Fin -->
+
+        <!--Botón de Editar Producto-->
+        <div class="BotonDeEdición">
+            <a href="/products/edit/<%= products.id %>"><button type=button>Editar Producto</button></a>
+        </div>
+        <!-- // -->
+
         <div class="masterContainerM"> <!-- Version Mobile Inicio -->
             <p>Nombre del Producto</p>
             <div class="mainBoxM">
