@@ -35,7 +35,7 @@ module.exports = function(sequelize, dataTypes){
         let Usuario = sequelize.define(alias,cols,config); 
         
         Usuario.associate = function(models){
-            Usuario.belongsTo(models.perfil, {   // el usuario tiene un solo perfil
+            Usuario.belongsTo(models.Perfil, {   // el usuario tiene un solo perfil
                 as: "perfil",
                 foreignKey: "perfil_id"
             });

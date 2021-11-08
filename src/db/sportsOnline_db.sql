@@ -1,4 +1,8 @@
--- BASE DE DATOS
+-- Creacion de la Base de Datos
+CREATE DATABASE sportsOnline_db;
+
+-- Seleccion de la Base de Datos
+USE sportsOnline_db;
 
 -- Creacion de tabla de producto
 CREATE TABLE producto (

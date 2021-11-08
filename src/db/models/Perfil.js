@@ -20,7 +20,7 @@ module.exports = function(sequelize, dataTypes){
         let Perfil = sequelize.define(alias,cols,config); 
     
         Perfil.associate = function(models){
-            Perfil.hasMany(models.Usuarios, {   // el perfil tiene muchos usuarios
+            Perfil.hasMany(models.Usuario, {   // el perfil tiene muchos usuarios
                 as: "Usuario",
                 foreignKey: "perfil_id"
             })

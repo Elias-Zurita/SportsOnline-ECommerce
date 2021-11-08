@@ -73,6 +73,43 @@
                 <% } %>  
         </div>
     
+        <div class="control-formulario">
+            <label for="descripción">Genero</label>
+                <input type="text" 
+                name="genero" 
+                class="control-especifico">
+                <% if (locals.errors && errors.genero) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en genero -->
+                    <div class="text-danger">
+                        <p><%= errors.genero.msg %></p> <!-- muestra el mensaje que debe llenar el campo de genero -->
+                    </div>
+                <% } %>  
+        </div>
+        
+        <div class="control-formulario">
+            <label for="descripción">Deporte</label>
+                <input type="text" 
+                name="deporte" 
+                class="control-especifico">
+                <% if (locals.errors && errors.deporte) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en deporte -->
+                    <div class="text-danger">
+                        <p><%= errors.deporte.msg %></p> <!-- muestra el mensaje que debe llenar el campo de deporte -->
+                    </div>
+                <% } %>  
+        </div>
+        
+        <div class="control-formulario">
+            <label for="descripción">Talle</label>
+                <input type="text" 
+                name="talle" 
+                class="control-especifico">
+                <% if (locals.errors && errors.talle) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en talle -->
+                    <div class="text-danger">
+                        <p><%= errors.talle.msg %></p> <!-- muestra el mensaje que debe llenar el campo de talle -->
+                    </div>
+                <% } %>  
+        </div>
+
+
         <div class="botonesCreacion">
             <div class="subirFotoProducto">
                 <input 
