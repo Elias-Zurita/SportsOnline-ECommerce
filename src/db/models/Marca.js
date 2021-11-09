@@ -13,7 +13,7 @@ module.exports = function(sequelize, dataTypes){
         }
         
         let config = {
-            tableName: "Marca",
+            tableName: "marca",
             timestamps: false // es true ya que la tabla  se llama igual que el modelo
         }
     

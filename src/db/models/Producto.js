@@ -37,7 +37,7 @@ module.exports = function(sequelize, dataTypes){
         }
         
         let config = {
-            tableName: "Producto",
+            tableName: "producto",
             timestamps: true // es true ya que la tabla se llama igual que el modelo
         }
     

@@ -2,7 +2,7 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": "null",
+    "password": null,
     "database": "sportsOnline_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

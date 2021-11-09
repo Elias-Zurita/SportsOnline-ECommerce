@@ -1,8 +1,8 @@
 -- Creacion de la Base de Datos
-CREATE DATABASE sportsOnline_db;
+-- CREATE DATABASE sportsOnline_db;
 
 -- Seleccion de la Base de Datos
-USE sportsOnline_db;
+-- USE sportsOnline_db;
 
 -- Creacion de tabla de producto
 CREATE TABLE producto (
@@ -11,11 +11,11 @@ CREATE TABLE producto (
   precio smallint(6) NOT NULL,
   descripcion text NOT NULL,
   imagen varchar(100) NOT NULL,
-  talle_id tinyint(4) NOT NULL,
-  genero_id tinyint(4) NOT NULL,
-  deporte_id tinyint(4) NOT NULL,
-  marca_id tinyint(4) NOT NULL,
-  categoria_id tinyint(4) NOT NULL,
+  talle_id INT UNSIGNED NOT NULL,
+  genero_id INT UNSIGNED NOT NULL,
+  deporte_id INT UNSIGNED NOT NULL,
+  marca_id INT UNSIGNED NOT NULL,
+  categoria_id INT UNSIGNED NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -23,8 +23,8 @@ CREATE TABLE producto (
 -- Creacion de tabla de producto_talle
 CREATE TABLE producto_talle (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  producto_id UNSIGNED NOT NULL,
-  talle_id UNSIGNED NOT NULL,
+  producto_id INT UNSIGNED NOT NULL,
+  talle_id INT UNSIGNED NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -85,7 +85,7 @@ CREATE TABLE usuario (
   email varchar(50) NOT NULL,
   contraseña varchar(50) NOT NULL,
   avatar varchar(100) NOT NULL,
-  perfil_id int(11) NOT NULL,
+  perfil_id INT UNSIGNED NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -104,7 +104,7 @@ ADD FOREIGN KEY (talle_id) REFERENCES talle(id),
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),
 ADD FOREIGN KEY (deporte_id) REFERENCES deporte(id),
 ADD FOREIGN KEY (marca_id) REFERENCES marca(id),
-ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id),
+ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id);
 
 -- Creacion de Foreign Key Tabla pivot
 ALTER TABLE producto_talle 
@@ -117,7 +117,7 @@ ADD FOREIGN KEY (perfil_id) REFERENCES perfil(id);
 
 -- Ingreso de datos a producto
 INSERT INTO producto (id, nombre, precio, descripcion, imagen, talle_id, genero_id, deporte_id, marca_id, categoria_id, created_at, updated_at) VALUES
-(1, Camiseta River, 8000, Camiseta titular River Plate, imagen1.jpg, 1, 1, 1, 1, 1, '2021-02-26 00:03:56', '2021-02-26 00:03:56'),
+(1, 'Camiseta River', 8000, Camiseta titular River Plate, imagen1.jpg, 1, 1, 1, 1, 1, '2021-02-26 00:03:56', '2021-02-26 00:03:56'),
 (2, Camiseta Manchester City, 10000, Camiseta titular Manchester City, imagen2.jpg, 1, 1, 1, 1, 1, '2021-02-26 00:03:58', '2021-02-26 00:03:58'),
 (3, Camiseta PSG, 12000, Camiseta titular Paris Saint Germain, imagen3.jpg, 1, 1, 1, 1, 1, '2021-02-26 00:03:59', '2021-02-26 00:03:59'),
 (4, Camiseta Juventus, 9000, Camiseta titular Juventes, imagen4.jpg, 2, 1, 1, 1, 1, '2021-02-26 00:04:56', '2021-02-26 00:04:56'),
@@ -189,7 +189,7 @@ INSERT INTO categoria (id, nombre, created_at, updated_at) VALUES
 (3, zapatillas, '2021-01-02', '2021-01-02'),
 (4, raquetas, '2021-01-02', '2021-01-02'),
 (5, pelotas, '2021-01-02', '2021-01-02'),
-(6, botines, '2021-01-02', '2021-01-02'),
+(6, botines, '2021-01-02', '2021-01-02');
 
 -- Ingreso de datos a deporte
 INSERT INTO deporte (id, nombre, created_at, updated_at) VALUES
