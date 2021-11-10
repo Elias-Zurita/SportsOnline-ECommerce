@@ -14,7 +14,8 @@ module.exports = function(sequelize, dataTypes){
         
         let config = {
             tableName: "marca",
-            timestamps: false // es true ya que la tabla  se llama igual que el modelo
+            timestamps: true, // es true ya que la tabla  se llama igual que el modelo
+            underscored: true  // permite que se utilice el created_at y updated_at con guion bajo
         }
     
         let Marca = sequelize.define(alias,cols,config); 
