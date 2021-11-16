@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes){
     
     let config = {
         tableName: "deporte",
-        timestamps: true, 
+        timestamps: false, 
         underscored: true  // permite que se utilice el created_at y updated_at con guion bajo
     }
 

@@ -2,11 +2,13 @@ const {validationResult} = require("express-validator"); // requiere la libreria
 const db = require ("../db/models"); // nos permite utilizar la base de datos
 
 const productsController = {
-    crear: function (req, res) {
-        db.Deporte.findAll()               // obtiene todos los Deportes (alias del modelo Deporte)
-        .then(function(deportes){      // despues que obtenga los deportes
-            return res.render("products/create", {deportes:deportes});   // renderiza la vista de creacion de productos
-        })
+    crear: async function (req, res) {
+        const deportes = await db.Deporte.findAll()  // Espera a que se lea deportes y despues continua*/
+        const categorias = await db.Categoria.findAll()   
+        const generos = await db.Genero.findAll()   
+        const marcas= await db.Marca.findAll()   
+        const talles= await db.Talle.findAll()                 
+            return res.render("products/create", {deportes, categorias, generos, marcas, talles});   // renderiza la vista de creacion de productos
     },
 
     guardado: function (req, res) {
@@ -22,14 +24,15 @@ const productsController = {
             precio: req.body.precio,
             descripcion: req.body.descripcion,
             imagen: req.file.imagen,
-            talle: req.body.talle_id, // talle es el name que tiene en el formulario de creacion y talle_id es el nombre de la columna en el modelo
-            genero: req.body.genero_id,
-            deporte: req.body.deporte_id,
-            marca: req.body.marca_id,
-            categoria: req.body.categoria
+            talle_id: req.body.talle, // talle es el name que tiene en el formulario de creacion y talle_id es el nombre de la columna en el modelo
+            genero_id: req.body.genero,
+            deporte_id: req.body.deporte,
+            marca_id: req.body.marca,
+            categoria_id: req.body.categoria
         })
-
+        .then(function (){
         res.redirect("/products/list");  // si no hay campos sin llenar redirecciona a list
+        })
     },
 
     list: function (req, res) {

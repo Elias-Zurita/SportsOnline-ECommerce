@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes){
     
     let config = {
         tableName: "categoria",
-        timestamps: true, // es true ya que la tabla  se llama igual que el modelo
+        timestamps: false, 
         underscored: true  // permite que se utilice el created_at y updated_at con guion bajo
     }
 

@@ -16,11 +16,7 @@
                     type="text"
                     name="nombre"
                     class="control-especifico">
-                    <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
-                        <div class="text-danger">
-                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
-                        </div>
-                    <% } %>  
+
         </div>
     
         <div class="control-formulario">
@@ -28,36 +24,29 @@
                 <input type="text" 
                 name="descripcion" 
                 class="control-especifico">
-                <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
-                    <div class="text-danger">
-                        <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
-                    </div>
-                <% } %>  
+
         </div>
 
         <div class="control-formulario">
             <label for="categoria">Categoria</label>
-                <input type="text" 
-                name="categoria" 
-                class="control-especifico">
-                <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
-                    <div class="text-danger">
-                        <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
-                    </div>
-                <% } %>  
+                <select name= "categoria">
+                    <% categorias.forEach(categoria=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                        <option value="<%= categoria.id%>">  <!-- las opciones seran los id -->
+                    <%= categoria.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                    <% }) %>
+                </select>
         </div>
 
         <div class="control-formulario">
-            <label for="marca">Marca</label>
-               <input 
-               type="text" 
-               name="marca" 
-               class="control-especifico">
-               <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en marca -->
-                <div class="text-danger">
-                    <p><%= errors.marca.msg %></p> <!-- muestra el mensaje que debe llenar el campo de marca -->
-                </div>
-            <% } %>  
+            <label for="categoria">Marca</label>
+                <select name= "marca">
+                    <% marcas.forEach(marca=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                    <option value="<%= marca.id%>">  <!-- las opciones seran los id -->
+                    <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                    </option>
+                    <% }) %>
+                </select>
         </div>
 
         <div class="control-formulario">
@@ -66,47 +55,40 @@
                 type="text" 
                 name="precio" 
                 class="control-especifico">
-                <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
-                    <div class="text-danger">
-                        <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->
-                    </div>
-                <% } %>  
+
         </div>
     
         <div class="control-formulario">
             <label for="genero">Genero</label>
-                <input type="text" 
-                name="genero" 
-                class="control-especifico">
-                <% if (locals.errors && errors.genero) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en genero -->
-                    <div class="text-danger">
-                        <p><%= errors.genero.msg %></p> <!-- muestra el mensaje que debe llenar el campo de genero -->
-                    </div>
-                <% } %>  
+                <select name= "genero">
+                    <% generos.forEach(genero=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                    <option value="<%= genero.id%>">  <!-- las opciones seran los id -->
+                    <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                    </option>
+                    <% }) %>
+                </select>
         </div>
         
         <div class="control-formulario">
             <label for="deporte">Deporte</label>
-                <input type="text" 
-                name="deporte" 
-                class="control-especifico">
-                <% if (locals.errors && errors.deporte) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en deporte -->
-                    <div class="text-danger">
-                        <p><%= errors.deporte.msg %></p> <!-- muestra el mensaje que debe llenar el campo de deporte -->
-                    </div>
-                <% } %>  
+                <select name= "deporte">
+                    <% deportes.forEach(deporte=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                    <option value="<%= deporte.id%>">  <!-- las opciones seran los id -->
+                    <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                    </option>
+                    <% }) %>
+                </select>
         </div>
         
         <div class="control-formulario">
             <label for="talle">Talle</label>
-                <input type="text" 
-                name="talle_id" 
-                class="control-especifico">
-                <% if (locals.errors && errors.talle) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en talle -->
-                    <div class="text-danger">
-                        <p><%= errors.talle.msg %></p> <!-- muestra el mensaje que debe llenar el campo de talle -->
-                    </div>
-                <% } %>  
+                <select name= "talle">
+                    <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                    <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
+                    <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                    </option>
+                    <% }) %>
+                </select>
         </div>
 
 

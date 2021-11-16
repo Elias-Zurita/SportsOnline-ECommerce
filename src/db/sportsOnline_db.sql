@@ -2,7 +2,7 @@
 -- CREATE DATABASE sportsOnline_db;
 
 -- Seleccion de la Base de Datos
--- USE sportsOnline_db;
+--USE sportsOnline_db;
 
 -- Creacion de tabla de producto
 CREATE TABLE producto (
@@ -20,6 +20,14 @@ CREATE TABLE producto (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- Creacion de tabla de talle
+CREATE TABLE talle (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  talle varchar(150) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
 -- Creacion de tabla de producto_talle
 CREATE TABLE producto_talle (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -33,16 +41,16 @@ CREATE TABLE producto_talle (
 CREATE TABLE categoria (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre varchar(50) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- Creacion de tabla de deporte
 CREATE TABLE deporte (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre varchar(50) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  created_at TIMESTAMP NULL DEFAULT NULL,
+  updated_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- Creacion de tabla de genero
@@ -57,14 +65,6 @@ CREATE TABLE genero (
 CREATE TABLE marca (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre varchar(50) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
--- Creacion de tabla de talle
-CREATE TABLE talle (
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  talle tinyint(4) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -91,7 +91,7 @@ CREATE TABLE perfil (
 );
 
 -- Ingreso de datos a categoria
-INSERT INTO categoria (id, nombre, created_at, updated_at) VALUES
+INSERT INTO categoria (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'camisetas', '2021-01-02', '2021-01-02'),
 (2, 'shorts', '2021-01-02', '2021-01-02'),
 (3, 'zapatillas', '2021-01-02', '2021-01-02'),
@@ -100,19 +100,19 @@ INSERT INTO categoria (id, nombre, created_at, updated_at) VALUES
 (6, 'botines', '2021-01-02', '2021-01-02');
 
 -- Ingreso de datos a deporte
-INSERT INTO deporte (id, nombre, created_at, updated_at) VALUES
+INSERT INTO deporte (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'futbol', '2021-01-02', '2021-01-02'),
 (2, 'tenis', '2021-01-02', '2021-01-02'),
 (3, 'basket', '2021-01-02', '2021-01-02'),
 (4, 'training', '2021-01-02', '2021-01-02');
 
 -- Ingreso de datos a genero
-INSERT INTO genero (id, nombre, created_at, updated_at) VALUES
+INSERT INTO genero (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'hombre', '2021-01-02', '2021-01-02'),
 (2, 'mujer', '2021-01-02', '2021-01-02');
 
 -- Ingreso de datos a marca
-INSERT INTO marca (id, nombre, created_at, updated_at) VALUES
+INSERT INTO marca (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'Adidas', '2021-01-02', '2021-01-02'),
 (2, 'Nike', '2021-01-02', '2021-01-02'),
 (3, 'Puma', '2021-01-02', '2021-01-02'),
@@ -121,7 +121,7 @@ INSERT INTO marca (id, nombre, created_at, updated_at) VALUES
 (6, 'SportsOnline', '2021-01-02', '2021-01-02');
 
 -- Ingreso de datos a talle
-INSERT INTO talle (id, talle, created_at, updated_at) VALUES
+INSERT INTO talle (`id`, `talle`, `created_at`, `updated_at`) VALUES
 (1, 'S', '2021-01-02', '2021-01-02'),
 (2, 'M', '2021-01-02', '2021-01-02'),
 (3, 'L', '2021-01-02', '2021-01-02'),
@@ -185,13 +185,10 @@ ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id);
 
 -- Creacion de Foreign Key Tabla pivot
 ALTER TABLE producto_talle 
-ADD FOREIGN KEY (talle_id) REFERENCES producto(id),
-ADD FOREIGN KEY (producto_id) REFERENCES talle(id);
+ADD FOREIGN KEY (producto_id) REFERENCES producto(id),
+ADD FOREIGN KEY (talle_id) REFERENCES talle(id);
 
 -- Creacion de Foreign Key usuario
 ALTER TABLE usuario
 ADD FOREIGN KEY (perfil_id) REFERENCES perfil(id);
 
--- Ingreso de datos a usuario (nose que poner en contraseña)
-
--- Ingreso de datos a perfil

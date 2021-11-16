@@ -31,5 +31,16 @@
         "contraseña": "$2a$10$7BHk3YsjHKA6yMczWPZLHOhlzHTfxqMEXo0faX292vrhxmRyFkNdG",
         "No soy un robot": "on",
         "avatar": "avatar1634484380140.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Marco",
+        "apellido": "Pontiz",
+        "domicilio": "Mendoza",
+        "email": "marco@hotmail.com",
+        "categoria": "Gamer",
+        "contraseña": "$2a$10$FJcdlaJMs4XS6ABeMLHcX.1g7jsaEUWCYpwarU4dvtoWZhrnfC/Ny",
+        "No soy un robot": "on",
+        "avatar": "avatar1637015264634.jpg"
     }
 ]
