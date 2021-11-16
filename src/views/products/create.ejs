@@ -16,7 +16,11 @@
                     type="text"
                     name="nombre"
                     class="control-especifico">
-
+                    <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                        <div class="text-danger">
+                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
+                        </div>
+                    <% } %>  
         </div>
     
         <div class="control-formulario">
@@ -24,7 +28,11 @@
                 <input type="text" 
                 name="descripcion" 
                 class="control-especifico">
-
+                <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
+                    <div class="text-danger">
+                        <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
+                    </div>
+                <% } %>  
         </div>
 
         <div class="control-formulario">
@@ -36,6 +44,11 @@
                         </option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                    <div class="text-danger">
+                        <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                    </div>
+                <% } %>  
         </div>
 
         <div class="control-formulario">
@@ -47,6 +60,11 @@
                     </option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en marca -->
+                    <div class="text-danger">
+                        <p><%= errors.marca.msg %></p> <!-- muestra el mensaje que debe llenar el campo de marca -->
+                    </div>
+                <% } %>  
         </div>
 
         <div class="control-formulario">
@@ -55,6 +73,11 @@
                 type="text" 
                 name="precio" 
                 class="control-especifico">
+                <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
+                    <div class="text-danger">
+                        <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->
+                    </div>
+                <% } %>  
 
         </div>
     
@@ -67,6 +90,11 @@
                     </option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.genero) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en genero -->
+                    <div class="text-danger">
+                        <p><%= errors.genero.msg %></p> <!-- muestra el mensaje que debe llenar el campo de genero -->
+                    </div>
+                <% } %>  
         </div>
         
         <div class="control-formulario">
@@ -78,6 +106,11 @@
                     </option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.deporte) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en deporte -->
+                    <div class="text-danger">
+                        <p><%= errors.deporte.msg %></p> <!-- muestra el mensaje que debe llenar el campo de deporte -->
+                    </div>
+                <% } %>  
         </div>
         
         <div class="control-formulario">
@@ -89,8 +122,12 @@
                     </option>
                     <% }) %>
                 </select>
+                <% if (locals.errors && errors.talle) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en talle -->
+                    <div class="text-danger">
+                        <p><%= errors.talle.msg %></p> <!-- muestra el mensaje que debe llenar el campo de talle -->
+                    </div>
+                <% } %>  
         </div>
-
 
         <div class="botonesCreacion">
             <div class="subirFotoProducto">

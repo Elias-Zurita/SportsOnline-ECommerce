@@ -19,9 +19,6 @@ module.exports = function(sequelize, dataTypes){
             imagen:{
                 type: dataTypes.STRING
             },
-            talle_id:{
-                type: dataTypes.INTEGER
-            },
             genero_id: {
                 type: dataTypes.INTEGER 
             },
@@ -46,7 +43,7 @@ module.exports = function(sequelize, dataTypes){
     
         Producto.associate = function(models){
             Producto.belongsToMany(models.Talle, {   // un talle tiene muchos productos, y producto tiene muchos talles
-                as: "Talle",
+                as: "talle",
                 through: "producto_talle",   // nombre de la tabla pivot 
                 foreignKey: "producto_id",
                 otherKey: "talle_id",
