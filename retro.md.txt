@@ -72,3 +72,15 @@ Seguimos mejorando las vistas poniendole amor para que se vea linda y tenemos qu
 Logramos implementar la entidad de usuarios, replicamos la estructura de archivos y directorios. Implementamos el registro de usuarios, el login de usuarios, rutas de huespedes y de usuarios.
 
 Cada vez se torna mas complejo y un desafio mas grande. 
+
+
+Sprint 6:
+
+Resultado de la retrospectiva:
+
+Me costó mucho la realizacion del archivo .sql con la base de datos pero pude lograr, asi como tambien entender como funciona tanto el sql como los modelos. Eliminé todos los controllers y
+routes del JSON, para rehacerlos nuevamente, pero ahora funcionales a la base de datos creada. Si bien no logré cumplir los tiempos de entrega como si venia logrando en los sprint 
+anteriores, logré entender todo el modulo y que el sitio responda como requerian las consignas, que creo es lo importante. 
+
+
+  

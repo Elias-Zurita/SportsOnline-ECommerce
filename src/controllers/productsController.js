@@ -88,6 +88,15 @@ const productsController = {
             }
         });
         res.redirect("/products/" + req.params.id) // redirecciona al detalle del producto actualizado
+    },
+
+    eliminar: function(req, res){ // NO FUNCIONA ESTE METODO
+        db.Producto.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/products/productsList");
     }
 }
 

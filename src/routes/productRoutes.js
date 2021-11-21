@@ -23,7 +23,10 @@ router.get("/:id", productsController.detalle);
 // Formulario de edicion de producto
 router.get("/edit/:id", productsController.editar);
 
-// Procesa la edicion de productos
+// Procesa la edicion del producto
 router.post("/edit/:id", productsController.actualizar);
+
+// Procesa la eliminacion del producto
+router.post("/delete/:id", productsController.eliminar);
 
 module.exports = router;
