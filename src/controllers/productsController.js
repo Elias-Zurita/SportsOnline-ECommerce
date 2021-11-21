@@ -28,9 +28,9 @@ const productsController = {
             nombre: req.body.nombre, 
             precio: req.body.precio,
             descripcion: req.body.descripcion,
-            imagen: req.file.filename, // imagen es el name que tiene en el formulario de creacion y talle_id es el nombre de la columna en el modelo
+            imagen: req.file.filename, // imagen es el name que tiene en el formulario de creacion y filename es el nombre de la columna en el modelo
             genero_id: req.body.genero,
-            deporte_id: req.body.deporte,
+            deporte_id: req.body.deporte, // deporte es el name que tiene en el formulario de creacion y deporte_id es el nombre de la columna en el modelo
             marca_id: req.body.marca,
             categoria_id: req.body.categoria
         })
@@ -38,11 +38,56 @@ const productsController = {
             res.redirect("/products/list");  // si no hay campos sin llenar redirecciona a list
     },
 
-    list: function (req, res) {
-        db.Producto.findAll()
+    listado: function (req, res) {
+        db.Producto.findAll({
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
+            {association: "Marca"}, {association: "Categoria"}] // los nombres de las asociaciones (as) en el modelo de productos
+        }) 
             .then (function(productos) {
-                res.render ("products/productsList", {products: productos})
+                res.render ("products/productsList", {productos: productos}) // incluye "productos" para que se vean en el detalle
             })
+    },
+
+    detalle: function (req, res){
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
+            {association: "Marca"}, {association: "Categoria"}] // los nombres de las asociaciones (as) en el modelo de productos
+        })
+            .then(function(producto){
+                
+                res.render("products/details", {producto:producto}) // incluye "producto" para que se vean en el detalle
+            })
+    },
+
+    editar: function (req,res){
+        let pedidoProducto = db.Producto.findByPk(req.params.id);
+        let pedidoTalle = db.Talle.findAll();
+        let pedidoGenero = db.Genero.findAll();
+        let pedidoDeporte = db.Deporte.findAll();
+        let pedidoMarca = db.Marca.findAll();
+        let pedidoCategoria = db.Categoria.findAll();
+        
+        Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
+            .then(function([producto, talles, generos, deportes, marcas, categorias]) {  // ejecuta el then cuando estan todas las promesas listas
+                res.render("products/productEditForm", {producto:producto, talles:talles, generos:generos, deportes:deportes, marcas:marcas, categorias:categorias})
+            }) 
+    },
+
+    actualizar: function(req,res){
+        db.Producto.update({
+            nombre: req.body.nombre, 
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            genero_id: req.body.genero,
+            deporte_id: req.body.deporte, // deporte es el name que tiene en el formulario de creacion y deporte_id es el nombre de la columna en el modelo
+            marca_id: req.body.marca,
+            categoria_id: req.body.categoria
+        },{ 
+            where: {
+                id: req.params.id // el id es lo que llega por el url
+            }
+        });
+        res.redirect("/products/" + req.params.id) // redirecciona al detalle del producto actualizado
     }
 }
 

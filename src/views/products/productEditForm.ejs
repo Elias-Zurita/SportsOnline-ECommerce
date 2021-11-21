@@ -7,29 +7,38 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+<form action="/products/edit/<%= producto.id %>" method="POST">
     <div class="titulo">
     <h2>EDICION DE PRODUCTOS</h2>
     </div>
     <div class= "caja-master">
-        <div class="Foto"><img src="/img/products/<%= product.img %>" alt="fotoDelProducto"></div>
+        <div class="Foto"><img src="/img/products/<%= producto.imagen %>" alt="fotoDelProducto"></div>
 
         <div class="control-formulario">
             <label for="nombreDeProducto">Nombre de Producto</label>
-            <input type="text" value= "<%= product.nombre %>" name="nombre" id="nombreDeProducto">
+            <input type="text" value= "<%= producto.nombre %>" name="nombre">
        
             <label for="categoria">Categoria</label>
-            <input type="text" value= "<%= product.categoria %>" name="categoria" id="categoria">
+            <input type="text" value= "<%= producto.categoria_id %>" name="categoria">
         
             <label for="categoria">Marca</label>
-            <input type="text" value= "<%= product.marca %>" name="marca" id="marca">
+            <input type="text" value= "<%= producto.marca_id %>" name="marca">
+
+            <label for="deporte">Genero</label>
+            <input type="text" value= "<%= producto.genero_id %>" name="genero">
+
+            <label for="categoria">Deporte</label>
+            <input type="text" value= "<%= producto.deporte_id %>" name="deporte">
+
+            <label for="categoria">Talle</label>
+            <input type="text" value= "<%= producto.talle %>" name="talle">
 
             <label for="precio">Precio</label>
-            <input type="text" value= "<%= product.precio %>" name="precio" id="precio">
+            <input type="text" value= "<%= producto.precio %>" name="precio">
 
                 <div class="descripcion">
                     <label for="descripción">Descripción</label>
-                    <textarea name="descripcion" type="text" rows= "15" cols= "50" id="descripción"><%= product.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
+                    <textarea name="descripcion" type="text" rows= "15" cols= "50"><%= producto.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
                 </div>
         
                 
@@ -37,7 +46,7 @@
         
             </form> <!--  Cierre del formulario de edicion -->
 
-            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+            <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
                 <button class= "botones" type="submit">ELIMINAR PRODUCTO</button>
             </form>
         </div>

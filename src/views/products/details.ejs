@@ -15,14 +15,17 @@
                 <div class="box">BOX 3</div>
             </div>
             <div class="mainBox">
-                <img class="img" src="/img/products/<%= products.img %>">
+                <img class="img" src="/img/products/<%= producto.imagen %>">
             </div>
             <div class="container1">
-                <p class="detailProduct">Nombre de Producto: <%= products.nombre %> </p>
-                <p class="detailProduct">Descripcion: <%= products.descripcion %></p>
-                <p class="detailProduct">Categoria: <%= products.categoria %></p>
-                <p class="detailProduct">Marca: <%= products.marca %></p>
-                <p class="detailProduct">Precio: $<%= products.precio %></p>
+                <p class="detailProduct">Nombre de Producto: <%= producto.nombre %> </p>
+                <p class="detailProduct">Descripcion: <%= producto.descripcion %></p>
+                <p class="detailProduct">Categoria: <%= producto.Categoria.nombre %></p> <!-- Categoria (como lo llame en el alias) -->
+                <p class="detailProduct">Marca: <%= producto.Marca.nombre %></p>
+                <p class="detailProduct">Genero: <%= producto.Genero.nombre %></p>
+                <p class="detailProduct">Deporte: <%= producto.Deporte.nombre %></p>
+                <p class="detailProduct">Talle: <%= producto.talle[0].talle %></p>   <!-- talle (como lo llame en el alias) el primer elemento del array de .talle "s" -->
+                <p class="detailProduct">Precio: $<%= producto.precio %></p>
                 
                 <p class="detailProduct">Envios y Devoluciones</p>
                 <p class="detailProduct">Seleccione su talla</p>
@@ -38,7 +41,7 @@
 
         <!--Botón de Editar Producto-->
         <div class="BotonDeEdición">
-            <a href="/products/edit/<%= products.id %>"><button type=button>Editar Producto</button></a>
+            <a href="/products/edit/<%= producto.id %>"><button type=button>Editar Producto</button></a>
         </div>
         <!-- // -->
 
