@@ -8,7 +8,7 @@ module.exports =[
     body ("email")
     .notEmpty().withMessage("Tienes que escribir un email").bail() // valida que el campo de email no este vacio //
     .isEmail().withMessage("Debes escribir una direccion de correo electronico válida"), // valida que sea realmente un email y no cualquier texto //
-    body ("categoria").notEmpty().withMessage("Tienes que escribir una categoria"),
+    body ("perfil").notEmpty().withMessage("Tienes que seleccionar un perfil"),
     body ("contraseña").notEmpty().withMessage("Tienes que escribir una contraseña"),
      body('avatar').custom((value, { req }) => { 
 		let file = req.file;

@@ -147,6 +147,11 @@ INSERT INTO producto (`id`, `nombre`, `precio`, `descripcion`, `imagen`, `genero
 (10, 'Short River', 4000, 'Short titular River', 'imagen10.jpg', 1, 1, 1, 1, '2021-02-26 00:07:56', '2021-02-26 00:07:56'),
 (11, 'Short Argentina', 7000, 'Short titular Argentina', 'imagen11.jpg',  1, 1, 1, 1, '2021-02-26 00:07:56', '2021-02-26 00:07:56');
 
+-- Ingreso de datos a perfil
+INSERT INTO perfil (`id`, `nombre`, `created_at`, `updated_at`) VALUES
+(1, 'Administrador', '2021-01-02', '2021-01-02'),
+(2, 'Usuario', '2021-01-02', '2021-01-02');
+
 -- Creacion de Foreign Key producto
 ALTER TABLE producto
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),

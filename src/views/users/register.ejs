@@ -13,9 +13,7 @@
       <form action="/users/register" method="POST" class="formularioLog" enctype="multipart/form-data"> <!-- Formulario para crear usuario. Ademas tienen el "enctype=multipart..."" para subir imagen -->
         <h2 class="h-2">CREA TU CUENTA!</h2>
           
-        <video muted autoplay loop>
-          <source src="/video/Login Video.mp4">
-        </video>
+       
 
           <div class="capa"></div>
 
@@ -68,15 +66,14 @@
                   </div>
                 <% } %>  
                      
-            <label>Categoria:</label>
-              <input 
-                type="text"
-                name="categoria"
-                class="form-control <%= locals.errors && errors.categoria ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.categoria: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+            <label>Perfil:</label>
+              <input type="radio" name="perfil" value= "Administrador">
+              <input type="radio" name="perfil" value= "Usuario">
+                <class="form-control <%= locals.errors && errors.perfil ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.perfil: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                <% if (locals.errors && errors.perfil) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en perfil -->
                   <div class="text-danger">
-                    <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                    <p><%= errors.perfil.msg %></p> <!-- muestra el mensaje que debe llenar el campo de perfil -->
                   </div>
                 <% } %>  
                                 

@@ -8,7 +8,7 @@
     <h1>Listado de Productos</h1>
     <div class="cajaDeProducto">
         <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
-            <a href="/products/<%=producto.id %>"><img class= "FotoDelProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
+            <a href="/products/detail/<%=producto.id %>"><img class= "FotoDelProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
             <ul>
                 <li>Nombre:<%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
                 <li>Descripcion:<%= producto.descripcion %></li>

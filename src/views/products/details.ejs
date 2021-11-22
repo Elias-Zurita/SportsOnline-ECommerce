@@ -19,7 +19,6 @@
             </div>
             <div class="container1">
                 <p class="detailProduct">Nombre de Producto: <%= producto.nombre %> </p>
-                <p class="detailProduct">Descripcion: <%= producto.descripcion %></p>
                 <p class="detailProduct">Categoria: <%= producto.Categoria.nombre %></p> <!-- Categoria (como lo llame en el alias) -->
                 <p class="detailProduct">Marca: <%= producto.Marca.nombre %></p>
                 <p class="detailProduct">Genero: <%= producto.Genero.nombre %></p>
@@ -33,7 +32,7 @@
                 </div>
                 <button class="BotonDeCompra" type="submit">Añadir al carrito de compra</button>
                 <div class="subBox1">
-                    <p>Camiseta Oficial de la Seleción de Argentina</p>
+                    <p>Descripcion: <%= producto.descripcion %></p>
                 </div>
                 </div>
 

@@ -73,7 +73,7 @@ const productsController = {
             }) 
     },
 
-    actualizar: function(req,res){
+    actualizar: function(req,res){  // Guardar el producto editado o actualizado
         db.Producto.update({
             nombre: req.body.nombre, 
             precio: req.body.precio,
@@ -90,13 +90,19 @@ const productsController = {
         res.redirect("/products/" + req.params.id) // redirecciona al detalle del producto actualizado
     },
 
-    eliminar: function(req, res){ // NO FUNCIONA ESTE METODO
-        db.Producto.destroy({
+    eliminar: async function(req, res, next){  // NO FUNCIONA
+        const producto = await db.Producto.findByPk(req.params.id); 
+        await producto.setTalle([]) // borra todo los talles 
+        await db.Producto.destroy({
             where: {
                 id: req.params.id
             }
         })
-        res.redirect("/products/productsList");
+        res.redirect("/products/list");
+    },
+
+    carrito: function(req, res){
+        res.render ("products/productCart")
     }
 }
 

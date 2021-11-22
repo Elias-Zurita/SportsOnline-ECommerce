@@ -1,15 +1,8 @@
 const bcryptjs = require ("bcryptjs"); // declara la libreria bcryptjs para encriptar las contraseñas (requiere instalacion) 
 const {validationResult} = require("express-validator"); // requiere la libreria instalada para las validaciones de datos (express-validator es el nombre que se le dio al cuerpo de las validaciones en el middleware)
 const User = require("../models/User") // Requiere el archivo User.js de models con las funcionalidades
+const db = require ("../db/models"); // nos permite utilizar la base de datos
 
-/* TODO ESTO RENDERIZA EL LISTADO DE USUARIOS
-function findAll() {
-    let usersJson =  fs. readFileSync(path.join(__dirname, "../database/users.json"))   // Lee el archivo user.json donde estan los usuarios  //
-
-    let data = JSON.parse(usersJson) // declara "data" para parsear la informacion de los usuarios (toma el texto del array userJson) //
-    return data // devuelve data (la info de los usuarios) //
-}
-*/ 
 const controller = {
 
     register: (req, res) =>{
@@ -38,16 +31,18 @@ const controller = {
                 oldData: req.body // Mantiene la info que se envio anteriormente
             });
         }
-
-        let userToCreate = {     // Si el mail no estaba registrado y se puede registrar se encripta la contraseña del usuario nuevo
-             ...req.body,
-            contraseña: bcryptjs.hashSync(req.body.contraseña,10),  // Encripta la contraseña en el archivo de users.json //
-            avatar: req.file.filename
-        }
-
-        let userCreated = User.create(userToCreate); // Declaro al usuario creado para usarlo despues
-        
-        return res.redirect("/users/login");
+        // ------------------------DESDE ACA ES LO NUEVO DE DB -----------------------
+        db.Usuario.create({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            contraseña: bcryptjs.hashSync(req.body.contraseña, 10),  // Encripta la contraseña
+            avatar: req.file.filename, 
+            perfil_id: req.body.perfil_id
+        }).then(function(){
+            return res.redirect("/users/login")
+        })
+        // -------------------ACA TERMINA LO NUEVO DE DB -----------------------------
     },
 
     list: (req, res) =>{

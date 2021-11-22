@@ -17,9 +17,6 @@ router.post("/create", uploadFile.single("imagen"), validations, productsControl
 // Formulario de listado de productos
 router.get("/list", productsController.listado);
 
-// Formulario de detalle de producto
-router.get("/:id", productsController.detalle);
-
 // Formulario de edicion de producto
 router.get("/edit/:id", productsController.editar);
 
@@ -28,5 +25,11 @@ router.post("/edit/:id", productsController.actualizar);
 
 // Procesa la eliminacion del producto
 router.post("/delete/:id", productsController.eliminar);
+
+// Formulario de carrito de compras
+router.get("/carrito", productsController.carrito);
+
+// Formulario de detalle de producto
+router.get("/detail/:id", productsController.detalle);
 
 module.exports = router;
