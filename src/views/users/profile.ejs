@@ -7,20 +7,19 @@
 
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-    <h2>Bienvenido <%= user.nombre %> <%= user.apellido %></h2> 
+    <h2>Bienvenido <%= usuario.nombre %> <%= usuario.apellido %></h2> 
         
         <div>
-            <img src="/img/avatar/<%= user.avatar%>">
+            <img src="/img/avatar/<%= usuario.avatar%>">
         </div>
     
             <div>
                 <h3>Datos del Usuario</h3>
                     <ul>
-                        <li>Nombre:<%= user.nombre %></li> 
-                        <li>Apellido:<%= user.apellido %></li> 
-                        <li>Email:<%= user.email %></li> 
-                        <li>Domicilio:<%= user.domicilio %></li> 
-                        <li>Categoria:<%= user.categoria %></li> 
+                        <li>Nombre: <%= usuario.nombre %></li> 
+                        <li>Apellido: <%= usuario.apellido %></li> 
+                        <li>Email: <%= usuario.email %></li> 
+                        <li>Perfil: <%= usuario.Perfil.nombre%></li> 
                  </ul>
             </div>
 

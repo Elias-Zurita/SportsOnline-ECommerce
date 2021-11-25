@@ -1,0 +1,21 @@
+
+.sucursal{
+display: flex;
+align-items: center;
+width: 40%;
+margin: auto;
+}
+
+.direccionLocal{
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.local img{
+    width: 90%
+}
+
+h1 {
+text-align: center;
+}

@@ -1,21 +1,18 @@
-const User = require("../models/User") // Requiere el archivo User.js de models con las funcionalidades
+const db = require("../db/models")  // Requiere los modelos de la base de datos
 
-function userLoggedMiddleware (req, res, next) {
-    res.locals.isLogged = false;      // cuando el usuario no esta logueado    
-  
-    let emailInCookie = req.cookies.userEmail;  // En emailInCookie requiero las cookies y lo que vino de email
-    let userFromCookie = User.findByField("email", emailInCookie)  // userFromCookie es un usuario que encuentra de la base de datos de User
-
-    if (userFromCookie){ // Si encontre al usuario 
-        req.session.userLogged = userFromCookie; 
+function recordameMiddleware(req, res, next){ 
+    if(!req.session.usuarioLogueado && req.cookies.recordame){
+        db.Usuario.findOne({
+            where:{
+                id: req.cookies.recordame
+            }
+        }).then(function(user){
+            req.session.usuarioLogueado = user;
+            return next()
+        })
+    }else{
+        return next()
     }
-
-    if (req.session.userLogged) {     // Si hay alguien logueado
-        res.locals.isLogged = true    // cuando el usuario esta logueado
-        res.locals.userLogged = req.session.userLogged     // pasa lo que tiene en sesion (los datos del usuario con el session.userLogged) a la vista (la variable local)
-    }
-
-    next()
+        
 }
-
-module.exports = userLoggedMiddleware
+module.exports= recordameMiddleware;

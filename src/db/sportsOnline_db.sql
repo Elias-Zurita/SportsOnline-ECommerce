@@ -152,6 +152,10 @@ INSERT INTO perfil (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'Administrador', '2021-01-02', '2021-01-02'),
 (2, 'Usuario', '2021-01-02', '2021-01-02');
 
+INSERT INTO usuario (`id`, `nombre`, `apellido`, `email`, `contraseña`, `avatar`, `perfil_id`,`created_at`, `updated_at`) VALUES
+(1,'Pedro', 'Gomez', 'gomez@gmail.com', '123456', 'avatar1', '1', '2021-02-26 00:07:56', '2021-02-26 00:07:56'),
+(2,'Marcelo', 'Gallardo', 'muñeco@gmail.com', '123456', 'avatar2', '2', '2021-02-26 00:07:56', '2021-02-26 00:07:56');
+
 -- Creacion de Foreign Key producto
 ALTER TABLE producto
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),

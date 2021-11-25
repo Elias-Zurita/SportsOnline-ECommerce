@@ -1,2 +1,9 @@
-.cajaDeUsuario {display: block; width: 25%;border: blueviolet solid;}
-.cajaDeUsuario img {text-align: center;}
+.cajaDeUsuario {
+    display: block;
+    width: 50%;
+    align-items: center;
+}
+.cajaDeUsuario img {
+    text-align: center;
+    width: 100%;
+}

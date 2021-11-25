@@ -38,7 +38,7 @@ module.exports = function(sequelize, dataTypes){
         
         Usuario.associate = function(models){
             Usuario.belongsTo(models.Perfil, {   // el usuario tiene un solo perfil
-                as: "perfil",
+                as: "Perfil",
                 foreignKey: "perfil_id"
             });
         }

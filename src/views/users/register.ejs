@@ -13,8 +13,6 @@
       <form action="/users/register" method="POST" class="formularioLog" enctype="multipart/form-data"> <!-- Formulario para crear usuario. Ademas tienen el "enctype=multipart..."" para subir imagen -->
         <h2 class="h-2">CREA TU CUENTA!</h2>
           
-       
-
           <div class="capa"></div>
 
           <div class="mb-3">
@@ -41,19 +39,7 @@
                     <p><%= errors.apellido.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
                   </div>
                 <% } %>  
-                                  
-            <label>Domicilio:</label>
-              <input 
-                type="text" 
-                name="domicilio" 
-                class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>" 
-                value="<%= locals.oldData ? oldData.domicilio: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                <% if (locals.errors && errors.domicilio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en domicilio -->
-                  <div class="text-danger">
-                    <p><%= errors.domicilio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de domicilio -->
-                  </div>
-                <% } %>  
-                
+                                                 
             <label>Email: </label>
               <input 
                 type="email" 
@@ -66,16 +52,22 @@
                   </div>
                 <% } %>  
                      
-            <label>Perfil:</label>
-              <input type="radio" name="perfil" value= "Administrador">
-              <input type="radio" name="perfil" value= "Usuario">
-                <class="form-control <%= locals.errors && errors.perfil ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.perfil: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                <% if (locals.errors && errors.perfil) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en perfil -->
-                  <div class="text-danger">
-                    <p><%= errors.perfil.msg %></p> <!-- muestra el mensaje que debe llenar el campo de perfil -->
-                  </div>
-                <% } %>  
+
+                <div class="control-formulario">
+                  <label for="perfil">Perfil</label>
+                      <select name= "perfil">
+                          <% perfil.forEach(perfil=>{ %>  <!-- para cada elemento de la tabla de perfil -->
+                          <option value="<%= perfil.id%>">  <!-- las opciones seran los id -->
+                          <%= perfil.nombre %>     <!-- el .nombre es por "nombre" del modelo de perfil -->
+                          </option>
+                          <% }) %>
+                      </select>
+                      <% if (locals.errors && errors.perfil) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en perfil -->
+                          <div class="text-danger">
+                              <p><%= errors.perfil.msg %></p> <!-- muestra el mensaje que debe llenar el campo de perfil -->
+                          </div>
+                      <% } %>  
+              </div>
                                 
             <label>Contraseña: </label>
               <input 

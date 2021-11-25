@@ -27,7 +27,7 @@ router.post("/edit/:id", productsController.actualizar);
 router.post("/delete/:id", productsController.eliminar);
 
 // Formulario de carrito de compras
-router.get("/carrito", productsController.carrito);
+router.get("/productCart", productsController.carrito);
 
 // Formulario de detalle de producto
 router.get("/detail/:id", productsController.detalle);

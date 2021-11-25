@@ -24,12 +24,12 @@ router.get("/login", guestMiddleware, usersController.login);   // El guestMiddl
 router.post("/login", validations, usersController.loginProcess);   
 
 //Perfil del usuario
-router.get("/profile", authMiddleware, usersController.profile); // El authMiddleware hace que si nadie esta loguedo no permite ver el profile
+router.get("/profile/:id", authMiddleware, usersController.profile); // El authMiddleware hace que si nadie esta loguedo no permite ver el profile
 
 //Logout del usuario
 router.get("/logout", usersController.logout); // Cerrar sesion
 
-// Formulario de listado de usuarios------------------------------------------------------------------------- 
+// Formulario de listado de usuarios
 router.get("/list", usersController.list);    
 
 // Eliminacion de usuario (NO ESTA FUNCIONANDO)

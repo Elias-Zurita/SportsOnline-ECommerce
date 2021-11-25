@@ -7,18 +7,17 @@
             <h1>Listado de Usuarios</h1>
             
             <div class = "cajaDeUsuario">
-                <% users.forEach (function(users){ %>  <!-- para cada usuario -->
+                <% usuario.forEach (function(usuario){ %>  <!-- para cada usuario -->
                 <div class="cajaFotoDePerfil">
-                    <img class= "FotoDePerfil" src="/img/avatar/<%= users.avatar %>" alt="Foto de perfil">
+                    <img class= "FotoDePerfil" src="/img/avatar/<%= usuario.avatar %>" alt="Foto de perfil">
                 </div>
                     <ul>
-                        <li>Nombre:<%= users.nombre %></li> 
-                        <li>Apellido:<%= users.apellido %></li> 
-                        <li>Email:<%= users.email %></li> 
-                        <li>Domicilio:<%= users.domicilio %></li> 
-                        <li>Categoria:<%= users.categoria %></li> 
+                        <li>Nombre:<%= usuario.nombre %></li> 
+                        <li>Apellido:<%= usuario.apellido %></li> 
+                        <li>Email:<%= usuario.email %></li> 
+                        <li>Categoria:<%= usuario.perfil_id %></li> 
                     </ul>
-                    <form action="/users/delete/<%= users.id %>?_method=DELETE" method="POST">
+                    <form action="/users/delete/<%= usuario.id %>" method="POST">
                         <button class= "botones" type="submit">ELIMINAR USUARIO</button>
                     </form>
             </div>
