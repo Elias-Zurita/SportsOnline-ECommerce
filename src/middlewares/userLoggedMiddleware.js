@@ -1,13 +1,13 @@
 const db = require("../db/models")  // Requiere los modelos de la base de datos
 
-function recordameMiddleware(req, res, next){ 
-    if(!req.session.usuarioLogueado && req.cookies.recordame){
+function userLoggedMiddleware(req, res, next){ 
+    if(!req.session.userLogged && req.cookies.email){
         db.Usuario.findOne({
             where:{
-                id: req.cookies.recordame
+                id: req.cookies.recordarUsuario
             }
-        }).then(function(user){
-            req.session.usuarioLogueado = user;
+        }).then(function(usuario){
+            req.session.userLogged = usuario;
             return next()
         })
     }else{
@@ -15,4 +15,4 @@ function recordameMiddleware(req, res, next){
     }
         
 }
-module.exports= recordameMiddleware;
+module.exports= userLoggedMiddleware;

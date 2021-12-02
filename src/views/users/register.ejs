@@ -56,7 +56,7 @@
                 <div class="control-formulario">
                   <label for="perfil">Perfil</label>
                       <select name= "perfil">
-                          <% perfil.forEach(perfil=>{ %>  <!-- para cada elemento de la tabla de perfil -->
+                          <% perfil.forEach(perfil=>{ %>  <!-- para cada elemento de la tabla de perfil DEBERIA LLEVAR PERFILES AL PRINCIPIO POR QUE ES LO QUE LLAMA DESDE EL CONTROLLER PERO NO FUNCIONA -->
                           <option value="<%= perfil.id%>">  <!-- las opciones seran los id -->
                           <%= perfil.nombre %>     <!-- el .nombre es por "nombre" del modelo de perfil -->
                           </option>

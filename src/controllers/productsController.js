@@ -87,10 +87,10 @@ const productsController = {
                 id: req.params.id // el id es lo que llega por el url
             }
         });
-        res.redirect("/products/" + req.params.id) // redirecciona al detalle del producto actualizado
+        res.redirect("/products/list") // redirecciona al listado de productos
     },
 
-    eliminar: async function(req, res, next){  // NO FUNCIONA
+    eliminar: async function(req, res, next){  
         const producto = await db.Producto.findByPk(req.params.id); 
         await producto.setTalle([]) // borra todo los talles 
         await db.Producto.destroy({

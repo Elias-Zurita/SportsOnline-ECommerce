@@ -21,10 +21,10 @@ router.post("/register", uploadFile.single("avatar"), validations, usersControll
 router.get("/login", guestMiddleware, usersController.login);   // El guestMiddleware hace que si esta logueado el usuario no permite ver el login
 
 // Procesa el Formulario de login  
-router.post("/login", validations, usersController.loginProcess);   
+router.post("/login", usersController.loginProcess);   
 
 //Perfil del usuario
-router.get("/profile/:id", authMiddleware, usersController.profile); // El authMiddleware hace que si nadie esta loguedo no permite ver el profile
+router.get("/profile", authMiddleware, usersController.profile); // El authMiddleware hace que si nadie esta loguedo no permite ver el profile
 
 //Logout del usuario
 router.get("/logout", usersController.logout); // Cerrar sesion

@@ -1,6 +1,7 @@
 const bcryptjs = require ("bcryptjs"); // declara la libreria bcryptjs para encriptar las contraseñas (requiere instalacion) 
 const {validationResult} = require("express-validator"); // requiere la libreria instalada para las validaciones de datos (express-validator es el nombre que se le dio al cuerpo de las validaciones en el middleware)
 const db = require ("../db/models"); // nos permite utilizar la base de datos
+const {op} = require("sequelize");
 
 const controller = {
 
@@ -43,7 +44,7 @@ const controller = {
         res.render('users/login')   // renderiza el login //
     },
 
-    loginProcess: function(req,res) {    // FUNCIONANDO CON DB
+    loginProcess: function(req,res, next) {   
         const resultValidation = validationResult(req);
 
         if(!resultValidation.isEmpty()){
@@ -56,18 +57,46 @@ const controller = {
             where: {
                 email: req.body.email 
             }
-        }).then( usuarioEncontrado => {
-            req.session.usuarioLogueado = usuarioEncontrado;
-            if(req.body.recordame){
-                res.cookie("recordame", usuarioEncontrado.id, { maxAge: 1000 * 60 * 4 })
+        }).then( (userToLogin) => {
+            if (userToLogin){
+                console.log(userToLogin)
+                console.log(req.body.contraseña)
+                let isOkThePassword = bcryptjs.compareSync(req.body.contraseña, userToLogin.contraseña) // Declara como "isOkThePassword" cuando la contraseña ingresada es la misma cargada en la base de datos (la compara con el brycrpt.compareSync por que esta encriptada)
+                console.log(isOkThePassword)
+                if (isOkThePassword){
+                    delete userToLogin.contraseña; // elimina la contraseña de lo que se visualiza en la consola o en inspeccionar  
+                    req.session.userLogged = userToLogin
+                        
+                    if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
+                        res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2} )    // la cookie va a dejar logueado al usuario por 2 minutos (1000 milisegundos x 2) por mas que cierre el navegador
+                    }
+                        console.log("hola")
+                    return res.redirect ("/") // Accion que hace cuando la contraseña es correcta
+                }
+                return res.render('users/login', { // si la contraseña ingresada es incorrecta renderiza nuevamente con el msj de validacion
+                    errors: {
+                        email: {
+                        msg: "La contraseña es incorrecta"
+                        }                    
+                    }
+                });
             }
-            return res.redirect("/");
-        })  
+            return res.render('users/login', { // si el mail ingresado no esta registrado muestra el msj de validacion
+                errors: {
+                    email: {
+                        msg: "Esta email no se encuentra registrado"
+                    }
+                }
+            });
+        })
     },
         
     profile: function (req, res){ // FUNCIONA CON DB SI LOGRO LOGUEARLO BIEN
-        db.Usuario.findByPk(req.params.id, {
-            include: {association: "Perfil"}
+        db.Usuario.findOne({
+            include: {association: "Perfil"},
+            where: {
+                id:req.session.userLogged.id
+            }
         })
             .then(function(usuario){
                 res.render("users/profile", {usuario:usuario}) // incluye "usuario" para que se vean en el perfil
@@ -93,7 +122,7 @@ const controller = {
                 id: req.params.id
             }
         })
-        res.redirect("/users/userList") // incluye "users" para que se vean en el detalle);
+        res.redirect("/users/list") // incluye "users" para que se vean en el detalle);
     },
 
 }

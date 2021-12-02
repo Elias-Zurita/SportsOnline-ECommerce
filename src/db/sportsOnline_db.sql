@@ -74,7 +74,7 @@ CREATE TABLE usuario (
   nombre varchar(50) NOT NULL,
   apellido varchar(50) NOT NULL,
   email varchar(50) NOT NULL,
-  contraseña varchar(50) NOT NULL,
+  contraseña varchar(150) NOT NULL,
   avatar varchar(100) NOT NULL,
   perfil_id INT UNSIGNED NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

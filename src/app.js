@@ -7,9 +7,15 @@ const methodOverride = require('method-override'); // Es una libreria que se usa
 const session = require("express-session") // Es una libreria que se usa para las sesiones (requiere instalacion) y guarda en el servidor 
 const cookies = require("cookie-parser") // Es una libreria que se usa para guardar en el navegador usado y en el servidor (en este caso lo uso para dejar logueado por un tiempo "X" al usuario)
 
+// Routers (poner antes de los middlewares)
+const mainRoutes = require('./routes/mainRoutes');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+
 var app = express();
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+const localsMiddleware = require("./middlewares/localsMiddleware")
 
 app.use(session({                 // Inicializacion de sesion
   secret:"Shh, es un secreto",
@@ -31,12 +37,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));  // captura la info que recibe desde un formulario con POST //
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
+app.use(localsMiddleware);
 
-// Routers
-const mainRoutes = require('./routes/mainRoutes');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-
+// Las rutas siempre van despues de los middleware
 app.use('/', mainRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
