@@ -1,9 +1,27 @@
-.cajaDeUsuario {
-    display: block;
+* {    /* le da el estilo al viewport */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.todosLosUsuarios{
+    display: flex;
+    flex-direction: row;
+}
+.cajaDeUsuario{
+    font-weight: 200;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
     width: 50%;
-    align-items: center;
+    margin: 5px;
 }
+
 .cajaDeUsuario img {
-    text-align: center;
-    width: 100%;
+    width: 20%;
+    border:blanchedalmond;
+    border-style:double;
+    border-radius: 10%;
 }
+

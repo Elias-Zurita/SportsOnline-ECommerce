@@ -13,10 +13,10 @@ const controller = {
     processRegister: async function (req, res) { //    FUNCIONANDO CON DB
         const resultValidation = validationResult(req); // Campos que tuvieron error
 		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de register de nuevo 
-            const perfiles = await db.Perfil.findAll()  // Espera a que se lea perfil y despues continua     
+            // Espera a que se lea perfil y despues continua     
             return res.render('users/register', {
 				errors: resultValidation.mapped(),  // Le pasa a la vista de register los errores que se señalaron en validateRegisterMiddleware 
-                oldData:req.body,perfiles
+                oldData:req.body.perfil
             });
                 }
         let usuarioCreado = await db.Usuario.create({
@@ -33,10 +33,11 @@ const controller = {
 
     list: function (req, res) { // FUNCIONANDO CON DB
           db.Usuario.findAll({
-            include: {association:"Perfil"} // incluye asociaciones para que se vean en el detalle
+            include: [{association: "Perfil"}]   // incluye asociaciones para que se vean en el detalle
         }) 
-            .then (function(usuario) {
-                res.render ("users/userList", {usuario: usuario}) // incluye "users" para que se vean en el detalle
+            .then (function(user) {
+               
+                res.render ("users/userList", {user: user}) // incluye "user" para que se vean en el detalle
             })
     },
     
@@ -44,16 +45,18 @@ const controller = {
         res.render('users/login')   // renderiza el login //
     },
 
-    loginProcess: function(req,res, next) {   
+    loginProcess: async (req,res, next)=> {  
+       
         const resultValidation = validationResult(req);
 
         if(!resultValidation.isEmpty()){
             return res.render("users/login", { 
-                errors: resultValidation.mapped(),
+                errors: resultValidation.errors,
                 oldData: req.body 
             });
         }
-        db.Usuario.findOne({
+       await db.Usuario.findOne({
+        include: [{association: "Perfil"}], 
             where: {
                 email: req.body.email 
             }
@@ -68,7 +71,7 @@ const controller = {
                     req.session.userLogged = userToLogin
                         
                     if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
-                        res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2} )    // la cookie va a dejar logueado al usuario por 2 minutos (1000 milisegundos x 2) por mas que cierre el navegador
+                        res.cookie("recordarUsuario", req.body.email, {maxAge: 1000 * 60 * 60} )    // la cookie va a dejar logueado al usuario por 2 minutos (1000 milisegundos x 2) por mas que cierre el navegador
                     }
                         console.log("hola")
                     return res.redirect ("/") // Accion que hace cuando la contraseña es correcta
@@ -104,7 +107,7 @@ const controller = {
     },
 
     logout: (req, res) => { // NO FUNCIONA, QUEDA LA SESION ABIERTA
-        res.clearCookie("recordarme"); // Destruye la cookie para poder desloguearse
+        res.clearCookie("recordarUsuario"); // Destruye la cookie para poder desloguearse
         req.session.destroy();    // Borra lo que se encuentra dentro de la sesion (la cierra)
         return res.redirect("/")  // Redirije al index
         
