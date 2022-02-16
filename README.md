@@ -1,7 +1,5 @@
 ![](public/img/Logo.jpg)
 
-# SPORTSONLINE :runner:
-
 SportsOnline es una empresa que nació en el año 2021, en un momento de mucha transformación, potenciando las ventas 
 online y la distribución a domicilio. Su (por el momento) única sede, se encuentra ubicada en la provincia de Mendoza,
 ciudad de San Rafael. Fue creado por un grupo de 4 jóvenes, que se conocieron entrenando y quisieron llevar el deporte a todos los hogares
