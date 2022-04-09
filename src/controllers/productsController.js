@@ -60,7 +60,10 @@ const productsController = {
     },
 
     editar: function (req,res){
-        let pedidoProducto = db.Producto.findByPk(req.params.id);
+        let pedidoProducto = db.Producto.findByPk(req.params.id,{
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
+            {association: "Marca"}, {association: "Categoria"}] 
+        });
         let pedidoTalle = db.Talle.findAll();
         let pedidoGenero = db.Genero.findAll();
         let pedidoDeporte = db.Deporte.findAll();
@@ -68,8 +71,9 @@ const productsController = {
         let pedidoCategoria = db.Categoria.findAll();
         
         Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
-            .then(function([producto, talles, generos, deportes, marcas, categorias]) {  // ejecuta el then cuando estan todas las promesas listas
-                res.render("products/productEditForm", {producto:producto, talles:talles, generos:generos, deportes:deportes, marcas:marcas, categorias:categorias})
+            .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
+                res.render("products/productEditForm", {producto:values[0], talles: values[1], generos:values[2], 
+                    deportes:values[3], marcas:values[4], categorias:values[5]})
             }) 
     },
 

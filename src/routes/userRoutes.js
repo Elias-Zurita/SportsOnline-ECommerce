@@ -7,7 +7,7 @@ const usersController = require("../controllers/usersController");
 
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddlewareUsers');
-const validations = require('../middlewares/validateRegisterMiddleware');
+const validations = require('../middlewares/validateMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -15,13 +15,13 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get("/register", guestMiddleware, usersController.register);  // El guestMiddleware hace que si esta logueado el usuario no permite ver el register
 
 // Procesa el registro de usuarios y sube la foto de perfil desde el name del input en el html de Register 
-router.post("/register", uploadFile.single("avatar"), validations, usersController.processRegister);  
+router.post("/register", uploadFile.single("avatar"), validations.register, usersController.processRegister);  // validations es el objeto del middleWare y .register es el metodo de validacion
 
 // Formulario de login   
 router.get("/login", guestMiddleware, usersController.login);   // El guestMiddleware hace que si esta logueado el usuario no permite ver el login
 
 // Procesa el Formulario de login  
-router.post("/login", usersController.loginProcess);   
+router.post("/login", validations.login, usersController.loginProcess);   
 
 //Perfil del usuario
 router.get("/profile", authMiddleware, usersController.profile); // El authMiddleware hace que si nadie esta loguedo no permite ver el profile

@@ -51,24 +51,7 @@
                     <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
                   </div>
                 <% } %>  
-                     
-
-                <div class="control-formulario">
-                  <label for="perfil">Perfil</label>
-                      <select name= "perfil">
-                          <% perfil.forEach(perfil=>{ %>  <!-- para cada elemento de la tabla de perfil DEBERIA LLEVAR PERFILES AL PRINCIPIO POR QUE ES LO QUE LLAMA DESDE EL CONTROLLER PERO NO FUNCIONA -->
-                          <option value="<%= perfil.id%>">  <!-- las opciones seran los id -->
-                          <%= perfil.nombre %>     <!-- el .nombre es por "nombre" del modelo de perfil -->
-                          </option>
-                          <% }) %>
-                      </select>
-                      <% if (locals.errors && errors.perfil) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en perfil -->
-                          <div class="text-danger">
-                              <p><%= errors.perfil.msg %></p> <!-- muestra el mensaje que debe llenar el campo de perfil -->
-                          </div>
-                      <% } %>  
-              </div>
-                                
+                                  
             <label>Contraseña: </label>
               <input 
                 type="password"

@@ -12,23 +12,24 @@ const controller = {
 
     processRegister: async function (req, res) { //    FUNCIONANDO CON DB
         const resultValidation = validationResult(req); // Campos que tuvieron error
-		if (resultValidation.errors.length > 0) { // Si resultValidation es mayor a cero (tiene errores) renderizo el formulario de register de nuevo 
-            // Espera a que se lea perfil y despues continua     
+        if (!resultValidation.isEmpty()) {// Espera a que se lea deportes y despues continua
+             // Si resultValidation no esta vacio (tiene errores) renderizo el formulario de register de nuevo 
             return res.render('users/register', {
 				errors: resultValidation.mapped(),  // Le pasa a la vista de register los errores que se señalaron en validateRegisterMiddleware 
-                oldData:req.body.perfil
+                oldData:req.body
             });
                 }
-        let usuarioCreado = await db.Usuario.create({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            contraseña: bcryptjs.hashSync(req.body.contraseña, 10),  // Encripta la contraseña
-            avatar: req.file.filename, 
-            perfil_id: req.body.perfil
-            })
-            await usuarioCreado.setPerfil([req.body.perfil]) // el setPerfil proviene del asociacion (as) del modelo de usuario
-            res.redirect("/users/login");  // si no hay campos sin llenar redirecciona a login
+                await db.Usuario.create({
+                        id:20,
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.email,
+                        contraseña: bcryptjs.hashSync(req.body.contraseña, 10),  // Encripta la contraseña
+                        perfil_id: 2,  // Por default todos los usuarios creados van a ser clientes
+                        avatar: req.file.filename, 
+                    })
+                        .then(()=>{  res.redirect("/users/login");})
+                         // si no hay campos sin llenar redirecciona a login
     },
 
     list: function (req, res) { // FUNCIONANDO CON DB
@@ -49,9 +50,9 @@ const controller = {
        
         const resultValidation = validationResult(req);
 
-        if(!resultValidation.isEmpty()){
-            return res.render("users/login", { 
-                errors: resultValidation.errors,
+        if(!resultValidation.isEmpty()){     // si la validacion no esta vacia (tiene un error) 
+            return res.render("users/login", {     // renderiza nuevamente la vista del login con los errores
+                errors: resultValidation.mapped(),
                 oldData: req.body 
             });
         }
@@ -60,38 +61,15 @@ const controller = {
             where: {
                 email: req.body.email 
             }
-        }).then( (userToLogin) => {
-            if (userToLogin){
-                console.log(userToLogin)
-                console.log(req.body.contraseña)
-                let isOkThePassword = bcryptjs.compareSync(req.body.contraseña, userToLogin.contraseña) // Declara como "isOkThePassword" cuando la contraseña ingresada es la misma cargada en la base de datos (la compara con el brycrpt.compareSync por que esta encriptada)
-                console.log(isOkThePassword)
-                if (isOkThePassword){
-                    delete userToLogin.contraseña; // elimina la contraseña de lo que se visualiza en la consola o en inspeccionar  
-                    req.session.userLogged = userToLogin
-                        
-                    if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
-                        res.cookie("recordarUsuario", req.body.email, {maxAge: 1000 * 60 * 60} )    // la cookie va a dejar logueado al usuario por 2 minutos (1000 milisegundos x 2) por mas que cierre el navegador
-                    }
-                        console.log("hola")
-                    return res.redirect ("/") // Accion que hace cuando la contraseña es correcta
-                }
-                return res.render('users/login', { // si la contraseña ingresada es incorrecta renderiza nuevamente con el msj de validacion
-                    errors: {
-                        email: {
-                        msg: "La contraseña es incorrecta"
-                        }                    
-                    }
+        }).then( (users) => {
+            req.session.userLogged = users;
+            if (req.body.recordarUsuario){ 
+                res.cookie('recordarUsuario', users.id,{maxAge: 1000 * 60 * 60})
+            }
+                return res.redirect('/users/profile', { user: req.session.userLogged
                 });
             }
-            return res.render('users/login', { // si el mail ingresado no esta registrado muestra el msj de validacion
-                errors: {
-                    email: {
-                        msg: "Esta email no se encuentra registrado"
-                    }
-                }
-            });
-        })
+        )
     },
         
     profile: function (req, res){ // FUNCIONA CON DB SI LOGRO LOGUEARLO BIEN
