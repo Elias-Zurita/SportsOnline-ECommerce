@@ -3,26 +3,35 @@
    <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD  -->
     <body>
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER  -->
-        <main>
-            <h1>Listado de Usuarios</h1>
+    
+  <h1>Listado de Usuarios</h1>
+        <div class="todosLosUsuarios">
+            
+            
+            <% usuario.forEach (function(usuario){ %>  <!-- para cada usuario -->
             
             <div class = "cajaDeUsuario">
-                <% usuario.forEach (function(usuario){ %>  <!-- para cada usuario -->
+                
                 <div class="cajaFotoDePerfil">
-                    <img class= "FotoDePerfil" src="/img/avatar/<%= usuario.avatar %>" alt="Foto de perfil">
+                    <img class= "FotoDePerfil" src="/img/avatar/<%=usuario.avatar %>" alt="Foto de perfil" width="50px">
                 </div>
+                <div class="datosUsuario">
                     <ul>
                         <li>Nombre:<%= usuario.nombre %></li> 
                         <li>Apellido:<%= usuario.apellido %></li> 
                         <li>Email:<%= usuario.email %></li> 
                         <li>Categoria:<%= usuario.perfil_id %></li> 
                     </ul>
+                </div>
+                <div class="elimUsuario">
                     <form action="/users/delete/<%= usuario.id %>?_method=delete" method="POST">
                         <button class= "botones" type="submit">ELIMINAR USUARIO</button>
                     </form>
+                </div>
+           
             </div>
                 <% } ) %>
-        </main>
+    </div>
     <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
     </body>
 </html>

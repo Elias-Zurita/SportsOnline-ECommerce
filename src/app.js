@@ -14,18 +14,13 @@ const productRoutes = require('./routes/productRoutes');
 
 var app = express();
 
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const localsMiddleware = require("./middlewares/localsMiddleware")
 
-app.use(session({                 // Inicializacion de sesion
-  secret:"Shh, es un secreto",
-  resave: false,                  // Propiedades de session que se deben setear como false
-  saveUninitialized: false,       // Propiedades de session que se deben setear como false
-}))
 
-app.use(cookies())
 
-app.use(userLoggedMiddleware) // Es importante que vaya despues de la inicializacion de la sesion
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  // Define la ubicacion de la carpeta de views   //
@@ -37,12 +32,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));  // captura la info que recibe desde un formulario con POST //
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
+app.use(session({                 // Inicializacion de sesion
+  secret:"Shh, es un secreto",
+  resave: false,                  // Propiedades de session que se deben setear como false
+  saveUninitialized: false,       // Propiedades de session que se deben setear como false
+}))
+
 app.use(localsMiddleware);
+
 
 // Las rutas siempre van despues de los middleware
 app.use('/', mainRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

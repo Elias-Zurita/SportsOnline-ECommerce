@@ -13,11 +13,12 @@
         
     <div class="userHeader">
         <ul type="None">
-            <li><img src="/img/avatar/<%= locals.usuario.avatar %>"></li>
+            <li><img src="/img/avatar/<%=usuario.avatar %>"></li>
             <div class= "nombreDeUsuario">
-                <li><a href="/users/profile"><%= locals.usuario.nombre %><%= locals.usuario.apellido %></a></li>
+                <li><a href="/users/profile"><%= usuario.nombre %><%= usuario.apellido %></a></li>
                 <li><a href="/users/logout">Cerrar sesión</a></li>
                 <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
+                
             </div>
         </ul>
     </div>
@@ -27,6 +28,7 @@
         <li><a href="/users/register">Crear cuenta</a></li>
         <li><a href="/users/login">Iniciar sesión</a></li>
         <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
+      
     </ul>
     <% } %>
 
@@ -45,6 +47,7 @@
         <li><a href="">Ofertas</a></li>
         <li><a href="/products/create">Crear Productos</a></li>
         <li><a href="/users/list">Usuarios</a></li>
+        
     </ul>
 </div>
 </header>
