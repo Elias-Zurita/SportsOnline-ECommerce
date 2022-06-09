@@ -71,8 +71,9 @@ const productsController = {
         let pedidoCategoria = db.Categoria.findAll();
         
         Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
-            .then(function([producto, talles, generos, deportes, marcas, categorias]) {  // ejecuta el then cuando estan todas las promesas listas
-                res.render("products/productEditForm", {producto:producto, talles:talles, generos:generos, deportes:deportes, marcas:marcas, categorias:categorias})
+            .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
+                res.render("products/productEditForm", {producto:values[0], talles: values[1], generos:values[2], 
+                    deportes:values[3], marcas:values[4], categorias:values[5]})
             }) 
     },
 
