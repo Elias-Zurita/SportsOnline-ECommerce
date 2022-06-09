@@ -8,7 +8,17 @@ module.exports = function(sequelize, dataTypes){
                 autoIncrement : true
             },
             nombre: {
+                allowNull: false,
                 type: dataTypes.STRING
+            },
+            created_at:    {
+                allowNull: true,
+                type: dataTypes.DATE
+            },
+            updated_at:
+            {
+                allowNull: true,
+                type: dataTypes.DATE
             },
         }
         

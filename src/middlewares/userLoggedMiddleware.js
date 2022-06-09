@@ -12,7 +12,7 @@ function userLoggedMiddleware(req, res, next){
         })
     }else{
         return next()
-    }
-        
+    }       
 }
 module.exports= userLoggedMiddleware;
+

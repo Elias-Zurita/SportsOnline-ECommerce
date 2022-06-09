@@ -15,7 +15,8 @@
                 <input
                     type="text"
                     name="nombre"
-                    class="control-especifico">
+                    class="control-especifico"
+                    value="<%= locals.oldData ? oldData.nombre: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
                     <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
                         <div class="text-danger">
                             <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
@@ -27,7 +28,8 @@
             <label for="descripción">Descripción</label>
                 <input type="text" 
                 name="descripcion" 
-                class="control-especifico">
+                class="control-especifico"
+                value="<%= locals.oldData ? oldData.descripcion: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
                 <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
                     <div class="text-danger">
                         <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
@@ -72,7 +74,8 @@
                 <input 
                 type="text" 
                 name="precio" 
-                class="control-especifico">
+                class="control-especifico"
+                value="<%= locals.oldData ? oldData.precio: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
                 <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
                     <div class="text-danger">
                         <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->

@@ -16,12 +16,6 @@ var app = express();
 
 const localsMiddleware = require("./middlewares/localsMiddleware")
 
-
-
-
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  // Define la ubicacion de la carpeta de views   //
 app.set('view engine', 'ejs');         // declara como motor de vistas a EJS //

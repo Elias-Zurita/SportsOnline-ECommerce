@@ -76,7 +76,7 @@ CREATE TABLE usuario (
   email varchar(50) NOT NULL,
   contraseña varchar(150) NOT NULL,
   avatar varchar(100) NOT NULL,
-  perfil_id INT UNSIGNED NOT NULL,
+  perfil_id INT UNSIGNED,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -149,12 +149,12 @@ INSERT INTO producto (`id`, `nombre`, `precio`, `descripcion`, `imagen`, `genero
 
 -- Ingreso de datos a perfil
 INSERT INTO perfil (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'Administrador', '2021-01-02', '2021-01-02'),
-(2, 'Usuario', '2021-01-02', '2021-01-02');
+(1, 'Administrador', '2021-02-26 00:07:56', '2021-02-26 00:07:56'),
+(2, 'Usuario', '2021-02-26 00:07:56', '2021-02-26 00:07:56');
 
 INSERT INTO usuario (`id`, `nombre`, `apellido`, `email`, `contraseña`, `avatar`, `perfil_id`,`created_at`, `updated_at`) VALUES
-(1,'Pedro', 'Gomez', 'gomez@gmail.com', '123456', 'avatar1', '1', '2021-02-26 00:07:56', '2021-02-26 00:07:56'),
-(2,'Marcelo', 'Gallardo', 'muñeco@gmail.com', '123456', 'avatar2', '2', '2021-02-26 00:07:56', '2021-02-26 00:07:56');
+(1,'Pedro', 'Gomez', 'gomez@gmail.com', '123', 'avatar1', '1', '2021-02-26 00:07:56', '2021-02-26 00:07:56'),
+(2,'Marcelo', 'Gallardo', 'muñeco@gmail.com', '123', 'avatar2', '2', '2021-02-26 00:07:56', '2021-02-26 00:07:56');
 
 -- Creacion de Foreign Key producto
 ALTER TABLE producto

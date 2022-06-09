@@ -60,7 +60,10 @@ const productsController = {
     },
 
     editar: function (req,res){
-        let pedidoProducto = db.Producto.findByPk(req.params.id);
+        let pedidoProducto = db.Producto.findByPk(req.params.id,{
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
+            {association: "Marca"}, {association: "Categoria"}] 
+        });
         let pedidoTalle = db.Talle.findAll();
         let pedidoGenero = db.Genero.findAll();
         let pedidoDeporte = db.Deporte.findAll();

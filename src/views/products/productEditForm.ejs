@@ -18,20 +18,60 @@
             <label for="nombreDeProducto">Nombre de Producto</label>
             <input type="text" value= "<%= producto.nombre %>" name="nombre">
        
-            <label for="categoria">Categoria</label>
-            <input type="text" value= "<%= producto.categoria_id %>" name="categoria">
+            <div class="control-formulario">
+                <label for="categoria">Categoria</label>
+                    <select name= "categoria">
+                        <% categorias.forEach(categoria=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                            <option value="<%= categoria.id%>">  <!-- las opciones seran los id -->
+                        <%= categoria.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                            </option>
+                        <% }) %>
+                    </select>
+            </div>
         
-            <label for="categoria">Marca</label>
-            <input type="text" value= "<%= producto.marca_id %>" name="marca">
+            <div class="control-formulario">
+                <label for="categoria">Marca</label>
+                    <select name= "marca">
+                        <% marcas.forEach(marca=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                        <option value="<%= marca.id%>">  <!-- las opciones seran los id -->
+                        <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+            </div>
 
-            <label for="deporte">Genero</label>
-            <input type="text" value= "<%= producto.genero_id %>" name="genero">
+            <div class="control-formulario">
+                <label for="genero">Genero</label>
+                    <select name= "genero">
+                        <% generos.forEach(genero=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                        <option value="<%= genero.id%>">  <!-- las opciones seran los id -->
+                        <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+            </div>
 
-            <label for="categoria">Deporte</label>
-            <input type="text" value= "<%= producto.deporte_id %>" name="deporte">
+            <div class="control-formulario">
+                <label for="deporte">Deporte</label>
+                    <select name= "deporte">
+                        <% deportes.forEach(deporte=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                        <option value="<%= deporte.id%>">  <!-- las opciones seran los id -->
+                        <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+            </div>
 
-            <label for="categoria">Talle</label>
-            <input type="text" value= "<%= producto.talle %>" name="talle">
+            <div class="control-formulario">
+                <label for="talle">Talle</label>
+                    <select name= "talle">
+                        <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                        <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
+                        <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+            </div>
 
             <label for="precio">Precio</label>
             <input type="text" value= "<%= producto.precio %>" name="precio">
