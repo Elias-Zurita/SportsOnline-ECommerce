@@ -13,7 +13,7 @@
                 
                 <div class="userHeader">
                     <ul type="None">
-                        <li><img src="/img/avatar/<%=usuario.avatar %>"></li>
+                        <li><a href="/users/profile"><img src="/img/avatar/<%=usuario.avatar %>"></li></a>
                         <div class= "nombreDeUsuario">
                             <li><a href="/users/profile"><%= usuario.nombre %><%= usuario.apellido %></a></li>
                             <li><a href="/users/logout">Cerrar sesión</a></li>
@@ -45,8 +45,10 @@
         <li><a href="">Mujer</a></li>
         <li><a href="">Niños</a></li>
         <li><a href="">Ofertas</a></li>
-        <li><a href="/products/create">Crear Productos</a></li>
+    <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
+        <li><a href="/products/create">Crear Productos</a></li> 
         <li><a href="/users/list">Usuarios</a></li>
+    <%}%>
         
     </ul>
     

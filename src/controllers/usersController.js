@@ -32,6 +32,7 @@ const controller = {
 
     list: function (req, res) { 
           db.Usuario.findAll({
+              include: [{association: "Perfil"}] // Incluye la asociacion para poder visualizar el nombre del perfil y no el id
         }) 
             .then (function(usuario) {               
                 res.render ("users/userList", {user: usuario}) // incluye "users" para que se vean en el detalle
@@ -75,6 +76,50 @@ const controller = {
                 res.render("users/profile", {usuario:usuario}) // incluye "usuario" para que se vean en el perfil
             })
     },
+
+    edit: function (req,res){
+        let pedidoUsuario = db.Usuario.findByPk(req.params.id,{
+            include: [{association: "Perfil"}]
+        });
+        let pedidoPerfil = db.Perfil.findAll();
+        Promise.all([pedidoUsuario,pedidoPerfil])
+            .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
+                res.render("users/userEditForm", {usuario:values[0], perfiles: values[1]})
+            }) 
+    },
+
+    actualizar: function(req, res){ // Guardar el usuario editado
+        db.Usuario.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email
+        },{
+            where: {
+                id: req.params.id // el id es lo que llega por el url
+            }
+        });
+        res.redirect("/users/profile")
+    },
+    /*          
+       
+      actualizar: function(req,res){  // Guardar el producto editado o actualizado
+        db.Producto.update({
+            nombre: req.body.nombre, 
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            genero_id: req.body.genero,
+            deporte_id: req.body.deporte, // deporte es el name que tiene en el formulario de creacion y deporte_id es el nombre de la columna en el modelo
+            marca_id: req.body.marca,
+            categoria_id: req.body.categoria
+        },{ 
+            where: {
+                id: req.params.id // el id es lo que llega por el url
+            }
+        });
+        res.redirect("/products/list") // redirecciona al listado de productos
+    },
+
+    */
 
     logout: (req, res) => { 
         res.clearCookie("recordarUsuario"); // Destruye la cookie para poder desloguearse

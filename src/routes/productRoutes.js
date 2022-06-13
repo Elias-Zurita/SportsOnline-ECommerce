@@ -6,11 +6,11 @@ const productsController = require("../controllers/productsController");
 
 // Middlewares //
 const uploadFile = require('../middlewares/multerMiddlewareProducts');
-//const validations = require('../middlewares/validateProductsMiddleware'); este no va mas
-const validations = require('../middlewares/validateMiddleware'); // este es el nuevo
+const validations = require('../middlewares/validateMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware')
 
 // Formulario de creacion de productos
-router.get("/create", productsController.crear);
+router.get("/create", adminMiddleware, productsController.crear);
 
 // Procesa la creacion de productos
 router.post("/create", uploadFile.single("imagen"), validations.productCreate, productsController.guardado);
@@ -19,13 +19,13 @@ router.post("/create", uploadFile.single("imagen"), validations.productCreate, p
 router.get("/list", productsController.listado);
 
 // Formulario de edicion de producto
-router.get("/edit/:id", productsController.editar);
+router.get("/edit/:id", adminMiddleware, productsController.editar);
 
 // Procesa la edicion del producto
-router.post("/edit/:id", productsController.actualizar);
+router.post("/edit/:id", adminMiddleware, productsController.actualizar);
 
 // Procesa la eliminacion del producto
-router.post("/delete/:id", productsController.eliminar);
+router.post("/delete/:id", adminMiddleware, productsController.eliminar);
 
 // Formulario de carrito de compras
 router.get("/productCart", productsController.carrito);

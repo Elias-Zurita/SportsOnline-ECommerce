@@ -37,10 +37,11 @@
         </div> <!-- Version Desktop Fin -->
 
         <!--Botón de Editar Producto-->
-        <div class="BotonDeEdición">
+        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver este boton -->
+            <div class="BotonDeEdición">
             <a href="/products/edit/<%= producto.id %>"><button type=button>Editar Producto</button></a>
-        </div>
-        <!-- // -->
+            </div>
+        <%}%>
 
         <div class="masterContainerM"> <!-- Version Mobile Inicio -->
             <p>Nombre del Producto</p>

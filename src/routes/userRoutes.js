@@ -10,6 +10,7 @@ const uploadFile = require('../middlewares/multerMiddlewareUsers');
 const validations = require('../middlewares/validateMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware')
 
 // Formulario de registro - El guestMiddleware hace que si esta logueado el usuario no permite ver el register
 router.get("/register", guestMiddleware, usersController.register);  
@@ -29,10 +30,16 @@ router.get("/profile", authMiddleware, usersController.profile);
 //Logout del usuario
 router.get("/logout", usersController.logout); 
 
-// Formulario de listado de usuarios
-router.get("/list",usersController.list);    
+// Formulario de listado de usuarios solo lo puede ver un administrador
+router.get("/list",adminMiddleware, usersController.list);    
 
-// Eliminacion de usuario 
-router.delete("/delete/:id", usersController.destroy);
+// Formulario de edicion del perfil del usuario
+router.get("/edit/:id", authMiddleware, usersController.edit);
+
+// Procesa la edicion del perfil del usuario
+router.post("/edit/:id", authMiddleware, usersController.actualizar);
+
+// Eliminacion de usuario solo la puede realizar un administrador
+router.delete("/delete/:id",adminMiddleware, usersController.destroy);
 
 module.exports = router;

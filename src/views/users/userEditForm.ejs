@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<form action="/users/edit/<%= usuario.id %>" method="POST">
+    <h2>EDICION DE USUARIO</h2> 
+       
+            <div>
+                <h3>Datos del Usuario</h3>
+
+                <div>
+                    <img src="/img/avatar/<%= usuario.avatar%>">
+                </div>
+
+                <div class="mb-3">
+                    <label>Nombre:</label>
+                      <input 
+                        type="text" 
+                        name="nombre" 
+                        class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.nombre: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                        <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                          <div class="text-danger">
+                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
+                          </div>
+                        <% } %>  
+         
+                    <label>Apellido:</label>
+                      <input 
+                        type="text"
+                        name="apellido"
+                        class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.apellido: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                        <% if (locals.errors && errors.apellido) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                          <div class="text-danger">
+                            <p><%= errors.apellido.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                          </div>
+                        <% } %>  
+                                                         
+                    <label>Email: </label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.email: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                        <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
+                          <div class="text-danger">
+                            <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
+                          </div>
+                        <% } %>  
+     
+            </div>
+    
+            <button class ="botones" type="submit">GUARDAR CAMBIOS</button>
+
+</form>
+
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>
