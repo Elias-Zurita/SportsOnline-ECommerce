@@ -3,96 +3,107 @@
 
 <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<body>
+    <body>
 
-<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+        <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<form action="/products/edit/<%= producto.id %>" method="POST">
-    <div class="titulo">
-    <h2>EDICION DE PRODUCTOS</h2>
-    </div>
-    <div class= "caja-master">
-        <div class="Foto"><img src="/img/products/<%= producto.imagen %>" alt="fotoDelProducto"></div>
+            <form action="/products/edit/<%= producto.id %>" method="POST">
+                <h2>EDICION DE PRODUCTOS</h2> 
+                    <div class= "cajaDeProducto">
+                        <div class="cajaFotoDeProducto">
+                            <img src="/img/products/<%= producto.imagen %>" alt="fotoDelProducto">
+                        </div>
 
-        <div class="control-formulario">
-            <label for="nombreDeProducto">Nombre de Producto</label>
-            <input type="text" value= "<%= producto.nombre %>" name="nombre">
-       
-            <div class="control-formulario">
-                <label for="categoria">Categoria</label>
-                    <select name= "categoria">
-                        <% categorias.forEach(categoria=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                            <option value="<%= categoria.id%>">  <!-- las opciones seran los id -->
-                        <%= categoria.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                            </option>
-                        <% }) %>
-                    </select>
-            </div>
-        
-            <div class="control-formulario">
-                <label for="categoria">Marca</label>
-                    <select name= "marca">
-                        <% marcas.forEach(marca=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                        <option value="<%= marca.id%>">  <!-- las opciones seran los id -->
-                        <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                        </option>
-                        <% }) %>
-                    </select>
-            </div>
+                        <div class="datosProducto">
+                            <label>NOMBRE DE PRODUCTO:</label>
+                                <input 
+                                    class="form-control"
+                                    type="text" 
+                                    value= "<%= producto.nombre %>" 
+                                    name="nombre">
 
-            <div class="control-formulario">
-                <label for="genero">Genero</label>
-                    <select name= "genero">
-                        <% generos.forEach(genero=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                        <option value="<%= genero.id%>">  <!-- las opciones seran los id -->
-                        <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                        </option>
-                        <% }) %>
-                    </select>
-            </div>
+                            <div class="form-control">
+                                <label for="categoria">Categoria</label>
+                                    <select name= "categoria">
+                                        <% categorias.forEach(categoria=>{ %>  
+                                            <option value="<%= categoria.id%>">  
+                                        <%= categoria.nombre %>     
+                                            </option>
+                                        <% }) %>
+                                    </select>
+                            </div>
+                        
+                            <div class="form-control">
+                                <label for="categoria">Marca</label>
+                                    <select name= "marca">
+                                        <% marcas.forEach(marca=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                                        <option value="<%= marca.id%>">  <!-- las opciones seran los id -->
+                                        <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                                        </option>
+                                        <% }) %>
+                                    </select>
+                            </div>
 
-            <div class="control-formulario">
-                <label for="deporte">Deporte</label>
-                    <select name= "deporte">
-                        <% deportes.forEach(deporte=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                        <option value="<%= deporte.id%>">  <!-- las opciones seran los id -->
-                        <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                        </option>
-                        <% }) %>
-                    </select>
-            </div>
+                            <div class="form-control">
+                                <label for="genero">Genero</label>
+                                    <select name= "genero">
+                                        <% generos.forEach(genero=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                                        <option value="<%= genero.id%>">  <!-- las opciones seran los id -->
+                                        <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                                        </option>
+                                        <% }) %>
+                                    </select>
+                            </div>
 
-            <div class="control-formulario">
-                <label for="talle">Talle</label>
-                    <select name= "talle">
-                        <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                        <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
-                        <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                        </option>
-                        <% }) %>
-                    </select>
-            </div>
+                            <div class="form-control">
+                                <label for="deporte">Deporte</label>
+                                    <select name= "deporte">
+                                        <% deportes.forEach(deporte=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                                        <option value="<%= deporte.id%>">  <!-- las opciones seran los id -->
+                                        <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                                        </option>
+                                        <% }) %>
+                                    </select>
+                            </div>
 
-            <label for="precio">Precio</label>
-            <input type="text" value= "<%= producto.precio %>" name="precio">
-
-                <div class="descripcion">
-                    <label for="descripción">Descripción</label>
-                    <textarea name="descripcion" type="text" rows= "15" cols= "50"><%= producto.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
-                </div>
-        
-                
-            <button class ="botones" type="submit">GUARDAR PRODUCTO</button>
-        
+                            <div class="form-control">
+                                <label for="talle">Talle</label>
+                                    <select name= "talle">
+                                        <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                                        <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
+                                        <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                                        </option>
+                                        <% }) %>
+                                    </select>
+                            </div>
+                            
+                            <label for="precio">PRECIO:</label>
+                                <input 
+                                    class="form-control"
+                                    type="text" 
+                                    value= "<%= producto.precio %>" 
+                                    name="precio">
+                                
+                            <label for="descripción">DESCRIPCION:</label>
+                                <textarea 
+                                    class="form-control"
+                                    name="descripcion" 
+                                    type="text" 
+                                    rows= "15" 
+                                    cols= "50">
+                                    <%= producto.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
+    
+                        </div>
+                    </div>
+                                
+                    <button class ="botones" type="submit">GUARDAR PRODUCTO</button>   
             </form> <!--  Cierre del formulario de edicion -->
 
             <form action="/products/delete/<%= producto.id %>" method="POST">
                 <button class= "botones" type="submit">ELIMINAR PRODUCTO</button>
             </form>
-        </div>
-    </div>
+                      
+        <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
-
-</body>
+    </body>
 </html>

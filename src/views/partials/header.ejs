@@ -30,11 +30,14 @@
                 <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
       
                 </ul>
-    
             <% } %>
+
             <nav class="barra-de-busqueda">
-            <input type="search" placeholder="Buscar productos, marcas y más"> <i class="fas fa-search"></i> 
+                <form action= "/products/list/search" method="GET">
+                    <input type="text" name= "search" placeholder="Buscar productos"><i class="fas fa-search" type="submit" value="Search"></i>
+                </form>
             </nav>
+
         </div>
     </div>
 

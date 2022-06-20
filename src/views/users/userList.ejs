@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html>
-   <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD  -->
+    <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD  -->
     <body>
-    <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER  -->
+        <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER  -->
     
-  <h1>Listado de Usuarios</h1>
-        <div class="todosLosUsuarios">
-            
-            
-            <% user.forEach (function(user){ %>  <!-- para cada usuario -->
-            
-            <div class = "cajaDeUsuario">
-                
-                <div class="cajaFotoDePerfil">
-                    <img class= "FotoDePerfil" src="/img/avatar/<%=user.avatar %>" alt="Foto de perfil" width="50px">
-                </div>
-                <div class="datosUsuario">
-                    <ul>
-                        <li>Nombre:<%= user.nombre %></li> 
-                        <li>Apellido:<%= user.apellido %></li> 
-                        <li>Email:<%= user.email %></li> 
-                        <li>Categoria:<%= user.Perfil.nombre %></li> 
-                        
-                        <!-- user.perfil_id -->
-                    </ul>
-                </div>
+            <h1>Listado de Usuarios</h1>
+                <div class="todosLosUsuarios">          
+                    <% user.forEach (function(user){ %>  <!-- para cada usuario -->
+                        <div class = "cajaDeUsuario">
+                            <div class="cajaFotoDePerfil">
+                                <img class= "FotoDePerfil" src="/img/avatar/<%=user.avatar %>" alt="Foto de perfil" width="50px">
+                            </div>
+                                <div class="datosUsuario">
+                                    <ul>
+                                        <li>Nombre:<%= user.nombre %></li> 
+                                        <li>Apellido:<%= user.apellido %></li> 
+                                        <li>Email:<%= user.email %></li> 
+                                        <li>Categoria:<%= user.Perfil.nombre %></li> 
+                                    </ul>
+                                </div>
 
-                <div class="elimUsuario">
-                    <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
-                        <button class= "botones" type="submit">ELIMINAR USUARIO</button>
-                    </form>
+                                <div class="elimUsuario">
+                                    <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                                        <button class= "botones" type="submit">ELIMINAR USUARIO</button>
+                                    </form>
+                                </div>
+                    
+                        </div>
+                    <% } ) %>
                 </div>
-           
-            </div>
-                <% } ) %>
-    </div>
-    <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
+        <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
     </body>
 </html>

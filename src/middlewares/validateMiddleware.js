@@ -117,17 +117,23 @@ const validations = {
         })
     ],
 
-    productEdit: [ //ESTO AUN NO ESTA VINCULADO EN LAS RUTAS PARA QUE FUNCIONE
-        check ("nombre").notEmpty().withMessage("Obligatorio y Deberá tener al menos 5 caracteres"), // valida el nombre ("NAME" en formulario de register) no este vacio //
-        check ("descripcion").notEmpty().withMessage("Deberá tener al menos 20 caracteres"),
-        check ("categoria").notEmpty().withMessage("Tienes que escribir una categoria de producto"),
-        check ("marca").notEmpty().withMessage("Tienes que escribir una marca de producto"),
-        check ("precio").notEmpty().withMessage("Tienes que escribir un precio"),
-        check ("genero").notEmpty().withMessage("Tienes que escribir un genero"),
-        check ("talle").notEmpty().withMessage("Tienes que escribir un talle"),
-        check ("deporte").notEmpty().withMessage("Tienes que escribir un deporte")
+    productEdit: [  // Esto no esta funcionando. Ni la vista ni el controller estan configurados todavia
+        check ("nombre")
+            .notEmpty()
+            .withMessage("Tiene que escribir un nombre")
+            .bail()
+            .isLength({min:5}) 
+            .withMessage("El nombre debe tener al menos 5 caracteres"), 
+        check ("precio")
+            .notEmpty()
+            .withMessage("Tienes que escribir un precio"),
+        check ("descripcion")
+            .notEmpty()
+            .withMessage("Tiene que escribir una descripcion")
+            .bail()
+            .isLength({min:5}) 
+            .withMessage("La descripcion debe tener al menos 5 caracteres")
     ]
-
 }
 
 module.exports = validations;

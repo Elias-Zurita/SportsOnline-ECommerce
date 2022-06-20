@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+         <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+    <body>
+        <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+        
+            <h1>Listado de Productos</h1>
+                <div class="todosLosProductos">
+                    <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
+                        <div class = "cajaDeProducto">
+                            <div class="cajaFotoDeProducto">
+                                <a href="/products/detail/<%=producto.id %>"><img class= "FotoDeProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
+                            </div>
+                            
+                            <div class="datosProducto">
+                                <ul>
+                                    <li>Nombre:<%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
+                                    <li>Descripcion:<%= producto.descripcion %></li>
+                                    <li>Categoria:<%= producto.Categoria.nombre %></li>
+                                    <li>Marca:<%= producto.Marca.nombre %></li>
+                                    <li>Genero:<%= producto.Genero.nombre %></li>
+                                    <li>Deporte:<%= producto.Deporte.nombre %></li>
+                                    <li>Precio:<%= producto.precio %></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
 
-<body>
-<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
-<main>
-    <h1>Listado de Productos</h1>
-    <div class="cajaDeProducto">
-        <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
-            <a href="/products/detail/<%=producto.id %>"><img class= "FotoDelProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
-            <ul>
-                <li>Nombre:<%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
-                <li>Descripcion:<%= producto.descripcion %></li>
-                <li>Categoria:<%= producto.Categoria.nombre %></li>
-                <li>Marca:<%= producto.Marca.nombre %></li>
-                <li>Genero:<%= producto.Genero.nombre %></li>
-                <li>Deporte:<%= producto.Deporte.nombre %></li>
-                <li>Precio:<%= producto.precio %></li>
-            </ul>
-        <% }) %>
-    </div>
-</main>
-
-
-<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
-</body>
+        <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+    </body>
 </html>

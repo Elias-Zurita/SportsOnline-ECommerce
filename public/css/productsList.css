@@ -3,11 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-.todosLosUsuarios{
+.todosLosProductos{
     display: flex;
     flex-direction: row;
 }
-.cajaDeUsuario{
+.cajaDeProducto{
     font-weight: 200;
     color: beige;
     display: flex;
@@ -18,7 +18,7 @@
     margin: 5px;
 }
 
-.cajaDeUsuario img {
+.cajaDeProducto img {
     width: 20%;
     border:blanchedalmond;
     border-style:double;

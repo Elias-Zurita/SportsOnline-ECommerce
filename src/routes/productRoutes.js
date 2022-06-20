@@ -18,11 +18,14 @@ router.post("/create", uploadFile.single("imagen"), validations.productCreate, p
 // Formulario de listado de productos
 router.get("/list", productsController.listado);
 
+// Formulario de listado de productos buscados
+router.get("/list/search", productsController.buscar);
+
 // Formulario de edicion de producto
 router.get("/edit/:id", adminMiddleware, productsController.editar);
 
 // Procesa la edicion del producto
-router.post("/edit/:id", adminMiddleware, productsController.actualizar);
+router.post("/edit/:id", adminMiddleware, validations.productEdit, productsController.actualizar);
 
 // Procesa la eliminacion del producto
 router.post("/delete/:id", adminMiddleware, productsController.eliminar);

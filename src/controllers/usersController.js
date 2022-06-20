@@ -100,27 +100,7 @@ const controller = {
         });
         res.redirect("/users/profile")
     },
-    /*          
-       
-      actualizar: function(req,res){  // Guardar el producto editado o actualizado
-        db.Producto.update({
-            nombre: req.body.nombre, 
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            genero_id: req.body.genero,
-            deporte_id: req.body.deporte, // deporte es el name que tiene en el formulario de creacion y deporte_id es el nombre de la columna en el modelo
-            marca_id: req.body.marca,
-            categoria_id: req.body.categoria
-        },{ 
-            where: {
-                id: req.params.id // el id es lo que llega por el url
-            }
-        });
-        res.redirect("/products/list") // redirecciona al listado de productos
-    },
-
-    */
-
+    
     logout: (req, res) => { 
         res.clearCookie("recordarUsuario"); // Destruye la cookie para poder desloguearse
         req.session.destroy();    // Borra lo que se encuentra dentro de la sesion (la cierra)
