@@ -61,7 +61,7 @@ const controller = {
                 if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
                     res.cookie("recordarUsuario", userToLogin.id, {maxAge: (1000 * 60) * 5} )    // la cookie va a dejar logueado al usuario por 5 minutos por mas que cierre el navegador
                 }
-            return res.redirect ("/") // Accion que hace cuando la contraseña es correcta
+            return res.redirect ("/users/profile") // Accion que hace cuando la contraseña es correcta
         })
     },
         
