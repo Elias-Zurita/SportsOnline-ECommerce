@@ -15,7 +15,7 @@ Proyecto integrador realizado en Digital House.
 - User admin: administrador@gmail.com
 - Pass admin: 123
 - NOTA: Todos los usuarios creados tendran la categoria de cliente. 
-  Desde la cuenta del administrador se puede acceder al formulario de Edicion de productos, Listado y eliminacion de Usuarios.
+  Desde la cuenta del administrador se puede acceder al formulario de Edicion de productos, Listado  y eliminacion de Usuarios (en el header debajo de la busqueda de productos).
 
 ## DESARROLLADORES Y COLABORADORES :man_technologist:
 
