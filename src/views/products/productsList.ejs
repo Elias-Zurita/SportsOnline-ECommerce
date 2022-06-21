@@ -12,6 +12,10 @@
                                 <a href="/products/detail/<%=producto.id %>"><img class= "FotoDeProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
                             </div>
                             
+                            <div class="BotonDeDetalle">
+                                <a href="/products/detail/<%=producto.id %>"><button type=button>DETALLE</button></a>
+                            </div>
+
                             <div class="datosProducto">
                                 <ul>
                                     <li>Nombre:<%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
@@ -22,6 +26,9 @@
                                     <li>Deporte:<%= producto.Deporte.nombre %></li>
                                     <li>Precio:<%= producto.precio %></li>
                                 </ul>
+                            </div>
+                            <div class="BotonDeEdición">
+                                <a href="/products/edit/<%= producto.id %>"><button type=button>EDITAR PRODUCTO</button></a>
                             </div>
                         </div>
                     <% }) %>
