@@ -27,9 +27,11 @@
                                     <li>Precio:<%= producto.precio %></li>
                                 </ul>
                             </div>
-                            <div class="BotonDeEdición">
-                                <a href="/products/edit/<%= producto.id %>"><button type=button>EDITAR PRODUCTO</button></a>
-                            </div>
+                            <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
+                                <div class="BotonDeEdición">
+                                    <a href="/products/edit/<%= producto.id %>"><button type=button class="btn btn-warning">EDITAR PRODUCTO</button></a>
+                                </div>
+                            <%}%>
                         </div>
                     <% }) %>
                 </div>
