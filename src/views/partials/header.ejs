@@ -15,9 +15,9 @@
                     <ul type="None">
                         <li><a href="/users/profile"><img src="/img/avatar/<%=usuario.avatar %>"></li></a>
                         <div class= "nombreDeUsuario">
-                            <li><a href="/users/profile"><%= usuario.nombre %><%= usuario.apellido %></a></li>
+                            <li><a href="/users/profile"><%= usuario.nombre %> <%= usuario.apellido %></a></li>
                             <li><a href="/users/logout">Cerrar sesión</a></li>
-                            <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
+                            <li><a href="/productCart">Mis compras<i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
                 
                         </div>
                     </ul>
@@ -27,7 +27,7 @@
                 <ul class="right-navbar" type="None">
                 <li><a href="/users/register">Crear cuenta</a></li>
                 <li><a href="/users/login">Iniciar sesión</a></li>
-                <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
+                <li><a href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->
       
                 </ul>
             <% } %>

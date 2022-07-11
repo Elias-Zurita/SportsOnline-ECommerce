@@ -2,93 +2,29 @@
 
 <html>
     <%- include('../partials/head.ejs') %> <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+    <body>
+        <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<body>
+            <h1>Carrito de Compras <i class="fas fa-shopping-cart"></i></h1>
+                
+                <div class="carritoBody">
+                    <table class="tableCart">  <!-- Etiqueta para crear una tabla -->
+                        <thead class="tableHead">   <!-- Etiqueta para valores superiores de la tabla -->
+                            <tr>   <!-- Etiqueta para valores Table Row (fila) -->
+                                <th scope="col" colspan="2">PRODUCTO</th> <!-- coldspan es para la cantidad de columnas que abarcara -->
+                                <th scope="col">PRECIO UNITARIO</th>
+                                <th scope="col">CANTIDAD</th>
+                                <th scope="col">SUBTOTAL</th>
+                                <th scope="col">ELIMINAR</th>
+                            </tr>
+                        </thead>
+                            <tbody>   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
+                            
+                            </tbody>
+                    </table>
+                </div>
 
-    <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-    <main>
-    <h1>¡Tu Carro de Compras!</h1>
-
-    <div class="producto1">
-        <img class="imagen-producto" src="" alt="producto1" >
-        <div>
-            <div class="datos">Nombre del producto:Producto1</div>
-            <button id="borrar">Eliminar</button>
-
-        </div>
-        <div class="pos1">
-            <div class= "dato">Forma de entrega:</div>
-            <div class= "dato"><input type='checkbox' name = "dirección" value = "Domicilio" checke>Domicilio <input type='checkbox' name = "dirección" value = "Sucursal" checke>Sucursal</div>
-            <div class= "dato">Día de entrega<input type='date' name='fecha' value='2021-09-06' min='2021-09-01' max='2021-12-15'></div>
-        </div>
-        <div class="pos1">
-            <div class= "dato">Precio</div>
-            <div class= "dato">$--</div>
-        </div>
-    </div>
-
-        <div class="producto1">
-            <img class="imagen-producto" src="" alt="producto2" >
-            <div>
-                <div class="datos">Nombre del producto:Producto2</div>
-                <button id="borrar">Eliminar</button>
-    
-            </div>
-            <div class="pos2">
-                <div class="dato">Forma de entrega:</div>
-                <div class="dato"><input type='checkbox' name = "dirección" value = "Domicilio" checke > Domicilio</div>
-                <div class="dato">Día de entrega<input type='date' name='fecha' value='2021-09-06' min='2021-09-01' max='2021-12-15'></div>
-            </div>
-            <div class="pos2">
-                <div class="dato">Precio</div>
-                <div class="dato">$--</div>
-            </div>
-        </div>
-
-        <div class="producto1">
-            <img class="imagen-producto" src="" alt="producto3" >
-            <div>
-                <div class="datos">Nombre del producto:Producto3</div>
-                <button id="borrar">Eliminar</button>
-    
-            </div>
-            <div class="pos2">
-                <div class="dato">Forma de entrega:</div>
-                <div class="dato"><input type='checkbox' name = "dirección" value = "Domicilio" checke > Domicilio</div>
-                <div class="dato">Día de entrega<input type='date' name='fecha' value='2021-09-06' min='2021-09-01' max='2021-12-15'></div>
-            </div>
-            <div class="pos2">
-                <div class="dato">Precio</div>
-                <div class="dato">$--</div>
-            </div>
-        </div>
-
-        <div class="producto1">
-            <img class="imagen-producto" src="" alt="producto4">
-            <div>
-                <div class="datos">Nombre del producto:Producto4</div>
-                <button id="borrar">Eliminar</button>
-    
-            </div>
-            <div class="pos2">
-                <div class="dato">Forma de entrega: </div>
-                <div class="dato"><input type='checkbox' name = "dirección" value = "Domicilio" checke > Domicilio</div>
-                <div class="dato">Día de entrega<input type='date' name='fecha' value='2021-09-06' min='2021-09-01' max='2021-12-15'></div>
-            </div>
-            <div class="pos2">
-                <div class="dato">Precio</div>
-                <div class="dato">$--</div>
-            </div>
-        </div>
-        <div class='botones'>
-        <li class= 'boton'>Seguir comprando<li class= 'boton'>Elegir Método de Pago</li></li>
-        <li class= 'boton3'>¡COMPRAR AHORA!</li>
-        </div>
-    </main>
-
-    <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
-
-</body>
-
+        <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+    </body>
 </html>

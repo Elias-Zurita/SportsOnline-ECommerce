@@ -17,6 +17,26 @@ const validations = {
             .bail() 
             .isLength({min:2}) // valida que el apellido tenga mas de 2 caracteres //
             .withMessage("El apellido debe tener al menos 2 caracteres"), 
+        check ("pais")
+            .notEmpty()  // valida que el pais no este sin seleccionar //
+            .withMessage("Tienes que seleccionar tu pais"),
+        check ("codigo_postal")
+            .notEmpty()  // valida que el codigo postal no este vacio //
+            .withMessage("Tienes que escribir un codigo postal")
+            .bail() 
+            .isLength({min:4}) // valida que el apellido tenga mas de 4 caracteres //
+            .withMessage("El codigo postal debe tener al menos 4 caracteres"),
+        check ("fecha_de_nacimiento") 
+            .notEmpty()  // valida que la fecha de nacimiento no este vacia //
+            .withMessage("Tienes que seleccionar tu fecha de nacimiento"),
+        check ("telefono")
+            .notEmpty()  // valida que el telefono no este vacio //
+            .withMessage("Tienes que escribir un telefono")
+            .bail()
+            .isNumeric({no_symbols:true})
+            .withMessage("El telefono solo puede ser numerico") // valida que el telefono sea numerico y no letras
+            .isLength({min:10}) // valida que el telefono tenga mas de 10 caracteres //
+            .withMessage("El telefono debe tener al menos 10 numeros"),
         check ("email")
             .notEmpty() // valida que el campo de email no este vacio //
             .withMessage("Tienes que escribir un email")

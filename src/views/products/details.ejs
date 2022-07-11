@@ -8,91 +8,62 @@
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
     <main>
-        <div class="masterContainer"> <!-- Version Desktop Inicio -->
-            <div class="container">
-                <div class="box">BOX 1</div>
-                <div class="box">BOX 2</div>
-                <div class="box">BOX 3</div>
-            </div>
-            <div class="mainBox">
-                <img class="img" src="/img/products/<%= producto.imagen %>">
-            </div>
-            <div class="container1">
-                <p class="detailProduct">Nombre de Producto: <%= producto.nombre %> </p>
-                <p class="detailProduct">Categoria: <%= producto.Categoria.nombre %></p> <!-- Categoria (como lo llame en el alias) -->
-                <p class="detailProduct">Marca: <%= producto.Marca.nombre %></p>
-                <p class="detailProduct">Genero: <%= producto.Genero.nombre %></p>
-                <p class="detailProduct">Deporte: <%= producto.Deporte.nombre %></p>
-                <p class="detailProduct">Precio: $<%= producto.precio %></p>
-                <p class="detailProduct">Envios y Devoluciones</p>
-                <p class="detailProduct">Seleccione su talla</p>
-                <div class="container3">
-                </div>
-                <button class="BotonDeCompra" type="submit">Añadir al carrito de compra</button>
-                <div class="subBox1">
-                    <p>Descripcion: <%= producto.descripcion %></p>
-                </div>
-                </div>
 
-        </div> <!-- Version Desktop Fin -->
+        <div class="CajaMasterDetalle">
+            
+            <div class="cajaIzquierda">
+                <div class="cajaImagenDetalle">
+                    <img class="fotoDetalle" src="/img/products/<%= producto.imagen %>">
+                </div>
+            </div>
+
+            <form action="/productCart/add/<%= producto.id %>" method="POST">
+                <div class="cajaDerecha">
+                    <div class="tituloProductoDetalle">NOMBRE DEL PRODUCTO</div>
+                    <div class="precioDetalle">  $21213</div>
+                    <div class="tarjetasDetalle"><img src="/img/tarjetas.jpg" alt="tarjetas"></div>
+                    <div class="InfoDetalle">
+                        <p>MARCA: <%= producto.Marca.nombre %></p>
+                        <p>DEPORTE: <%= producto.Deporte.nombre %></p>
+                        <p>CATEGORIA: <%= producto.Categoria.nombre %></p> <!-- Categoria (como lo llame en el alias) -->
+                        <p>GENERO: <%= producto.Genero.nombre %></p>
+                    </div>
+
+                    <div class="cajaSelectoraDetalle">
+                        <div class="talleProducto">
+                                Talle
+                            <div class="cajaSelectora">
+                                <select class= "selectTalleDetalle">
+                                    <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
+                                    <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
+                                        <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                                    </option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="talleProductoDetalle">
+                            <div>Cantidad</div>
+                            <input class="inputTalleDetalle" type="number" name="cantidad" id="cantidad" value="1">
+                        </div>
+                        <div class="cajaAgregarProducto">
+                            <button class="botonAgregarProducto" type="submit">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                    <div class="descripcionDetalle">
+                        <p>DESCRIPCION: <%= producto.descripcion %></p>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <!--Botón de Editar Producto-->
         <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver este boton -->
             <div class="BotonDeEdición">
-            <a href="/products/edit/<%= producto.id %>"><button type=button>Editar Producto</button></a>
+            <a href="/products/edit/<%= producto.id %>"><button type=button>EDITAR PRODUCTO</button></a>
             </div>
         <%}%>
 
-        <div class="masterContainerM"> <!-- Version Mobile Inicio -->
-            <p>Nombre del Producto</p>
-            <div class="mainBoxM">
-                <img class="img" src="/img/fotoP.jpg">
-            </div>
-            <div class="miniContainer">
-                <div class="box1M">1</div>
-                <div class="box1M">2</div>
-                <div class="box1M">3</div>
-                <div class="box1M">4</div>
-                <div class="box1M">5</div>
-            </div>
-            <div class="descProM">Color: IdColor</div>
-            <div class="colorContainer">
-                <div class="box2M">1</div>
-                <div class="box2M">2</div>
-                <div class="box2M">3</div>
-                <div class="box2M">4</div>
-                <div class="box2M">5</div>
-                <div class="box2M">6</div>
-            </div>    
-            <div class="descProM">Seleccione una Talla</div>   
-            <div class="tallaContainer">
-                <div class="box3M">1</div>
-                <div class="box3M">2</div>
-                <div class="box3M">3</div>
-                <div class="box3M">4</div>
-                <div class="box3M">5</div>
-                <div class="box3M">6</div>
-            </div>  
-            <div class="descProductM">
-                <p>Detalles de Producto</p>
-            </div>
-        <div>          
-           <ul class="ListaCollapse">
-             <li> <a onclick="this.parentElement.classList.toggle('active');"> Caracteristicas Tecnicas <i class= "flechita fas fa-chevron-down"></i></a>
-                    <div class="info">  
-                    </div>
-                </li>
-                <li><a onclick="this.parentElement.classList.toggle('active');">Evio y Devoluciones <i class="flechita fas fa-chevron-down"></i></a>
-                    <div class="info">
-                        <p></p>
-                    </div>
-                </li>
-                    <div class="info">
-                    </div>
-                </li>
-             </ul>         
-        </div> 
-        </div> 
     </main>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->

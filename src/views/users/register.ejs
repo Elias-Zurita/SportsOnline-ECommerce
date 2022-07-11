@@ -39,6 +39,61 @@
                     <p><%= errors.apellido.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
                   </div>
                 <% } %>  
+
+            <label>Selecciona tu Pais:</label>
+              <select 
+                name="pais"
+                class="form-select <%= locals.errors && errors.pais ? 'is-invalid' : null %>">
+                  <option value="">Paises</option><br>
+                    <% let pais = ['Argentina', 'Brasil', 'Paraguay', 'Uruguay', 'Bolivia', 'Chile', 'Peru', 'Ecuador', 'Colombia', 'Mexico', 'Venezuela', 'Estados Unidos', 'Canada']; %>
+                    <% for (const unPais of pais) { %>
+                  <option value= "<%= unPais %>"
+                    <%= locals.oldData && (unPais === oldData.pais) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->
+                    <%= unPais %>
+                  </option>
+                  <% } %>
+              </select>
+                <% if (locals.errors && errors.pais) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en pais -->
+                  <div class="text-danger">
+                    <p><%= errors.pais.msg %></p> <!-- muestra el mensaje que debe llenar el campo de pais -->
+                  </div>
+                <% } %>  
+
+            <label>Codigo Postal:</label>
+              <input 
+                type="text"
+                name="codigo_postal"
+                class="form-control <%= locals.errors && errors.codigo_postal ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.codigo_postal: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                <% if (locals.errors && errors.codigo_postal) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                  <div class="text-danger">
+                    <p><%= errors.codigo_postal.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                  </div>
+                <% } %>  
+
+            <label>Fecha de Nacimiento:</label>
+              <input 
+                type="date"
+                name="fecha_de_nacimiento"
+                class="form-control <%= locals.errors && errors.fecha_de_nacimiento ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.fecha_de_nacimiento: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                <% if (locals.errors && errors.fecha_de_nacimiento) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                  <div class="text-danger">
+                    <p><%= errors.fecha_de_nacimiento.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                  </div>
+                <% } %>  
+
+            <label>Telefono:</label>
+              <input 
+                type="text"
+                name="telefono"
+                class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.telefono: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                <% if (locals.errors && errors.telefono) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                  <div class="text-danger">
+                    <p><%= errors.telefono.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                  </div>
+                <% } %>  
                                                  
             <label>Email: </label>
               <input 

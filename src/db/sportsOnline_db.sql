@@ -54,7 +54,7 @@ CREATE TABLE genero (
 INSERT INTO genero (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (1, 'Hombre', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (2, 'Mujer', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(3, 'N/A', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(3, 'Unisex', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de marca
 CREATE TABLE marca (
@@ -75,6 +75,29 @@ INSERT INTO marca (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (7, 'Babolat', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (8, 'Wilson', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (9, 'SportsOnline', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+
+-- Creacion de tabla de ordenes
+CREATE TABLE ordenes (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  fecha DATETIME NOT NULL,
+  precio_total INT UNSIGNED NOT NULL,
+  usuario_id INT UNSIGNED,
+  created_at TIMESTAMP DEFAULT current_timestamp(),
+  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
+
+-- Creacion de tabla de items
+CREATE TABLE items (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  cantidad INT UNSIGNED NOT NULL,
+  subtotal INT UNSIGNED NOT NULL,
+  imagen varchar (50) NOT NULL,
+  producto_id INT UNSIGNED,
+  usuario_id INT UNSIGNED,
+  ordenes_id INT UNSIGNED,
+  created_at TIMESTAMP DEFAULT current_timestamp(),
+  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
 
 -- Creacion de tabla de perfil
 CREATE TABLE perfil (
@@ -147,7 +170,7 @@ INSERT INTO talle (`id`, `talle`, `created_at`, `updated_at`) VALUES
 (11, '43', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (12, '44', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (13, '45', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(14, 'N/A', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(14, 'UNICO', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de usuario
 CREATE TABLE usuario (
@@ -157,6 +180,10 @@ CREATE TABLE usuario (
   email varchar(50) NOT NULL,
   contraseña varchar(150) NOT NULL,
   avatar varchar(100) NOT NULL,
+  pais varchar(100) NOT NULL,
+  codigo_postal varchar(100) NOT NULL,
+  fecha_de_nacimiento DATE NOT NULL,
+  telefono varchar (100) NOT NULL,
   perfil_id INT UNSIGNED,
   created_at TIMESTAMP DEFAULT current_timestamp(),
   updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -173,12 +200,23 @@ ALTER TABLE producto
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),
 ADD FOREIGN KEY (deporte_id) REFERENCES deporte(id),
 ADD FOREIGN KEY (marca_id) REFERENCES marca(id),
-ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id);
+ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id),
+ADD FOREIGN KEY (items_id) REFERENCES items(id);
 
 -- Creacion de Foreign Key Tabla pivot
 ALTER TABLE producto_talle 
 ADD FOREIGN KEY (producto_id) REFERENCES producto(id),
 ADD FOREIGN KEY (talle_id) REFERENCES talle(id);
+
+-- Creacion de Foreign Key items
+ALTER TABLE items
+ADD FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+ADD FOREIGN KEY (ordenes_id) REFERENCES ordenes(id),
+ADD FOREIGN KEY (producto_id) REFERENCES producto(id);
+
+-- Creacion de Foreign Key ordenes
+ALTER TABLE ordenes
+ADD FOREIGN KEY (usuario_id) REFERENCES usuario(id);
 
 -- Creacion de Foreign Key usuario
 ALTER TABLE usuario

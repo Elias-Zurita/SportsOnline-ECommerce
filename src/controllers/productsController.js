@@ -65,19 +65,26 @@ const productsController = {
     },
     
     detalle: function (req, res){
-        db.Producto.findByPk(req.params.id, {
+        let pedidoProducto = db.Producto.findByPk(req.params.id,{
             include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
-            {association: "Marca"}, {association: "Categoria"}] // los nombres de las asociaciones (as) en el modelo de productos
-        })
-            .then(function(producto){
-                
-                res.render("products/details", {producto:producto}) // incluye "producto" para que se vean en el detalle
-            })
+            {association: "Marca"}, {association: "Categoria"}] 
+        });
+        let pedidoTalle = db.Talle.findAll();
+        let pedidoGenero = db.Genero.findAll();
+        let pedidoDeporte = db.Deporte.findAll();
+        let pedidoMarca = db.Marca.findAll();
+        let pedidoCategoria = db.Categoria.findAll();
+        
+        Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
+            .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
+                res.render("products/details", {producto:values[0], talles: values[1], generos:values[2], 
+                    deportes:values[3], marcas:values[4], categorias:values[5]})
+            }) 
     },
 
     editar: function (req,res){
         let pedidoProducto = db.Producto.findByPk(req.params.id,{
-            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en la edicion
             {association: "Marca"}, {association: "Categoria"}] 
         });
         let pedidoTalle = db.Talle.findAll();
@@ -119,11 +126,8 @@ const productsController = {
             }
         })
         res.redirect("/products/list");
-    },
-
-    carrito: function(req, res){
-        res.render ("products/productCart")
     }
+
 }
 
 module.exports = productsController;

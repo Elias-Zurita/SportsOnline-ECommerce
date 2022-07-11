@@ -11,6 +11,7 @@ const cookies = require("cookie-parser") // Es una libreria que se usa para guar
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const productCartRoutes = require('./routes/productCartRoutes');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(localsMiddleware);
 app.use('/', mainRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
+app.use("/productCart", productCartRoutes);
 
 
 // catch 404 and forward to error handler

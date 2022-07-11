@@ -30,9 +30,6 @@ router.post("/edit/:id", adminMiddleware, validations.productEdit, productsContr
 // Procesa la eliminacion del producto
 router.post("/delete/:id", adminMiddleware, productsController.eliminar);
 
-// Formulario de carrito de compras
-router.get("/productCart", productsController.carrito);
-
 // Formulario de detalle de producto
 router.get("/detail/:id", productsController.detalle);
 

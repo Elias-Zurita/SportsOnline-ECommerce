@@ -23,6 +23,10 @@ const controller = {
             apellido: req.body.apellido,
             email: req.body.email,
             contraseña: bcryptjs.hashSync(req.body.contraseña, 10),  // Encripta la contraseña
+            pais: req.body.pais,
+            codigo_postal:req.body.codigo_postal,
+            fecha_de_nacimiento:req.body.fecha_de_nacimiento,
+            telefono:req.body.telefono,
             avatar: req.file.filename, 
             perfil_id:2 // Por default todos los perfiles creados van a ser usuarios (clientes)
             }).then(function(){            
@@ -92,7 +96,11 @@ const controller = {
         db.Usuario.update({
             nombre: req.body.nombre,
             apellido: req.body.apellido,
-            email: req.body.email
+            email: req.body.email,
+            pais: req.body.pais,
+            codigo_postal:req.body.codigo_postal,
+            fecha_de_nacimiento:req.body.fecha_de_nacimiento,
+            telefono:req.body.telefono
         },{
             where: {
                 id: req.params.id // el id es lo que llega por el url

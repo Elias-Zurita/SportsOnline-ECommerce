@@ -48,28 +48,32 @@ module.exports = function(sequelize, dataTypes){
                 foreignKey: "producto_id",
                 otherKey: "talle_id",
                 timestamps: false
-            });
+            }),
             
             Producto.belongsTo(models.Genero, {   // el producto tiene un solo genero
                 as: "Genero",
                 foreignKey: "genero_id"
-            });
+            }),
 
             Producto.belongsTo(models.Deporte, {   // el producto tiene un solo deporte
                 as: "Deporte",
                 foreignKey: "deporte_id"
-            });
+            }),
 
             Producto.belongsTo(models.Marca, {   // el producto tiene una sola marca
                 as: "Marca",
                 foreignKey: "marca_id"
-            });
+            }),
 
             Producto.belongsTo(models.Categoria, {   // el producto tiene una sola categoria
                 as: "Categoria",
                 foreignKey: "categoria_id"
-            });
-        }
+            }),
+            Producto.hasMany(models.Items,{    //  el producto tiene muchos items
+                as: "Items",
+                foreignKey: "producto_id"
+            })
+        };
 
         return Producto
     }

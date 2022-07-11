@@ -23,6 +23,18 @@ module.exports = function(sequelize, dataTypes){
             avatar:{
                 type: dataTypes.STRING
             },
+            pais:{
+                type: dataTypes.STRING
+            },
+            codigo_postal:{
+                type:dataTypes.INTEGER
+            },
+            fecha_de_nacimiento:{
+                type: dataTypes.DATE
+            },
+            telefono:{
+                type: dataTypes.STRING
+            },
             perfil_id:{
                 type: dataTypes.INTEGER
             },
@@ -40,6 +52,16 @@ module.exports = function(sequelize, dataTypes){
             Usuario.belongsTo(models.Perfil, {   // el usuario tiene un solo perfil
                 as: "Perfil",
                 foreignKey: "perfil_id"
+            }),
+            /*
+            Usuario.belongsTo(models.Ordenes,{   // el usuario tiene una sola orden
+                as:"Ordenes",                       
+                foreignKey:"ordenes_id"            ESTO NO ESTA EN BLUENAMI
+            }),
+            */
+            Usuario.hasMany(models.Items,{   // el usuario tiene muchos items
+                as: "Items",
+                foreignKey: "usuario_id"
             });
         }
 
