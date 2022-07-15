@@ -12,19 +12,32 @@ module.exports = function(sequelize, dataTypes){
                 type: dataTypes.INTEGER
             },
             subtotal: {
+                allowNull: true,
                 type: dataTypes.INTEGER
             },
             producto_id:{
-                type: dataTypes.INTEGER
+                allowNull: false,
+                type: dataTypes.STRING
             },
             ordenes_id:{
+                allowNull: true,
                 type: dataTypes.INTEGER
             },
             usuario_id:{
+                allowNull: false,
                 type: dataTypes.INTEGER
             },
             imagen: {
                 type: dataTypes.STRING 
+            },
+            created_at:    {
+                allowNull: true,
+                type: dataTypes.DATE
+            },
+            updated_at:
+            {
+                allowNull: true,
+                type: dataTypes.DATE
             },
         }
         
@@ -48,7 +61,7 @@ module.exports = function(sequelize, dataTypes){
             Items.belongsTo(models.Producto,{   // el item tiene un solo producto
                 as:"Producto",
                 foreignKey:"producto_id"
-            });
+            })
         }
 
         return Items

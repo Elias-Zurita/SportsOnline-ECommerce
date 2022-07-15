@@ -6,7 +6,7 @@
         <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
             <h1>Carrito de Compras <i class="fas fa-shopping-cart"></i></h1>
-                
+                           
                 <div class="carritoBody">
                     <table class="tableCart">  <!-- Etiqueta para crear una tabla -->
                         <thead class="tableHead">   <!-- Etiqueta para valores superiores de la tabla -->
@@ -19,11 +19,28 @@
                             </tr>
                         </thead>
                             <tbody>   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
-                            
+                                <% items.forEach(item=> %> 
+                                        <form method="POST">
+                                    <tr class="filaCarrito">
+                                        <td><img src="/img/products/<%= item.producto.imagen %>"></td>
+                                        <td><p><%= item.producto.nombre%></p></td>
+                                        <td><p><%=item.producto.precio%></p></td>
+                                        <td><p><%=item.cantidad%></p></td>
+                                        <td>$<p><%=item.subtotal%></p></td>
+                                        </form>
+                                        <td><form action="/productCart/delete/<%=item.id %>/?_method=DELETE" method="POST">
+                                            <button type="submit" class="botonBorrar"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <% }) %>  
                             </tbody>
                     </table>
-                </div>
 
+                    <div class="cajaCarritoPrecioTotal">
+                        <p>$<%= precioTotal %>.-</p>
+                    </div>
+                </div>
 
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
     </body>

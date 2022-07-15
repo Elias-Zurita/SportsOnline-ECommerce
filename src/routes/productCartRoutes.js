@@ -5,11 +5,20 @@ const router = express.Router();
 const productCartController = require("../controllers/productCartController");
 
 // Middlewares //
-const uploadFile = require('../middlewares/multerMiddlewareProducts');
-const validations = require('../middlewares/validateMiddleware');
-const adminMiddleware = require('../middlewares/adminMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Formulario de carrito de compras
 router.get("/", productCartController.carrito);
+
+
+/*
+// Procesa agregar un producto con el authMiddleware (solo si hay alguien logueado)
+router.post("/add/:id", authMiddleware, productCartController.agregarProducto);
+
+// agregado asi nomas
+router.post("/order/add", authMiddleware ,productCartController.addOrder);
+router.delete("/delete/:id" , productCartController.destroyItem);
+
+*/
 
 module.exports = router;

@@ -76,29 +76,6 @@ INSERT INTO marca (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (8, 'Wilson', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (9, 'SportsOnline', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
--- Creacion de tabla de ordenes
-CREATE TABLE ordenes (
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  fecha DATETIME NOT NULL,
-  precio_total INT UNSIGNED NOT NULL,
-  usuario_id INT UNSIGNED,
-  created_at TIMESTAMP DEFAULT current_timestamp(),
-  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
-);
-
--- Creacion de tabla de items
-CREATE TABLE items (
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  cantidad INT UNSIGNED NOT NULL,
-  subtotal INT UNSIGNED NOT NULL,
-  imagen varchar (50) NOT NULL,
-  producto_id INT UNSIGNED,
-  usuario_id INT UNSIGNED,
-  ordenes_id INT UNSIGNED,
-  created_at TIMESTAMP DEFAULT current_timestamp(),
-  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
-);
-
 -- Creacion de tabla de perfil
 CREATE TABLE perfil (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -115,7 +92,7 @@ INSERT INTO perfil (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 -- Creacion de tabla de producto
 CREATE TABLE producto (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(50) NOT NULL,
+  nombre varchar(100) NOT NULL,
   precio smallint(6) NOT NULL,
   descripcion text NOT NULL,
   imagen varchar(100) NOT NULL,
@@ -195,13 +172,35 @@ INSERT INTO usuario (`id`, `nombre`, `apellido`, `email`, `contraseña`, `avatar
 (5, 'Cristiano', 'Ronaldo', 'ronaldo@gmail.com', '$2a$10$gZghUHemiJKuqECqWAfB9Ot1SLropi30RN/iaJzMw7fsai7i6As/K', 'avatar1655750333885.jpg', 2, '2022-06-20 18:38:53', '2022-06-20 18:38:53'),
 (6, 'Elias', 'Zurita', 'eliass.zurita@gmail.com', '$2a$10$IBBSZqBgQqZsT9zWV7/O7.pYgfcBazW/O9Ztvqhfe2L8y9tXxkDKK', 'avatar1655750349595.jpg', 2, '2022-06-20 18:39:09', '2022-06-20 18:39:09');
 
+-- Creacion de tabla de ordenes
+CREATE TABLE ordenes (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  fecha DATETIME NOT NULL,
+  precio_total DECIMAL NOT NULL,
+  usuario_id INT UNSIGNED,
+  created_at TIMESTAMP DEFAULT current_timestamp(),
+  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
+
+-- Creacion de tabla de items
+CREATE TABLE items (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  cantidad INT UNSIGNED NOT NULL,
+  subtotal INT UNSIGNED NOT NULL,
+  imagen varchar (50) NOT NULL,
+  producto_id INT UNSIGNED,
+  usuario_id INT UNSIGNED,
+  ordenes_id INT UNSIGNED,
+  created_at TIMESTAMP DEFAULT current_timestamp(),
+  updated_at TIMESTAMP DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
+
 -- Creacion de Foreign Key producto
 ALTER TABLE producto
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),
 ADD FOREIGN KEY (deporte_id) REFERENCES deporte(id),
 ADD FOREIGN KEY (marca_id) REFERENCES marca(id),
 ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id),
-ADD FOREIGN KEY (items_id) REFERENCES items(id);
 
 -- Creacion de Foreign Key Tabla pivot
 ALTER TABLE producto_talle 

@@ -18,4 +18,12 @@ table.tableCart th{
     font-family: "calibri";
     padding: 10px;
     text-align:left;
+    font-size: xx-large;
 }
+
+.filaCarrito{
+    font-family: "calibri";
+    text-align:center;
+    font-size: large;
+}
+

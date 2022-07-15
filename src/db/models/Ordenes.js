@@ -9,13 +9,24 @@ module.exports = function(sequelize, dataTypes){
                 autoIncrement : true
             },
             fecha: {
+                allowNull: false,
                 type: dataTypes.DATE
             },
             precio_total: {
+                allowNull: false,
                 type: dataTypes.DECIMAL
             },
             usuario_id: {
+                allowNull: false,
                 type: dataTypes.INTEGER
+            },
+            created_at: {
+                allowNull: true,
+                type: dataTypes.DATE
+            },
+            updated_at: {
+                allowNull: true,
+                type: dataTypes.DATE
             },
         }
         

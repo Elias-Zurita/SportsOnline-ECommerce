@@ -68,11 +68,12 @@ module.exports = function(sequelize, dataTypes){
             Producto.belongsTo(models.Categoria, {   // el producto tiene una sola categoria
                 as: "Categoria",
                 foreignKey: "categoria_id"
-            }),
+            })
             Producto.hasMany(models.Items,{    //  el producto tiene muchos items
                 as: "Items",
                 foreignKey: "producto_id"
             })
+            
         };
 
         return Producto

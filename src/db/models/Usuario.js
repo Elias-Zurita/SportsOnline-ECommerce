@@ -38,6 +38,15 @@ module.exports = function(sequelize, dataTypes){
             perfil_id:{
                 type: dataTypes.INTEGER
             },
+            created_at:    {
+                allowNull: true,
+                 type: dataTypes.DATE
+             },
+             updated_at:
+             {
+                 allowNull: true,
+                 type: dataTypes.DATE
+             },
         }
         
         let config = {
@@ -54,13 +63,13 @@ module.exports = function(sequelize, dataTypes){
                 foreignKey: "perfil_id"
             }),
             /*
-            Usuario.belongsTo(models.Ordenes,{   // el usuario tiene una sola orden
+            Usuario.hasMany(models.Ordenes,{   // el usuario tiene muchas ordenes
                 as:"Ordenes",                       
-                foreignKey:"ordenes_id"            ESTO NO ESTA EN BLUENAMI
-            }),
-            */
+                foreignKey:"usuario_id"
+            }),   blue nami no lo tiene */ 
+            
             Usuario.hasMany(models.Items,{   // el usuario tiene muchos items
-                as: "Items",
+                as: "Items2",
                 foreignKey: "usuario_id"
             });
         }
