@@ -26,6 +26,9 @@ module.exports = function(sequelize, dataTypes){
             pais:{
                 type: dataTypes.STRING
             },
+            direccion:{
+                type:dataTypes.STRING
+            },
             codigo_postal:{
                 type:dataTypes.INTEGER
             },

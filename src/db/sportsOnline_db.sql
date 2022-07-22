@@ -158,6 +158,7 @@ CREATE TABLE usuario (
   contraseña varchar(150) NOT NULL,
   avatar varchar(100) NOT NULL,
   pais varchar(100) NOT NULL,
+  direccion varchar(100) NOT NULL,
   codigo_postal varchar(100) NOT NULL,
   fecha_de_nacimiento DATE NOT NULL,
   telefono varchar (100) NOT NULL,

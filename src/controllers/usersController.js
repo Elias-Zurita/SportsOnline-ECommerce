@@ -24,6 +24,7 @@ const controller = {
             email: req.body.email,
             contraseña: bcryptjs.hashSync(req.body.contraseña, 10),  // Encripta la contraseña
             pais: req.body.pais,
+            direccion:req.body.direccion,
             codigo_postal:req.body.codigo_postal,
             fecha_de_nacimiento:req.body.fecha_de_nacimiento,
             telefono:req.body.telefono,

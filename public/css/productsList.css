@@ -1,32 +1,93 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.todosLosProductos{
+.cajaBuscardorListado{
     display: flex;
-    flex-direction: row;
+    margin-left: 30%;
+    font-size: 30px;
+    font-weight: bold;
 }
-.cajaDeProducto{
+
+.buscar{
+    position: absolute;
+    margin-left: 20px;
+}
+
+.buscar input{    /* campo de escritura para busqueda */
+    width: 0px;  /* oculta a cero el campo de busqueda (desde el ancho) */
+    height: 45px;  /* altura del campo donde escribis la busqueda */
+    padding: 0 20px;
+    font-size: 20px; 
+    color: rgb(0, 0, 0);
+    outline-style: ridge;  /* estilo del contorno */
+    border-radius: 30px;
+    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+.iconoRunner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center; /* centra al muñeco runner */
+    color: rgb(25, 255, 244);
+    font-size: xx-large;
+    border-radius: 50%;  /* le da forma redonda a la caja del runner */
+    cursor: pointer; /* pone la manito de hipervinculo al pasar el mouse sobre la lupa */
+}
+
+.buscar:hover input{ 
+    width: 500px;   /* ancho que se expandira al pasar el cursor sobre la lupa */
+}
+
+.bodyProductsList{
+    text-align: center;
+}
+
+.bodyProductsList  :hover{       
+    transform: scale(1.1);  /* aumenta el tamaño de la caja de los productos */
+    transition: opacity .2s;
+}
+
+article.cajaDeProducto{
     font-weight: 200;
-    color: beige;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    display: flex;
-    width: 50%;
-    margin: 5px;
+    display: inline-block; /* se ponen en horizontal respetando los tamaños que le paso */
+    justify-content: space-around;
+    width: 18%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    height: auto;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); /* esta tapado el efecto sombra por el solido de abajo */
+    border:solid black 10px;
 }
 
-.cajaDeProducto img {
-    width: 20%;
-    border:blanchedalmond;
-    border-style:double;
+.cajaFotoDeProducto{
+    width: 100%;
+    height: 100%;
+    border:solid rgb(189, 82, 82) 8px;
+}
+
+.cajaFotoDeProducto img{
+    width: 200px;   /*  al ser imagen se ajusta en pixeles */
+    height: 200px;  /*  al ser imagen se ajusta en pixeles */
+    border-style: double;
     border-radius: 10%;
+    border:solid rgb(90, 57, 211) 5px;
 }
 
-.cajaFotoDeProducto :hover{  /*  al pasar el mouse por la foto del producto */ 
-    transform: scale(1.2);  /* aumenta el tamaño de la imagen */
-    box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 15%);
-    z-index: 10;
+.cajaFotoDeProducto :hover{
+    transform: none;  /* aumenta el tamaño de la caja de los productos */
+    transition: opacity .2s;
+}
+
+.datosProducto:hover{
+    transform: none;  /* aumenta el tamaño de la caja de los productos */
+    transition: opacity .2s;
+}
+
+.datosProducto{
+    border:solid rgb(217, 228, 60) 5px;
 }

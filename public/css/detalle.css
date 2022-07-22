@@ -1,41 +1,56 @@
+.mainDetalle{
+    background-color: white;
+}
+
 
 .CajaMasterDetalle{
     display: flex; /* se manejan con flex */
-    flex-direction: row; /* una caja al lado de la otra */
     width: 100%; /* ancho */
     height: 100%; /* alto */
     border:solid black 10px;
+    flex-grow: 1;
 }
 
 .cajaIzquierda{
     display: flex;
     width: 60%;
     height: 100%;
-    border: solid rgb(61, 43, 226) 8px
+    border: solid rgb(61, 43, 226) 8px;
+    margin-top: auto; /* centra la imagen en el plano vertical */
+    margin-bottom: auto; /* centra la imagen en el plano vertical */
+    margin-top: auto; /* centra la imagen en el plano vertical */
+    margin-bottom: auto; /* centra la imagen en el plano vertical */
 }
 
 .cajaDerecha{
     display: flex;
     flex-direction:column;
-    width: 100%;
+    width: 40%;
     height: 100%;
-    border: solid yellowgreen 8px
+    border: solid yellowgreen 8px;
 }
 
 .cajaImagenDetalle{
     margin-left: auto; /* centra la imagen en el plano horizontal */
     margin-right: auto; /* centra la imagen en el plano horizontal */
     border: solid rgb(214, 226, 43) 8px;
-    height: 60%;
+    height: 100%;
     width: 60%;  /* ocupa el 60% de la caja de la izquierda */
 }
 
-.fotoDetalle { /* foto del producto en detalle */
-    width: 100%;   /* Ocupara el 100% de su caja */
+.cajaImagenDetalle img{
+    width: 650px;   /* al ser imagen se utiliza pixeles */
+    height: 650px;  /* al ser imagen se utiliza pixeles */
+}
+
+.tituloDeporteDetalle{
+    margin-left: 2%;
+    font-size: large;
+    font-weight: bold;
 }
 
 .tituloProductoDetalle{
-    text-align: center;
+    margin-left: 2%;
     font-family: Arial black;
     font-size: xx-large;
     font-weight: bolder; /* Letra en negrita */
@@ -43,8 +58,10 @@
 }
 
 .precioDetalle{
+    margin-top: 1%;
     text-align: left;
     font-family: Franklin Gothic Heavy;
+    font-style: italic;
     font-size: xxx-large;
     font-weight: bolder; /* Letra en negrita */
     border: solid green;
@@ -52,16 +69,41 @@
 }
 
 .tarjetasDetalle{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
     text-align: left;
     border: solid rgb(0, 87, 128);
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
 }
 
-.tarjetasDetalle img{
-    width: 30%;
+.fa-credit-card{
+    font-size: 40px;
+    align-items: center;
+    color: goldenrod;
+}
+
+.cuotas {
+    font-size: 27px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(43, 210, 216);
+    margin-left: 4%;   
+    text-align: center;
+    width: 40%;
+    border-radius: 15px;
+}
+
+.cambio{
+    font-size: 20px;
+    color: rgb(39, 230, 39);
+    margin-left: 2%;
+    margin-top: 1%;
 }
 
 .InfoDetalle{
+    margin-top: 1%;
     text-align: left;
     border: solid rgb(9, 11, 12);
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
@@ -70,6 +112,7 @@
 }
 
 .cajaSelectoraDetalle{
+    margin-top: 1%;
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
     border: solid white;
     display: flex;
@@ -86,7 +129,7 @@
 
 .selectTalleDetalle{
     text-align: center; 
-    background-color: tomato;  /* colores del select del talle */
+    background-color: rgb(43, 210, 216);  /* colores del select del talle */
     width: 50%;
 }
 
@@ -103,7 +146,7 @@
 }
 
 .inputTalleDetalle{
-    background-color: blue;
+    background-color: rgb(43, 210, 216);
     text-align: center;
     font-family: Franklin Gothic Heavy;
     font-size: large;
@@ -117,18 +160,74 @@
 }
 
 .botonAgregarProducto{
-    width: 80%;
+    width: 70%;
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
+    margin-left: 8%;
+    background-color: rgb(0, 187, 125);
+}
+
+.cajaAgregarProducto button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(4, 85, 58);
+    transform: scale(1);
+    border-radius: 50px;
+    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+.compartirRedes{
+    margin-left: 2%;
+    margin-top: 1%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Redes{
+    margin-top: 2px;
+}
+
+.cajaEnvioGratis{
+    margin-left: 3%;
+    margin-top: 1%;
+    display: flex;
+    background-color: rgb(43, 210, 216);
+    color: black;
+    width: 45%;
+    transform: skew(-15deg);   /* Dobla la caja  */
+    padding: 10px 10px 10px 20px;  /* Separacion interna de 20 px a la izquierda (camion) */
+}
+
+.cajaEnvio{
+    margin-left: 4%;
+}
+
+.cajaCamioncito{
+    font-size: larger;
+}
+
+.promoEnvio{
+    font-weight:bold;  /* letra en negrita */
+    font-size: larger;
+}
+
+.comprasSuperiores{
+    color: rgb(0, 0, 0);
+}
+
+.especificaciones{
+    font-size: 30px;
+    font-style: italic;
 }
 
 .descripcionDetalle{
+    margin-top: 1%;
     border: solid rgb(223, 205, 43);
     margin-left: 2%;
     text-align: left;
     font-family: Franklin Gothic Heavy;
     font-size: large;
-    height: 100%;
+    display: flex;
+    flex-grow: 1; /* ocupa todo el espacio disponible */
 }
 
 .BotonDeEdición{

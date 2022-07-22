@@ -20,6 +20,12 @@ const validations = {
         check ("pais")
             .notEmpty()  // valida que el pais no este sin seleccionar //
             .withMessage("Tienes que seleccionar tu pais"),
+        check ("direccion")
+            .notEmpty()  // valida que la direccion no este vacia //
+            .withMessage("Tienes que escribir una direccion")
+            .bail() 
+            .isLength({min:4}) // valida que la direccion tenga mas de 4 caracteres //
+            .withMessage("La direccion debe tener al menos 4 caracteres"),
         check ("codigo_postal")
             .notEmpty()  // valida que el codigo postal no este vacio //
             .withMessage("Tienes que escribir un codigo postal")

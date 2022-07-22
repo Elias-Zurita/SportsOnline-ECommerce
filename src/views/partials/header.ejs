@@ -34,7 +34,7 @@
 
             <nav class="barra-de-busqueda">
                 <form action= "/products/list/search" method="GET">
-                    <input type="text" name= "search" placeholder="Buscar productos"><i class="fas fa-search" type="submit" value="Search"></i>
+                    <input type="text" name= "search" placeholder="Buscar productos"> <i class="fas fa-search" type="submit" value="Search"></i>
                 </form>
             </nav>
 
@@ -43,14 +43,14 @@
 
 <div class="caja-categorias">
     <ul class="categorias" type="None">
-        <li><a href="/products/list">Todos los Productos</a></li>
-        <li><a href="">Hombre</a></li>
-        <li><a href="">Mujer</a></li>
-        <li><a href="">Niños</a></li>
-        <li><a href="">Ofertas</a></li>
+        <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
+        <li><a href="">HOMBRE</a></li>
+        <li><a href="">MUJER</a></li>
+        <li><a href="">NIÑOS</a></li>
+        <li><a href="">OFERTAS</a></li>
     <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
-        <li><a href="/products/create">Crear Productos</a></li> 
-        <li><a href="/users/list">Usuarios</a></li>
+        <li><a href="/products/create">CREAR PRODUCTOS</a></li> 
+        <li><a href="/users/list">USUARIOS</a></li>
     <%}%>
         
     </ul>

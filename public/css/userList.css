@@ -8,8 +8,8 @@
     flex-direction: row;
 }
 .cajaDeUsuario{
-    font-weight: 200;
-    color: beige;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 
 .cajaDeUsuario img {
     width: 20%;
-    border:blanchedalmond;
+    border:rgb(65, 40, 2);
     border-style:double;
     border-radius: 10%;
 }

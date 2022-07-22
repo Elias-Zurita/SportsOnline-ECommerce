@@ -59,6 +59,18 @@
                   </div>
                 <% } %>  
 
+            <label>Dirección:</label>
+              <input 
+                type="text"
+                name="direccion"
+                class="form-control <%= locals.errors && errors.direccion ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.direccion: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
+                <% if (locals.errors && errors.direccion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
+                  <div class="text-danger">
+                    <p><%= errors.direccion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
+                  </div>
+                <% } %>  
+
             <label>Codigo Postal:</label>
               <input 
                 type="text"

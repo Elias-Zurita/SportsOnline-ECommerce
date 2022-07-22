@@ -4,38 +4,50 @@
     <body>
         <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
         
-            <h1>Listado de Productos</h1>
-                <div class="todosLosProductos">
-                    <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
-                        <div class = "cajaDeProducto">
-                            <div class="cajaFotoDeProducto">
-                                <a href="/products/detail/<%=producto.id %>"><img class= "FotoDeProducto" src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"></a> <!-- hipervinculo a producto segun id -->
-                            </div>
-                            
-                            <div class="BotonDeDetalle">
-                                <a href="/products/detail/<%=producto.id %>"><button type=button>DETALLE</button></a>
-                            </div>
-
-                            <div class="datosProducto">
-                                <ul>
-                                    <li>Nombre:<%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
-                                    <li>Descripcion:<%= producto.descripcion %></li>
-                                    <li>Categoria:<%= producto.Categoria.nombre %></li>
-                                    <li>Marca:<%= producto.Marca.nombre %></li>
-                                    <li>Genero:<%= producto.Genero.nombre %></li>
-                                    <li>Deporte:<%= producto.Deporte.nombre %></li>
-                                    <li>Precio:<%= producto.precio %></li>
-                                </ul>
-                            </div>
-                            <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
-                                <div class="BotonDeEdición">
-                                    <a href="/products/edit/<%= producto.id %>"><button type=button class="btn btn-warning">EDITAR PRODUCTO</button></a>
-                                </div>
-                            <%}%>
-                        </div>
-                    <% }) %>
+        <br>
+        
+        <div class="cajaBuscardorListado">ENCONTREMOS TU PRODUCTO!
+            <form action= "/products/list/search" method="GET">
+                <div class="buscar">
+                    <input type="text" name= "search" placeholder=" ¿Qué estás buscando? "> <i type="submit" value="Search"></i>
+                    <div class="iconoRunner">
+                        <i class="fas fa-running"></i></i>
+                    </div>
                 </div>
+            </form>
+        </div>
 
+        <br>    
+
+        <div class="bodyProductsList">
+            <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
+                <a href="/products/detail/<%=producto.id %>">
+                    <article class = "cajaDeProducto">
+                        <div class="cajaFotoDeProducto">
+                            <img src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"> <!-- Foto del producto -->
+                        </div>
+                        
+                        <div class="datosProducto">
+                            <ul type= "None">
+                                <li>Nombre: <%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
+                                <li>Categoria: <%= producto.Categoria.nombre %></li>
+                                <li>Marca: <%= producto.Marca.nombre %></li>
+                                <li>Genero: <%= producto.Genero.nombre %></li>
+                                <li>Deporte: <%= producto.Deporte.nombre %></li>
+                                <li>Precio: <%= producto.precio %></li>
+                            </ul>
+                        </div>
+                        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
+                            <div class="BotonDeEdición">
+                                <a href="/products/edit/<%= producto.id %>"><button type=button class="btn btn-warning">EDITAR PRODUCTO</button></a>
+                            </div>
+                        
+                        <%}%>
+                    </article>
+                </a>
+            <% }) %>
+        </div>
+        
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
     </body>
 </html>

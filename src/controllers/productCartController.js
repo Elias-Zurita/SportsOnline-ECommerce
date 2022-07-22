@@ -17,7 +17,7 @@ const productCartController = {
         items.forEach(item =>{
             precioTotal = Number(precioTotal) + Number(item.subtotal)
         })
-            return res.render("/products/productCart", {items, precioTotal});
+            return res.render("products/productCart", {items, precioTotal});
     }
     /*
     agregarProducto: async (req, res) => {

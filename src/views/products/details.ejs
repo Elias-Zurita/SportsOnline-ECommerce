@@ -7,28 +7,29 @@
 
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-    <main>
+    <main class="mainDetalle">
 
         <div class="CajaMasterDetalle">
             
             <div class="cajaIzquierda">
                 <div class="cajaImagenDetalle">
-                    <img class="fotoDetalle" src="/img/products/<%= producto.imagen %>">
+                    <img src="/img/products/<%= producto.imagen %>">
                 </div>
             </div>
 
-            <form action="/productCart/add/<%= producto.id %>" method="POST">
-                <div class="cajaDerecha">
-                    <div class="tituloProductoDetalle">NOMBRE DEL PRODUCTO</div>
+            <div class="cajaDerecha">
+                <form action="/productCart/add/<%= producto.id %>" method="POST">
+                    <div class="tituloDeporteDetalle"><%= producto.Deporte.nombre %></div>
+                    <div class="tituloProductoDetalle"><%= producto.nombre %></div>
+                    
                     <div class="precioDetalle">  $21213</div>
-                    <div class="tarjetasDetalle"><img src="/img/tarjetas.jpg" alt="tarjetas"></div>
-                    <div class="InfoDetalle">
-                        <p>MARCA: <%= producto.Marca.nombre %></p>
-                        <p>DEPORTE: <%= producto.Deporte.nombre %></p>
-                        <p>CATEGORIA: <%= producto.Categoria.nombre %></p> <!-- Categoria (como lo llame en el alias) -->
-                        <p>GENERO: <%= producto.Genero.nombre %></p>
+                    
+                    <div class="tarjetasDetalle"><i class="fas fa-credit-card"></i>
+                        <div class="cuotas">3 Cuotas sin Interés!</div>
                     </div>
 
+                    <div class="cambio"><i class="fas fa-exchange-alt"></i> Primer cambio gratis</div>
+                    
                     <div class="cajaSelectoraDetalle">
                         <div class="talleProducto">
                                 Talle
@@ -47,14 +48,43 @@
                             <input class="inputTalleDetalle" type="number" name="cantidad" id="cantidad" value="1">
                         </div>
                         <div class="cajaAgregarProducto">
-                            <button class="botonAgregarProducto" type="submit">AGREGAR AL CARRITO</button>
+                            <button class="botonAgregarProducto" type="submit"><i class="fas fa-shopping-cart"></i> AGREGAR AL CARRITO</button>
                         </div>
                     </div>
+                    
+                    <div class="compartirRedes">
+                        <i class="fas fa-share-alt"></i> Compartir
+                            <div class="Redes">
+                                <i class="fab fa-facebook-square"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-twitter-square"></i>
+                            </div>
+                    </div>
+
+
+                    <div class="cajaEnvioGratis">
+                        <div class="cajaCamioncito">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="cajaEnvio">
+                            <div class="promoEnvio">ENVIO GRATIS A TODO EL PAIS  </div>
+                            <div class="comprasSuperiores">EN COMPRAS SUPERIORES A $10.000</div>
+                        </div>
+                    </div>
+
+                    <div class="InfoDetalle">
+                        <p class="especificaciones">ESPECIFICACIONES</p>
+                        <div>MARCA: <%= producto.Marca.nombre %></div>
+                        <div>CATEGORIA: <%= producto.Categoria.nombre %></div> <!-- Categoria (como lo llame en el alias) -->
+                        <div>GENERO: <%= producto.Genero.nombre %></div>
+                    </div>
+
                     <div class="descripcionDetalle">
                         <p>DESCRIPCION: <%= producto.descripcion %></p>
                     </div>
-                </div>
-            </form>
+
+                </form>
+            </div>
         </div>
 
         <!--Botón de Editar Producto-->

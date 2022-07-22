@@ -1,38 +1,135 @@
 
-.inicioSesion{color: black;font-size: large;}
-.formularioLog{margin-bottom: 8px; margin-top: 0px; text-align: center; flex-wrap: wrap; color: white;
-     background-color: rgb(73, 70, 70); height: 100%; padding: 0%;}
-.control-formulario label{margin: 7px; display: block; font-weight: bold; font-size: large;}
-.control-formulario input {width: 12.5vw; height: 1.5vw;} /* cambia el tamaño para ingresar usuario y contraseña */
-.olvido a{font-weight: bold;margin: 10px; color:white; font-size: large;}
-.olvido a:hover{color: #ffee00; font-size: large; font-weight: bolder;}
-.recordarUsuario label{display: flex; align-items: center;}
-.recordarme {font-size: large; font-weight: bolder; margin: 10px;}
-.login {margin: 7px; }
-.botonIngresar {background-color:rgb(45, 156, 142); width: 12.5vw; height: 2vw; color: white; font-size: large;}
-.fa-sign-in-alt{color: white; font-size: large;}
-.loginFacebook {margin: 10px;}
-.loginFacebook button {background-color: #19599f;  width: 12.5vw; height: 2vw;}
-.fa-facebook {color:white; font-size: large;}
-.botonFace {color: white; font-size: large;}
-.loginGoogle {margin: 10px}
-.loginGoogle button {background-color: #Ce3a30; width: 12.5vw; height: 2vw;}
-.botonGoogle {color: white; font-size: large}
-.fa-google {color: white; font-size: large;}
-.crearCuenta {margin: 10px; font-weight: bold;}
-.botonCreaTuCuenta {background-color:rgb(12, 12, 12); width: 12.5vw; height: 2vw; color: white; font-size: large;}
-.fa-user-plus {color: white;font-size: large;}
+.inicioSesion h2{
+     color: black;
+     font-size: xx-large;
+     font-weight: bold;
+     text-align: center;
+     margin-top: 30px; 
+}
 
-/*TRANSICIONES EN BOTONES */
-.botonDeLogin button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
-.loginFacebook button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
-.loginGoogle button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
-.crearCuenta button:hover{background-color: rgb(233, 135, 23);border-radius: 5px}
-/*TRANSICIONES EN BOTONES */
+.formularioLog{
+     margin: 10px; 
+     text-align: center; 
+     color: rgb(0, 0, 0);
+     background-color: rgb(white); 
+}
 
-/* Desde aca para abajo es de creacion de producto */
+.control-formulario label{
+     margin: 7px; 
+     font-weight: bold; 
+     font-size: large;
+}
 
-.subirProducto button {font-size: xx-large;} /* Edita solo el boton de subir producto */
-.botonesCreacion {display: flex; align-items: center; flex-direction: column; padding-top: 1%;transition: all 0.2s ease; } /* Edita los dos botones de creacion de producto */
-.botonesCreacion button:hover{background-color: rgb(63, 35, 3); /* selecciono la caja botonesCreacion y de ahi al boton que le pongo hover (transicion a marron) */
- }
+.control-formulario input {
+     width: 13%; 
+     font-weight: bold;
+} 
+
+.recordarme {
+     font-size: large; 
+     font-weight: bolder; 
+     margin: 8px;
+}
+
+.olvido a{
+     font-weight: bold;
+     margin-top: 10px; 
+     color:rgb(0, 0, 0); 
+     font-size: large;
+}
+
+.olvido a:hover{
+     color: #2554f0; 
+     font-size: large; 
+     font-weight: bolder;
+}
+
+.botonIngresar {
+     background-color:rgb(45, 156, 142); 
+     width: 12.5vw; 
+     height: 2vw; 
+     color: white; 
+     font-size: large;
+}
+
+.botonDeLogin button:hover{
+     background-color: rgb(233, 135, 23);
+     border-radius: 5px
+}
+
+.fa-sign-in-alt{
+     color: white; 
+     font-size: large;
+}
+
+.loginFacebook button {
+     background-color: #19599f;  
+     width: 12.5vw; 
+     height: 2vw; 
+}
+
+.botonFace {
+     color: white; 
+     font-size: large;
+}
+
+.loginFacebook button:hover{
+     background-color: rgb(233, 135, 23);
+     border-radius: 5px
+}
+
+.fa-facebook {
+     color:white; 
+     font-size: large;
+}
+
+.loginGoogle button {
+     background-color: #Ce3a30; 
+     width: 12.5vw; 
+     height: 2vw;
+}
+
+.botonGoogle {
+     color: white; 
+     font-size: large
+}
+
+.loginGoogle {
+     margin: 10px
+}
+
+.fa-google {
+     color: white; 
+     font-size: large;
+}
+
+.loginGoogle button:hover{
+     background-color: rgb(233, 135, 23);
+     border-radius: 5px
+}
+
+.crearCuenta {
+     margin: 10px; 
+     font-weight: bold;
+}
+
+.botonCreaTuCuenta {
+     background-color:rgb(12, 12, 12); 
+     width: 12.5vw; 
+     height: 2vw; 
+     color: white; 
+     font-size: large;
+}
+
+
+
+.crearCuenta button:hover{
+     background-color: rgb(233, 135, 23);
+     border-radius: 5px
+}
+
+.fa-user-plus {
+     color: white;
+     font-size: large;
+}
+
