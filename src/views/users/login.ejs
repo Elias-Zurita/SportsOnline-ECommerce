@@ -15,32 +15,58 @@
 
         <div class="control-formulario">
             <label for="nombreUsuario">Correo Electrónico</label>
-                <input 
-                    type="text" 
-                    name="email" 
-                    id="nombreUsuario" 
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.email: null %>">    
-                    <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
-                        <div class="text-danger">
-                        <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
-                        </div>
-                    <% } %>  
-        </div>
-        
-        <div class="control-formulario">
-            <label for="contraseña">Contraseña</label>
-                <input type="password" 
-                name="contraseña" 
-                id="contraseña" 
-                class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>">
-                <% if (locals.errors && errors.contraseña) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en contraseña -->
+                <div class="wrapper">
+                    <input 
+                        type="text" 
+                        name="email" 
+                        id="nombreUsuario" 
+                        class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.email: null %>">    
+                </div>
+                <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
                     <div class="text-danger">
-                    <p><%= errors.contraseña.msg %></p> <!-- muestra el mensaje que debe llenar el campo de contraseña -->
+                        <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
                     </div>
                 <% } %>  
         </div>
-    
+
+        <div class="control-formulario">
+            <label for="contraseña">Contraseña</label>
+                <div class="wrapper">
+                    <input 
+                        type="password"
+                        name="contraseña" 
+                        id="contraseña"
+                        class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"
+                        required>
+                    <span><i 
+                        class="fas fa-eye" 
+                        id="Eye"></i>
+                    </span>
+                </div>
+                    <!-- Campo para funcionalidad de Ojo (visualizador de contraseña) -->
+                    <script>
+                        var eye = document.getElementById('Eye');
+                        var contraseña = document.getElementById('contraseña');
+                        eye.addEventListener("click", function(){   /* al hacer click en el ojo acciona */
+                            if (contraseña.type === "password") {  
+                                contraseña.type = "text";       /* transforma el tipo password (encriptado) a texto */
+                                eye.classList.add ("hide-eye"); /* tacha el ojo */
+                            } else {
+                                contraseña.type = "password";    /* vuelve al formato encriptado */
+                                eye.classList.remove ("hide-eye"); /* tilda y destilda el ojo tachado */
+                            }
+                        })
+                    </script>
+                <div>
+                    <% if (locals.errors && errors.contraseña) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en contraseña -->
+                        <div class="text-danger">
+                        <p><%= errors.contraseña.msg %></p> <!-- muestra el mensaje que debe llenar el campo de contraseña -->
+                        </div>
+                    <% } %>  
+                </div>
+        </div>
+
         <label class="recordarUsuario">
             <div class="recordarme">
                 <input type="checkbox" name="recordarUsuario"  id="recordarUsuario"> Recordarme

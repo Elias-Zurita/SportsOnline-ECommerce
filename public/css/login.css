@@ -22,8 +22,38 @@
 
 .control-formulario input {
      width: 13%; 
-     font-weight: bold;
+     font-weight: bold; 
 } 
+
+.wrapper{
+     display: flex;
+     flex-direction: row;
+     position: relative;
+}
+
+.wrapper input{
+     width: 100%; 
+     font-size: large;
+     font-weight: bold;
+     padding-left: 15px;
+}
+
+.wrapper span {  /* ojo de password */
+     position: absolute;
+     right: 15px;
+     top: 50%;
+     transform: translateY(-50%);  /* centra el ojo sobre el eje Y */
+     cursor: pointer;  /* el mouse se pone en modo hipervinculo al pasar sobre el ojo */
+     display: none;/* asi no se ve a menos que escriba la contraseña */
+}
+
+.wrapper span i.hide-eye:before{
+     content: "\f070";            /* aplica la cruz al ojo */
+}
+
+.wrapper input:valid ~ span{   
+     display: block;         /* Hace que aparezca el span (el ojo) al ingresar password */
+}
 
 .recordarme {
      font-size: large; 
