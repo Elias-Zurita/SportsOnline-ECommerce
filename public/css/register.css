@@ -1,3 +1,110 @@
+.creaTuCuenta{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px; 
+
+}
+
+.cajaPadreRegister{
+    display: flex;
+    flex-direction: row;
+    border: solid brown;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.cajaDatosPersonales{
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: solid rgb(228, 217, 63);
+    width: 25%;
+    font-size: large;
+}
+
+.cajaDatosPersonales label{
+    margin-top: 5%;
+}
+
+.cajaDatosPersonales input{
+    text-align: center;
+}
+
+.cajaSobreTuCuenta{
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: solid rgb(219, 48, 235);
+    margin-left: 5%;
+    width: 25%;
+    font-size: large;
+}
+
+.cajaSobreTuCuenta label{
+    margin-top: 5%;
+}
+
+.cajaSobreTuCuenta input{
+    text-align: center;
+}
+
+.tituloDatos{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-select option{
+    text-align: center;
+    font-weight: bold;
+}
+
+.checkRegister {
+   display: flex;
+   flex-direction: column;
+   margin-left: 40%;
+   align-items: flex-start;
+   margin-top: 1%;
+}
+
+.botonRegistrarse{
+    font-family: Franklin Gothic Heavy;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+
+.botonRegistrarse button{
+   background-color: rgb(43, 210, 216);
+    width: 15% ;
+}
+
+.botonRegistrarse button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(4, 85, 58);
+    transform: scale(1);
+    border-radius: 50px;
+    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+.tengoCuenta{
+    text-align: center;
+}
+
+.tengoCuenta a{
+    color:black; 
+    font-weight: bold;
+    font-size: large;
+}
+
+.tengoCuenta a:hover{
+    color: rgb(216, 43, 43);
+}
 
 .text-danger {color: red; font-weight: bolder; font-size: large}
 

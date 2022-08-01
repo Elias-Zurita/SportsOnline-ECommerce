@@ -76,7 +76,10 @@ const validations = {
                 }
             }
             return true; 
-        })
+        }), 
+        check('politicas')
+            .notEmpty()
+            .withMessage("Tienes que aceptar las politicas")
     ],
     
     login:[
@@ -113,6 +116,18 @@ const validations = {
             .bail()
             .isLength({min:4}) 
             .withMessage("El nombre debe tener al menos 4 caracteres"), 
+        check ("categoria")
+            .notEmpty()
+            .withMessage ("Tienes que seleccionar una categoria"),
+        check ("marca")
+            .notEmpty()
+            .withMessage ("Tienes que seleccionar una marca"),
+        check ("genero")
+            .notEmpty()
+            .withMessage ("Tienes que seleccionar un genero"),
+        check ("deporte")
+            .notEmpty()
+            .withMessage ("Tienes que seleccionar un deporte"),
         check ("descripcion")
             .notEmpty()
             .withMessage("Tiene que escribir una descripcion")

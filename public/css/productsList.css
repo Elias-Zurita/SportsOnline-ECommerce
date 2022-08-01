@@ -1,3 +1,5 @@
+
+
 .cajaBuscardorListado{
     display: flex;
     margin-left: 30%;
@@ -44,13 +46,15 @@
     text-align: center;
 }
 
-.bodyProductsList  :hover{       
-    transform: scale(1.1);  /* aumenta el tamaño de la caja de los productos */
-    transition: opacity .2s;
+.bodyProductsList :hover{
+    cursor: pointer; /* mouse en modo hipervinculo */
+    transform: translateY(-5%); /* mueve la caja hacia arriba */
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transition: all 400ms ease; /* para que la caja se desplaze suave hacia arriba */
+    border-radius: 20px;
 }
 
 article.cajaDeProducto{
-    font-weight: 200;
     color: rgb(0, 0, 0);
     font-weight: bold;
     display: flex;
@@ -61,33 +65,32 @@ article.cajaDeProducto{
     border-radius: 20px;
     margin: 15px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); /* esta tapado el efecto sombra por el solido de abajo */
-    border:solid black 10px;
+    border:solid black 10px;  
 }
 
-.cajaFotoDeProducto{
-    width: 100%;
-    height: 100%;
-    border:solid rgb(189, 82, 82) 8px;
-}
-
-.cajaFotoDeProducto img{
+article.cajaDeProducto img{
     width: 200px;   /*  al ser imagen se ajusta en pixeles */
     height: 200px;  /*  al ser imagen se ajusta en pixeles */
-    border-style: double;
+    /* border-style: double; */
     border-radius: 10%;
-    border:solid rgb(90, 57, 211) 5px;
-}
-
-.cajaFotoDeProducto :hover{
-    transform: none;  /* aumenta el tamaño de la caja de los productos */
-    transition: opacity .2s;
-}
-
-.datosProducto:hover{
-    transform: none;  /* aumenta el tamaño de la caja de los productos */
-    transition: opacity .2s;
+    /* border:solid rgb(90, 57, 211) 5px; */
 }
 
 .datosProducto{
-    border:solid rgb(217, 228, 60) 5px;
+    border: solid brown;
+    align-items: center;
+    margin-left: none;
+    margin-right: auto;
+}
+
+.datosProducto ul{
+    margin-left: none;
+    margin-right: auto;
+}
+
+.datosProducto li{
+    border: solid blue;
+    width: 100%;
+    margin-left: none;
+    margin-right: auto;
 }

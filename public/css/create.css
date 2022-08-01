@@ -1,6 +1,76 @@
 
-/* Desde aca para abajo es de creacion de producto */
-.subirProducto button {font-size: xx-large;} /* Edita solo el boton de subir producto */
-.botonesCreacion {display: flex; align-items: center; flex-direction: column; padding-top: 1%;transition: all 0.2s ease; } /* Edita los dos botones de creacion de producto */
-.botonesCreacion button:hover{background-color: rgb(63, 35, 3); /* selecciono la caja botonesCreacion y de ahi al boton que le pongo hover (transicion a marron) */
- }
+.botonCreate{
+    font-family: Franklin Gothic Heavy;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+
+.botonCreate button {
+    background-color: rgb(43, 210, 216);
+    width: 15% ;
+} 
+
+.botonCreate button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(4, 85, 58);
+    transform: scale(1);
+    border-radius: 50px;
+    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+.createTitulo{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.createTitulo i{
+color: gold;
+}
+
+.cajaPadreCreacion{
+    display: flex;
+    flex-direction: row;
+    border: solid brown;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.cajaCreacionIzq{
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: solid rgb(228, 217, 63);
+    width: 25%;
+    font-size: large;
+}
+
+.cajaCreacionIzq label{
+    margin-top: 5%;
+}
+
+.cajaCreacionIzq input{
+    text-align: center;
+}
+
+.cajaCreacionDer{
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: solid rgb(219, 48, 235);
+    margin-left: 5%;
+    width: 25%;
+    font-size: large;
+}
+
+.cajaCreacionDer label{
+    margin-top: 5%;
+}
+
+.cajaCreacionDer input{
+    text-align: center;
+}

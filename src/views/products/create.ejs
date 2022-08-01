@@ -8,152 +8,171 @@
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
     <form action="/products/create" method="POST" class="formularioLog" enctype="multipart/form-data">
-        <h2>CREACION DE PRODUCTO NUEVO!</h2>
+        
+        <h2 class="createTitulo"><i class="fas fa-lightbulb"></i> CREACIÓN DE PRODUCTO NUEVO</h2>
 
-        <div class="control-formulario">
-            <label for="nombreDeProducto">Nombre de Producto</label>
-                <input
-                    type="text"
-                    name="nombre"
-                    class="control-especifico"
-                    value="<%= locals.oldData ? oldData.nombre: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
-                    <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
-                        <div class="text-danger">
-                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
-                        </div>
-                    <% } %>  
-        </div>
-    
-        <div class="control-formulario">
-            <label for="descripción">Descripción</label>
-                <input type="text" 
-                name="descripcion" 
-                class="control-especifico"
-                value="<%= locals.oldData ? oldData.descripcion: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
-                <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
-                    <div class="text-danger">
-                        <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
-                    </div>
-                <% } %>  
-        </div>
-
-        <div class="control-formulario">
-            <label for="categoria">Categoria</label>
-                <select name= "categoria">
-                    <% categorias.forEach(categoria=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                        <option value="<%= categoria.id%>">  <!-- las opciones seran los id -->
+        <div class="cajaPadreCreacion">
+            
+            <div class="cajaCreacionIzq">
+                
+                <label for="nombreDeProducto">Nombre de Producto</label>
+                    <input
+                        type="text"
+                        name="nombre"
+                        class="form-control"
+                        value="<%= locals.oldData ? oldData.nombre: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
+                        <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                            <div class="text-danger">
+                                <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
+                            </div>
+                        <% } %>  
+                                
+                <label for="categoria">Categoria</label>
+                <select 
+                name= "categoria"
+                class="form-select">
+                <%= locals.errors && errors.categoria ? 'is-invalid' : null %>
+                    <option value=""></option>                           
+                    <% categorias.forEach(categoria=>{ %> <!-- categorias toma toda las categorias de la base de datos por el controller .findAll -->
+                    <option value= "<%= categoria.id %>"
+                    <%= locals.oldData && (categoria === oldData.categoria) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->    
                     <%= categoria.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                        </option>
+                    </option>
                     <% }) %>
                 </select>
                 <% if (locals.errors && errors.categoria) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
                     <div class="text-danger">
                         <p><%= errors.categoria.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
                     </div>
-                <% } %>  
-        </div>
-
-        <div class="control-formulario">
-            <label for="categoria">Marca</label>
-                <select name= "marca">
-                    <% marcas.forEach(marca=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                    <option value="<%= marca.id%>">  <!-- las opciones seran los id -->
-                    <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                    </option>
-                    <% }) %>
-                </select>
-                <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en marca -->
-                    <div class="text-danger">
-                        <p><%= errors.marca.msg %></p> <!-- muestra el mensaje que debe llenar el campo de marca -->
-                    </div>
-                <% } %>  
-        </div>
-
-        <div class="control-formulario">
-            <label for="precio">Precio</label>
-                <input 
-                type="text" 
-                name="precio" 
-                class="control-especifico"
-                value="<%= locals.oldData ? oldData.precio: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
-                <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
-                    <div class="text-danger">
-                        <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->
-                    </div>
-                <% } %>  
-
-        </div>
-    
-        <div class="control-formulario">
-            <label for="genero">Genero</label>
-                <select name= "genero">
-                    <% generos.forEach(genero=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                    <option value="<%= genero.id%>">  <!-- las opciones seran los id -->
-                    <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                    </option>
-                    <% }) %>
-                </select>
-                <% if (locals.errors && errors.genero) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en genero -->
-                    <div class="text-danger">
-                        <p><%= errors.genero.msg %></p> <!-- muestra el mensaje que debe llenar el campo de genero -->
-                    </div>
-                <% } %>  
-        </div>
-        
-        <div class="control-formulario">
-            <label for="deporte">Deporte</label>
-                <select name= "deporte">
-                    <% deportes.forEach(deporte=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                    <option value="<%= deporte.id%>">  <!-- las opciones seran los id -->
-                    <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                    </option>
-                    <% }) %>
-                </select>
-                <% if (locals.errors && errors.deporte) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en deporte -->
-                    <div class="text-danger">
-                        <p><%= errors.deporte.msg %></p> <!-- muestra el mensaje que debe llenar el campo de deporte -->
-                    </div>
-                <% } %>  
-        </div>
-        
-        <div class="control-formulario">
-            <label for="talle">Talle</label>
-                <select name= "talle">
-                    <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
-                    <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
-                    <%= talle.talle %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
-                    </option>
-                    <% }) %>
-                </select>
-                <% if (locals.errors && errors.talle) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en talle -->
-                    <div class="text-danger">
-                        <p><%= errors.talle.msg %></p> <!-- muestra el mensaje que debe llenar el campo de talle -->
-                    </div>
-                <% } %>  
-        </div>
-
-        <div class="botonesCreacion">
-            <div class="subirFotoProducto">
-                <input 
-                type="file" 
-                name= "imagen" 
-                class="botones">SUBIR IMAGEN DEL PRODUCTO
-                <% if (locals.errors && errors.imagen) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en imagen -->
-                    <div class="text-danger">
-                        <p><%= errors.imagen.msg %></p> <!-- muestra el mensaje que debe subir una imagen -->
-                    </div>
-                <% } %>  
-            </div>
-
-                <br>    
+                <% } %>                 
+                        
+                    <label for="categoria">Marca</label>
+                    <select 
+                    name= "marca"
+                    class="form-select">
+                    <%= locals.errors && errors.marca ? 'is-invalid' : null %>
+                        <option value=""></option>                           
+                        <% marcas.forEach(marca=>{ %> <!-- marcas toma toda las marcas de la base de datos por el controller .findAll -->
+                        <option value= "<%= marca.id %>"
+                        <%= locals.oldData && (marca === oldData.marca) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->    
+                        <%= marca.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.marca) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                        <div class="text-danger">
+                            <p><%= errors.marca.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                        </div>
+                    <% } %>  
+                               
+                    <label for="categoria">Genero</label>
+                    <select 
+                    name= "genero"
+                    class="form-select">
+                    <%= locals.errors && errors.genero ? 'is-invalid' : null %>
+                        <option value=""></option>                           
+                        <% generos.forEach(genero=>{ %> <!-- marcas toma toda las marcas de la base de datos por el controller .findAll -->
+                        <option value= "<%= genero.id %>"
+                        <%= locals.oldData && (genero === oldData.genero) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->    
+                        <%= genero.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.genero) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                        <div class="text-danger">
+                            <p><%= errors.genero.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                        </div>
+                    <% } %>  
             
-            <div class="subirProducto">
-                <button type="submit" class="botones">SUBIR PRODUCTO</button>
-            </div>
-        </div>
-    
-</form>
+                    <label for="categoria">Deporte</label>
+                    <select 
+                    name= "deporte"
+                    class="form-select">
+                    <%= locals.errors && errors.deporte.id ? 'is-invalid' : null %>
+                        <option value=""></option>                           
+                        <% deportes.forEach(deporte=>{ %> <!-- marcas toma toda las marcas de la base de datos por el controller .findAll -->
+                        <option value= "<%= deporte.id %>"
+                        <%= locals.oldData && (deporte === oldData.deporte) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->    
+                        <%= deporte.nombre %>     <!-- el .nombre es por "nombre" del modelo de categoria -->
+                        </option>
+                        <% }) %>
+                    </select>
+                    <% if (locals.errors && errors.deporte) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                        <div class="text-danger">
+                            <p><%= errors.deporte.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                        </div>
+                    <% } %>  
 
+            </div>
+
+            <div class="cajaCreacionDer">
+
+                <label for="categoria">Talle</label>
+                <select 
+                name= "talle"
+                class="form-select">
+                <%= locals.errors && errors.talle ? 'is-invalid' : null %>
+                    <option value=""></option>                           
+                    <% talles.forEach(talle=>{ %> <!-- marcas toma toda las marcas de la base de datos por el controller .findAll -->
+                    <option value= "<%= talle.id %>"
+                    <%= locals.oldData && (talle === oldData.talle) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->    
+                    <%= talle.talle %>     <!-- el .talle es por "nombre" del modelo de talle -->
+                    </option>
+                    <% }) %>
+                </select>
+                <% if (locals.errors && errors.talle) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en categoria -->
+                    <div class="text-danger">
+                        <p><%= errors.talle.msg %></p> <!-- muestra el mensaje que debe llenar el campo de categoria -->
+                    </div>
+                <% } %>   
+                
+                <label>SUBIR IMAGEN DEL PRODUCTO </label>
+                    <input 
+                    type="file" 
+                    name= "imagen" 
+                    class="form-control">
+                    <% if (locals.errors && errors.imagen) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en imagen -->
+                        <div class="text-danger">
+                            <p><%= errors.imagen.msg %></p> <!-- muestra el mensaje que debe subir una imagen -->
+                        </div>
+                    <% } %>  
+                
+                <label for="descripción">Descripción</label> <!-- Rows es la cantidad de reglones -->
+                    <textarea
+                    name="descripcion" 
+                    type="text"
+                    rows="3"
+                    class="form-control"
+                    value="<%= locals.oldData ? oldData.descripcion:null %>"></textarea> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
+                    <% if (locals.errors && errors.descripcion) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en descripcion -->
+                        <div class="text-danger">
+                            <p><%= errors.descripcion.msg %></p> <!-- muestra el mensaje que debe llenar el campo de descripcion -->
+                        </div>
+                    <% } %>  
+                
+                <label for="precio">PRECIO</label>
+                    <input 
+                    type="text" 
+                    name="precio" 
+                    class="form-control"
+                    value="<%= locals.oldData ? oldData.precio: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del producto -->
+                    <% if (locals.errors && errors.precio) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en precio -->
+                        <div class="text-danger">
+                            <p><%= errors.precio.msg %></p> <!-- muestra el mensaje que debe llenar el campo de precio -->
+                        </div>
+                    <% } %>  
+                
+            </div>
+
+        </div>
+
+            <div class="botonCreate">
+                <button 
+                    type="submit">SUBIR PRODUCTO
+                </button>
+            </div>
+            
+    </form>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 

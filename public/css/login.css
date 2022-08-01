@@ -14,6 +14,12 @@
      background-color: rgb(white); 
 }
 
+.control-formulario {
+     display: flex; 
+     flex-direction: column;
+     align-items: center;
+ }
+ 
 .control-formulario label{
      margin: 7px; 
      font-weight: bold; 
@@ -151,8 +157,6 @@
      font-size: large;
 }
 
-
-
 .crearCuenta button:hover{
      background-color: rgb(233, 135, 23);
      border-radius: 5px
@@ -162,4 +166,3 @@
      color: white;
      font-size: large;
 }
-
