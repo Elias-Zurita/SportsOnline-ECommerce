@@ -6,56 +6,103 @@
   <body>
 
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+     
+    <form action="/users/edit/<%= usuario.id %>" method="POST" class="formularioLog">  
 
-      <form action="/users/edit/<%= usuario.id %>" method="POST">
-        <h2>EDICION DE USUARIO</h2> 
+      <h2 class="editProfileTitulo"><i class="fas fa-user-cog"></i> EDITA TUS DATOS</h2> 
 
-          <h3>Datos del Usuario</h3>
-            <div class = "cajaDeUsuario">
-              <div class="cajaFotoDePerfil">
-                <img src="/img/avatar/<%= usuario.avatar%>">
-              </div>
+          <div class = "cajaPadreEditProfile">
 
-                <div class="datosUsuario">
-                  <label>Nombre:</label>
-                    <input 
-                      type="text" 
-                      name="nombre" 
-                      class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                      value="<%= locals.oldData ? oldData.nombre: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                        <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
-                          <div class="text-danger">
-                            <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
-                          </div>
-                        <% } %>  
+            <div class="cajaAvatar">
+              <img src="/img/avatar/<%= usuario.avatar%>">
+            </div>
+
+            <div class="cajaCentroDatos">
+              <label><i class="fas fa-user"></i> Nombre:</label>
+                <input 
+                  type="text" 
+                  name="nombre" 
+                  class="form-control"
+                  value="<%= usuario.nombre %>"> 
+
+              <label><i class="fas fa-user-shield"></i> Apellido:</label>
+                <input 
+                  type="text"
+                  name="apellido"
+                  class="form-control"
+                  value="<%= usuario.apellido %>"> 
+
+              <label><i class="fas fa-calendar-alt"></i> Fecha de Nacimiento:</label>
+                <input 
+                  type="date"
+                  name="fecha_de_nacimiento"
+                  class="form-control <%= locals.errors && errors.fecha_de_nacimiento ? 'is-invalid' : null %>"
+                  value="<%= usuario.fecha_de_nacimiento %>"> 
+
+              <label><i class="fas fa-map-marker-alt"></i> Dirección:</label>
+                <input 
+                  type="text"
+                  name="direccion"
+                  class="form-control <%= locals.errors && errors.direccion ? 'is-invalid' : null %>"
+                  value="<%= usuario.direccion %>"> 
+      
+              <label><i class="fas fa-paper-plane"></i> Codigo Postal:</label>
+                <input 
+                  type="text"
+                  name="codigo_postal"
+                  class="form-control <%= locals.errors && errors.codigo_postal ? 'is-invalid' : null %>"
+                  value="<%= usuario.codigo_postal %>"> 
+
+            </div>
+
+            <div class="cajaDerechaDatos">
+              
+              <label><i class="fas fa-envelope"></i> Email: </label>
+                <input 
+                  type="email" 
+                  name="email"
+                  class="form-control"
+                  value="<%= usuario.email %>"> 
             
-                  <label>Apellido:</label>
-                    <input 
-                      type="text"
-                      name="apellido"
-                      class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
-                      value="<%= locals.oldData ? oldData.apellido: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                        <% if (locals.errors && errors.apellido) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en apellido -->
-                          <div class="text-danger">
-                            <p><%= errors.apellido.msg %></p> <!-- muestra el mensaje que debe llenar el campo de apellido -->
-                          </div>
-                        <% } %>  
-                                                      
-                  <label>Email: </label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                      value="<%= locals.oldData ? oldData.email: null %>"> <!-- Mantiene en pantalla los datos que se fueron agregando del usuario -->
-                        <% if (locals.errors && errors.email) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en email -->
-                          <div class="text-danger">
-                            <p><%= errors.email.msg %></p> <!-- muestra el mensaje que debe llenar el campo de email -->
-                          </div>
-                        <% } %>  
-                </div>
+              <label><i class="fas fa-mobile-alt"></i> Telefono:</label>
+                <input 
+                  type="text"
+                  name="telefono"
+                  class="form-control <%= locals.errors && errors.telefono ? 'is-invalid' : null %>"
+                  value="<%= usuario.telefono %>">
+            
+              <label><i class="fas fa-globe-americas"></i> Selecciona tu Pais:</label>
+                <select 
+                  name="pais"
+                  class="form-select"> 
+                  <%= locals.errors && errors.pais ? 'is-invalid' : null %>
+                    <option value="<%= usuario.pais %>"></option><br>
+                      <% let pais = ['Argentina', 'Brasil', 'Paraguay', 'Uruguay', 'Bolivia', 'Chile', 'Peru', 'Ecuador', 'Colombia', 'Mexico', 'Venezuela', 'Estados Unidos', 'Canada']; %>
+                      <% for (const unPais of pais) { %>
+                    <option value= "<%= unPais %>"
+                      <%= locals.oldData && (unPais === oldData.pais) ? 'select' : null %> > <!-- NO FUNCIONA NOSE POR QUE, NO MANTIENE EL PAIS ELEGIDO AL ENVIAR VACIO LOS DEMAS CAMPOS -->
+                      <%= unPais %>
+                    </option>
+                    <% } %>
+                </select>
+                  <% if (locals.errors && errors.pais) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en pais -->
+                    <div class="text-danger">
+                      <p><%= errors.pais.msg %></p> <!-- muestra el mensaje que debe llenar el campo de pais -->
+                    </div>
+                  <% } %>  
+
+                  <br>
+                  <div style= "font-size: xx-large">hacer validaciones de campos, ver mail con register validate </div>
+
             </div>
             
-            <button class ="botones" type="submit">GUARDAR CAMBIOS</button>
+          </div>
+          
+          <div class="botonEditProfile">
+            <button
+              type="submit">GUARDAR CAMBIOS
+            </button>
+          </div>
 
       </form>
 

@@ -1,14 +1,14 @@
-.createTitulo{
+.editProfileTitulo{
     color: black;
     font-size: xx-large;
     font-weight: bold;
 }
 
-.createTitulo i{
-color: gold;
+.editProfileTitulo i{
+color: rgba(224, 114, 24, 0.835);
 }
 
-.cajaPadreCreacion{
+.cajaPadreEditProfile{
     display: flex;
     flex-direction: row;
     border: solid brown;
@@ -16,7 +16,18 @@ color: gold;
     margin-top: 1%;
 }
 
-.cajaCreacionIzq{
+.cajaAvatar{
+    border: solid green;
+    margin-right: 5%;
+    
+}
+
+.cajaAvatar img{
+    width: 470px;   /*  al ser imagen se ajusta en pixeles */
+    height: 470px;  /*  al ser imagen se ajusta en pixeles */
+}
+
+.cajaCentroDatos{
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -26,15 +37,15 @@ color: gold;
     font-size: large;
 }
 
-.cajaCreacionIzq label{
+.cajaCentroDatos label{
     margin-top: 5%;
 }
 
-.cajaCreacionIzq input{
+.cajaCentroDatos input{
     text-align: center;
 }
 
-.cajaCreacionDer{
+.cajaDerechaDatos{
     font-weight: bold;
     text-align: center;
     display: flex;
@@ -45,15 +56,15 @@ color: gold;
     font-size: large;
 }
 
-.cajaCreacionDer label{
+.cajaDerechaDatos label{
     margin-top: 5%;
 }
 
-.cajaCreacionDer input{
+.cajaDerechaDatos input{
     text-align: center;
 }
 
-.botonCreate{
+.botonEditProfile{
     font-family: Franklin Gothic Heavy;
     font-size: xx-large;
     margin-left: auto;
@@ -61,16 +72,16 @@ color: gold;
     margin-top: 1%;
 }
 
-.botonCreate button {
-    background-color: #73ecf7;
+.botonEditProfile button{
+    background-color: rgb(43, 210, 216);
     width: 25% ;
     border-radius: 50px;
-} 
+}
 
-.botonCreate button:hover{
+.botonEditProfile button:hover{
     color: rgb(255, 255, 255);
-    background-color: rgb(4, 85, 58);
+    background-color: rgba(224, 114, 24, 0.835);
     transform: scale(1);
     border-radius: 50px;
-    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+    transition: all 700ms ease; /* velocidad a la que se abre el campo de busqueda */
 }

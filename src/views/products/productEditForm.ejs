@@ -22,8 +22,13 @@
                         <input 
                             class="form-control"
                             type="text" 
-                            value= "<%= producto.nombre %>" 
-                            name="nombre">
+                            name="nombre"
+                            value= "<%= producto.nombre %>">
+                            <% if (locals.errors && errors.nombre) {%>   <!-- Si en las variables locales vino errors y si en erros vino un error en nombre -->
+                                <div class="text-danger">
+                                    <p><%= errors.nombre.msg %></p> <!-- muestra el mensaje que debe llenar el campo de nombre -->
+                                </div>
+                            <% } %>  
 
                     <label for="categoria">Categoria</label>
                         <select 
@@ -99,9 +104,13 @@
                             cols= "50">
                             <%= producto.descripcion %></textarea> <!-- rows (reglones) cols(letras por reglon) -->
                     
+                            <br>
+                  <div style= "font-size: xx-large">hacer validaciones de campos sino el productList se descuajeringa </div>
+
+
                     <div class="botonGuardarEdicion">
                         <button 
-                            type="submit">GUARDAR PRODUCTO
+                            type="submit">GUARDAR CAMBIOS
                         </button>   
                     </div>
                     

@@ -13,7 +13,10 @@
             
             <div class="cajaIzquierda">
                 <div class="cajaImagenDetalle">
-                    <img src="/img/products/<%= producto.imagen %>">
+                    <img src="/img/products/<%= producto.imagen %>" data-zoom-image="/img/products/<%= producto.imagen %>" id="zoom">
+                    <!--  Aplica efecto lupa a la imagen. Ademas del id="zoom" en la img requiere un script que va en el head -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.js"></script> 
+                    <script>$("#zoom").elevateZoom();</script>
                 </div>
             </div>
 

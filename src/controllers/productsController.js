@@ -69,11 +69,11 @@ const productsController = {
             include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
             {association: "Marca"}, {association: "Categoria"}] 
         });
-        let pedidoTalle = db.Talle.findAll();
-        let pedidoGenero = db.Genero.findAll();
-        let pedidoDeporte = db.Deporte.findAll();
-        let pedidoMarca = db.Marca.findAll();
-        let pedidoCategoria = db.Categoria.findAll();
+            let pedidoTalle = db.Talle.findAll();
+            let pedidoGenero = db.Genero.findAll();
+            let pedidoDeporte = db.Deporte.findAll();
+            let pedidoMarca = db.Marca.findAll();
+            let pedidoCategoria = db.Categoria.findAll();
         
         Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
             .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
@@ -87,11 +87,11 @@ const productsController = {
             include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en la edicion
             {association: "Marca"}, {association: "Categoria"}] 
         });
-        let pedidoTalle = db.Talle.findAll();
-        let pedidoGenero = db.Genero.findAll();
-        let pedidoDeporte = db.Deporte.findAll();
-        let pedidoMarca = db.Marca.findAll();
-        let pedidoCategoria = db.Categoria.findAll();
+            let pedidoTalle = db.Talle.findAll();
+            let pedidoGenero = db.Genero.findAll();
+            let pedidoDeporte = db.Deporte.findAll();
+            let pedidoMarca = db.Marca.findAll();
+            let pedidoCategoria = db.Categoria.findAll();
         
         Promise.all([pedidoProducto, pedidoTalle, pedidoGenero, pedidoDeporte, pedidoMarca, pedidoCategoria]) 
             .then(function(values) {  // ejecuta el then cuando estan todas las promesas listas
@@ -127,7 +127,6 @@ const productsController = {
         })
         res.redirect("/products/list");
     }
-
 }
 
 module.exports = productsController;

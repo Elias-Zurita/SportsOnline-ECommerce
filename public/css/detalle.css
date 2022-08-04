@@ -88,7 +88,7 @@
     font-style: italic;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    background-color: rgb(43, 210, 216);
+    background-color:  #73ecf7;
     margin-left: 4%;   
     text-align: center;
     width: 40%;
@@ -129,7 +129,7 @@
 
 .selectTalleDetalle{
     text-align: center; 
-    background-color: rgb(43, 210, 216);  /* colores del select del talle */
+    background-color:  #73ecf7;  /* colores del select del talle */
     width: 50%;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .inputTalleDetalle{
-    background-color: rgb(43, 210, 216);
+    background-color:  #73ecf7;
     text-align: center;
     font-family: Franklin Gothic Heavy;
     font-size: large;
@@ -190,7 +190,7 @@
     margin-left: 3%;
     margin-top: 1%;
     display: flex;
-    background-color: rgb(43, 210, 216);
+    background-color:  #73ecf7;
     color: black;
     width: 45%;
     transform: skew(-15deg);   /* Dobla la caja  */

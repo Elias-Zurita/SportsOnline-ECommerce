@@ -101,6 +101,7 @@ const controller = {
             pais: req.body.pais,
             codigo_postal:req.body.codigo_postal,
             fecha_de_nacimiento:req.body.fecha_de_nacimiento,
+            direccion:req.body.direccion,
             telefono:req.body.telefono
         },{
             where: {

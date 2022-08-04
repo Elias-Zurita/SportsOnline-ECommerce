@@ -4,7 +4,10 @@
     font-weight: bold;
     text-align: center;
     margin-top: 10px; 
+}
 
+.creaTuCuenta i{
+    color: rgb(74, 236, 82);
 }
 
 .cajaPadreRegister{
@@ -89,7 +92,7 @@
     background-color: rgb(4, 85, 58);
     transform: scale(1);
     border-radius: 50px;
-    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+    transition: all 700ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
 
 .tengoCuenta{

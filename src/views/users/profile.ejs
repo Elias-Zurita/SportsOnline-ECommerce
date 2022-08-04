@@ -6,25 +6,30 @@
 
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-        <h2>Bienvenido <%= usuario.nombre %> <%= usuario.apellido %></h2> 
-            <div class = "cajaDeUsuario">
-                <div class="cajaFotoDePerfil">
-                    <img src="/img/avatar/<%= usuario.avatar%>">
+        <h2 class="profileTitulo"><i class="fas fa-user"></i> Bienvenid@ <%= usuario.nombre %> <%= usuario.apellido %>!</h2> 
+            
+        <div class = "cajaPadreProfile">
+            <div class="cajaFotoDeProfile">
+                <img src="/img/avatar/<%= usuario.avatar%>">
+            </div>    
+                
+            <div class="datosPadreProfile">
+                <div class="datosProfile">
+                    <div>NOMBRE: <%= usuario.nombre %></div>
+                    <div>APELLIDO: <%= usuario.apellido %></div>
+                    <div>EMAIL: <%= usuario.email %></div>
+                    <div>DIRECCION: <%= usuario.direccion %></div> 
+                    <div>C.P.: <%= usuario.codigo_postal %></div> 
+                    <div>TELEFONO: <%= usuario.telefono %></div>
+                    <div>PAIS: <%= usuario.pais %></div>
                 </div>
-                    
-                    <h3>Datos del Usuario</h3>
-                    <div class="datosUsuario">
-                        <ul>
-                            <li>Nombre: <%= usuario.nombre %></li> 
-                            <li>Apellido: <%= usuario.apellido %></li> 
-                            <li>Email: <%= usuario.email %></li> 
-                        </ul>
-                    </div>
-            </div>
 
-            <div class="elimUsuario">
-                <a href="/users/edit/<%= usuario.id %>"><button type=button>EDITAR USUARIO</button></a>
+                <div class="editUserProfile">
+                    <a href="/users/edit/<%= usuario.id %>"><button type=button>EDITAR USUARIO</button></a>
+                </div>
+
             </div>
+        </div>
 
     <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 

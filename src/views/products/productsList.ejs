@@ -24,22 +24,18 @@
                 <a href="/products/detail/<%=producto.id %>">
                     <article class = "cajaDeProducto">
                         <div class="cajaFotoDeProducto">
-                            <img src="/img/products/<%= producto.imagen %>" alt="Imagen del producto"> <!-- Foto del producto -->
+                            <img src="/img/products/<%= producto.imagen %>" class="imageProduct" alt="Imagen del producto"> <!-- Foto del producto -->
                         </div>
                         
-                        <div class="datosProducto">
-                            <ul type= "None">
-                                <li>Nombre: <%= producto.nombre %></li>  <!-- Nombre de producto segun id -->
-                                <li>Categoria: <%= producto.Categoria.nombre %></li>
-                                <li>Marca: <%= producto.Marca.nombre %></li>
-                                <li>Genero: <%= producto.Genero.nombre %></li>
-                                <li>Deporte: <%= producto.Deporte.nombre %></li>
-                                <li>Precio: <%= producto.precio %></li>
-                            </ul>
+                        <div class="datosProducto">                          
+                            <div class="deporteList"><%= producto.Deporte.nombre %></div>
+                            <div class="nombreList"><%= producto.nombre %></div>  <!-- Nombre de producto segun id -->
+                            <div class="precioList">$<%= producto.precio %></div>                           
                         </div>
+                        
                         <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
                             <div class="BotonDeEdición">
-                                <a href="/products/edit/<%= producto.id %>"><button type=button class="btn btn-warning">EDITAR PRODUCTO</button></a>
+                                <a href="/products/edit/<%= producto.id %>"><button type=button class="botonEditList">EDITAR PRODUCTO</button></a>
                             </div>
                         
                         <%}%>

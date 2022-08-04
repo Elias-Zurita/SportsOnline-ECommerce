@@ -33,7 +33,7 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 
 .cajaMarcas{width: 100%;}
 
-.caja-categorias, .caja-categorias a{background-color: rgb(43, 210, 216); color:black; width: 100%; height: 40px; margin-inline-end: 30px;}
+.caja-categorias, .caja-categorias a{background-color: #73ecf7;; color:black; width: 100%; height: 40px; margin-inline-end: 30px;}
 .caja-categorias { justify-content: space-between;font-size: larger;padding: 4px 0 4px 0;}
 
 .categorias {display: flex; flex-direction: row; justify-content: space-between; font-weight: bold; width: 100%;}
@@ -44,8 +44,9 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 .fotosMarcas {display: flex; flex-direction: row; flex-wrap: wrap; background-color: black; justify-content: space-between; margin:auto; width:100%;}
 .fotosMarcas div{margin-right: 50px;}
 
-.productos{display:flex;width: 25%; justify-content: flex-start;}
-.productos div{width: 25vw; justify-content: space-between; width: 100vw;}
+.productos{display:flex;width: 25%; justify-content: flex-start; }
+.productos div{width: 25vw; justify-content: space-between; width: 100vw;border: solid blue;}
+
 .mujerHombre{display: flex; flex-direction: row ; width:90vw; align-items: center; justify-content: space-between;}
 
 .hombre, .mujer{height: 100%; width: 50vw; padding: 3px;}
@@ -55,11 +56,11 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 .camiseta h2, .zapatillaHombre h2, .pelotaCapitano h2, .bolsoNike h2 {width: 25vw; padding: 7px; font-size: 17px; color:black; text-align: left;}
 .filasImagenes{display: block;}
 
-.suscribite{border:black solid;}
-.suscribite h2{text-align: center;}
+.suscribite{border:black solid;background-color:  #73ecf7;;}
+.suscribite h2{text-align: center;color: white;}
 .botonSuscripcion{display:flex; justify-content: center; margin-bottom: 12px;}
 
-footer {margin-top: 70px; background-color: black; color: white; width:100%;}
+footer {margin-top: 70px; background-color: rgba(0,0,0,0.9); color: white; width:100%;}
 
 .cajas-footer {justify-content: space-between;}
 .cajas-footer2 {justify-content: space-between; margin-top: 50px;}

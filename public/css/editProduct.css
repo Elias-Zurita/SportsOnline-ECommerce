@@ -16,13 +16,18 @@ color: red;
     margin-top: 1%;
 }
 
+.cajaFotoDeProducto img{
+    width: 470px;   /*  al ser imagen se ajusta en pixeles */
+    height: 470px;  /*  al ser imagen se ajusta en pixeles */
+}
+
 .cajaEdicionIzquierda{
     font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
     border: solid rgb(228, 217, 63);
-    width: 25%;
+    width: 30%;
     font-size: large;
 }
 
@@ -33,6 +38,15 @@ color: red;
 .cajaEdicionIzquierda input{
     text-align: center;
     font-weight: bold;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajaEdicionIzquierda select{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cajaEdicionDerecha{
@@ -40,9 +54,9 @@ color: red;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(219, 48, 235);
+    border: solid rgb(235, 92, 48);
     margin-left: 5%;
-    width: 25%;
+    width: 30%;
     font-size: large;
 }
 
@@ -52,20 +66,23 @@ color: red;
 
 .cajaEdicionDerecha input{
     text-align: center;
+    font-weight: bold;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajaEdicionDerecha select{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cajaEdicionDerecha textarea{
- font-weight: bold;
-}
-
-.cajaFotoDeProducto img{
-    width: 400px;   /*  al ser imagen se ajusta en pixeles */
-    height: 400px;  /*  al ser imagen se ajusta en pixeles */
-    align-items: center;    
-}
-
-.cajaFotoDeProducto{
-    margin-right: 5%;
+    font-weight: bold;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .botonGuardarEdicion{
@@ -77,8 +94,9 @@ color: red;
 }
 
 .botonGuardarEdicion button{
-    background-color: rgb(43, 210, 216); 
-    width: 350px;   
+    background-color: #73ecf7;
+    width: 380px;  
+    border-radius: 50px; 
 }
 
 .botonGuardarEdicion button:hover {
@@ -94,7 +112,7 @@ color: red;
     font-size: x-large;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .botonEliminarProducto button {
