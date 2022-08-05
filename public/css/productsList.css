@@ -48,8 +48,7 @@
 .bodyProductsList :hover{
     cursor: pointer; /* mouse en modo hipervinculo */
     transform: translateY(-5%); /* mueve la caja hacia arriba */
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-    transition: all 400ms ease; /* para que la caja se desplaze suave hacia arriba */
+    transition: 0.9s; /* para que la caja se desplaze suave hacia arriba */
     border-radius: 20px;
 }
 
@@ -63,7 +62,7 @@ article.cajaDeProducto{
     height: auto;
     border-radius: 20px;
     margin: 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); /* esta tapado el efecto sombra por el solido de abajo */
+    box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.157); /* efecto sombra: lateral, vertical, manchado */
 }
 
 article.cajaDeProducto img{
@@ -73,8 +72,8 @@ article.cajaDeProducto img{
 
 article.cajaDeProducto :hover{  /* hover interno de la caja */
     transform: translateY(0%); /* deja todo lo interno del articulo sin moverse al hacer el hover */
-    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0);
-    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0); /* aplica 0 de sombra para que no sombree por seccion del articulo */
+    border-radius: 20px 20px 0px 0px;
 }
 
 .cajaFotoDeProducto{
@@ -121,10 +120,15 @@ article.cajaDeProducto:hover .imageProduct{  /* efecto de zoom (expande la escal
 .botonEditList{
     background-color: rgba(236, 179, 24, 0.931);
     font-size: large;
-    border: solid red;
+    border-radius: 10px;
     width: 80%;
 }
 
 .botonEditList button{
     width: 70%;
+}
+
+.botonEditList:hover{
+    background-color: rgb(216, 74, 55);
+    border-radius: 10px 
 }

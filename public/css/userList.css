@@ -1,26 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.todosLosUsuarios{
-    display: flex;
-    flex-direction: row;
-}
-.cajaDeUsuario{
-    color: rgb(0, 0, 0);
+
+.listadoUsuariosTitulo{
+    text-align: center;
+    margin-top: 1%;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    display: flex;
-    width: 50%;
-    margin: 5px;
 }
 
-.cajaDeUsuario img {
-    width: 20%;
+.listadoUsuariosTitulo i{
+    color:rgb(0, 255, 157)
+}
+
+.tableUsuarios{
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.headUsuarios{
+    text-align: center;
+    font-size: large;
+    background-color: rgb(173, 173, 173);
+    
+}
+
+tbody td{     /* interior de la tabla */
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
+    padding: 10px;
+    font-weight: bold;
+    font-family: calibri;
+}
+
+.FotoDeUsuario img{
+    width: 80px;
+    height: 80px;
     border:rgb(65, 40, 2);
-    border-style:double;
     border-radius: 10%;
+}
+
+.FotoDeUsuario {
+    text-align: center;
+}
+
+.FotoDeUsuario td img{
+    text-align: center;
+    border: solid violet;
+}
+
+.columnaNombre{
+    width: 150px;
+}
+
+.columnaApellido{
+    width: 150px;
+}
+
+.columnaEmail{
+    width: 250px;
+}
+
+.columnaDireccion{
+    width: 300px;
+}
+
+.elimUsuarioList{
+    
+    font-size: small;
+    margin-right: auto;
+    margin-left: auto;  
+}
+
+.elimUsuarioList button{
+    background-color:rgb(216, 43, 43);
+    font-weight: bold;
+    border-radius: 10%;
+    width: 70px;
+    height: 50px;
+}
+
+.elimUsuarioList button:hover{
+    color: rgb(255, 255, 255);
+    background-color: red;
+    transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
 }

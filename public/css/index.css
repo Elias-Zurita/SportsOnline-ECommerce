@@ -36,7 +36,7 @@ a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de e
 .caja-categorias, .caja-categorias a{background-color: #73ecf7;; color:black; width: 100%; height: 40px; margin-inline-end: 30px;}
 .caja-categorias { justify-content: space-between;font-size: larger;padding: 4px 0 4px 0;}
 
-.categorias {display: flex; flex-direction: row; justify-content: space-between; font-weight: bold; width: 100%;}
+.categorias {display: flex; flex-direction: row; justify-content: space-between; font-weight: bold; width: 100%; }
 
 
 .navega, .lanzamientos{font-weight: bold; font-size: x-large;}
