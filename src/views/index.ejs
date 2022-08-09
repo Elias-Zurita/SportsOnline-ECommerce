@@ -1,99 +1,148 @@
 <!DOCTYPE html>
 <html>
 
-    <div class="container-fluid">
-
     <%- include('partials/head.ejs') %>  <!--  Incluye el HEAD  -->
 
 <body>
 
-<%- include('partials/header.ejs') %>  <!--  Incluye el HEADER  -->
+    <%- include('partials/header.ejs') %>  <!--  Incluye el HEADER  -->
 
-<main>
-    
-    <br>
+    <main>
+        
+        <br>
 
-    <h2 class="navega">NAVEGÁ POR MARCAS</h2>
-    
-    <div class="cajaMarcas">
-    <ul class="fotosMarcas" type= "None">
-        <div><li><a href=""><img src="\img\adidas.png" alt="adidas"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_fila.png" alt="fila"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_kappa.png" alt="kappa"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_nike.png" alt="nike"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_puma.png" alt="puma"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_reebok.png" alt="reebok"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_umbro.png" alt="umbro"></a></li></div>
-        <div><li><a href=""><img src="\img\icon_logo_lagear.png" alt="lagear"></a></li></div>
-     </ul>
-</div>
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true"> <!--  en la clase donde esta slide al agregarle carouserl-fade cambia el efecto de transicion  -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> <!--  Los Slide son las lineas inferiores de cambio de banner  -->
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner" data-bs-interval="1000">
+                <div class="carousel-item active"> <!--  active es para determinar la primer imagen que mostrara  -->
+                    <img src= "/img/carrousel/banner1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000"> <!--  interval determina el tiempo para pasar a la siguiente imagen  -->
+                    <img src="/img/carrousel/banner2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="/img/carrousel/banner3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="/img/carrousel/banner4.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="/img/carrousel/banner5.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
-<br>
+        <br>
 
-<h2 class="lanzamientos">LANZAMIENTOS</h2>
+        <div class="lanzamientos">L A N Z A M I E N T O S</div>
+        
+        <div class="productosLanzamientos">
+            <div class="cajaLanzamientoIndex">
+                <a href=""><img src="/img/products/imagen1.jpg" alt="adidas">
+                <div class="nombreList">Camiseta Adidas Titular Selección</div>
+                <div class="precioList">$10000</div> 
+                </a>
+            </div>
+            <div class="cajaLanzamientoIndex">
+                <a href=""><img src="/img/products/imagen1632079322371.jpg" alt="adidas">
+                <div class="nombreList">Camiseta Adidas Titular Selección</div>
+                <div class="precioList">$10000</div>
+                </a>
+            </div>
+            <div class="cajaLanzamientoIndex">
+                <a href=""><img src="/img/products/imagen1632079387683.jpg" alt="adidas">
+                <div class="nombreList">Camiseta Adidas Titular Selección</div>
+                <div class="precioList">$10000</div>
+                </a>
+            </div>
+            <div class="cajaLanzamientoIndex">
+                <a href=""><img src="/img/products/imagen1632079419116.jpg" alt="adidas">
+                <div class="nombreList">Camiseta Adidas Titular Selección</div>
+                <div class="precioList">$10000</div>
+                </a>
+            </div>
+        </div>
 
-<div class="filasImagenes">
+        <div class="lanzamientos">NAVEGÁ POR MARCAS</div>
+        
+        <div class="cajaMarcas">
+            <ul class="fotosMarcas" type= "None">
+                <li><a href=""><img src="\img\adidas.png" alt="adidas"></a></li>
+                <li><a href=""><img src="\img\icon_logo_fila.png" alt="fila"></a></li>
+                <li><a href=""><img src="\img\icon_logo_kappa.png" alt="kappa"></a></li>
+                <li><a href=""><img src="\img\icon_logo_nike.png" alt="nike"></a></li>
+                <li><a href=""><img src="\img\icon_logo_puma.png" alt="puma"></a></li>
+                <li><a href=""><img src="\img\icon_logo_reebok.png" alt="reebok"></a></li>
+                <li><a href=""><img src="\img\icon_logo_umbro.png" alt="umbro"></a></li>
+                <li><a href=""><img src="\img\icon_logo_lagear.png" alt="lagear"></a></li>
+            </ul>
+        </div>
 
-<div class="productos">
+        <br>
+        
+        <div class="mujerHombre">
+            <div class="imagenMujerHombre">
+                <a href=""><img src="\img\seccionMujer.jpg" alt="secciones" class="imgMujer"></a>
+            </div>
+            <div class="imagenMujerHombre">
+                <a href=""><img src="\img\seccionHombre.jpg" alt="secciones" class="imgHombre"></a>
+            </div>
+        </div>
+        
+        <br>
 
-    <div class="camiseta">
-        <a href=""><img src="/img/products/imagen1.jpg" alt="adidas">
-        <h2>Camiseta Adidas Titular Selección</h2>
-        <h2>$10000</h2>
-        </a>
-    </div>
 
-    <div class="zapatillaHombre">
-        <a href=""><img src="/img/products/imagen1632079322371.jpg" alt="adidas">
-        <h2>Pelota US Open Wilson</h2>
-        <h2>$300</h2>
-        </a>
-    </div>
 
-    <div class="pelotaCapitano">
-        <a href=""><img src="/img/products/imagen1632079387683.jpg" alt="adidas">
-        <h2>Pelota Adidas Aniversario</h2>
-        <h2>$2000</h2>
-        </a>
-    </div>
+        <div class="ventajasTitulo">Ventajas de comprar en SportsOnline</div>
+        
+        <div class="ventajasPadre">
+            <div class="cajaHijoVentaja">
+                <i class="fas fa-money-bill-alt"></i>
+                <div class="subtituloVentajas">MEDIOS DE PAGO</div>
+                <div class="textoVentajas">¡Acompañá la mejor experiencia de compra pagando con tus tarjetas preferidas! Podés pagar con debito y crédito.</div>
+            </div>
+            <div class="cajaHijoVentaja">
+                <i class="fas fa-truck"></i>
+                <div class="subtituloVentajas">ENVIOS A TODO EL PAIS</div>
+                <div class="textoVentajas">Enviamos a toda la Republica Argentina.</div>
+            </div>
+            <div class="cajaHijoVentaja">
+                <i class="fas fa-leaf"></i>
+                <div class="subtituloVentajas">IMPACTO POSITIVO</div>
+                <div class="textoVentajas">Comprando Online podés saber el impacto positivo que tiene tu compra. También cómo ésta contribuye positivamente a la sociedad y al planeta.</div>
+            </div>
+        </div>
 
-    <div class="bolsoNike">
-        <a href=""><img src="/img/products/imagen1632079419116.jpg" alt="adidas">
-        <h2>Camiseta PSG</h2>
-        <h2>$8000</h2>
-        </a>
-    </div>
+        <div class="suscribite">
+            <div class="newsletter">NEWSLETTER</div>
+            <div class="recibiNewsletter">Recibí $500 todas las ofertas</div>
+            <div class="ofertasNewsletter">¿Quieres recibir nuestras ofertas? ¡Registrate ya mismo y comenzá a disfrutarlas!</div>   
+            <div class="inputNewsletter">
+                <input 
+                    type="text" 
+                    name="ingresarMail" 
+                    placeholder=" Email" 
+                    class="ingresarMailIndex">
+            </div>
+        </div>
+        
+    </main>
 
-</div>
-
-<div class="mujerHombre">
-<div class="seccionMujer">
-<a href=""><img src="\img\seccionMujer.jpg" alt="secciones" class="mujer"></a>
-</div>
-
-<div class="seccionHombre">
-<a href=""><img src="\img\seccionHombre.jpg" alt="secciones" class="hombre"></a>
-</div>
-</div>
-</div>
-
-<div class="suscribite">
-<h2>¡Suscribite al newsletter y recibí $500 para tu primera compra!</h2>
-<h2>Además enterate antes que nadie de las últimas novedades y promociones.</h2>
-<form class="botonSuscripcion">
-<div class="botonMail">
-<label for="ingresarMail"></label>
-<input type="text" name="ingresarMail" id="ingresarMail" placeholder="Ingresa tu e-mail" class="ingresarMail">
-</div>
-
-<div class="suscripcion">
-    <button type="submit" class="suscribirme"><i class="far fa-envelope"></i> SUSCRIBIRME</button>
-    </div>
-</form>
-</div>
-</main>
-
-<%- include('partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
+    <%- include('partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
 
 </body>
 

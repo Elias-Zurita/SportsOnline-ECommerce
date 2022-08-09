@@ -1,79 +1,201 @@
-* {box-sizing: border-box;} 
+a {
+    text-decoration: none; /* le saca el subrayado a todos los hipervinculos de etiqueta a */
+} 
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suma posteriormente. */
+}
 
 body{
-    font-family: 'Exo 2',sans-serif; /* tipo de letra Exo 2 para todo el sitio web */
+    font-family: 'Exo 2',sans-serif;
     background-color: white
 }  
 
-header{background-color: white;}
-.sports-online, .ayuda, .atencionCliente, .redes {font-weight: bold;}
-
-a{text-decoration: none;} /* le saca el subrayado a todos los hipervinculos de etiqueta a */
-
-.main-header {display: flex;justify-content: space-between; align-items: center;}
-
-.logo {width: 180px; height: 120px;}
-
-.fas fa-truck{
-    color: blue;
-    background-color: blueviolet;
+.productosLanzamientos{ 
+    width: 95%;
+    display: flex;
+    flex-direction: row; /* un producto al lado del otro en el plano horizontal*/
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
 }
 
-.userHeader ul{display: flex; align-items: center; margin-right: 9px; text-align: end;}
-.userHeader li{align-items: end; margin-right: 9px; text-align: end;}
-.userHeader img {width:50px;height: 50px; border-radius: 100%; } /* estilo a la foto del usuario */
-.nombreDeUsuario{text-align: end;margin-right: 9px;color:black; font-weight: bold}
-.nombreDeUsuario a:hover{color:red; font-weight: bold;font-size: large} /* el estilo que le da al apoyar el puntero sobre los campos */
-.right-navbar{display: flex; text-align: end;}
-.right-navbar li {margin-right: 9px;}
-.right-navbar a{color:black; font-weight: bold;}
-.barra-de-busqueda {text-align: end;}
-.barra-de-busqueda input {width: 11.6vw; height: 1.5vw;}
-.right-navbar a:hover{color:red; font-weight: bold;font-size: large} /* el estilo que le da al apoyar el puntero sobre los campos */
+.cajaLanzamientoIndex{
+    width: 100%;
+ 
+    margin: 5px 15px 5px 15px;
+    text-align: center;
+}
 
-.cajaMarcas{width: 100%;}
+.cajaLanzamientoIndex:hover{
+    transition: 0.9s; /* para que la caja se desplaze suave hacia arriba */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
+    border-top:  5px solid #73ecf7;;
+}
 
-.caja-categorias, .caja-categorias a{background-color: #73ecf7;; color:black; width: 100%; height: 40px; margin-inline-end: 30px;}
-.caja-categorias { justify-content: space-between;font-size: larger;padding: 4px 0 4px 0;}
+.cajaLanzamientoIndex img{
+    width: 100%;   
+    height: 100%;  
+    max-height: 400px; 
+}
 
-.categorias {display: flex; flex-direction: row; justify-content: space-between; font-weight: bold; width: 100%; }
+.mujerHombre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* separa hacia los laterales las imagenes */
+    width: 100%;
+}
 
+.imagenMujerHombre{
+    text-align: center;
+    width: 90%;
+    overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+    margin-left: 13px;  /* el margen separa las imagenes */
+    margin-right: 13px;
+}
 
-.navega, .lanzamientos{font-weight: bold; font-size: x-large;}
+.imagenMujerHombre:hover .imgMujer{   /* efecto de zoom (expande la escala de la imagen) */
+    transform: scale(1.07); 
+    cursor: pointer; /* mouse en modo hipervinculo */
+}
 
-.fotosMarcas {display: flex; flex-direction: row; flex-wrap: wrap; background-color: black; justify-content: space-between; margin:auto; width:100%;}
-.fotosMarcas div{margin-right: 50px;}
+.imagenMujerHombre:hover .imgHombre{   /* efecto de zoom (expande la escala de la imagen) */
+    transform: scale(1.07); 
+    cursor: pointer; /* mouse en modo hipervinculo */
+}
 
-.productos{display:flex;width: 25%; justify-content: flex-start; }
-.productos div{width: 25vw; justify-content: space-between; width: 100vw;border: solid blue;}
+.imgMujer {
+    transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
+}
 
-.mujerHombre{display: flex; flex-direction: row ; width:90vw; align-items: center; justify-content: space-between;}
+.imgHombre {
+    transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
+}
 
-.hombre, .mujer{height: 100%; width: 50vw; padding: 3px;}
+.mujerHombre img{
+    width: 100%;
+}
 
-.camiseta img, .zapatillaHombre img, .pelotaCapitano img, .bolsoNike img {height: 67%;width: 25vw; padding: 5px;}
-.camiseta, .zapatillaHombre, .pelotaCapitano, .bolsoNike {width: 25vw; padding: 7px; display: flex;}
-.camiseta h2, .zapatillaHombre h2, .pelotaCapitano h2, .bolsoNike h2 {width: 25vw; padding: 7px; font-size: 17px; color:black; text-align: left;}
-.filasImagenes{display: block;}
+.lanzamientos{
+    font-size: xxx-large;
+    font-family: Luckiest Guy;
+    text-align: center;
+    font-weight: bold;
+    color: hotpink;
+    margin-bottom: 15px;
+}
 
-.suscribite{border:black solid;background-color:  #73ecf7;;}
-.suscribite h2{text-align: center;color: white;}
-.botonSuscripcion{display:flex; justify-content: center; margin-bottom: 12px;}
+.cajaMarcas{
+    width: 70%;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    border-radius: 20px;
+    padding: 15px 15px 0 15px;
+    align-items: center;
+    display: flex;
+}
 
-footer {margin-top: 70px; background-color: rgba(0,0,0,0.9); color: white; width:100%;}
+.fotosMarcas{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
 
-.cajas-footer {justify-content: space-between;}
-.cajas-footer2 {justify-content: space-between; margin-top: 50px;}
-.cajas-footer a{color: white}
-.cajas-footer a:hover{color: rgba(8, 205, 240, 0.568);}
+.ventajasTitulo{
+    font-family: Dancing Script;
+    text-align: center;
+    font-size: xxx-large;
+}
 
-.cajas-footer, .cajas-footer2 {display: flex; color: white}  /* transforma en cajas de bloque las clases del footer y las pone una al lado de la otra */
+.ventajasPadre{
+    display: flex;
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
 
-.politica a{color: white;}
-.termino a{color:white;}
-.parte1 {margin-top: 15px; color: white}
-.redes {margin-bottom: 7px; margin-inline-end: 40px;}
+.cajaHijoVentaja{
+    border: 2px solid rgba(0,0,0,.12156862745098039);
+    border-radius: 10px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
 
-.fa-facebook-square{color: #19599f; font-size: xx-large; margin-right: 8px;}
-.fa-instagram{color: rgb(216, 81, 205);font-size: xx-large; margin-right: 8px}
-.fa-twitter-square{color:rgba(42, 109, 255, 0.863);font-size: xx-large; margin-right: 8px}
+.cajaHijoVentaja i{
+    color: rgb(240, 160, 12);
+    font-size: xx-large;
+}
+
+.subtituloVentajas{
+    font-weight: bold;
+    font-size: large;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    font-family: "Roboto", sans-serif;
+}
+
+.textoVentajas{
+    font-weight: bold;
+    color: gray;
+}
+
+.suscribite{
+    background-color:  #73ecf7;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
+    font-family: "Prompt",Sans-serif;
+    padding: 80px;
+    margin: 40px 0px 40px 0px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.newsletter{
+    font-size: medium;
+    margin-bottom: 20px;
+}
+
+.recibiNewsletter{
+    font-size: xx-large;
+    font-family: Segoe UI Black;
+    margin-bottom: 20px;
+}
+
+.ofertasNewsletter{
+    font-size: large;
+    font-family: calibri;
+    margin-bottom: 20px;
+}
+
+.ingresarMailIndex{
+    border: solid black;
+    font-size: medium;
+    border-radius: 10px;
+    padding: 13px 0 13px 8px;
+    width: 50%;
+}
+
+.inputNewsletter ::placeholder{
+    color: black;
+    font-weight: bold;
+}
+
+/*   ESTILOS NUEVOS
+
+position: fixed; Mantiene la seccion estatica en la pantalla por mas que bajes o subas
+cursor: pointer; Cambia el cursor a modo hipervinculo
+
+*/

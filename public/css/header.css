@@ -1,0 +1,184 @@
+.caja-envios{
+    text-align: center!important;
+    background-color: #73ecf7;
+    line-height: 20px;
+    font-size: 12px;
+    font-family: "Prompt",Sans-serif;
+    width: 100%;
+    cursor: pointer;
+    padding: 4px 0;
+    position: absolute; /* le da funcionabilidad a las ubicaciones de abajo */
+    top:0; /* 0 distancia de separacion con la parte superior de la pantalla */
+    right: 0; /* 0 distancia de separacion con la parte derecha de la pantalla */
+    left: 0; /* 0 distancia de separacion con la parte izquierda de la pantalla */
+}
+
+.main-header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* alinea los items (buscador, login, etc) en el centro respecto al plano vertical */
+    width: 100%;
+}
+
+.logo {width: 180px; height: 120px;}
+
+.barra-de-busqueda {
+    text-align: center;
+    width: 60%;
+}
+
+.barra-de-busqueda input {
+    width: 70%;
+    border-radius: 10px;
+    padding: 10px 10px;  /* agranda el input (campo de busqueda) alejando los bordes 10px vertical del texto que se ingresa */
+    font-weight: bold;
+    border: solid black;
+    border-width: 3px;
+}
+
+.barra-de-busqueda ::placeholder{
+    color: black;
+    font-weight: bold;
+}
+
+.headerSinLoguear{
+    text-align: end;
+    margin-right: 12px;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerSinLoguear a{
+    color:black;
+    font-weight: bold;
+    height: 100%;
+}
+
+.headerSinLoguear div :hover{
+    background-color:  #73ecf7;
+    color: white;
+    transition: 1s;
+}
+
+.headerLogueado{
+    display: flex;
+    margin-right: 10px;
+    align-items: center;  /*  Alinea imagen y textos en el plano vertical */
+}
+
+.avatarHeader img {
+    width:80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.avatarHeader{
+    overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+    padding: 5px;
+    margin-right: 3px;
+}
+
+.avatarHeader :hover .imgHeaderAvatar{
+    transform: scale(1.09); 
+    cursor: pointer; /* mouse en modo hipervinculo */
+    transition: 0.9s;
+    border-radius: 100%;
+}
+
+.headerLogueadoOpciones {
+    display: flex; 
+    flex-direction: column;
+    text-align: end;
+    font-weight: bold;
+}
+
+.headerLogueadoOpciones a{
+    color: black;
+}
+
+.headerLogueadoOpciones div :hover{
+    background-color:  #73ecf7;
+    color: white;
+    transition: 1s;
+}
+
+.menuHeader{
+    color:black; 
+    width: 100%; 
+    height: 40px; 
+    margin-inline-end: 30px;
+    justify-content: space-between;
+    font-size: larger;
+    padding: 4px 0 4px 0;
+}
+
+.menuHorizontalHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold; 
+    width: 100%; 
+    color: black;
+    list-style: none; /* nose no hace nada*/
+}
+
+.menuHorizontalHeader a{
+    color: black;
+    margin-right: 25px;
+    margin-top: 10px;
+}
+
+.menuHorizontalHeader > li > a{
+    display: block;
+}
+
+/* Subrayado de menu horizontal */
+
+.menuHorizontalHeader > li:hover{
+    display: inline-block; /* el subrayado va a ocupar solo el texto */
+    position: relative;
+}
+
+.menuHorizontalHeader > li::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* grosor de la linea que hara el subtitulo */
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.6s ease-out;
+}
+
+.menuHorizontalHeader > li:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Subrayado de menu horizontal */
+
+.menuVerticalHeader{
+    position: absolute;  /* cuando se despliega el listado no deforma la fila */
+    display: none;
+    list-style: none; /* quita el punto de lista */
+    width: 170px;
+}
+
+.menuHorizontalHeader li:hover .menuVerticalHeader{
+    display: block ; /* el menu aparece al hacer el hover */
+    background-color: #73ecf7;
+}
+
+.menuVerticalHeader li a{
+    display: block;
+    color: black;
+}
+
+.menuVerticalHeader li a:hover{
+    color: rgb(243, 186, 31);
+    background-color: black;
+}

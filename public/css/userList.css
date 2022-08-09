@@ -3,17 +3,19 @@
     text-align: center;
     margin-top: 1%;
     font-weight: bold;
+    font-family: Paytone One;
 }
 
 .listadoUsuariosTitulo i{
     color:rgb(0, 255, 157)
 }
 
-.tableUsuarios{
+table.tableUsuarios{
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.4);
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+    max-width: 90%;    
 }
 
 .headUsuarios{
@@ -82,3 +84,4 @@ tbody td{     /* interior de la tabla */
     background-color: red;
     transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
+

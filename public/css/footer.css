@@ -1,0 +1,19 @@
+.sports-online, .ayuda, .atencionCliente, .redes {font-weight: bold;}
+
+footer {margin-top: 70px; background-color: rgba(0,0,0,0.9); color: white; width:100%;}
+
+.cajas-footer {justify-content: space-between;}
+.cajas-footer2 {justify-content: space-between; margin-top: 50px;}
+.cajas-footer a{color: white}
+.cajas-footer a:hover{color: rgba(8, 205, 240, 0.568);}
+
+.cajas-footer, .cajas-footer2 {display: flex; color: white}  /* transforma en cajas de bloque las clases del footer y las pone una al lado de la otra */
+
+.politica a{color: white;}
+.termino a{color:white;}
+.parte1 {margin-top: 15px; color: white}
+.redes {margin-bottom: 7px; margin-inline-end: 40px;}
+
+.fa-facebook-square{color: #19599f; font-size: xx-large; margin-right: 8px;}
+.fa-instagram{color: rgb(216, 81, 205);font-size: xx-large; margin-right: 8px}
+.fa-twitter-square{color:rgba(42, 109, 255, 0.863);font-size: xx-large; margin-right: 8px}

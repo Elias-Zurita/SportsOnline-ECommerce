@@ -4,6 +4,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    font-family: Paytone One;
 }
 
 .profileTitulo i{
@@ -13,7 +14,7 @@
 .cajaPadreProfile{
     display: flex;
     flex-direction: row;
-    background-color: #73ecf7;
+    background-color: #6d7c7e;
     justify-content: center;
     width: 50%;
     margin-left: auto;
