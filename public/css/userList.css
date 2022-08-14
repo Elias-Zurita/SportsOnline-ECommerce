@@ -16,13 +16,13 @@ table.tableUsuarios{
     margin-right: auto;
     margin-top: 2%;
     max-width: 90%;    
+    width: 90%;
 }
 
 .headUsuarios{
     text-align: center;
     font-size: large;
-    background-color: rgb(173, 173, 173);
-    
+    background-color: rgb(173, 173, 173); 
 }
 
 tbody td{     /* interior de la tabla */
@@ -30,6 +30,11 @@ tbody td{     /* interior de la tabla */
     padding: 10px;
     font-weight: bold;
     font-family: calibri;
+}
+
+tbody tr:hover{  /* efecto a la fila/reglon de usuario */
+    background-color: rgb(125, 130, 139);
+    color: white;
 }
 
 .FotoDeUsuario img{
@@ -64,11 +69,13 @@ tbody td{     /* interior de la tabla */
     width: 300px;
 }
 
+.perfilUserList{
+    text-align: center;
+}
+
 .elimUsuarioList{
-    
     font-size: small;
-    margin-right: auto;
-    margin-left: auto;  
+    text-align: center;
 }
 
 .elimUsuarioList button{

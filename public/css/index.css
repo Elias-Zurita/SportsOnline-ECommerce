@@ -13,6 +13,33 @@ body{
     background-color: white
 }  
 
+.lanzamientos{
+    font-size: xxx-large;
+    font-family: Luckiest Guy;
+    text-align: center;
+    font-weight: bold;
+    color: hotpink;
+    margin-bottom: 15px;
+    animation-name: lanzamientosAnimacion;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes lanzamientosAnimacion{
+    100% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.50;
+    }
+    25% {
+        opacity: 1.25;
+    }
+}
+
 .productosLanzamientos{ 
     width: 95%;
     display: flex;
@@ -25,15 +52,14 @@ body{
 
 .cajaLanzamientoIndex{
     width: 100%;
- 
     margin: 5px 15px 5px 15px;
     text-align: center;
 }
 
 .cajaLanzamientoIndex:hover{
-    transition: 0.9s; /* para que la caja se desplaze suave hacia arriba */
+    transition: 0.5s; /* para que la caja se desplaze suave hacia arriba */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
-    border-top:  5px solid #73ecf7;;
+    border-radius: 5%;
 }
 
 .cajaLanzamientoIndex img{
@@ -79,15 +105,6 @@ body{
     width: 100%;
 }
 
-.lanzamientos{
-    font-size: xxx-large;
-    font-family: Luckiest Guy;
-    text-align: center;
-    font-weight: bold;
-    color: hotpink;
-    margin-bottom: 15px;
-}
-
 .cajaMarcas{
     width: 70%;
     margin-top: 5px;
@@ -104,49 +121,14 @@ body{
     display: flex;
     justify-content: space-between;
     width:100%;
+    overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
 }
 
-.ventajasTitulo{
-    font-family: Dancing Script;
-    text-align: center;
-    font-size: xxx-large;
-}
-
-.ventajasPadre{
-    display: flex;
-    width: 60%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
-
-.cajaHijoVentaja{
-    border: 2px solid rgba(0,0,0,.12156862745098039);
-    border-radius: 10px;
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 10px;
-    padding-top: 30px;
-}
-
-.cajaHijoVentaja i{
-    color: rgb(240, 160, 12);
-    font-size: xx-large;
-}
-
-.subtituloVentajas{
-    font-weight: bold;
-    font-size: large;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    font-family: "Roboto", sans-serif;
-}
-
-.textoVentajas{
-    font-weight: bold;
-    color: gray;
+.fotosMarcas img:hover{
+    background-color: royalblue;
+    transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
+    border-radius: 20%;
+    transform: scale(1.1); 
 }
 
 .suscribite{
@@ -191,6 +173,55 @@ body{
 .inputNewsletter ::placeholder{
     color: black;
     font-weight: bold;
+}
+
+.ventajasTitulo{
+    font-family: Dancing Script;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.ventajasPadre{
+    display: flex;
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.cajaHijoVentaja{
+    border: 2px solid rgba(0,0,0,.12156862745098039);
+    border-radius: 10px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+
+.cajaHijoVentaja i{
+    color: rgb(240, 160, 12);
+    font-size: xx-large;
+}
+
+.cajaHijoVentaja:hover{
+    transition: 0.5s; /* para que la caja se desplaze suave hacia arriba */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
+    cursor: pointer;
+}
+
+.subtituloVentajas{
+    font-weight: bold;
+    font-size: large;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    font-family: "Roboto", sans-serif;
+}
+
+.textoVentajas{
+    font-weight: bold;
+    color: gray;
 }
 
 /*   ESTILOS NUEVOS

@@ -2,8 +2,9 @@
     text-align: center!important;
     background-color: #73ecf7;
     line-height: 20px;
-    font-size: 12px;
-    font-family: "Prompt",Sans-serif;
+    font-size: 15px;
+    font-family: 'Exo 2',sans-serif;
+    font-weight: bold;
     width: 100%;
     cursor: pointer;
     padding: 4px 0;
@@ -21,7 +22,16 @@
     width: 100%;
 }
 
-.logo {width: 180px; height: 120px;}
+.caja-logo{
+    width: 15%;
+}
+
+.caja-logo img{
+    width: 60%; 
+    max-height: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
 
 .barra-de-busqueda {
     text-align: center;
@@ -44,7 +54,7 @@
 
 .headerSinLoguear{
     text-align: end;
-    margin-right: 12px;
+    margin-right: 2%;
     width: 15%;
     display: flex;
     flex-direction: column;
@@ -106,12 +116,14 @@
 
 .menuHeader{
     color:black; 
-    width: 100%; 
+    width: 60%; 
     height: 40px; 
     margin-inline-end: 30px;
     justify-content: space-between;
     font-size: larger;
     padding: 4px 0 4px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menuHorizontalHeader{
@@ -126,8 +138,11 @@
 
 .menuHorizontalHeader a{
     color: black;
-    margin-right: 25px;
     margin-top: 10px;
+}
+
+.menuHorizontalHeader i{
+    color: rgb(238, 39, 39);
 }
 
 .menuHorizontalHeader > li > a{

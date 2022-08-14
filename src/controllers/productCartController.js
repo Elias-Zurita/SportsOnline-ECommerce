@@ -18,8 +18,8 @@ const productCartController = {
             precioTotal = Number(precioTotal) + Number(item.subtotal)
         })
             return res.render("products/productCart", {items, precioTotal});
-    }
-    /*
+    },
+ 
     agregarProducto: async (req, res) => {
         let productFound = await db.Producto.findByPk(req.params.id,{
             include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
@@ -35,14 +35,6 @@ const productCartController = {
         return res.redirect("/productCart") 
     },
 
-    destroyItem: async (req, res) =>{
-        await db.Items.destroy({
-            where:{
-                id: req.params.id
-            }
-        });
-        res.redirect("/productCart")
-    },
     addOrder: async (req, res) =>{
         let items = await db.Items.findAll({
             include:["Producto", "Ordenes", "Usuario"],
@@ -58,7 +50,7 @@ const productCartController = {
         let ordersFound = await db.Ordenes.findAll()
         let newId = ordersFound.length === 0 ? 1 :  ordersFound[ordersFound.length-1].id + 1
         let newOrder = await db.Ordenes.create({   
-            precio_total: precioTotal,
+            precio_total: totalPrice,
             usuario_id: req.session.userLogged.id,
             fecha: new Date(),
             id: newId
@@ -74,8 +66,17 @@ const productCartController = {
         )
         return res.redirect("/productCart")
     }
-*/
-    
+
+    /*
+      destroyItem: async (req, res) =>{
+        await db.Items.destroy({
+            where:{
+                id: req.params.id
+            }
+        });
+        res.redirect("/productCart")
+    },
+    */
 }
 
 module.exports = productCartController;

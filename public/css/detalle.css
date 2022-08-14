@@ -13,7 +13,7 @@
 
 .cajaIzquierda{
     display: flex;
-    width: 60%;
+    width: 50%;
     height: 100%;
     border: solid rgb(61, 43, 226) 8px;
     margin-top: auto; /* centra la imagen en el plano vertical */
@@ -25,7 +25,7 @@
 .cajaDerecha{
     display: flex;
     flex-direction:column;
-    width: 40%;
+    width: 50%;
     height: 100%;
     border: solid yellowgreen 8px;
 }
@@ -39,8 +39,10 @@
 }
 
 .cajaImagenDetalle img{
-    width: 650px;   /* al ser imagen se utiliza pixeles */
-    height: 650px;  /* al ser imagen se utiliza pixeles */
+    width: 100%;   /* al ser imagen se utiliza pixeles */
+    height: 100%; 
+    max-height: 550px;
+    max-width: auto;
 }
 
 .tituloDeporteDetalle{
@@ -234,4 +236,18 @@
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
     margin-left: 2%;
+}
+
+.BotonDeEdición button{
+    width: 15%;
+    background-color: rgba(255, 247, 134, 0.938);
+}
+
+.BotonDeEdición :hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(207, 139, 11);
+    transform: scale(1);
+    border-radius: 50px;
+    transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+    width: 15%;
 }

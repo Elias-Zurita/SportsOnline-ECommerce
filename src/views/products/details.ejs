@@ -13,26 +13,24 @@
             
             <div class="cajaIzquierda">
                 <div class="cajaImagenDetalle">
-                    <img src="/img/products/<%= producto.imagen %>" data-zoom-image="/img/products/<%= producto.imagen %>" id="zoom">
-                    <!--  Aplica efecto lupa a la imagen. Ademas del id="zoom" en la img requiere un script que va en el head -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.js"></script> 
-                    <script>$("#zoom").elevateZoom();</script>
+                    <img src="/img/products/<%= producto.imagen %>">
                 </div>
             </div>
 
             <div class="cajaDerecha">
-                <form action="/productCart/add/<%= producto.id %>" method="POST">
-                    <div class="tituloDeporteDetalle"><%= producto.Deporte.nombre %></div>
-                    <div class="tituloProductoDetalle"><%= producto.nombre %></div>
-                    
-                    <div class="precioDetalle">  $21213</div>
-                    
-                    <div class="tarjetasDetalle"><i class="fas fa-credit-card"></i>
-                        <div class="cuotas">3 Cuotas sin Interés!</div>
-                    </div>
+            
+                <div class="tituloDeporteDetalle"><%= producto.Deporte.nombre %></div>
+                <div class="tituloProductoDetalle"><%= producto.nombre %></div>
+                
+                <div class="precioDetalle">$<%= producto.precio %></div>
+                
+                <div class="tarjetasDetalle"><i class="fas fa-credit-card"></i>
+                    <div class="cuotas">3 Cuotas sin Interés!</div>
+                </div>
 
-                    <div class="cambio"><i class="fas fa-exchange-alt"></i> Primer cambio gratis</div>
-                    
+                <div class="cambio"><i class="fas fa-exchange-alt"></i> Primer cambio gratis</div>
+                
+                <form action="/productCart/add/<%= producto.id %>" method="POST">
                     <div class="cajaSelectoraDetalle">
                         <div class="talleProducto">
                                 Talle
@@ -50,43 +48,44 @@
                             <div>Cantidad</div>
                             <input class="inputTalleDetalle" type="number" name="cantidad" id="cantidad" value="1">
                         </div>
+                    
                         <div class="cajaAgregarProducto">
                             <button class="botonAgregarProducto" type="submit"><i class="fas fa-shopping-cart"></i> AGREGAR AL CARRITO</button>
                         </div>
                     </div>
-                    
-                    <div class="compartirRedes">
-                        <i class="fas fa-share-alt"></i> Compartir
-                            <div class="Redes">
-                                <i class="fab fa-facebook-square"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-twitter-square"></i>
-                            </div>
-                    </div>
-
-
-                    <div class="cajaEnvioGratis">
-                        <div class="cajaCamioncito">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="cajaEnvio">
-                            <div class="promoEnvio">ENVIO GRATIS A TODO EL PAIS  </div>
-                            <div class="comprasSuperiores">EN COMPRAS SUPERIORES A $10.000</div>
-                        </div>
-                    </div>
-
-                    <div class="InfoDetalle">
-                        <p class="especificaciones">ESPECIFICACIONES</p>
-                        <div>MARCA: <%= producto.Marca.nombre %></div>
-                        <div>CATEGORIA: <%= producto.Categoria.nombre %></div> <!-- Categoria (como lo llame en el alias) -->
-                        <div>GENERO: <%= producto.Genero.nombre %></div>
-                    </div>
-
-                    <div class="descripcionDetalle">
-                        <p>DESCRIPCION: <%= producto.descripcion %></p>
-                    </div>
-
                 </form>
+                
+                <div class="compartirRedes">
+                    <i class="fas fa-share-alt"></i> Compartir
+                        <div class="Redes">
+                            <i class="fab fa-facebook-square"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-twitter-square"></i>
+                        </div>
+                </div>
+
+
+                <div class="cajaEnvioGratis">
+                    <div class="cajaCamioncito">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="cajaEnvio">
+                        <div class="promoEnvio">ENVIO GRATIS A TODO EL PAIS  </div>
+                        <div class="comprasSuperiores">EN COMPRAS SUPERIORES A $10.000</div>
+                    </div>
+                </div>
+
+                <div class="InfoDetalle">
+                    <p class="especificaciones">ESPECIFICACIONES</p>
+                    <div>MARCA: <%= producto.Marca.nombre %></div>
+                    <div>CATEGORIA: <%= producto.Categoria.nombre %></div> <!-- Categoria (como lo llame en el alias) -->
+                    <div>GENERO: <%= producto.Genero.nombre %></div>
+                </div>
+
+                <div class="descripcionDetalle">
+                    <p>DESCRIPCION: <%= producto.descripcion %></p>
+                </div>
+
             </div>
         </div>
 

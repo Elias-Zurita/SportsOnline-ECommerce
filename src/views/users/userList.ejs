@@ -30,10 +30,10 @@
                                     <td><p><%= user.email %></p></td>
                                     <td><p><%= user.pais %></p></td>
                                     <td><p><%= user.direccion %></p></td>
-                                    <td><p><%= user.codigo_postal %></p></td>
-                                    <td><p><%= user.fecha_de_nacimiento %></p></td>
-                                    <td><p><%= user.telefono %></p></td>
-                                    <td><p><%= user.Perfil.nombre %></p></td>
+                                    <td><p class="perfilUserList"><%= user.codigo_postal %></p></td>
+                                    <td><p class="perfilUserList"><%= user.fecha_de_nacimiento %></p></td>
+                                    <td><p class="perfilUserList"><%= user.telefono %></p></td>
+                                    <td><p class="perfilUserList"><%= user.Perfil.nombre %></p></td>
                                     <td><p>
                                             <div class="elimUsuarioList">
                                                 <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
