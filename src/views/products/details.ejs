@@ -35,6 +35,9 @@
                         <div class="talleProducto">
                                 Talle
                             <div class="cajaSelectora">
+                                <% if (producto.categoria_id == "4" || producto.categoria_id == "5" ){ %> <!-- si es categoria 4 o 5 (pelotas o raquetas) -->
+                                    <div>UNICO</div> <!-- No deja seleccionar el talle y muestra "UNICO" -->
+                                    <% } else { %> 
                                 <select class= "selectTalleDetalle">
                                     <% talles.forEach(talle=>{ %>  <!-- para cada elemento de la tabla de categoria -->
                                     <option value="<%= talle.id%>">  <!-- las opciones seran los id -->
@@ -42,6 +45,7 @@
                                     </option>
                                     <% }) %>
                                 </select>
+                                <% } %>
                             </div>
                         </div>
                         <div class="talleProductoDetalle">

@@ -94,7 +94,7 @@ INSERT INTO perfil (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 CREATE TABLE producto (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre varchar(100) NOT NULL,
-  precio smallint(6) NOT NULL,
+  precio MEDIUMINT(10) NOT NULL,
   descripcion text NOT NULL,
   imagen varchar(100) NOT NULL,
   genero_id INT UNSIGNED NOT NULL,
@@ -147,8 +147,7 @@ INSERT INTO talle (`id`, `talle`, `created_at`, `updated_at`) VALUES
 (10, '42', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (11, '43', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (12, '44', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(13, '45', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(14, 'UNICO', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(13, '45', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de usuario
 CREATE TABLE usuario (
