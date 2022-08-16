@@ -24,7 +24,13 @@ INSERT INTO categoria (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (8, 'Buzos', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (9, 'Pantalones', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (10, 'Remeras', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(11, 'Medias', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(11, 'Medias', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(12, 'Paletas', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(13, 'Muñequera', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(14, 'Cubre grip', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(15, 'Guantes', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(16, 'Palo', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(17, 'Pollera', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de deporte
 CREATE TABLE deporte (
@@ -41,7 +47,8 @@ INSERT INTO deporte (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (3, 'PADDLE', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (4, 'RUNNIG', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (5, 'HOCKEY', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(6, 'TRAINING', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(6, 'TRAINING', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(7, 'VOLEY', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de genero
 CREATE TABLE genero (
@@ -75,7 +82,11 @@ INSERT INTO marca (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 (6, 'Fila', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (7, 'Babolat', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
 (8, 'Wilson', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
-(9, 'SportsOnline', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
+(9, 'Nassau', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(10, 'Topper', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(11, 'Vairo', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(12, 'Prince', '2021-01-02 03:00:00', '2021-01-02 03:00:00'),
+(13, 'Head', '2021-01-02 03:00:00', '2021-01-02 03:00:00');
 
 -- Creacion de tabla de perfil
 CREATE TABLE perfil (
@@ -201,7 +212,7 @@ ALTER TABLE producto
 ADD FOREIGN KEY (genero_id) REFERENCES genero(id),
 ADD FOREIGN KEY (deporte_id) REFERENCES deporte(id),
 ADD FOREIGN KEY (marca_id) REFERENCES marca(id),
-ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id),
+ADD FOREIGN KEY (categoria_id) REFERENCES categoria(id);
 
 -- Creacion de Foreign Key Tabla pivot
 ALTER TABLE producto_talle 

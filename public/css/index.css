@@ -13,6 +13,10 @@ body{
     background-color: white
 }  
 
+#carouselExampleIndicators{
+    z-index: -1; /* pone detras el carrousel */
+}
+
 .lanzamientos{
     font-size: xxx-large;
     font-family: Luckiest Guy;

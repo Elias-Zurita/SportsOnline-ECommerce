@@ -1,7 +1,7 @@
-const {validationResult} = require("express-validator"); // requiere la libreria instalada para las validaciones de datos
+const {validationResult} = require("express-validator") // requiere la libreria instalada para las validaciones de datos
 const db = require ("../db/models"); // nos permite utilizar la base de datos
-const {Op, Association} = require("sequelize");
-const Items = require("../db/models/Items"); // declara "Items" desde el modelo de Items de la db
+const {Op, Association} = require("sequelize")
+const Items = require("../db/models/Items") // declara "Items" desde el modelo de Items de la db
 
 const productCartController = {
     carrito: async (req, res) =>{
@@ -12,12 +12,12 @@ const productCartController = {
                 ordenes_id: null 
                 }
             },
-        );
-        let precioTotal = 0;
+        )
+        let precioTotal = 0
         items.forEach(item =>{
             precioTotal = Number(precioTotal) + Number(item.subtotal)
         })
-            return res.render("products/productCart", {items, precioTotal});
+            return res.render("products/productCart", {items, precioTotal})
     },
  
     agregarProducto: async (req, res) => {
@@ -30,7 +30,8 @@ const productCartController = {
             precio: Number(productFound.precio),
             cantidad: Number(req.body.cantidad),
             subtotal: Number(req.body.cantidad) * Number(productFound.precio),
-            user_id: req.session.userLogged.id
+            usuario_id: req.session.userLogged.id,
+            producto_id: productFound.id
         })
         return res.redirect("/productCart") 
     },
@@ -40,7 +41,7 @@ const productCartController = {
             include:["Producto", "Ordenes", "Usuario"],
             where:{
                 usuario_id: req.session.userLogged.id,
-                order_id: null
+                ordenes_id: null
             }
         })
         let totalPrice = 0;

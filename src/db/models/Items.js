@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataTypes){
     
-    let alias = "Items";
+    let alias = "Items"
     
         let cols = {
             id: {
@@ -47,7 +47,7 @@ module.exports = function(sequelize, dataTypes){
             underscored: true  // permite que se utilice el created_at y updated_at con guion bajo
         }
     
-        let Items = sequelize.define(alias,cols,config); 
+        let Items = sequelize.define(alias,cols,config)
         
         Items.associate = function(models){
             Items.belongsTo(models.Usuario, {   // el item tiene un solo usuario
