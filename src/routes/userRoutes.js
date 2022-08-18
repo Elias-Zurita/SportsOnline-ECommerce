@@ -31,7 +31,7 @@ router.get("/profile", authMiddleware, usersController.profile);
 router.get("/logout", usersController.logout); 
 
 // Formulario de listado de usuarios solo lo puede ver un administrador
-router.get("/list",adminMiddleware, usersController.list);    
+router.get("/list",adminMiddleware, usersController.list);
 
 // Formulario de edicion del perfil del usuario
 router.get("/edit/:id", authMiddleware, usersController.edit);

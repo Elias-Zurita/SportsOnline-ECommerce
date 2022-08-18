@@ -15,8 +15,6 @@ router.post("/add/:id", authMiddleware, productCartController.agregarProducto);
 
 router.post("/order/add", authMiddleware ,productCartController.addOrder);
 
-
-// router.delete("/delete/:id" , productCartController.destroyItem);
-
+router.delete("/delete/:id" , productCartController.destroyItem);
 
 module.exports = router;

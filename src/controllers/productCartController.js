@@ -1,11 +1,11 @@
-const {validationResult} = require("express-validator") // requiere la libreria instalada para las validaciones de datos
-const db = require ("../db/models"); // nos permite utilizar la base de datos
+const {validationResult} = require("express-validator") 
+const db = require ("../db/models") 
 const {Op, Association} = require("sequelize")
-const Items = require("../db/models/Items") // declara "Items" desde el modelo de Items de la db
+const Items = require("../db/models/Items") 
 
 const productCartController = {
     carrito: async (req, res) =>{
-        let items = await db.Items.findAll(    // obtengo todos los items de la base de datos
+        let items = await db.Items.findAll(   
             { include:["Producto", "Ordenes", "Usuario"],
             where: {
                 usuario_id: req.session.userLogged.id,
@@ -17,14 +17,15 @@ const productCartController = {
         items.forEach(item =>{
             precioTotal = Number(precioTotal) + Number(item.subtotal)
         })
+        console.log(items)
             return res.render("products/productCart", {items, precioTotal})
     },
- 
+    
     agregarProducto: async (req, res) => {
         let productFound = await db.Producto.findByPk(req.params.id,{
-            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, // incluye asociaciones para que se vean en el detalle
-            {association: "Marca"}, {association: "Categoria"}] // los nombres de las asociaciones (as) en el modelo de productos
-        });
+            include: [{association: "talle"}, {association: "Genero"}, {association: "Deporte"}, 
+            {association: "Marca"}, {association: "Categoria"}]
+        })
         await db.Items.create({
             nombre: productFound.nombre,
             precio: Number(productFound.precio),
@@ -44,7 +45,7 @@ const productCartController = {
                 ordenes_id: null
             }
         })
-        let totalPrice = 0;
+        let totalPrice = 0
         items.forEach(item => {
             totalPrice = Number(totalPrice) + Number(item.subtotal)
         })
@@ -66,9 +67,8 @@ const productCartController = {
             }
         )
         return res.redirect("/productCart")
-    }
+    },
 
-    /*
       destroyItem: async (req, res) =>{
         await db.Items.destroy({
             where:{
@@ -76,10 +76,10 @@ const productCartController = {
             }
         });
         res.redirect("/productCart")
-    },
-    */
+    }
+
 }
 
-module.exports = productCartController;
+module.exports = productCartController
 
     

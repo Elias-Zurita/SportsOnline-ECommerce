@@ -9,11 +9,12 @@ module.exports = function(sequelize, dataTypes){
                 autoIncrement : true
             },
             cantidad: {
+                allowNull: true,
                 type: dataTypes.INTEGER
             },
             subtotal: {
                 allowNull: true,
-                type: dataTypes.INTEGER
+                type: dataTypes.DECIMAL
             },
             producto_id:{
                 allowNull: false,

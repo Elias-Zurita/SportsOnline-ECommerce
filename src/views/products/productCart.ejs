@@ -9,7 +9,6 @@
                            
                 <div class="carritoBody">
 
-                    
                     <table class="tableCart">  <!-- Etiqueta para crear una tabla -->
                         <thead class="tableHead">   <!-- Etiqueta para valores superiores de la tabla -->
                             <tr>   <!-- Etiqueta para valores Table Row (fila) -->
@@ -21,12 +20,12 @@
                             </tr>
                         </thead>
                             <tbody>   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
-                                <% items.forEach(item=> %> 
+                                <% items.forEach(item=> { %> 
                                         <form method="POST">
                                     <tr class="filaCarrito">
-                                        <td><img src="/img/products/<%= item.producto.imagen %>"></td>
-                                        <td><p><%= item.producto.nombre%></p></td>
-                                        <td><p><%=item.producto.precio%></p></td>
+                                        <td><img src="/img/products/<%= item.Producto.imagen %>"></td>
+                                        <td><p><%= item.Producto.nombre%></p></td>
+                                        <td><p><%=item.Producto.precio%></p></td>
                                         <td><p><%=item.cantidad%></p></td>
                                         <td>$<p><%=item.subtotal%></p></td>
                                         </form>
@@ -42,6 +41,10 @@
                     <div class="cajaCarritoPrecioTotal">
                         <p>$<%= precioTotal %></p>
                     </div>
+
+                    <form action="productCart/order/add" method="POST">
+                        <button  type="submit">Confirmar Compra</button>
+                    </form>
                 </div>
 
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
