@@ -51,6 +51,7 @@
     transform: translateY(-5%); /* mueve la caja hacia arriba */
     transition: 0.9s; /* para que la caja se desplaze suave hacia arriba */
     border-radius: 20px;
+    border: solid goldenrod 2px;
 }
 
 article.cajaDeProducto{
@@ -77,6 +78,7 @@ article.cajaDeProducto :hover{  /* hover interno de la caja */
     transform: translateY(0%); /* deja todo lo interno del articulo sin moverse al hacer el hover */
     box-shadow: 5px 5px 5px rgba(0,0,0,0); /* aplica 0 de sombra para que no sombree por seccion del articulo */
     border-radius: 20px 20px 0px 0px;
+    border: none /* deja lo interno sin bordes al hacer el hover */
 }
 
 .cajaFotoDeProducto{
