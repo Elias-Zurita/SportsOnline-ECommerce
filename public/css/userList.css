@@ -32,7 +32,7 @@ tbody td{     /* interior de la tabla */
     font-family: calibri;
 }
 
-tbody tr:hover{  /* efecto a la fila/reglon de usuario */
+tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
     background-color: rgb(125, 130, 139);
     color: white;
 }

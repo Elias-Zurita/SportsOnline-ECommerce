@@ -5,14 +5,14 @@
     <body>
         <%- include('../partials/header.ejs') %>  
 
-            <h1>Carrito de Compras <i class="fas fa-shopping-cart"></i></h1>
+            <h1 class="carritoTitulo">Mi Carrito de Compras <i class="fas fa-shopping-cart"></i></h1>
                            
                 <div class="carritoBody">
 
                     <table class="tableCart">  <!-- Etiqueta para crear una tabla -->
                         <thead class="tableHead">   <!-- Etiqueta para valores superiores de la tabla -->
                             <tr>   <!-- Etiqueta para valores Table Row (fila) -->
-                                <th scope="col" colspan="2">PRODUCTO</th> <!-- coldspan es para la cantidad de columnas que abarcara -->
+                                <th scope="col" colspan="2" class="columna1Cart">PRODUCTOS</th> <!-- coldspan es para la cantidad de columnas que abarcara -->
                                 <th scope="col">PRECIO UNITARIO</th>
                                 <th scope="col">CANTIDAD</th>
                                 <th scope="col">SUBTOTAL</th>
@@ -23,28 +23,53 @@
                                 <% items.forEach(item=> { %> 
                                         <form method="POST">
                                     <tr class="filaCarrito">
-                                        <td><img src="/img/products/<%= item.Producto.imagen %>"></td>
-                                        <td><p><%= item.Producto.nombre%></p></td>
-                                        <td><p><%=item.Producto.precio%></p></td>
-                                        <td><p><%=item.cantidad%></p></td>
-                                        <td>$<p><%=item.subtotal%></p></td>
+                                        <td class="cajaImgCarrito"><img src="/img/products/<%= item.Producto.imagen %>" class="imgCarrito"></td>
+                                        <td><%= item.Producto.nombre%></td>
+                                        <td>$ <%=item.Producto.precio%></td>
+                                        <td><%=item.cantidad%></td>
+                                        <td class="subtotalCarrito">$ <%=item.subtotal%></td>
                                         </form>
                                         <td><form action="/productCart/delete/<%=item.id %>/?_method=DELETE" method="POST">
-                                            <button type="submit" class="botonBorrar"><i class="fas fa-trash-alt"></i></button>
+                                            <button type="submit" class="tachitoCarrito"><i class="fas fa-trash-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>
                                 <% }) %>  
+                                        <td  class="vaciarCarrito" colspan="6">  <!-- abarca toda la fila inferior -->
+                                            <form action="productCart/order/add" method="POST">
+                                                <button type="submit"><i class="fas fa-trash-alt"></i> Vaciar Carrito</button>
+                                            </form>
+                                        </td>
                             </tbody>
                     </table>
 
-                    <div class="cajaCarritoPrecioTotal">
-                        <p>$<%= precioTotal %></p>
+                    <div class="cajaDerechaCarrito">
+                        <div class="resumenCompraCarrito">
+                            <div class="cajaTituloResumen">RESUMEN DE COMPRA<i class="fas fa-money-check-edit-alt"></i></div>
+                            <% if (precioTotal > 30000){ %> <!-- Si el precio total de compra es superior a 30 mil muestra el msj inferior -->
+                                <div class="envioGratisCarrito"><i class="fas fa-truck" id="camioncitoCarrito"></i> ¡Genial! Tenes envío gratis</div>
+                            <% } %>
+                            <div class="resumenTotalCarrito">
+                                <div class="textoTotalCarrito">TOTAL:</div>
+                                <div class="precioTotalCarrito">$ <%= precioTotal %></div>
+                            </div>
+                            <div class="cuotasCarrito">
+                                <div>O hasta 3 cuotas sin interes de $<%= (precioTotal/3).toFixed(2) %></div> <!-- .toFixed(2) redondea en dos decimales -->
+                                <div>Llevalo sino en 6 cuotas de $<%= ((precioTotal+(0.15*precioTotal))/6).toFixed(2)  %></div> <!-- 6 cuotas con 15% de interes -->
+                            </div>
+                            <div class="botonesCarrito">
+                                <div class="botonConfirmarCarrito">
+                                    <form action="productCart/order/add" method="POST">
+                                        <button  type="submit">Confirmar Compra</button>
+                                    </form>
+                                </div>
+                                <div class="botonSeguirCarrito">
+                                    <a href="/products/list"><button  type="button">Seguir Comprando</button></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <form action="productCart/order/add" method="POST">
-                        <button  type="submit">Confirmar Compra</button>
-                    </form>
                 </div>
 
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->

@@ -1,24 +1,59 @@
+.carritoTitulo{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+}
+
+.carritoTitulo i{
+    color: white;
+    border-radius: 100%;
+    background-color: blue;
+    padding: 0.5%;
+}
+
 .carritoBody{
     display: flex;
     justify-content: space-evenly;
+    border: solid blue;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.imgCarrito{
+    border: solid red;
+    width:100%;
+}
+
+.cajaImgCarrito{
+    border: solid orange;
+    width: 13%;
+    background-color: aqua;
+    text-align: left;
 }
 
 table.tableCart{
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    margin: 40px 40px;
-    padding: 10px 10px 10px 10px;
-}
-
-thead.tableHead{
-    font-weight: 100;
+    border: solid blueviolet;
+    width: 65%;
+    margin-right: auto; /* desplaza la caja a la izquierda */
 }
 
 table.tableCart th{
-    font-family: "calibri";
     padding: 10px;
-    text-align:left;
-    font-size: xx-large;
+    text-align:center;
+    font-weight: bold;
+    font-family: Agency FB;
+    font-size: x-large;
+}
+
+.columna1Cart{
+    border: solid brown;
+    width: 40%;
 }
 
 .filaCarrito{
@@ -27,3 +62,131 @@ table.tableCart th{
     font-size: large;
 }
 
+.subtotalCarrito{
+    font-size: x-large;
+    font-weight: bold;
+    color: #229acd;
+    font-family: Segoe UI Black;
+}
+
+.tachitoCarrito{
+    background-color: white;
+    width: 50%;
+    border: none;
+}
+
+.tachitoCarrito i{
+    font-size: x-large;
+    background-color: white;
+}
+
+.tachitoCarrito i:hover{
+    color: red;
+    font-size: xx-large;
+    transition: 0.5s;
+}
+
+.vaciarCarrito{
+    border: solid red;
+    text-align: end;  /* ubica el boton a la derecha*/
+    
+}
+
+.vaciarCarrito button{
+    width: 15%;
+    font-style: italic;
+    text-align: end;   /* ubica el texto a la derecha del boton */
+}
+
+.vaciarCarrito button:hover{
+    color: red;
+    transition: 0.5s;
+}
+
+.cajaDerechaCarrito{
+    border: solid aqua;
+    width: 25%;
+    
+}
+
+.resumenCompraCarrito{
+    border: solid brown;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(212, 212, 212);
+    border-radius: 20px;
+}
+
+.cajaTituloResumen{
+    padding: 10px;
+    text-align:center;
+    font-weight: bold;
+    font-family: Agency FB;
+    font-size: x-large;
+}
+
+.envioGratisCarrito{
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+#camioncitoCarrito{
+    color: green;
+    animation: girarCamion 2s linear infinite; /* nombre de la animacion "girarCamion" velocidad y durabilidad */
+}
+
+@keyframes girarCamion{ /* gira el camion */
+    100%{transform: rotate(-360deg);}
+}
+
+.resumenTotalCarrito{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.textoTotalCarrito{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    justify-content: center;
+}
+
+.precioTotalCarrito{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    justify-content: center;
+}
+
+.cuotasCarrito{
+    text-align: end;
+    margin-top: 3%;
+    font-weight: bold;
+}
+
+.botonesCarrito{
+    margin-top: 5%;
+}
+
+.botonConfirmarCarrito, .botonSeguirCarrito{
+    text-align: center;
+    border: red solid;
+    padding: 3.5%;
+    font-size: x-large;    
+}
+
+.botonConfirmarCarrito button{
+    border-radius: 10px;
+    width: 80%;
+    font-weight: bold;
+    background-color:  #73ecf7;
+}
+
+.botonSeguirCarrito button{
+    border-radius: 10px;
+    width: 80%;
+    font-weight: bold;
+    background-color:  #73ecf7;
+}

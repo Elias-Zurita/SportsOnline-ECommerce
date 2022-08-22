@@ -7,19 +7,36 @@
     font-weight: bold;
     width: 100%;
     cursor: pointer;
+    position: absolute;
     padding: 4px 0;
-    position: absolute; /* le da funcionabilidad a las ubicaciones de abajo */
     top:0; /* 0 distancia de separacion con la parte superior de la pantalla */
     right: 0; /* 0 distancia de separacion con la parte derecha de la pantalla */
     left: 0; /* 0 distancia de separacion con la parte izquierda de la pantalla */
 }
 
+.caja-envios:hover{
+    color: white;
+    transition: 0.9s;;
+}
+
+/*
+header{
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    padding-bottom: 1%;
+}
+*/
+
 .main-header {
-    margin-top: 20px;
+    margin-top: 1.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;  /* alinea los items (buscador, login, etc) en el centro respecto al plano vertical */
-    width: 100%;
+    width: 80%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .caja-logo{
