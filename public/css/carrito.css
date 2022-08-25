@@ -16,7 +16,7 @@
 .carritoBody{
     display: flex;
     justify-content: space-evenly;
-    border: solid blue;
+ 
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -24,21 +24,18 @@
 }
 
 .imgCarrito{
-    border: solid red;
+
     width:100%;
 }
 
 .cajaImgCarrito{
-    border: solid orange;
     width: 13%;
-    background-color: aqua;
     text-align: left;
 }
 
 table.tableCart{
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    border: solid blueviolet;
     width: 65%;
     margin-right: auto; /* desplaza la caja a la izquierda */
 }
@@ -52,7 +49,6 @@ table.tableCart th{
 }
 
 .columna1Cart{
-    border: solid brown;
     width: 40%;
 }
 
@@ -87,7 +83,6 @@ table.tableCart th{
 }
 
 .vaciarCarrito{
-    border: solid red;
     text-align: end;  /* ubica el boton a la derecha*/
     
 }
@@ -104,16 +99,13 @@ table.tableCart th{
 }
 
 .cajaDerechaCarrito{
-    border: solid aqua;
-    width: 25%;
-    
+    width: 30%;
 }
 
 .resumenCompraCarrito{
-    border: solid brown;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: rgb(212, 212, 212);
+    background-color: rgba(0,0,0,0.9);
     border-radius: 20px;
 }
 
@@ -123,12 +115,14 @@ table.tableCart th{
     font-weight: bold;
     font-family: Agency FB;
     font-size: x-large;
+    color: white;
 }
 
 .envioGratisCarrito{
     font-weight: bold;
     font-size: large;
     text-align: center;
+    color: green;
 }
 
 #camioncitoCarrito{
@@ -144,6 +138,7 @@ table.tableCart th{
     display: flex;
     justify-content: space-between;
     margin-top: 3%;
+    color: white;
 }
 
 .textoTotalCarrito{
@@ -151,6 +146,7 @@ table.tableCart th{
     font-weight: bold;
     font-family: Paytone One;
     justify-content: center;
+    color: white;
 }
 
 .precioTotalCarrito{
@@ -158,12 +154,14 @@ table.tableCart th{
     font-weight: bold;
     font-family: Paytone One;
     justify-content: center;
+    color:#229acd;
 }
 
 .cuotasCarrito{
     text-align: end;
     margin-top: 3%;
     font-weight: bold;
+    color: white;
 }
 
 .botonesCarrito{
@@ -172,21 +170,122 @@ table.tableCart th{
 
 .botonConfirmarCarrito, .botonSeguirCarrito{
     text-align: center;
-    border: red solid;
     padding: 3.5%;
-    font-size: x-large;    
+    font-size: large;    
 }
 
 .botonConfirmarCarrito button{
     border-radius: 10px;
     width: 80%;
     font-weight: bold;
-    background-color:  #73ecf7;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  white;
+    transition: 0.5s;
+}
+
+.botonConfirmarCarrito button:hover{
+    background-color: #73ecf7;
 }
 
 .botonSeguirCarrito button{
     border-radius: 10px;
     width: 80%;
     font-weight: bold;
+    background-color:  WHITE;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+}
+
+.botonSeguirCarrito button:hover{
     background-color:  #73ecf7;
 }
+
+/* Laptops */
+@media (max-width:1435px){
+    table.tableCart th{
+        font-size: large;
+    }
+    .subtotalCarrito{
+        font-size: large;
+    }
+    .envioGratisCarrito{
+        font-size: medium;
+    }
+    .textoTotalCarrito{
+        font-size: x-large;
+    }
+    .precioTotalCarrito{
+        font-size: x-large;
+    }
+    .cuotasCarrito{
+        font-size: small;
+    }
+    .botonConfirmarCarrito, .botonSeguirCarrito{
+    font-size: small;
+    }
+}
+
+/* Laptops */
+@media (max-width:1280px){
+    table.tableCart th{
+        font-size: medium;
+    }
+    .bodyCarrito td{
+        font-size: small;
+    }
+    .subtotalCarrito{
+        font-size: medium;
+    }
+    .envioGratisCarrito{
+        font-size: small;
+    }
+    .textoTotalCarrito{
+        font-size: large;
+    }
+    .precioTotalCarrito{
+        font-size: large;
+    }
+    .cuotasCarrito{
+        font-size: x-small;
+    }
+    .botonConfirmarCarrito, .botonSeguirCarrito{
+    font-size: x-small;
+    }
+}
+
+/* Laptos */
+@media (max-width:940px){ 
+    .carritoBody{
+        width: 90%;
+    }
+    .cajaTituloResumen{
+        font-size: large;
+    }
+    .bodyCarrito td{
+        font-size: x-small;
+    }
+    .cuotasCarrito{
+        font-size: xx-small;
+    }
+}
+
+/* Tablets */
+@media (max-width:770px){ 
+    .carritoBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    table.tableCart{
+        margin-right: 0%;
+    }
+    .cajaDerechaCarrito{
+        width: 55%;
+        margin-top: 3%;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+}
+

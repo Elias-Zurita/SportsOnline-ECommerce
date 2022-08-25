@@ -3,17 +3,16 @@
     font-size: xx-large;
     font-weight: bold;
     font-family: Paytone One;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .createTitulo i{
-color: gold;
+    color: gold;
 }
 
 .cajaPadreCreacion{
     display: flex;
     flex-direction: row;
-    border: solid brown;
     justify-content: center;
     margin-top: 1%;
 }
@@ -23,9 +22,11 @@ color: gold;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(228, 217, 63);
     width: 25%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaCreacionIzq label{
@@ -41,10 +42,12 @@ color: gold;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(219, 48, 235);
     margin-left: 5%;
     width: 25%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaCreacionDer label{
@@ -75,4 +78,71 @@ color: gold;
     transform: scale(1);
     border-radius: 50px;
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+
+/* Laptops */
+@media (max-width:1280px){ 
+    .createTitulo{
+        font-size: large;
+    }
+
+    .cajaCreacionIzq{
+        width: 35%;
+    }
+
+    .cajaCreacionDer{
+        width: 35%;
+    }
+
+    .botonCreate{
+        font-size: large;
+    }
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .createTitulo{
+        font-size: medium;
+    }
+
+    .cajaPadreCreacion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cajaPadreCreacion label{
+        font-size: small;
+    }
+
+    .cajaCreacionIzq{
+        width: 50%;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .cajaCreacionDer{
+        width: 50%;
+        margin-left: 0%;
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    .botonCreate{
+        font-size: medium;
+    }
+
+    .botonCreate button{
+        width: 50%;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .cajaCreacionDer{
+        width: 70%;
+}
+    .cajaCreacionIzq{
+        width: 70%; 
+    }
+
 }

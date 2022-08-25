@@ -90,9 +90,15 @@
                       <p><%= errors.pais.msg %></p> <!-- muestra el mensaje que debe llenar el campo de pais -->
                     </div>
                   <% } %>  
-
-                  <br>
-                  <div style= "font-size: xx-large">hacer validaciones de campos, ver mail con register validate </div>
+                
+              <div>
+                <label>Sube tu nueva imagen de perfil: </label>
+                  <input 
+                    type="file"
+                    name= "avatar" 
+                    class="form-control"
+                    value="<%= usuario.avatar.filename %>">  <!-- El name "avatar" es importante usarlo en el archivo de routes users -->
+              </div>
 
             </div>
             

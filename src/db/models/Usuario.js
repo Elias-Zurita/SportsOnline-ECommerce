@@ -55,7 +55,12 @@ module.exports = function(sequelize, dataTypes){
         let config = {
             tableName: "usuario",
             timestamps: true, // es true ya que la tabla se llama igual que el modelo
-            underscored: true  // permite que se utilice el created_at y updated_at con guion bajo
+            underscored: true,  // permite que se utilice el created_at y updated_at con guion bajo
+            scopes:{
+                withoutPassword:{
+                    attributes:{exclude:["contraseña"]},
+                }
+            },
         }
     
         let Usuario = sequelize.define(alias,cols,config); 

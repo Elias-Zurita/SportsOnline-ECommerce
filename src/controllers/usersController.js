@@ -102,6 +102,9 @@ const controller = {
             codigo_postal:req.body.codigo_postal,
             fecha_de_nacimiento:req.body.fecha_de_nacimiento,
             direccion:req.body.direccion,
+            //avatar: req.file.filename, 
+            avatar: req.file ? req.file.filename:req.session.userLogged.avatar, 
+            //avatar: req.file ? req.file.filename : req.session.usuarioLogueado.avatar, asi lo tiene mati
             telefono:req.body.telefono
         },{
             where: {

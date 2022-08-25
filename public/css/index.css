@@ -14,7 +14,7 @@ body{
 }  
 
 #carouselExampleIndicators{
-    z-index: -1; /* pone detras el carrousel */
+    z-index: -1; /* pone detras el carrousel PERO PIERDE FUNCIONALIDAD LOS BOTONES */
 }
 
 .lanzamientos{
@@ -72,6 +72,20 @@ body{
     max-height: 400px; 
 }
 
+.nombreLanzamientos{
+    font-weight: bold;
+    font-family: calibri;
+    font-size: large;
+    color: black;
+}
+
+.precioLanzamientos{
+    font-weight: bold;
+    font-size: x-large;
+    color: #229acd;
+    font-family: Segoe UI Black;
+}
+
 .mujerHombre{
     display: flex;
     flex-direction: row;
@@ -126,6 +140,11 @@ body{
     justify-content: space-between;
     width:100%;
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+}
+
+.fotosMarcas img{
+    width: 100%;
+
 }
 
 .fotosMarcas img:hover{
@@ -234,3 +253,107 @@ position: fixed; Mantiene la seccion estatica en la pantalla por mas que bajes o
 cursor: pointer; Cambia el cursor a modo hipervinculo
 
 */
+
+/* Laptops */
+@media (max-width:1280px){ 
+    .lanzamientos{
+        font-size: xx-large;
+    }
+
+    .nombreLanzamientos, .precioLanzamientos{
+        font-size: medium;
+    }
+
+    .productosLanzamientos{
+        width: 100%;
+    }
+
+    .ventajasTitulo{
+        font-size: x-large;
+    }
+
+    .ventajasPadre{
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .cajaHijoVentaja{
+        width: 30%;
+        font-size: medium;
+    }
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .lanzamientos{
+        font-size: x-large;
+    }
+
+    .nombreLanzamientos, .precioLanzamientos{
+        font-size: x-small;
+    }
+
+    .productosLanzamientos{
+        width: 100%;
+    }
+
+    .cajaMarcas{
+        width: 90%;
+    }
+
+    .ventajasTitulo{
+        font-size: x-large;
+    }
+
+    .ventajasPadre{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .cajaHijoVentaja{
+        width: 80%;
+        font-size: medium;
+        margin-bottom: 4%;
+    }
+
+    .recibiNewsletter{
+        font-size: x-large;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .lanzamientos{
+        font-size: x-large;
+    }
+
+    .nombreLanzamientos, .precioLanzamientos{
+        font-size: x-small;
+    }
+
+    .productosLanzamientos{
+        width: 100%;
+    }
+
+    .mujerHombre{
+        display: flex;
+        flex-direction: column;   
+        width: 100%;
+        align-items: center; /* los centra en el eje x */
+    }
+
+    .imgMujer{
+        margin-bottom: 3%;
+    }
+
+    .recibiNewsletter{
+        font-size: x-large;
+    }
+
+}
+
+
+
+
+  

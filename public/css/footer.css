@@ -1,19 +1,90 @@
-.sports-online, .ayuda, .atencionCliente, .redes {font-weight: bold;}
+footer {
+    margin-top: 3%;
+    background-color: rgba(0,0,0,0.9);
+    color: white; 
+    width:100%;
+}
 
-footer {margin-top: 70px; background-color: rgba(0,0,0,0.9); color: white; width:100%;}
+.cajas-footer {
+    justify-content: space-between;
+    display: flex;
+    color: white;  
+}
 
-.cajas-footer {justify-content: space-between;}
-.cajas-footer2 {justify-content: space-between; margin-top: 50px;}
-.cajas-footer a{color: white}
-.cajas-footer a:hover{color: rgba(8, 205, 240, 0.568);}
+.cajas-footer a{
+    color: white
 
-.cajas-footer, .cajas-footer2 {display: flex; color: white}  /* transforma en cajas de bloque las clases del footer y las pone una al lado de la otra */
+}
+.cajas-footer a:hover{
+    color: rgba(8, 205, 240, 0.568);
+}
 
-.politica a{color: white;}
-.termino a{color:white;}
-.parte1 {margin-top: 15px; color: white}
-.redes {margin-bottom: 7px; margin-inline-end: 40px;}
+.cajas-footer2 {
+    justify-content: space-between;
+    margin-top: 2%;
+    display: flex;
+    color: white
+}
 
-.fa-facebook-square{color: #19599f; font-size: xx-large; margin-right: 8px;}
-.fa-instagram{color: rgb(216, 81, 205);font-size: xx-large; margin-right: 8px}
-.fa-twitter-square{color:rgba(42, 109, 255, 0.863);font-size: xx-large; margin-right: 8px}
+.cajas-footer2 a{
+    color: white;
+}
+
+.cajas-footer2 a:hover{
+    color: rgba(8, 205, 240, 0.568);
+}
+
+.parte1 {
+    margin-top: 15px;
+}
+
+.redes-footer{
+    margin-bottom: 7px; 
+}
+
+.fa-facebook-square{
+    color: #19599f; 
+    font-size: xx-large; 
+}
+
+.fa-instagram{
+    color: rgb(216, 81, 205);
+    font-size: xx-large; 
+}
+
+.fa-twitter-square{
+    color:rgba(42, 109, 255, 0.863);
+    font-size: xx-large; 
+}
+
+.titulos-footer {
+    font-weight: bold;
+}
+
+/* Laptops */
+@media (max-width:800px){ 
+    footer{
+        font-size: small;
+    }
+    .redes i {
+        font-size: large;
+    }
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .cajas-footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .redes i {
+        font-size: x-large;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .cajas-footer2{
+        font-size: x-small;
+    }
+}

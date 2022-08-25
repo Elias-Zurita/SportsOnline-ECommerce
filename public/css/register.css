@@ -13,7 +13,7 @@
 .cajaPadreRegister{
     display: flex;
     flex-direction: row;
-    border: solid brown;
+
     justify-content: center;
     margin-top: 1%;
 }
@@ -23,7 +23,8 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(228, 217, 63);
+    background-color: #e0e0e0c4;
+    padding: 1%;
     width: 25%;
     font-size: large;
 }
@@ -41,7 +42,8 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(219, 48, 235);
+    background-color: #e0e0e0c4;
+    padding: 1%;
     margin-left: 5%;
     width: 25%;
     font-size: large;

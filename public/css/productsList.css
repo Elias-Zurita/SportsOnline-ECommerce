@@ -39,7 +39,7 @@
 }
 
 .buscar:hover input{ 
-    width: 600px;   /* ancho que se expandira al pasar el cursor sobre la lupa */
+    width: 400px;   /* ancho que se expandira al pasar el cursor sobre la lupa */
 }
 
 .bodyProductsList{
@@ -59,7 +59,7 @@ article.cajaDeProducto{
     display: flex;
     display: inline-block; /* se ponen en horizontal respetando los tamaños que le paso */
     justify-content: space-around;
-    width: 13%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    width: 14%;  /* El ancho en % determinará la cantidad de articulos por fila */
     height: auto;
     border-radius: 20px;
     margin: 15px;
@@ -138,3 +138,43 @@ article.cajaDeProducto:hover .imageProduct{  /* efecto de zoom (expande la escal
     background-color: rgb(216, 74, 55);
     border-radius: 10px 
 }
+
+/* Laptops */
+@media (max-width:1540px){ 
+    article.cajaDeProducto{
+        width: 20%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    }
+}
+
+/* Laptops */
+@media (max-width:1056px){ 
+    article.cajaDeProducto{
+        width: 25%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    }
+    .cajaBuscardorListado{
+        border: springgreen solid;
+        display: none;
+    }
+}
+
+/* Laptops */
+@media (max-width:856px){ 
+    article.cajaDeProducto{
+        width: 35%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    }
+}
+
+/* Tablets */
+@media (max-width:600px){ 
+    article.cajaDeProducto{
+        width: 40%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    }
+}
+
+/* Tablets y Smartphones */ 
+@media (max-width:550px){ 
+    article.cajaDeProducto{
+        width: 60%;  /* El ancho en % determinará la cantidad de articulos por fila */
+    }
+}
+

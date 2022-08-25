@@ -3,7 +3,7 @@
     font-size: xx-large;
     font-weight: bold;
     font-family: Paytone One;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .editTitulo i{
@@ -13,14 +13,22 @@ color: red;
 .cajaPadreEdicion{
     display: flex;
     flex-direction: row;
-    border: solid brown;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 1%;
+    padding: 1%;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cajaFotoDeProducto img{
-    width: 470px;   /*  al ser imagen se ajusta en pixeles */
-    height: 470px;  /*  al ser imagen se ajusta en pixeles */
+.cajaFotoEdicionProducto{
+    width: 30%;
+    display: flex;
+    align-items: center; /* alinea la imagen sobre el eje y */
+}
+
+.cajaFotoEdicionProducto img{
+    width: 100%;
 }
 
 .cajaEdicionIzquierda{
@@ -28,9 +36,11 @@ color: red;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(228, 217, 63);
     width: 30%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaEdicionIzquierda label{
@@ -56,10 +66,11 @@ color: red;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(235, 92, 48);
-    margin-left: 5%;
     width: 30%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaEdicionDerecha label{
@@ -89,15 +100,16 @@ color: red;
 
 .botonGuardarEdicion{
     font-family: Franklin Gothic Heavy;
-    font-size: xx-large;
+    font-size: x-large;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: auto;
+    width: 70%;
 }
 
 .botonGuardarEdicion button{
     background-color: #73ecf7;
-    width: 380px;  
+    width: 100%;
     border-radius: 50px; 
 }
 
@@ -115,11 +127,12 @@ color: red;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+    width: 30%;
 }
 
 .botonEliminarProducto button {
     background-color: rgb(216, 43, 43);
-    width: 15% ;
+    width: 100% ;
 }
 
 .botonEliminarProducto button:hover {
@@ -130,3 +143,87 @@ color: red;
     transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
 
+/* Laptops */
+@media (max-width:1280px){ 
+    .cajaPadreEdicion label{
+        font-size: small;
+    }
+
+    .cajaPadreEdicion input{
+        font-size: small;
+    }
+
+    .cajaPadreEdicion textarea{
+        font-size: small;
+    }
+
+    .cajaPadreEdicion select{
+        font-size: small;
+    }
+    .botonGuardarEdicion{
+        font-size: medium;
+        width: 90%;
+    }
+    .botonEliminarProducto{
+        font-size: medium;
+        width: 30%;
+    }
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .editTitulo{
+        font-size: large;
+    }
+
+    .cajaPadreEdicion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cajaFotoEdicionProducto{
+        width: 60%;
+    }
+    .cajaEdicionIzquierda{
+        width: 60%;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .cajaEdicionDerecha{
+        width: 60%;
+        border-radius: 0px 0px 15px 15px;
+    }
+    .botonGuardarEdicion{
+       margin-top: 3%;
+       width: 60%;
+    }
+    .botonEliminarProducto{
+        font-size: medium;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .cajaPadreEdicion label{
+        font-size: x-small;
+    }
+
+    .cajaPadreEdicion input{
+        font-size: x-small;
+    }
+
+    .cajaPadreEdicion textarea{
+        font-size: x-small;
+    }
+
+    .cajaPadreEdicion select{
+        font-size: x-small;
+    }
+    .botonGuardarEdicion{
+        font-size: x-small;
+        width: 80%;
+    }
+    .botonEliminarProducto{
+        font-size: x-small;
+    }
+}

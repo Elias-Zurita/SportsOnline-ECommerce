@@ -19,7 +19,7 @@
                                 <th scope="col">ELIMINAR</th>
                             </tr>
                         </thead>
-                            <tbody>   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
+                            <tbody class="bodyCarrito">   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
                                 <% items.forEach(item=> { %> 
                                         <form method="POST">
                                     <tr class="filaCarrito">
@@ -60,11 +60,11 @@
                             <div class="botonesCarrito">
                                 <div class="botonConfirmarCarrito">
                                     <form action="productCart/order/add" method="POST">
-                                        <button  type="submit">Confirmar Compra</button>
+                                        <button  type="submit">CONFIRMAR COMPRA</button>
                                     </form>
                                 </div>
                                 <div class="botonSeguirCarrito">
-                                    <a href="/products/list"><button  type="button">Seguir Comprando</button></a>
+                                    <a href="/products/list"><button  type="button">SEGUIR COMPRANDO</button></a>
                                 </div>
                             </div>
                         </div>

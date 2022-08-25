@@ -3,7 +3,7 @@
     font-size: xx-large;
     font-weight: bold;
     text-align: center;
-    margin-top: 1%;
+    margin-top: 3%;
     font-family: Paytone One;
 }
 
@@ -14,61 +14,58 @@
 .cajaPadreProfile{
     display: flex;
     flex-direction: row;
-    background-color: #6d7c7e;
+    background-color: #e0e0e0c4;
     justify-content: center;
-    width: 50%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    padding: 40px;
-    border-radius: 3%;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaFotoDeProfile{
-    border: solid rgba(0,0,0,0.9);
     margin-right: 5%;
     border-radius: 10%;
+    width: 50%;
 }
 
 .cajaFotoDeProfile img{
-    width: 400px;
-    height:  400px;
+    width: 100%;
     border-radius: 10%;
 }
 
 .datosPadreProfile{
     font-weight: bold;
-    width: 400px;
-    height:  400px;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    background-color: rgba(0,0,0,0.9);
-    color: white;
+    padding: 1%;
+    background-color: #8f8f8fc4;
     border-radius: 10%;
 }
 
 .datosProfile{
-    font-size: large;
+    font-size: X-large;
     padding: 15px;
 }
 
 .editUserProfile{
     text-align: center;
-    margin-top: 20% ;
+    margin-top: auto; /* ubica el boton abajo de todo en la caja */
+    width: 60%;
 }
 
 .editUserProfile{
     font-family: Franklin Gothic Heavy;
-    font-size: x-large;
+    font-size: X-large;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .editUserProfile button{
     background-color: rgba(44, 195, 145, 0.685);
-    width: 300px;  
+    width: 90%;  
     border-radius: 50px; 
 }
 
@@ -78,4 +75,146 @@
     transform: scale(1);
     border-radius: 50px;
     transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+/* Laptops */
+@media (max-width:1280px){ 
+    .cajaPadreProfile{
+        width: 80%;
+    }
+
+    .cajaFotoDeProfile{
+        width: 50%;
+    }
+
+    .cajaFotoDeProfile img{
+        width: 100%
+    }
+
+    .datosPadreProfile{  
+        width: 50%;
+    }
+}
+
+/* Laptops */
+@media (max-width:1100px){ 
+    .cajaPadreProfile{
+        width: 80%;
+    }
+
+    .cajaFotoDeProfile{
+        width: 55%;
+    }
+
+    .cajaFotoDeProfile img{
+        width: 100%;
+    }
+
+    .datosPadreProfile{  
+        width: 35%;
+    }
+
+    .datosProfile{
+        font-size: small;
+    }
+
+    .editUserProfile{
+        font-size: medium;
+    }
+}
+
+/* Laptops */
+@media (max-width:915px){ 
+    .profileTitulo{
+        font-size: x-large;
+    }
+
+    .cajaPadreProfile{
+        width: 70%;
+    }
+    .cajaFotoDeProfile img{
+        width: 100%;
+    }
+
+    .datosPadreProfile{  
+        width: 40%;
+    }
+
+    .editUserProfile{
+        font-size: small;
+        width: 80%;
+    }
+}
+
+/* Tablets */
+@media (max-width:820px){ 
+    .cajaFotoDeProfile img{
+        width: 100%;
+    }
+
+    .datosPadreProfile{  
+        width: 45%;
+    }
+
+    .datosProfile{
+        font-size: x-small;
+    }
+
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .cajaFotoDeProfile img{
+        width: 100%;
+
+    }
+
+    .datosPadreProfile{  
+        width: 45%;
+    }
+
+    .datosProfile{
+        font-size: xx-small;
+    }
+}
+
+/* Tablets */
+@media (max-width:600px){ 
+    .profileTitulo{
+        font-size: large;
+    }
+
+    .cajaPadreProfile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        text-align: center;
+    }
+
+    .cajaFotoDeProfile {
+        width: 80%;
+        margin-right: 0%;
+    }
+
+    .datosPadreProfile{
+        width: 80%;
+        margin-top: 5%;
+    }
+    .editUserProfile{
+        font-size: xx-small;
+        width: 80%;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .profileTitulo{
+        font-size: medium;
+    }
+
+    .editUserProfile{
+        font-size: xx-small;
+        width: 80%;
+    }
 }

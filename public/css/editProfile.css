@@ -3,7 +3,7 @@
     font-size: xx-large;
     font-weight: bold;
     font-family: Paytone One;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 .editProfileTitulo i{
@@ -13,20 +13,21 @@ color: rgba(224, 114, 24, 0.835);
 .cajaPadreEditProfile{
     display: flex;
     flex-direction: row;
-    border: solid brown;
     justify-content: center;
     margin-top: 1%;
 }
 
 .cajaAvatar{
-    border: solid green;
     margin-right: 5%;
-    
+    width: 25%;
+    display: flex;
+    align-items: center; /* ubica la foto en el centro del eje Y */
+  
 }
 
 .cajaAvatar img{
-    width: 470px;   /*  al ser imagen se ajusta en pixeles */
-    height: 470px;  /*  al ser imagen se ajusta en pixeles */
+    width: 100%;
+    border-radius: 15px;
 }
 
 .cajaCentroDatos{
@@ -34,9 +35,11 @@ color: rgba(224, 114, 24, 0.835);
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(228, 217, 63);
     width: 25%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaCentroDatos label{
@@ -52,10 +55,12 @@ color: rgba(224, 114, 24, 0.835);
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid rgb(219, 48, 235);
     margin-left: 5%;
     width: 25%;
     font-size: large;
+    background-color: #e0e0e0c4;
+    padding: 1%;
+    border-radius: 15px;
 }
 
 .cajaDerechaDatos label{
@@ -71,12 +76,12 @@ color: rgba(224, 114, 24, 0.835);
     font-size: xx-large;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .botonEditProfile button{
     background-color: rgb(43, 210, 216);
-    width: 25% ;
+    width: 35% ;
     border-radius: 50px;
 }
 
@@ -86,4 +91,56 @@ color: rgba(224, 114, 24, 0.835);
     transform: scale(1);
     border-radius: 50px;
     transition: all 700ms ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+/* Laptops */
+@media (max-width:1000px){ 
+    .cajaCentroDatos{
+        width: 33%;
+    }
+
+    .cajaDerechaDatos{
+        width: 33%;
+    }
+
+    .botonEditProfile{
+        font-size: x-large;
+    }
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .editProfileTitulo{
+        font-size:x-large;
+    }
+
+    .cajaPadreEditProfile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cajaAvatar{
+        width: 50%;
+        margin-right: 0%;
+        margin-bottom: 3%;
+    }
+    .cajaCentroDatos{
+        width: 50%;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .cajaDerechaDatos{
+        width: 50%;
+        margin-left: 0%;
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    .botonEditProfile{
+        font-size: medium;
+    }
+
+    .botonEditProfile button{
+        width: 50%;
+    }
 }

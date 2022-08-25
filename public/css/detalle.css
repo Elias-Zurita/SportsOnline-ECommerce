@@ -5,17 +5,17 @@
 
 .CajaMasterDetalle{
     display: flex; /* se manejan con flex */
-    width: 100%; /* ancho */
-    height: 100%; /* alto */
-    border:solid black 10px;
+    width: 90%; /* ancho */
     flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
 }
 
 .cajaIzquierda{
     display: flex;
-    width: 50%;
-    height: 100%;
-    border: solid rgb(61, 43, 226) 8px;
+    flex-direction: column;
+    width: 45%;
     margin-top: auto; /* centra la imagen en el plano vertical */
     margin-bottom: auto; /* centra la imagen en el plano vertical */
     margin-top: auto; /* centra la imagen en el plano vertical */
@@ -25,23 +25,20 @@
 .cajaDerecha{
     display: flex;
     flex-direction:column;
-    width: 50%;
-    height: 100%;
-    border: solid yellowgreen 8px;
+    width: 45%;
+    background-color: #e0e0e0c4;
+    padding: 0.5%;
+    border-radius: 15px;
 }
 
 .cajaImagenDetalle{
     margin-left: auto; /* centra la imagen en el plano horizontal */
     margin-right: auto; /* centra la imagen en el plano horizontal */
-    border: solid rgb(214, 226, 43) 8px;
-    height: 100%;
-    width: 60%;  /* ocupa el 60% de la caja de la izquierda */
+    width: 80%;  /* ocupa el 60% de la caja de la izquierda */
 }
 
 .cajaImagenDetalle img{
-    width: 100%;   /* al ser imagen se utiliza pixeles */
-    height: 100%; 
-    max-height: 550px;
+    width: 100%;   
     max-width: auto;
 }
 
@@ -56,7 +53,6 @@
     font-family: Paytone One;
     font-size: xx-large;
     font-weight: bolder; /* Letra en negrita */
-    border: solid salmon;
 }
 
 .precioDetalle{
@@ -66,7 +62,6 @@
     font-style: italic;
     font-size: xxx-large;
     font-weight: bolder; /* Letra en negrita */
-    border: solid green;
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
 }
 
@@ -75,8 +70,8 @@
     display: flex;
     flex-direction: row;
     text-align: left;
-    border: solid rgb(0, 87, 128);
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
+    align-items: center;
 }
 
 .fa-credit-card{
@@ -86,14 +81,14 @@
 }
 
 .cuotas {
-    font-size: 27px;
+    font-size: x-large;
     font-style: italic;
     font-weight: bold;
     color: rgb(255, 255, 255);
     background-color:  #73ecf7;
     margin-left: 4%;   
     text-align: center;
-    width: 40%;
+    width: 35%;
     border-radius: 15px;
 }
 
@@ -102,12 +97,12 @@
     color: rgb(39, 230, 39);
     margin-left: 2%;
     margin-top: 1%;
+    font-weight: bold;
 }
 
 .InfoDetalle{
     margin-top: 1%;
     text-align: left;
-    border: solid rgb(9, 11, 12);
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
     font-family: Franklin Gothic Heavy;
     font-size: large;
@@ -116,14 +111,13 @@
 .cajaSelectoraDetalle{
     margin-top: 1%;
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
-    border: solid white;
     display: flex;
     flex-direction: row; /* coloca cajas selectoras una al lado de la otra */
+    align-items: center;
 }
 
 .talleProducto{
     text-align: center;
-    border: solid rgb(9, 11, 12);
     font-family: Franklin Gothic Heavy;
     font-size: large;
     width: 25%;
@@ -140,7 +134,6 @@
 }
 
 .talleProductoDetalle{
-    border: solid rgb(212, 58, 135);
     text-align: center;
     font-family: Franklin Gothic Heavy;
     font-size: large;
@@ -194,7 +187,7 @@
     display: flex;
     background-color:  #73ecf7;
     color: black;
-    width: 45%;
+    width: 50%;
     transform: skew(-15deg);   /* Dobla la caja  */
     padding: 10px 10px 10px 20px;  /* Separacion interna de 20 px a la izquierda (camion) */
 }
@@ -223,7 +216,6 @@
 
 .descripcionDetalle{
     margin-top: 1%;
-    border: solid rgb(223, 205, 43);
     margin-left: 2%;
     text-align: left;
     font-family: Franklin Gothic Heavy;
@@ -235,7 +227,8 @@
 .BotonDeEdición{
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
-    margin-left: 2%;
+    margin-top: 1%;
+    text-align: center;
 }
 
 .BotonDeEdición button{
@@ -251,3 +244,228 @@
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
     width: 15%;
 }
+
+
+/* Deskopt */
+@media (max-width:1690px){ 
+    .cuotas {
+        font-size: large;
+}
+    .cajaEnvio{        
+        font-size: x-small;
+    }
+    .botonAgregarProducto{
+        font-size: large;
+    }
+    .cajaIzquierda{
+        width: 60%;
+    }
+    .cajaDerecha{
+        width: 60%;
+    }
+}
+
+/* Laptops */
+@media (max-width:1280px){ 
+    .CajaMasterDetalle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cajaImagenDetalle{
+        width: 100%;
+    }
+    .BotonDeEdición button{
+        width: 30%;
+    }
+}
+
+/* Laptops */
+@media (max-width:1086px){ 
+    .CajaMasterDetalle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3%;
+    }
+    .cajaImagenDetalle{
+        width: 100%;
+    }
+    .tituloProductoDetalle {
+        font-size: x-large;
+    }
+    .precioDetalle{
+        font-size: x-large;
+    }
+    .cuotas {
+        font-size: medium;
+    }
+    .cajaEnvio{        
+        font-size: xx-small;
+    }
+    .botonAgregarProducto{
+        font-size: small;
+    }
+    .talleProducto{
+        font-size: small;
+    }
+    .talleProductoDetalle{
+        font-size: small;
+    }
+    .talleProductoDetalle input{
+        font-size: small
+    }
+    .compartirRedes{
+        font-size: medium;
+    }
+    .Redes i{
+        font-size: x-large;
+    }
+    .especificaciones{
+        font-size: large;
+    }
+    .InfoDetalle{
+        font-size: medium;
+    }
+    .descripcionDetalle{
+        font-size: medium;
+    }
+    .BotonDeEdición button{
+        width: 30%;
+        font-size: large;
+    }
+}
+
+/* Tablets */
+@media (max-width:700px){ 
+    .tituloProductoDetalle {
+        font-size: large;
+    }
+    .precioDetalle{
+        font-size: large;
+    }
+    .cuotas {
+        font-size: x-small;
+    }
+    .tarjetasDetalle i{
+        font-size: small;
+    }
+    .cambio{
+        font-size: medium;
+    }
+    .cambio i{
+        font-size: medium;
+    }
+    .cajaEnvio{        
+        font-size: 8px;
+    }
+    .botonAgregarProducto{
+        font-size: x-small;
+    }
+    .talleProducto{
+        font-size: x-small;
+    }
+    .talleProductoDetalle{
+        font-size: x-small;
+    }
+    .talleProductoDetalle input{
+        font-size: x-small
+    }
+    .compartirRedes{
+        font-size: small;
+    }
+    .Redes i{
+        font-size: large;
+    }
+    .especificaciones{
+        font-size: medium;
+    }
+    .InfoDetalle{
+        font-size: small;
+    }
+    .descripcionDetalle{
+        font-size: small;
+    }
+    .BotonDeEdición button{
+        width: 30%;
+        font-size: medium;
+    }
+    .cajaIzquierda{
+        width: 80%;
+    }
+    .cajaDerecha{
+        width: 80%;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .tituloDeporteDetalle{
+        font-size: medium ;
+    }
+    .tituloProductoDetalle {
+        font-size: medium;
+    }
+    .precioDetalle{
+        font-size: medium;
+    }
+    .cambio{
+        font-size: small;
+    }
+    .cambio i{
+        font-size: small;
+    }
+    .cajaEnvio{        
+        font-size: 6px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .cajaEnvioGratis i{        
+        font-size: small;
+        display: flex;
+        align-items: center;
+    }
+    .cajaEnvioGratis{
+        width: 70%;
+        padding: 2px 2px 2px 3px;  
+    }
+    .botonAgregarProducto{
+        font-size: xx-small;
+    }
+    .talleProducto{
+        font-size: xx-small;
+    }
+    .talleProductoDetalle{
+        font-size: xx-small;
+    }
+    .talleProductoDetalle input{
+        font-size: xx-small
+    }
+    .compartirRedes{
+        font-size: x-small;
+    }
+    .Redes i{
+        font-size: medium;
+    }
+    .especificaciones{
+        font-size: small;
+    }
+    .InfoDetalle{
+        font-size: x-small;
+    }
+    .descripcionDetalle{
+        font-size: x-small;
+    }
+    .BotonDeEdición button{
+        width: 50%;
+        font-size: small;
+    }
+    .cajaIzquierda{
+        width: 80%;
+    }
+    .cajaDerecha{
+        width: 80%;
+    }
+}
+
