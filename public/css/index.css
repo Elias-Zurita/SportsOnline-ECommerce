@@ -1,22 +1,18 @@
 a {
     text-decoration: none; /* le saca el subrayado a todos los hipervinculos de etiqueta a */
 } 
-
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suma posteriormente. */
 }
-
 body{
     font-family: 'Exo 2',sans-serif;
     background-color: white
 }  
-
 #carouselExampleIndicators{
     z-index: -1; /* pone detras el carrousel PERO PIERDE FUNCIONALIDAD LOS BOTONES */
 }
-
 .lanzamientos{
     font-size: xxx-large;
     font-family: Luckiest Guy;
@@ -28,7 +24,6 @@ body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-
 @keyframes lanzamientosAnimacion{
     100% {
         opacity: 1;
@@ -43,7 +38,6 @@ body{
         opacity: 1.25;
     }
 }
-
 .productosLanzamientos{ 
     width: 95%;
     display: flex;
@@ -53,46 +47,39 @@ body{
     margin-right: auto;
     margin-bottom: 30px;
 }
-
 .cajaLanzamientoIndex{
     width: 100%;
     margin: 5px 15px 5px 15px;
     text-align: center;
 }
-
 .cajaLanzamientoIndex:hover{
     transition: 0.5s; /* para que la caja se desplaze suave hacia arriba */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
     border-radius: 5%;
 }
-
 .cajaLanzamientoIndex img{
     width: 100%;   
     height: 100%;  
     max-height: 400px; 
 }
-
 .nombreLanzamientos{
     font-weight: bold;
     font-family: calibri;
     font-size: large;
     color: black;
 }
-
 .precioLanzamientos{
     font-weight: bold;
     font-size: x-large;
     color: #229acd;
     font-family: Segoe UI Black;
 }
-
 .mujerHombre{
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* separa hacia los laterales las imagenes */
     width: 100%;
 }
-
 .imagenMujerHombre{
     text-align: center;
     width: 90%;
@@ -100,29 +87,23 @@ body{
     margin-left: 13px;  /* el margen separa las imagenes */
     margin-right: 13px;
 }
-
 .imagenMujerHombre:hover .imgMujer{   /* efecto de zoom (expande la escala de la imagen) */
     transform: scale(1.07); 
     cursor: pointer; /* mouse en modo hipervinculo */
 }
-
 .imagenMujerHombre:hover .imgHombre{   /* efecto de zoom (expande la escala de la imagen) */
     transform: scale(1.07); 
     cursor: pointer; /* mouse en modo hipervinculo */
 }
-
 .imgMujer {
     transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
 }
-
 .imgHombre {
     transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
 }
-
 .mujerHombre img{
     width: 100%;
 }
-
 .cajaMarcas{
     width: 70%;
     margin-top: 5px;
@@ -134,26 +115,22 @@ body{
     align-items: center;
     display: flex;
 }
-
 .fotosMarcas{
     display: flex;
     justify-content: space-between;
     width:100%;
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
 }
-
 .fotosMarcas img{
     width: 100%;
 
 }
-
 .fotosMarcas img:hover{
     background-color: royalblue;
     transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
     border-radius: 20%;
     transform: scale(1.1); 
 }
-
 .suscribite{
     background-color:  #73ecf7;
     color: white;
@@ -167,24 +144,20 @@ body{
     margin-right: auto;
     margin-left: auto;
 }
-
 .newsletter{
     font-size: medium;
     margin-bottom: 20px;
 }
-
 .recibiNewsletter{
     font-size: xx-large;
     font-family: Segoe UI Black;
     margin-bottom: 20px;
 }
-
 .ofertasNewsletter{
     font-size: large;
     font-family: calibri;
     margin-bottom: 20px;
 }
-
 .ingresarMailIndex{
     border: solid black;
     font-size: medium;
@@ -192,18 +165,15 @@ body{
     padding: 13px 0 13px 8px;
     width: 50%;
 }
-
 .inputNewsletter ::placeholder{
     color: black;
     font-weight: bold;
 }
-
 .ventajasTitulo{
     font-family: Dancing Script;
     text-align: center;
     font-size: xxx-large;
 }
-
 .ventajasPadre{
     display: flex;
     width: 60%;
@@ -212,7 +182,6 @@ body{
     margin-right: auto;
     margin-top: 20px;
 }
-
 .cajaHijoVentaja{
     border: 2px solid rgba(0,0,0,.12156862745098039);
     border-radius: 10px;
@@ -222,18 +191,15 @@ body{
     padding-bottom: 10px;
     padding-top: 30px;
 }
-
 .cajaHijoVentaja i{
     color: rgb(240, 160, 12);
     font-size: xx-large;
 }
-
 .cajaHijoVentaja:hover{
     transition: 0.5s; /* para que la caja se desplaze suave hacia arriba */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
     cursor: pointer;
 }
-
 .subtituloVentajas{
     font-weight: bold;
     font-size: large;
@@ -241,42 +207,29 @@ body{
     padding-bottom: 25px;
     font-family: "Roboto", sans-serif;
 }
-
 .textoVentajas{
     font-weight: bold;
     color: gray;
 }
-
-/*   ESTILOS NUEVOS
-
-position: fixed; Mantiene la seccion estatica en la pantalla por mas que bajes o subas
-cursor: pointer; Cambia el cursor a modo hipervinculo
-
-*/
 
 /* Laptops */
 @media (max-width:1280px){ 
     .lanzamientos{
         font-size: xx-large;
     }
-
     .nombreLanzamientos, .precioLanzamientos{
         font-size: medium;
     }
-
     .productosLanzamientos{
         width: 100%;
     }
-
     .ventajasTitulo{
         font-size: x-large;
     }
-
     .ventajasPadre{
         justify-content: space-between;
         width: 90%;
     }
-
     .cajaHijoVentaja{
         width: 30%;
         font-size: medium;
@@ -288,35 +241,28 @@ cursor: pointer; Cambia el cursor a modo hipervinculo
     .lanzamientos{
         font-size: x-large;
     }
-
     .nombreLanzamientos, .precioLanzamientos{
         font-size: x-small;
     }
-
     .productosLanzamientos{
         width: 100%;
     }
-
     .cajaMarcas{
         width: 90%;
     }
-
     .ventajasTitulo{
         font-size: x-large;
     }
-
     .ventajasPadre{
         display: flex;
         flex-direction: column;
         width: 80%;
     }
-
     .cajaHijoVentaja{
         width: 80%;
         font-size: medium;
         margin-bottom: 4%;
     }
-
     .recibiNewsletter{
         font-size: x-large;
     }
@@ -327,30 +273,24 @@ cursor: pointer; Cambia el cursor a modo hipervinculo
     .lanzamientos{
         font-size: x-large;
     }
-
     .nombreLanzamientos, .precioLanzamientos{
         font-size: x-small;
     }
-
     .productosLanzamientos{
         width: 100%;
     }
-
     .mujerHombre{
         display: flex;
         flex-direction: column;   
         width: 100%;
         align-items: center; /* los centra en el eje x */
     }
-
     .imgMujer{
         margin-bottom: 3%;
     }
-
     .recibiNewsletter{
         font-size: x-large;
     }
-
 }
 
 

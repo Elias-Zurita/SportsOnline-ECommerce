@@ -4,32 +4,27 @@
     font-weight: bold;
     font-family: Paytone One;
     margin-top: 3%;
+    text-align: center;
 }
-
 .editProfileTitulo i{
 color: rgba(224, 114, 24, 0.835);
 }
-
 .cajaPadreEditProfile{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 1%;
 }
-
 .cajaAvatar{
     margin-right: 5%;
     width: 25%;
     display: flex;
     align-items: center; /* ubica la foto en el centro del eje Y */
-  
 }
-
 .cajaAvatar img{
     width: 100%;
     border-radius: 15px;
 }
-
 .cajaCentroDatos{
     font-weight: bold;
     text-align: center;
@@ -41,15 +36,12 @@ color: rgba(224, 114, 24, 0.835);
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaCentroDatos label{
     margin-top: 5%;
 }
-
 .cajaCentroDatos input{
     text-align: center;
 }
-
 .cajaDerechaDatos{
     font-weight: bold;
     text-align: center;
@@ -62,29 +54,25 @@ color: rgba(224, 114, 24, 0.835);
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaDerechaDatos label{
     margin-top: 5%;
 }
-
 .cajaDerechaDatos input{
     text-align: center;
 }
-
 .botonEditProfile{
     font-family: Franklin Gothic Heavy;
     font-size: xx-large;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
+    text-align: center;
 }
-
 .botonEditProfile button{
     background-color: rgb(43, 210, 216);
     width: 35% ;
     border-radius: 50px;
 }
-
 .botonEditProfile button:hover{
     color: rgb(255, 255, 255);
     background-color: rgba(224, 114, 24, 0.835);
@@ -98,11 +86,9 @@ color: rgba(224, 114, 24, 0.835);
     .cajaCentroDatos{
         width: 33%;
     }
-
     .cajaDerechaDatos{
         width: 33%;
     }
-
     .botonEditProfile{
         font-size: x-large;
     }
@@ -113,33 +99,35 @@ color: rgba(224, 114, 24, 0.835);
     .editProfileTitulo{
         font-size:x-large;
     }
-
     .cajaPadreEditProfile{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     .cajaAvatar{
-        width: 50%;
+        width: 70%;
         margin-right: 0%;
         margin-bottom: 3%;
     }
     .cajaCentroDatos{
-        width: 50%;
+        width: 90%;
         border-radius: 15px 15px 0px 0px;
+        font-size: small;
     }
-
+    .cajaCentroDatos label{
+        font-size: small;
+    }
     .cajaDerechaDatos{
-        width: 50%;
+        width: 90%;
         margin-left: 0%;
         border-radius: 0px 0px 15px 15px;
     }
-
+    .cajaDerechaDatos label{
+        font-size: small;
+    }
     .botonEditProfile{
         font-size: medium;
     }
-
     .botonEditProfile button{
         width: 50%;
     }

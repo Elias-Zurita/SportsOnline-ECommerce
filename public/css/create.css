@@ -4,19 +4,17 @@
     font-weight: bold;
     font-family: Paytone One;
     margin-top: 3%;
+    text-align: center;
 }
-
 .createTitulo i{
     color: gold;
 }
-
 .cajaPadreCreacion{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 1%;
 }
-
 .cajaCreacionIzq{
     font-weight: bold;
     text-align: center;
@@ -28,15 +26,12 @@
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaCreacionIzq label{
     margin-top: 5%;
 }
-
 .cajaCreacionIzq input{
     text-align: center;
 }
-
 .cajaCreacionDer{
     font-weight: bold;
     text-align: center;
@@ -49,29 +44,25 @@
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaCreacionDer label{
     margin-top: 5%;
 }
-
 .cajaCreacionDer input{
     text-align: center;
 }
-
 .botonCreate{
     font-family: Franklin Gothic Heavy;
     font-size: xx-large;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
+    text-align: center;
 }
-
 .botonCreate button {
     background-color: #73ecf7;
     width: 25% ;
     border-radius: 50px;
 } 
-
 .botonCreate button:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(4, 85, 58);
@@ -80,21 +71,17 @@
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
 }
 
-
 /* Laptops */
 @media (max-width:1280px){ 
     .createTitulo{
         font-size: large;
     }
-
     .cajaCreacionIzq{
         width: 35%;
     }
-
     .cajaCreacionDer{
         width: 35%;
     }
-
     .botonCreate{
         font-size: large;
     }
@@ -105,32 +92,26 @@
     .createTitulo{
         font-size: medium;
     }
-
     .cajaPadreCreacion{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     .cajaPadreCreacion label{
         font-size: small;
     }
-
     .cajaCreacionIzq{
-        width: 50%;
+        width: 80%;
         border-radius: 15px 15px 0px 0px;
     }
-
     .cajaCreacionDer{
-        width: 50%;
+        width: 80%;
         margin-left: 0%;
         border-radius: 0px 0px 15px 15px;
     }
-
     .botonCreate{
         font-size: medium;
     }
-
     .botonCreate button{
         width: 50%;
     }
@@ -144,5 +125,4 @@
     .cajaCreacionIzq{
         width: 70%; 
     }
-
 }

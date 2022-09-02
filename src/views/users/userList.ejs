@@ -5,6 +5,11 @@
         <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER  -->
         
             <h2 class="listadoUsuariosTitulo"><i class="fas fa-users"></i> LISTADO DE USUARIOS</h1>
+                
+            <div class="bodyUserList">
+
+                <!-- TABLA DE USUARIOS -->
+
                 <table class="tableUsuarios">          
                     <thead class="headUsuarios">
                         <tr>   <!-- Etiqueta para valores Table Row (fila) -->
@@ -14,26 +19,23 @@
                             <th scope="col" class="columnaEmail"><i class="fas fa-envelope"></i></th>
                             <th scope="col" class="columnaPais"><i class="fas fa-globe-americas"></i></th>
                             <th scope="col" class="columnaDireccion"><i class="fas fa-map-marker-alt"></i></th>
-                            <th scope="col" class="columnaCP"><i class="fas fa-paper-plane"></i></th>
-                            <th scope="col" class="columnaFechaNac"><i class="fas fa-calendar-alt"></i></th>
+                            <th scope="col" class="columnaCP"><i class="fas fa-paper-plane"></i></th>  
                             <th scope="col" class="columnaTelefono"><i class="fas fa-mobile-alt"></i></th>
-                            <th scope="col" class="columnaCategoria"><i class="fas fa-user-shield"></i></th>
                             <th scope="col"><i class="fas fa-user-times"></i></th>
+                            <th scope="col" class="columnaCategoria"><i class="fas fa-user-shield"></i></th>
                         </tr>
                     </thead>
                         <tbody>   <!-- Etiqueta para el cuerpo de la tabla (los productos agregados) -->
                             <% user.forEach (function(user){ %>  <!-- para cada usuario -->
                                 <tr class="filaUsuarios">
-                                   <td class= "FotoDeUsuario"><img src="/img/avatar/<%=user.avatar %>" alt="Avatar"></td>
+                                    <td class= "FotoDeUsuario"><img src="/img/avatar/<%=user.avatar %>" alt="Avatar"class="imgAvatarList"></td>
                                     <td><p><%= user.nombre %></p></td>
                                     <td><p><%= user.apellido %></p></td>
                                     <td><p><%= user.email %></p></td>
                                     <td><p><%= user.pais %></p></td>
                                     <td><p><%= user.direccion %></p></td>
-                                    <td><p class="perfilUserList"><%= user.codigo_postal %></p></td>
-                                    <td><p class="perfilUserList"><%= user.fecha_de_nacimiento %></p></td>
+                                    <td><p class="perfilUserList"><%= user.codigo_postal %></p></td>   
                                     <td><p class="perfilUserList"><%= user.telefono %></p></td>
-                                    <td><p class="perfilUserList"><%= user.Perfil.nombre %></p></td>
                                     <td><p>
                                             <div class="elimUsuarioList">
                                                 <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
@@ -44,11 +46,52 @@
                                                 </form>
                                             </div>
                                     </p></td>
+                                    <td><p class="perfilUserList"><%= user.Perfil.nombre %></p></td>
                                 </tr>
                             <% }) %>  
                         </tbody>
                 </table>
 
+                <br>
+
+
+                <!-- TARJETAS DE USUARIOS -->
+                
+                <div class="cajaPadreUserList">
+                    <% user.forEach (function(user){ %>  <!-- para cada usuario -->
+                        <article class = "cajaDeUser">
+                            <div class="cajaHijaDeUser">
+                                <div class="avatarListTablet">
+                                    <div class= ""><img src="/img/avatar/<%=user.avatar %>" alt="Avatar"class="imgAvatarListTablet"></div>
+                                </div>
+                                
+                                <div class="datosTabletUser">                          
+                                    <div><i class="fas fa-user"></i> <%= user.nombre %></div>
+                                    <div><i class="fas fa-user-shield"></i> <%= user.apellido %></div>
+                                    <div><i class="fas fa-envelope"></i> <%= user.email %></div>
+                                    <div><i class="fas fa-globe-americas"></i> <%= user.pais %></div>
+                                    <div><i class="fas fa-map-marker-alt"></i> <%= user.direccion %></div>
+                                    <div><i class="fas fa-paper-plane"></i> <%= user.codigo_postal %></div>
+                                    <div><i class="fas fa-calendar-alt"></i> <%= user.fecha_de_nacimiento %></div>
+                                    <div><i class="fas fa-mobile-alt"></i> <%= user.telefono %></div>   
+                                    <div><i class="fas fa-user-shield"></i> <%= user.Perfil.nombre %></div>  
+                                    
+                                    <div class="elimUsuarioListTablet">
+                                        <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                                            <button 
+                                                class= "botonElimListTable" 
+                                                type="submit">ELIMINAR USUARIO
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    <% }) %>
+                </div>
+
+            </div>
+            
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER  -->
     </body>
 </html>

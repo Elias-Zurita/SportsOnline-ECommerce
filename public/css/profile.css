@@ -6,11 +6,9 @@
     margin-top: 3%;
     font-family: Paytone One;
 }
-
 .profileTitulo i{
     color: rgb(43, 210, 216)
 }
-
 .cajaPadreProfile{
     display: flex;
     flex-direction: row;
@@ -23,18 +21,15 @@
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaFotoDeProfile{
     margin-right: 5%;
     border-radius: 10%;
-    width: 50%;
+    width: 40%;
 }
-
 .cajaFotoDeProfile img{
     width: 100%;
     border-radius: 10%;
 }
-
 .datosPadreProfile{
     font-weight: bold;
     width: 40%;
@@ -44,31 +39,26 @@
     background-color: #8f8f8fc4;
     border-radius: 10%;
 }
-
 .datosProfile{
-    font-size: X-large;
+    font-size: large;
     padding: 15px;
 }
-
 .editUserProfile{
     text-align: center;
     margin-top: auto; /* ubica el boton abajo de todo en la caja */
     width: 60%;
 }
-
 .editUserProfile{
     font-family: Franklin Gothic Heavy;
     font-size: X-large;
     margin-left: auto;
     margin-right: auto;
 }
-
 .editUserProfile button{
     background-color: rgba(44, 195, 145, 0.685);
     width: 90%;  
     border-radius: 50px; 
 }
-
 .editUserProfile button:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(120, 58, 124);
@@ -82,15 +72,12 @@
     .cajaPadreProfile{
         width: 80%;
     }
-
     .cajaFotoDeProfile{
         width: 50%;
     }
-
     .cajaFotoDeProfile img{
         width: 100%
     }
-
     .datosPadreProfile{  
         width: 50%;
     }
@@ -101,23 +88,18 @@
     .cajaPadreProfile{
         width: 80%;
     }
-
     .cajaFotoDeProfile{
         width: 55%;
     }
-
     .cajaFotoDeProfile img{
         width: 100%;
     }
-
     .datosPadreProfile{  
         width: 35%;
     }
-
     .datosProfile{
         font-size: small;
     }
-
     .editUserProfile{
         font-size: medium;
     }
@@ -128,18 +110,15 @@
     .profileTitulo{
         font-size: x-large;
     }
-
     .cajaPadreProfile{
         width: 70%;
     }
     .cajaFotoDeProfile img{
         width: 100%;
     }
-
     .datosPadreProfile{  
         width: 40%;
     }
-
     .editUserProfile{
         font-size: small;
         width: 80%;
@@ -151,11 +130,9 @@
     .cajaFotoDeProfile img{
         width: 100%;
     }
-
     .datosPadreProfile{  
         width: 45%;
     }
-
     .datosProfile{
         font-size: x-small;
     }
@@ -166,13 +143,10 @@
 @media (max-width:700px){ 
     .cajaFotoDeProfile img{
         width: 100%;
-
     }
-
     .datosPadreProfile{  
         width: 45%;
     }
-
     .datosProfile{
         font-size: xx-small;
     }
@@ -183,20 +157,21 @@
     .profileTitulo{
         font-size: large;
     }
-
     .cajaPadreProfile{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 90%;
         text-align: center;
     }
-
     .cajaFotoDeProfile {
         width: 80%;
         margin-right: 0%;
     }
-
+    .datosProfile{
+        font-size: small;
+        text-align: start;
+    }
     .datosPadreProfile{
         width: 80%;
         margin-top: 5%;
@@ -212,9 +187,11 @@
     .profileTitulo{
         font-size: medium;
     }
-
     .editUserProfile{
         font-size: xx-small;
         width: 80%;
+    }
+    .datosProfile{
+        font-size: x-small;
     }
 }

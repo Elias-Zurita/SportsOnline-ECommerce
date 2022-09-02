@@ -1,49 +1,68 @@
-
-.inicioSesion h2{
+.inicioSesion {
      color: black;
      font-size: xx-large;
      font-weight: bold;
      text-align: center;
-     margin-top: 30px; 
+     margin-top: 3%;
+     font-family: Paytone One;
 }
-
-.formularioLog{
-     margin: 10px; 
+.inicioSesion i{
+     color:#73ecf7;
+     transform: rotate(-45deg); /* Rota el misil hacia arriba, sino por defecto viene en diagonal */
+}
+.loginBody{
      text-align: center; 
      color: rgb(0, 0, 0);
      background-color: rgb(white); 
+     font-size: x-large;
+     font-weight: bold;
 }
-
-.control-formulario {
-     display: flex; 
-     flex-direction: column;
-     align-items: center;
- }
- 
-.control-formulario label{
-     margin: 7px; 
-     font-weight: bold; 
-     font-size: large;
+.correoLogin{
+     width: 20%;
+     margin-left: auto;
+     margin-right: auto;
 }
-
-.control-formulario input {
-     width: 13%; 
-     font-weight: bold; 
-} 
-
+.correoLogin input{
+     height: 45px;
+     border-radius: 10px;
+     border: #bbbbbbc4 solid;
+}
+.correoInputLogin{
+     width: 20%;
+}
+.correoLogin input:hover{
+     border:  #73ecf7 solid;
+     transition: all 600ms ease;
+}
+.contraseñaLogin{
+     width: 20%;
+     margin-left: auto;
+     margin-right: auto;
+}
+.contraseñaLogin input{
+     height: 45px;
+     border-radius: 10px;
+     border: #bbbbbbc4 solid;
+}
+.contraseñaLogin input:hover{
+     border:  #73ecf7 solid;
+     transition: all 600ms ease;;
+}
+.contraseñaInputLogin{
+     width: 20%;
+}
 .wrapper{
      display: flex;
      flex-direction: row;
      position: relative;
+     margin-top: 1.5%;
 }
-
 .wrapper input{
      width: 100%; 
      font-size: large;
      font-weight: bold;
      padding-left: 15px;
 }
-
 .wrapper span {  /* ojo de password */
      position: absolute;
      right: 15px;
@@ -52,117 +71,179 @@
      cursor: pointer;  /* el mouse se pone en modo hipervinculo al pasar sobre el ojo */
      display: none;/* asi no se ve a menos que escriba la contraseña */
 }
-
 .wrapper span i.hide-eye:before{
      content: "\f070";            /* aplica la cruz al ojo */
 }
-
 .wrapper input:valid ~ span{   
      display: block;         /* Hace que aparezca el span (el ojo) al ingresar password */
 }
-
 .recordarme {
      font-size: large; 
      font-weight: bolder; 
      margin: 8px;
 }
-
+.recordarme:hover{
+     color: #2554f0; 
+}
 .olvido a{
      font-weight: bold;
      margin-top: 10px; 
      color:rgb(0, 0, 0); 
      font-size: large;
 }
-
 .olvido a:hover{
      color: #2554f0; 
      font-size: large; 
      font-weight: bolder;
 }
-
 .botonIngresar {
      background-color:rgb(45, 156, 142); 
-     width: 12.5vw; 
-     height: 2vw; 
+     width: 20%; 
+     height: 45px;
      color: white; 
      font-size: large;
+     margin-top: 1%;
 }
-
 .botonDeLogin button:hover{
      background-color: rgb(233, 135, 23);
      border-radius: 5px
 }
-
+.botonesLogin{
+     text-align: center;
+     margin-top: 1%;
+     margin-bottom: 5%;
+}
+.botonesLogin button{
+     width: 20%;
+     height: 45px;
+}
 .fa-sign-in-alt{
      color: white; 
      font-size: large;
 }
-
 .loginFacebook button {
-     background-color: #19599f;  
-     width: 12.5vw; 
-     height: 2vw; 
+     background-color: #19599f;   
 }
-
 .botonFace {
      color: white; 
      font-size: large;
 }
-
 .loginFacebook button:hover{
      background-color: rgb(233, 135, 23);
      border-radius: 5px
 }
-
 .fa-facebook {
      color:white; 
      font-size: large;
 }
-
 .loginGoogle button {
      background-color: #Ce3a30; 
-     width: 12.5vw; 
-     height: 2vw;
 }
-
 .botonGoogle {
      color: white; 
      font-size: large
 }
-
 .loginGoogle {
-     margin: 10px
+     margin-top: 10px
 }
-
 .fa-google {
      color: white; 
      font-size: large;
 }
-
 .loginGoogle button:hover{
      background-color: rgb(233, 135, 23);
      border-radius: 5px
 }
-
 .crearCuenta {
-     margin: 10px; 
+     margin-top: 10px;
      font-weight: bold;
 }
-
 .botonCreaTuCuenta {
      background-color:rgb(12, 12, 12); 
-     width: 12.5vw; 
-     height: 2vw; 
      color: white; 
      font-size: large;
 }
-
 .crearCuenta button:hover{
      background-color: rgb(233, 135, 23);
      border-radius: 5px
 }
-
 .fa-user-plus {
      color: white;
      font-size: large;
+}
+
+/* Laptops */
+@media (max-width:1100px){
+     .correoLogin{
+          width: 30%;
+     }
+     .correoLogin input{
+          height: 35px;
+     }
+     .contraseñaLogin{
+          width: 30%;
+     }
+     .contraseñaLogin input{
+          height: 35px;
+     }
+     .botonDeLogin button{
+          width: 30%;
+          height: 35px;
+     }
+     .botonesLogin button{
+          width: 30%;
+          height: 35px;
+     }
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+     .correoLogin{
+          width: 40%;
+     }
+     .contraseñaLogin{
+          width: 40%;
+     }
+     .botonDeLogin button{
+          width: 40%;
+          height: 35px;
+     }
+     .botonesLogin button{
+          width: 40%;
+          height: 35px;
+     }
+}
+
+/* Tablets */
+@media (max-width:600px){ 
+     .correoLogin{
+          width: 60%;
+     }
+     .contraseñaLogin{
+          width: 60%;
+     }
+     .botonDeLogin button{
+          width: 60%;
+          height: 35px;
+     }
+     .botonesLogin button{
+          width: 60%;
+          height: 35px;
+     }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+     .correoLogin{
+          font-size: medium;
+     }
+     .contraseñaLogin{
+          font-size: medium;
+     }
+     .botonDeLogin button{
+          font-size: medium;
+     }
+     .botonesLogin button{
+         font-size: medium;
+     }
 }

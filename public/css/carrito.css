@@ -5,110 +5,92 @@
     font-family: Paytone One;
     margin-top: 1%;
 }
-
 .carritoTitulo i{
     color: white;
     border-radius: 100%;
     background-color: blue;
     padding: 0.5%;
 }
-
 .carritoBody{
     display: flex;
     justify-content: space-evenly;
- 
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2%;
 }
-
+.bodyCarrito td{
+    font-size: x-large;
+}
 .imgCarrito{
-
     width:100%;
 }
-
 .cajaImgCarrito{
     width: 13%;
     text-align: left;
 }
-
 table.tableCart{
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     width: 65%;
     margin-right: auto; /* desplaza la caja a la izquierda */
 }
-
 table.tableCart th{
-    padding: 10px;
+    padding: 5px;
     text-align:center;
     font-weight: bold;
     font-family: Agency FB;
     font-size: x-large;
 }
-
 .columna1Cart{
     width: 40%;
 }
-
 .filaCarrito{
     font-family: "calibri";
     text-align:center;
     font-size: large;
 }
-
 .subtotalCarrito{
     font-size: x-large;
     font-weight: bold;
     color: #229acd;
     font-family: Segoe UI Black;
 }
-
 .tachitoCarrito{
     background-color: white;
     width: 50%;
     border: none;
 }
-
 .tachitoCarrito i{
     font-size: x-large;
     background-color: white;
 }
-
 .tachitoCarrito i:hover{
     color: red;
     font-size: xx-large;
     transition: 0.5s;
 }
-
 .vaciarCarrito{
-    text-align: end;  /* ubica el boton a la derecha*/
-    
+    text-align: end;  /* ubica el boton a la derecha*/   
 }
-
 .vaciarCarrito button{
-    width: 15%;
+    width: 25%;
     font-style: italic;
     text-align: end;   /* ubica el texto a la derecha del boton */
 }
-
 .vaciarCarrito button:hover{
     color: red;
     transition: 0.5s;
 }
-
 .cajaDerechaCarrito{
     width: 30%;
 }
-
 .resumenCompraCarrito{
     padding-left: 5%;
     padding-right: 5%;
     background-color: rgba(0,0,0,0.9);
     border-radius: 20px;
 }
-
 .cajaTituloResumen{
     padding: 10px;
     text-align:center;
@@ -117,30 +99,25 @@ table.tableCart th{
     font-size: x-large;
     color: white;
 }
-
 .envioGratisCarrito{
     font-weight: bold;
     font-size: large;
     text-align: center;
     color: green;
 }
-
 #camioncitoCarrito{
     color: green;
     animation: girarCamion 2s linear infinite; /* nombre de la animacion "girarCamion" velocidad y durabilidad */
 }
-
 @keyframes girarCamion{ /* gira el camion */
     100%{transform: rotate(-360deg);}
 }
-
 .resumenTotalCarrito{
     display: flex;
     justify-content: space-between;
     margin-top: 3%;
     color: white;
 }
-
 .textoTotalCarrito{
     font-size: xx-large;
     font-weight: bold;
@@ -148,7 +125,6 @@ table.tableCart th{
     justify-content: center;
     color: white;
 }
-
 .precioTotalCarrito{
     font-size: xx-large;
     font-weight: bold;
@@ -156,24 +132,20 @@ table.tableCart th{
     justify-content: center;
     color:#229acd;
 }
-
 .cuotasCarrito{
     text-align: end;
     margin-top: 3%;
     font-weight: bold;
     color: white;
 }
-
 .botonesCarrito{
     margin-top: 5%;
 }
-
 .botonConfirmarCarrito, .botonSeguirCarrito{
     text-align: center;
     padding: 3.5%;
     font-size: large;    
 }
-
 .botonConfirmarCarrito button{
     border-radius: 10px;
     width: 80%;
@@ -182,11 +154,9 @@ table.tableCart th{
     background-color:  white;
     transition: 0.5s;
 }
-
 .botonConfirmarCarrito button:hover{
     background-color: #73ecf7;
 }
-
 .botonSeguirCarrito button{
     border-radius: 10px;
     width: 80%;
@@ -195,7 +165,6 @@ table.tableCart th{
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.5s;
 }
-
 .botonSeguirCarrito button:hover{
     background-color:  #73ecf7;
 }
@@ -204,6 +173,9 @@ table.tableCart th{
 @media (max-width:1435px){
     table.tableCart th{
         font-size: large;
+    }
+    .tachitoCarrito i{
+        font-size: large
     }
     .subtotalCarrito{
         font-size: large;
@@ -231,7 +203,7 @@ table.tableCart th{
         font-size: medium;
     }
     .bodyCarrito td{
-        font-size: small;
+        font-size: large;
     }
     .subtotalCarrito{
         font-size: medium;
@@ -254,7 +226,7 @@ table.tableCart th{
 }
 
 /* Laptos */
-@media (max-width:940px){ 
+@media (max-width:965px){ 
     .carritoBody{
         width: 90%;
     }
@@ -262,30 +234,70 @@ table.tableCart th{
         font-size: large;
     }
     .bodyCarrito td{
-        font-size: x-small;
+        font-size: medium;
     }
     .cuotasCarrito{
         font-size: xx-small;
+    }
+    .vaciarCarrito button{
+        width: 30%;
     }
 }
 
 /* Tablets */
 @media (max-width:770px){ 
+    .carritoTitulo{
+        font-size: x-large;
+    }
+    table.tableCart{
+        width: 90%;
+        margin-right: 0%;
+    }
     .carritoBody{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    table.tableCart{
-        margin-right: 0%;
-    }
     .cajaDerechaCarrito{
-        width: 55%;
+        width: 50%;
         margin-top: 3%;
+    }
+}
+
+/* Tablets */
+@media (max-width:600px){ 
+    table.tableCart th{
+        font-size: small;
+    }
+    .tachitoCarrito i{
+        font-size: medium
+    }
+    .vaciarCarrito button{
+        width: 25%;
+    }
+    .bodyCarrito td{
+        font-size: small;
     }
 }
 
 /* Smartphones */
 @media (max-width:480px){ 
+    .carritoTitulo{
+        font-size: large;
+    }
+    table.tableCart th{
+        font-size: x-small;
+    }
+    table.tableCart{
+        width: 100%;
+        margin-right: 0%;
+    }
+    .cajaDerechaCarrito{
+        width: 70%;
+        margin-top: 3%;
+    }
+    .bodyCarrito td{
+        font-size: x-small;
+    }
 }
 

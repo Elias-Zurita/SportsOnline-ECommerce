@@ -4,49 +4,40 @@
     font-weight: bold;
     font-family: Paytone One;
     margin-top: 3%;
+    text-align: center;
 }
-
 .editTitulo i{
-color: red;
+    color: red;
 }
-
 .cajaPadreEdicion{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 1%;
-    padding: 1%;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
 }
-
 .cajaFotoEdicionProducto{
-    width: 30%;
+    margin-right: 5%;
+    width: 25%;
     display: flex;
     align-items: center; /* alinea la imagen sobre el eje y */
 }
-
 .cajaFotoEdicionProducto img{
     width: 100%;
 }
-
 .cajaEdicionIzquierda{
     font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
     font-size: large;
     background-color: #e0e0e0c4;
     padding: 1%;
     border-radius: 15px;
 }
-
 .cajaEdicionIzquierda label{
     margin-top: 5%;
 }
-
 .cajaEdicionIzquierda input{
     text-align: center;
     font-weight: bold;
@@ -54,29 +45,26 @@ color: red;
     margin-left: auto;
     margin-right: auto;
 }
-
 .cajaEdicionIzquierda select{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
 .cajaEdicionDerecha{
     font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25%;
     font-size: large;
     background-color: #e0e0e0c4;
     padding: 1%;
     border-radius: 15px;
+    margin-left: 5%;
 }
-
 .cajaEdicionDerecha label{
     margin-top: 5%;
 }
-
 .cajaEdicionDerecha input{
     text-align: center;
     font-weight: bold;
@@ -84,20 +72,17 @@ color: red;
     margin-left: auto;
     margin-right: auto;
 }
-
 .cajaEdicionDerecha select{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
 .cajaEdicionDerecha textarea{
     font-weight: bold;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
-
 .botonGuardarEdicion{
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
@@ -106,13 +91,11 @@ color: red;
     margin-top: auto;
     width: 70%;
 }
-
 .botonGuardarEdicion button{
     background-color: #73ecf7;
     width: 100%;
     border-radius: 50px; 
 }
-
 .botonGuardarEdicion button:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(120, 58, 124);
@@ -120,7 +103,6 @@ color: red;
     border-radius: 50px;
     transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
-
 .botonEliminarProducto{
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
@@ -129,12 +111,10 @@ color: red;
     margin-top: 2%;
     width: 30%;
 }
-
 .botonEliminarProducto button {
     background-color: rgb(216, 43, 43);
     width: 100% ;
 }
-
 .botonEliminarProducto button:hover {
     color: rgb(255, 255, 255);
     background-color: red;
@@ -148,15 +128,12 @@ color: red;
     .cajaPadreEdicion label{
         font-size: small;
     }
-
     .cajaPadreEdicion input{
         font-size: small;
     }
-
     .cajaPadreEdicion textarea{
         font-size: small;
     }
-
     .cajaPadreEdicion select{
         font-size: small;
     }
@@ -175,23 +152,22 @@ color: red;
     .editTitulo{
         font-size: large;
     }
-
     .cajaPadreEdicion{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
     .cajaFotoEdicionProducto{
-        width: 60%;
+        width: 90%;
     }
     .cajaEdicionIzquierda{
-        width: 60%;
+        width: 90%;
         border-radius: 15px 15px 0px 0px;
     }
     .cajaEdicionDerecha{
-        width: 60%;
+        width: 90%;
         border-radius: 0px 0px 15px 15px;
+        margin-left: 0%;
     }
     .botonGuardarEdicion{
        margin-top: 3%;
@@ -207,15 +183,12 @@ color: red;
     .cajaPadreEdicion label{
         font-size: x-small;
     }
-
     .cajaPadreEdicion input{
         font-size: x-small;
     }
-
     .cajaPadreEdicion textarea{
         font-size: x-small;
     }
-
     .cajaPadreEdicion select{
         font-size: x-small;
     }

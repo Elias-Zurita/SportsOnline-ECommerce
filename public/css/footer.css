@@ -4,59 +4,48 @@ footer {
     color: white; 
     width:100%;
 }
-
 .cajas-footer {
     justify-content: space-between;
     display: flex;
     color: white;  
+    padding: 1%;
 }
-
 .cajas-footer a{
     color: white
-
 }
 .cajas-footer a:hover{
     color: rgba(8, 205, 240, 0.568);
 }
-
 .cajas-footer2 {
     justify-content: space-between;
     margin-top: 2%;
     display: flex;
     color: white
 }
-
 .cajas-footer2 a{
     color: white;
 }
-
 .cajas-footer2 a:hover{
     color: rgba(8, 205, 240, 0.568);
 }
-
 .parte1 {
     margin-top: 15px;
 }
-
 .redes-footer{
     margin-bottom: 7px; 
 }
-
 .fa-facebook-square{
     color: #19599f; 
     font-size: xx-large; 
 }
-
 .fa-instagram{
     color: rgb(216, 81, 205);
     font-size: xx-large; 
 }
-
 .fa-twitter-square{
     color:rgba(42, 109, 255, 0.863);
     font-size: xx-large; 
 }
-
 .titulos-footer {
     font-weight: bold;
 }

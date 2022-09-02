@@ -1,8 +1,6 @@
 .mainDetalle{
     background-color: white;
 }
-
-
 .CajaMasterDetalle{
     display: flex; /* se manejan con flex */
     width: 90%; /* ancho */
@@ -11,7 +9,6 @@
     margin-right: auto;
     margin-top: 5%;
 }
-
 .cajaIzquierda{
     display: flex;
     flex-direction: column;
@@ -21,7 +18,6 @@
     margin-top: auto; /* centra la imagen en el plano vertical */
     margin-bottom: auto; /* centra la imagen en el plano vertical */
 }
-
 .cajaDerecha{
     display: flex;
     flex-direction:column;
@@ -30,31 +26,26 @@
     padding: 0.5%;
     border-radius: 15px;
 }
-
 .cajaImagenDetalle{
     margin-left: auto; /* centra la imagen en el plano horizontal */
     margin-right: auto; /* centra la imagen en el plano horizontal */
     width: 80%;  /* ocupa el 60% de la caja de la izquierda */
 }
-
 .cajaImagenDetalle img{
     width: 100%;   
     max-width: auto;
 }
-
 .tituloDeporteDetalle{
     margin-left: 2%;
     font-size: large;
     font-weight: bold;
 }
-
 .tituloProductoDetalle{
     margin-left: 2%;
     font-family: Paytone One;
     font-size: xx-large;
     font-weight: bolder; /* Letra en negrita */
 }
-
 .precioDetalle{
     margin-top: 1%;
     text-align: left;
@@ -64,7 +55,6 @@
     font-weight: bolder; /* Letra en negrita */
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
 }
-
 .tarjetasDetalle{
     margin-top: 1%;
     display: flex;
@@ -73,13 +63,11 @@
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
     align-items: center;
 }
-
 .fa-credit-card{
     font-size: 40px;
     align-items: center;
     color: goldenrod;
 }
-
 .cuotas {
     font-size: x-large;
     font-style: italic;
@@ -91,7 +79,6 @@
     width: 35%;
     border-radius: 15px;
 }
-
 .cambio{
     font-size: 20px;
     color: rgb(39, 230, 39);
@@ -99,7 +86,6 @@
     margin-top: 1%;
     font-weight: bold;
 }
-
 .InfoDetalle{
     margin-top: 1%;
     text-align: left;
@@ -107,7 +93,6 @@
     font-family: Franklin Gothic Heavy;
     font-size: large;
 }
-
 .cajaSelectoraDetalle{
     margin-top: 1%;
     margin-left: 2%; /* Separado un 2% del margen izquierdo de la caja */
@@ -115,31 +100,26 @@
     flex-direction: row; /* coloca cajas selectoras una al lado de la otra */
     align-items: center;
 }
-
 .talleProducto{
     text-align: center;
     font-family: Franklin Gothic Heavy;
     font-size: large;
     width: 25%;
 }
-
 .selectTalleDetalle{
     text-align: center; 
     background-color:  #73ecf7;  /* colores del select del talle */
     width: 50%;
 }
-
 .cajaSelectora { 
     text-align: center;
 }
-
 .talleProductoDetalle{
     text-align: center;
     font-family: Franklin Gothic Heavy;
     font-size: large;
     width: 25%;
 }
-
 .inputTalleDetalle{
     background-color:  #73ecf7;
     text-align: center;
@@ -147,13 +127,11 @@
     font-size: large;
     width: 60%;
 }
-
 .cajaAgregarProducto{
     width: 100%;
     display: flex;
     align-items: right;
 }
-
 .botonAgregarProducto{
     width: 70%;
     font-family: Franklin Gothic Heavy;
@@ -161,7 +139,6 @@
     margin-left: 8%;
     background-color: rgb(0, 187, 125);
 }
-
 .cajaAgregarProducto button:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(4, 85, 58);
@@ -169,18 +146,15 @@
     border-radius: 50px;
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
 }
-
 .compartirRedes{
     margin-left: 2%;
     margin-top: 1%;
     font-size: 20px;
     font-weight: bold;
 }
-
 .Redes{
     margin-top: 2px;
 }
-
 .cajaEnvioGratis{
     margin-left: 3%;
     margin-top: 1%;
@@ -191,7 +165,6 @@
     transform: skew(-15deg);   /* Dobla la caja  */
     padding: 10px 10px 10px 20px;  /* Separacion interna de 20 px a la izquierda (camion) */
 }
-
 .cajaEnvio{
     margin-left: 4%;
 }
@@ -199,21 +172,17 @@
 .cajaCamioncito{
     font-size: larger;
 }
-
 .promoEnvio{
     font-weight:bold;  /* letra en negrita */
     font-size: larger;
 }
-
 .comprasSuperiores{
     color: rgb(0, 0, 0);
 }
-
 .especificaciones{
     font-size: 30px;
     font-style: italic;
 }
-
 .descripcionDetalle{
     margin-top: 1%;
     margin-left: 2%;
@@ -223,19 +192,16 @@
     display: flex;
     flex-grow: 1; /* ocupa todo el espacio disponible */
 }
-
 .BotonDeEdición{
     font-family: Franklin Gothic Heavy;
     font-size: x-large;
     margin-top: 1%;
     text-align: center;
 }
-
 .BotonDeEdición button{
     width: 15%;
     background-color: rgba(255, 247, 134, 0.938);
 }
-
 .BotonDeEdición :hover{
     color: rgb(255, 255, 255);
     background-color: rgb(207, 139, 11);
@@ -280,77 +246,22 @@
     }
 }
 
-/* Laptops */
-@media (max-width:1086px){ 
-    .CajaMasterDetalle{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 3%;
+/* Tablets */
+@media (max-width:1279px){ 
+    .cajaIzquierda{
+        width: 80%;
     }
-    .cajaImagenDetalle{
+    .cajaDerecha{
         width: 100%;
-    }
-    .tituloProductoDetalle {
-        font-size: x-large;
-    }
-    .precioDetalle{
-        font-size: x-large;
-    }
-    .cuotas {
-        font-size: medium;
-    }
-    .cajaEnvio{        
-        font-size: xx-small;
-    }
-    .botonAgregarProducto{
-        font-size: small;
-    }
-    .talleProducto{
-        font-size: small;
-    }
-    .talleProductoDetalle{
-        font-size: small;
-    }
-    .talleProductoDetalle input{
-        font-size: small
-    }
-    .compartirRedes{
-        font-size: medium;
-    }
-    .Redes i{
-        font-size: x-large;
-    }
-    .especificaciones{
-        font-size: large;
-    }
-    .InfoDetalle{
-        font-size: medium;
-    }
-    .descripcionDetalle{
-        font-size: medium;
-    }
-    .BotonDeEdición button{
-        width: 30%;
-        font-size: large;
     }
 }
 
 /* Tablets */
-@media (max-width:700px){ 
-    .tituloProductoDetalle {
-        font-size: large;
-    }
+@media (max-width:600px){ 
     .precioDetalle{
-        font-size: large;
-    }
-    .cuotas {
-        font-size: x-small;
+        font-size: xx-large;
     }
     .tarjetasDetalle i{
-        font-size: small;
-    }
-    .cambio{
         font-size: medium;
     }
     .cambio i{
@@ -358,114 +269,71 @@
     }
     .cajaEnvio{        
         font-size: 8px;
-    }
-    .botonAgregarProducto{
-        font-size: x-small;
-    }
-    .talleProducto{
-        font-size: x-small;
-    }
-    .talleProductoDetalle{
-        font-size: x-small;
-    }
+    } 
     .talleProductoDetalle input{
-        font-size: x-small
-    }
-    .compartirRedes{
-        font-size: small;
-    }
-    .Redes i{
-        font-size: large;
-    }
-    .especificaciones{
-        font-size: medium;
-    }
-    .InfoDetalle{
-        font-size: small;
-    }
-    .descripcionDetalle{
-        font-size: small;
+        font-size: small
     }
     .BotonDeEdición button{
         width: 30%;
         font-size: medium;
     }
-    .cajaIzquierda{
-        width: 80%;
-    }
-    .cajaDerecha{
-        width: 80%;
-    }
 }
 
 /* Smartphones */
 @media (max-width:480px){ 
-    .tituloDeporteDetalle{
-        font-size: medium ;
-    }
     .tituloProductoDetalle {
-        font-size: medium;
+        font-size: x-large;
     }
     .precioDetalle{
-        font-size: medium;
+        font-size: x-large;
+    }
+    .cuotas {
+        font-size: small;
+        width: 50%;
     }
     .cambio{
-        font-size: small;
-    }
-    .cambio i{
-        font-size: small;
+        font-size: medium;
     }
     .cajaEnvio{        
-        font-size: 6px;
         display: flex;
         align-items: center;
         flex-direction: column;
     }
     .cajaEnvioGratis i{        
         font-size: small;
-        display: flex;
-        align-items: center;
     }
     .cajaEnvioGratis{
-        width: 70%;
+        width: 60%;
         padding: 2px 2px 2px 3px;  
     }
     .botonAgregarProducto{
         font-size: xx-small;
     }
     .talleProducto{
-        font-size: xx-small;
-    }
-    .talleProductoDetalle{
-        font-size: xx-small;
-    }
-    .talleProductoDetalle input{
-        font-size: xx-small
-    }
-    .compartirRedes{
-        font-size: x-small;
-    }
-    .Redes i{
-        font-size: medium;
-    }
-    .especificaciones{
         font-size: small;
     }
+    .cajaSelectora select{
+       background-color: blueviolet;
+       width: 65%;
+    }
+    .talleProductoDetalle{
+        font-size: small;
+    }
+    .talleProductoDetalle input{
+        font-size: x-small
+    }
+    .especificaciones{
+        font-size: medium;
+    }
     .InfoDetalle{
-        font-size: x-small;
+        font-size: small;
     }
     .descripcionDetalle{
-        font-size: x-small;
+        font-size: small;
     }
     .BotonDeEdición button{
         width: 50%;
         font-size: small;
-    }
-    .cajaIzquierda{
-        width: 80%;
-    }
-    .cajaDerecha{
-        width: 80%;
     }
 }
 

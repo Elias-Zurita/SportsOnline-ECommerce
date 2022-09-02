@@ -3,21 +3,18 @@
     font-size: xx-large;
     font-weight: bold;
     text-align: center;
-    margin-top: 10px; 
+    margin-top: 3%;
+    font-family: Paytone One;
 }
-
 .creaTuCuenta i{
     color: rgb(74, 236, 82);
 }
-
 .cajaPadreRegister{
     display: flex;
     flex-direction: row;
-
     justify-content: center;
     margin-top: 1%;
 }
-
 .cajaDatosPersonales{
     font-weight: bold;
     text-align: center;
@@ -27,16 +24,14 @@
     padding: 1%;
     width: 25%;
     font-size: large;
+    border-radius: 15px;
 }
-
 .cajaDatosPersonales label{
     margin-top: 5%;
 }
-
 .cajaDatosPersonales input{
     text-align: center;
 }
-
 .cajaSobreTuCuenta{
     font-weight: bold;
     text-align: center;
@@ -47,48 +42,43 @@
     margin-left: 5%;
     width: 25%;
     font-size: large;
+    border-radius: 15px;
 }
-
 .cajaSobreTuCuenta label{
     margin-top: 5%;
 }
-
 .cajaSobreTuCuenta input{
     text-align: center;
 }
-
 .tituloDatos{
     font-size: x-large;
     font-weight: bold;
     text-align: center;
 }
-
 .form-select option{
     text-align: center;
     font-weight: bold;
 }
-
 .checkRegister {
    display: flex;
    flex-direction: column;
-   margin-left: 40%;
-   align-items: flex-start;
+   margin-left: auto;
+   margin-right: auto;
+   align-items: center;
    margin-top: 1%;
 }
-
 .botonRegistrarse{
     font-family: Franklin Gothic Heavy;
     font-size: xx-large;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
+    text-align: center
 }
-
 .botonRegistrarse button{
    background-color: rgb(43, 210, 216);
-    width: 15% ;
+    width: 20% ;
 }
-
 .botonRegistrarse button:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(4, 85, 58);
@@ -96,22 +86,80 @@
     border-radius: 50px;
     transition: all 700ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
-
 .tengoCuenta{
     text-align: center;
+    margin-top: 1%;
 }
-
 .tengoCuenta a{
     color:black; 
     font-weight: bold;
     font-size: large;
 }
-
 .tengoCuenta a:hover{
     color: rgb(216, 43, 43);
 }
+.text-danger {
+    color: red; 
+    font-weight: bolder;
+    font-size: large
+}
+.row {
+    margin: 10px;
+}
 
-.text-danger {color: red; font-weight: bolder; font-size: large}
+/* Laptops */
+@media (max-width:1280px){ 
+    .cajaDatosPersonales{
+        width: 35%;
+    }
+    .cajaSobreTuCuenta{
+        width: 35%;
+    }
+    .botonRegistrarse{
+        font-size: large;
+    }
+}
 
-.row {margin: 10px;}
+/* Tablets */
+@media (max-width:800px){ 
+    .creaTuCuenta{
+        font-size: medium;
+    }
+    .cajaPadreRegister{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cajaPadreRegister label{
+        font-size: medium;
+    }
+    .cajaDatosPersonales{
+        width: 80%;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .cajaSobreTuCuenta{
+        width: 80%;
+        margin-left: 0%;
+        border-radius: 0px 0px 15px 15px;
+    }
+    .tituloDatos{
+        font-size: large;
+    }
+    .botonRegistrarse{
+        font-size: medium;
+    }
+    .botonRegistrarse button{
+        width: 50%;
+    }
+}
 
+/* Smartphones */
+@media (max-width:480px){ 
+    .tituloDatos{
+        font-size: medium;
+    }
+    .checkRegister{
+        font-size: small;
+        width: 80%;
+    }
+}
