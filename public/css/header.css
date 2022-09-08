@@ -1,3 +1,9 @@
+header{
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 .caja-envios{
     text-align: center!important;
     background-color: #73ecf7;
@@ -7,26 +13,12 @@
     font-weight: bold;
     width: 100%;
     cursor: pointer;
-    padding: 4px 0;
-    /*position: absolute;
-    top:0;  0 distancia de separacion con la parte superior de la pantalla 
-    right: 0;  0 distancia de separacion con la parte derecha de la pantalla 
-    left: 0; 0 distancia de separacion con la parte izquierda de la pantalla */
+    padding: 4px 0;    
 }
 .caja-envios:hover{
     color: white;
     transition: 0.9s;;
 }
-
-/*
-header{
-    position: fixed;
-    z-index: 1;
-    background-color: white;
-    padding-bottom: 1%;
-}
-*/
-
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -115,14 +107,14 @@ header{
 .menuHeader{
     color:black; 
     width: 95%; 
-    height: 40px; 
-    margin-inline-end: 30px;
     justify-content: space-between;
     font-size: larger;
-    padding: 4px 0 4px 0;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2.5%;
+    border: red solid;
+}
+.chota{
+    border: violet solid;
 }
 .menuHorizontalHeader{
     display: flex;
@@ -132,6 +124,7 @@ header{
     width: 100%; 
     color: black;
     list-style: none; /* nose no hace nada*/
+    border: aqua solid;
 }
 .menuHorizontalHeader a{
     color: black;
@@ -231,6 +224,12 @@ header{
 
 /* Tablets */
 @media (max-width:800px){ 
+    .headerLogueado{
+        display: none;
+    }
+    .headerSinLoguear{
+        display: none;
+    }
     .caja-envios{
         font-size: small;
     }
@@ -260,9 +259,7 @@ header{
         width: 100%;
         background: rgb(248, 204, 8); /* color de fondo del menu */
         text-align: start;
-        opacity: 0.5;  
     }
-
     .menuHeader .menuHorizontalHeader li {
         display: block;
         margin: 10px 0;
@@ -304,6 +301,7 @@ header{
     }
     .headerSinLoguear{
         width: 22%;
+        font-size: x-small;
     }
     .barra-de-busqueda{ 
         width: 50%;
@@ -313,6 +311,9 @@ header{
     }
     .barra-de-busqueda input{ 
         width: 100%;
+        padding: 2px 2px;  
+        font-size: xx-small;
+        
     }
     .main-header{
         text-align: center;

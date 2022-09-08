@@ -8,11 +8,13 @@ a {
 }
 body{
     font-family: 'Exo 2',sans-serif;
-    background-color: white
-}  
+    background-color: white;
+} 
+/* 
 #carouselExampleIndicators{
-    z-index: -1; /* pone detras el carrousel PERO PIERDE FUNCIONALIDAD LOS BOTONES */
+    z-index: -1;  pone detras el carrousel PERO PIERDE FUNCIONALIDAD LOS BOTONES 
 }
+*/
 .lanzamientos{
     font-size: xxx-large;
     font-family: Luckiest Guy;
@@ -104,32 +106,31 @@ body{
 .mujerHombre img{
     width: 100%;
 }
+
 .cajaMarcas{
-    width: 70%;
-    margin-top: 5px;
+    border: blue solid;
     margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-    border-radius: 20px;
-    padding: 15px 15px 0 15px;
-    align-items: center;
-    display: flex;
+    margin-right: auto;  
+    width: 100%;
+    justify-content: space-around;
 }
 .fotosMarcas{
-    display: flex;
-    justify-content: space-between;
     width:100%;
-    overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+    display: flex;
+    flex-direction: row;
 }
 .fotosMarcas img{
     width: 100%;
-
 }
 .fotosMarcas img:hover{
-    background-color: royalblue;
     transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
-    border-radius: 20%;
     transform: scale(1.1); 
+}
+.fotosMarcas div{
+    border: solid red;
+    width: 100%;
+    margin: 15px;
+    overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
 }
 .suscribite{
     background-color:  #73ecf7;
@@ -247,8 +248,8 @@ body{
     .productosLanzamientos{
         width: 100%;
     }
-    .cajaMarcas{
-        width: 90%;
+    .fotosMarcas div{
+        margin: 5px;
     }
     .ventajasTitulo{
         font-size: x-large;
@@ -266,6 +267,10 @@ body{
     .recibiNewsletter{
         font-size: x-large;
     }
+    .suscribite input{
+        width: 95%;
+    }
+
 }
 
 /* Smartphones */
@@ -277,7 +282,10 @@ body{
         font-size: x-small;
     }
     .productosLanzamientos{
-        width: 100%;
+        width: 100%;       
+    }
+    .fotosMarcas div{
+        margin: 0px;
     }
     .mujerHombre{
         display: flex;

@@ -1,7 +1,5 @@
-
-
 <header>
-
+    
     <div class="caja-envios">
         ENVÍO GRATIS a todo el país, en compras superiores a $30.000 <i class="fas fa-truck"></i>
     </div>
@@ -38,55 +36,46 @@
     </div>
       
     <nav class="menuHeader">
-
-        <input type="checkbox" id="res-menu" checked>  <!-- checkbox para accionar "res-menu" (menu hamburguesa) -->
-        <label for="res-menu">
-            <i class="fa fa-bars" id="sign-two"></i> <!-- Menu hamburguesa -->
-            <i class="fas fa-window-close" id="sign-one"></i> <!-- X de cierre de menu hamburguesa -->
-        </label>
-
-        <ul class="menuHorizontalHeader">
-            <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
-            <li><a href="">HOMBRE <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Indumentaria</a></li>
-                    <li><a href="">Calzado</a></li>
-                    <li><a href="">Accesorios</a></li>
-                </ul>
-            </li>
-            <li><a href="">MUJER <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Indumentaria</a></li>
-                    <li><a href="">Calzado</a></li>
-                    <li><a href="">Accesorios</a></li>
-                </ul>
-            </li>
-            <li><a href="">NIÑOS <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Indumentaria</a></li>
-                    <li><a href="">Calzado</a></li>
-                    <li><a href="">Accesorios</a></li>
-                </ul>
-            </li>
-            <li><a href="">DEPORTES <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Futbol</a></li>
-                    <li><a href="">Tenis</a></li>
-                    <li><a href="">Paddle</a></li>
-                    <li><a href="">Running</a></li>
-                    <li><a href="">Hockey</a></li>
-                    <li><a href="">Training</a></li>
-                    <li><a href="">Voley</a></li>
-
-                </ul>
-            </li>
-        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
-            <li><a href="/products/create">CREAR PRODUCTOS</a></li> 
-            <li><a href="/users/list">USUARIOS</a></li>
-        <%}%>
-            
-        </ul>
+        <div class="chota">
+            <input type="checkbox" id="res-menu" checked>  <!-- checkbox para accionar "res-menu" (menu hamburguesa) -->
+            <label for="res-menu">
+                <i class="fa fa-bars" id="sign-two"></i> <!-- Menu hamburguesa -->
+                <i class="fas fa-window-close" id="sign-one"></i> <!-- X de cierre de menu hamburguesa -->
+            </label>
         
+            <ul class="menuHorizontalHeader">
+                <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
+                <li><a href="">HOMBRE <i class="fas fa-angle-down"></i></a>
+                    <ul class="menuVerticalHeader">
+                        <li><a href="">Indumentaria</a></li>
+                        <li><a href="">Calzado</a></li>
+                        <li><a href="">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="">MUJER <i class="fas fa-angle-down"></i></a>
+                    <ul class="menuVerticalHeader">
+                        <li><a href="">Indumentaria</a></li>
+                        <li><a href="">Calzado</a></li>
+                        <li><a href="">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="">DEPORTES <i class="fas fa-angle-down"></i></a>
+                    <ul class="menuVerticalHeader">
+                        <li><a href="">Futbol</a></li>
+                        <li><a href="">Tenis</a></li>
+                        <li><a href="">Paddle</a></li>
+                        <li><a href="">Running</a></li>
+                        <li><a href="">Hockey</a></li>
+                        <li><a href="">Training</a></li>
+                        <li><a href="">Voley</a></li>
+                    </ul>
+                </li>
+            <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
+                <li><a href="/products/create">CREAR PRODUCTOS</a></li> 
+                <li><a href="/users/list">USUARIOS</a></li>
+            <%}%>
+            </ul>
+        </div>
     </nav>
 
 </header>

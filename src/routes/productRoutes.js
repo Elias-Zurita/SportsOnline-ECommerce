@@ -33,4 +33,9 @@ router.post("/delete/:id", adminMiddleware, productsController.eliminar);
 // Formulario de detalle de producto
 router.get("/detail/:id", productsController.detalle);
 
+// Listados por genero y marcas
+router.get("/mujer", productsController.buscarMujer);
+router.get("/hombre", productsController.buscarHombre);
+router.get("/adidas", productsController.buscarAdidas);
+
 module.exports = router;

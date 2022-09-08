@@ -181,6 +181,7 @@ tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
         width: 100%;
         font-size: x-small;
         background-color: rgb(216, 43, 43);
+        font-weight: bold;
     }
     .botonElimListTable:hover{
         transition: all 900ms ease;
