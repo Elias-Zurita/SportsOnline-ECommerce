@@ -6,10 +6,18 @@
     margin-top: 1%;
 }
 .carritoTitulo i{
-    color: white;
-    border-radius: 100%;
-    background-color: blue;
-    padding: 0.5%;
+    color: brown
+}
+.carritoVacio{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Segoe UI Black;
+}
+.carritoVacio i{
+    color: red;
 }
 .carritoBody{
     display: flex;
@@ -233,6 +241,10 @@ table.tableCart th{
     .cajaTituloResumen{
         font-size: large;
     }
+    .carritoVacio{
+        font-size: x-large;
+        margin-bottom: 20%;
+    }
     .bodyCarrito td{
         font-size: medium;
     }
@@ -278,6 +290,9 @@ table.tableCart th{
     .bodyCarrito td{
         font-size: small;
     }
+    .carritoVacio{
+        font-size: large;
+    }
 }
 
 /* Smartphones */
@@ -298,6 +313,9 @@ table.tableCart th{
     }
     .bodyCarrito td{
         font-size: x-small;
+    }
+    .carritoVacio{
+        font-size: medium;
     }
 }
 

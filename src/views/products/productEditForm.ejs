@@ -114,18 +114,14 @@
 
             </div>
                       
-        
-
         </form> <!--  Cierre del formulario de edicion -->
 
         <form action="/products/delete/<%= producto.id %>" method="POST" class="formularioLog">
-            
             <div class="botonEliminarProducto">
                 <button 
                     type="submit">ELIMINAR PRODUCTO
                 </button>
             </div>
-
         </form>
                     
     <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->

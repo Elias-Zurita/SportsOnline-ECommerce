@@ -88,6 +88,10 @@ body{
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
     margin-left: 13px;  /* el margen separa las imagenes */
     margin-right: 13px;
+    filter: grayscale(100%);
+}
+.imagenMujerHombre:hover{
+    filter: grayscale(0%);
 }
 .imagenMujerHombre:hover .imgMujer{   /* efecto de zoom (expande la escala de la imagen) */
     transform: scale(1.07); 
@@ -106,7 +110,6 @@ body{
 .mujerHombre img{
     width: 100%;
 }
-
 .cajaMarcas{
     border: blue solid;
     margin-left: auto;
@@ -239,6 +242,11 @@ body{
 
 /* Tablets */
 @media (max-width:700px){ 
+    #carouselExampleIndicators{
+        transform: scale(1.2); 
+        overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+        width: 91%;
+    }
     .lanzamientos{
         font-size: x-large;
     }

@@ -123,7 +123,7 @@
 /* Tablets */
 @media (max-width:800px){ 
     .creaTuCuenta{
-        font-size: medium;
+        font-size: x-large;
     }
     .cajaPadreRegister{
         display: flex;

@@ -193,10 +193,11 @@
         font-size: x-small;
     }
     .botonGuardarEdicion{
-        font-size: x-small;
+        font-size: small;
         width: 80%;
     }
     .botonEliminarProducto{
-        font-size: x-small;
+        font-size: small;
+        width: 50%;
     }
 }

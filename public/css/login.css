@@ -198,6 +198,9 @@
 
 /* Tablets */
 @media (max-width:800px){ 
+     .inicioSesion {
+          font-size: x-large;
+     }
      .correoLogin{
           width: 40%;
      }

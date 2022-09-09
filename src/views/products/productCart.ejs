@@ -6,7 +6,11 @@
         <%- include('../partials/header.ejs') %>  
 
             <h1 class="carritoTitulo">Mi Carrito de Compras <i class="fas fa-shopping-cart"></i></h1>
-                           
+            
+            <% if (precioTotal==0){ %>
+                <div class="carritoVacio"><i class="fas fa-cart-arrow-down"></i> El carrito de compras esta vacio</div>
+            <% } else { %>
+
                 <div class="carritoBody">
 
                     <table class="tableCart">  <!-- Etiqueta para crear una tabla -->
@@ -71,7 +75,7 @@
                     </div>
 
                 </div>
-
+            <% } %>
         <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
     </body>
 </html>

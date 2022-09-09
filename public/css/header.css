@@ -3,7 +3,6 @@ header{
     top: 0;
     left: 0;
 }
-
 .caja-envios{
     text-align: center!important;
     background-color: #73ecf7;
@@ -38,6 +37,8 @@ header{
 .barra-de-busqueda {
     text-align: center;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .barra-de-busqueda input {
     width: 70%;
@@ -50,6 +51,17 @@ header{
 .barra-de-busqueda ::placeholder{
     color: black;
     font-weight: bold;
+}
+.carritoTablet i{
+    font-size: large;
+    color: #73ecf7;
+    display: none;
+    border-radius: 100%;
+    background-color: black;
+    padding: 5px;
+}
+.carritoTablet {
+    margin-left: auto;
 }
 .headerSinLoguear{
     text-align: end;
@@ -67,10 +79,30 @@ header{
     color: white;
     transition: 1s;
 }
+.iconoLoginTablet i{
+    font-size: large;
+    color: #73ecf7;
+    display: none;
+    border-radius: 100%;
+    background-color: black;
+    padding: 5px;
+}
+.iconoLoginTablet i:hover{
+    cursor: pointer;
+    color: rgb(240, 160, 12);
+    transition: 0.5s ease;
+}
+.sinLoguearTablet{
+    display: none;
+    line-height: 30px;
+}
+.sinLoguearTablet li{
+    margin: 22px 0px;
+}
 .headerLogueado{
     display: flex;
     align-items: center;  /*  Alinea imagen y textos en el plano vertical */
-    width: 20%;
+    width: 19%;
     flex-direction: row;
     text-align: end;
 }
@@ -111,10 +143,7 @@ header{
     font-size: larger;
     margin-left: auto;
     margin-right: auto;
-    border: red solid;
-}
-.chota{
-    border: violet solid;
+    padding: 0%;
 }
 .menuHorizontalHeader{
     display: flex;
@@ -124,17 +153,18 @@ header{
     width: 100%; 
     color: black;
     list-style: none; /* nose no hace nada*/
-    border: aqua solid;
+    margin-bottom: 0%;
+    margin-top: 0.5%;
 }
 .menuHorizontalHeader a{
     color: black;
-    margin-top: 10px;
 }
-.menuHorizontalHeader i{
-    color: rgb(238, 39, 39);
-}
+
 .menuHorizontalHeader > li > a{
     display: block;
+}
+.menuHeader label{
+    display: none;
 }
 
 /* Subrayado de menu horizontal */
@@ -180,11 +210,15 @@ header{
     color: rgb(243, 186, 31);
     background-color: black;
 }
+.headerUserTablet{
+    display: none;
+}
 #res-menu{
     display: none; /* oculta el checkbox */
 }
 #sign-one {
     display: none; /* oculta la x */
+    color: red;
 }
 #sign-two {
     display: none; /* oculta la hamburguesa */ 
@@ -224,7 +258,26 @@ header{
 
 /* Tablets */
 @media (max-width:800px){ 
-    .headerLogueado{
+    .menuHeader label{
+        display: block;
+        margin-top: 3px;
+    }
+    .headerTablet{
+        display: flex;
+    }
+    .carritoTablet i{
+        display: block;
+    }
+    .iconoLoginTablet i{
+        display: block;
+    }
+    .sinLoguearTablet{
+        display: block;
+    }
+    .avatarHeader{
+        display: none;
+    }
+    .headerLogueadoOpciones{
         display: none;
     }
     .headerSinLoguear{
@@ -250,24 +303,21 @@ header{
     label #sign-one {
         display: block; /* muestra la x */
     }
-    .avatarHeader{
-        display: none; /* abajo de 700px oculta el avatar */
-    }
     .menuHeader .menuHorizontalHeader {
         display: flex;
         flex-direction: column;
         width: 100%;
-        background: rgb(248, 204, 8); /* color de fondo del menu */
+        background: rgb(45, 156, 142); 
         text-align: start;
     }
     .menuHeader .menuHorizontalHeader li {
         display: block;
-        margin: 10px 0;
+        margin: 2px 0;
         line-height: 30px;
         border-bottom: 1px solid #EAEAEB;
     }
     .menuHeader .menuHorizontalHeader li a {
-        font-size: 20px;
+        font-size: small;
     }
     #res-menu:checked~ul {
         left: 0;
@@ -278,6 +328,9 @@ header{
     }
     #res-menu:checked~label #sign-two {
         display: block; /* si el menu esta tildado muestra la hamburguesa */ 
+    }
+    .headerUserTablet{
+        display: block;
     }
 }
 

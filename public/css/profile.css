@@ -177,7 +177,7 @@
         margin-top: 5%;
     }
     .editUserProfile{
-        font-size: xx-small;
+        font-size: large;
         width: 80%;
     }
 }
@@ -193,5 +193,8 @@
     }
     .datosProfile{
         font-size: x-small;
+    }
+    .editUserProfile{
+        font-size: medium;
     }
 }
