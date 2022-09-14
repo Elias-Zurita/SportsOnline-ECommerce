@@ -17,6 +17,15 @@ const controller = {
     sucursales: (req,res)=>{
         res.render('footer/sucursales') // renderiza sucursales
     },
+    envios: (req,res)=>{
+        res.render('footer/envios') // renderiza formas de envios
+    },
+    trabaja: (req,res)=>{
+        res.render('footer/trabaja') // renderiza trabaja con nosotros
+    },
+    terminos: (req,res)=>{
+        res.render('footer/terminos') // renderiza terminos y condiciones
+    },
  }
 
 module.exports = controller;

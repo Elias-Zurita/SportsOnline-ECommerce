@@ -1,0 +1,49 @@
+.tituloSomos{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+    text-align: center;
+}
+.tituloSomos i{
+    color: #73ecf7;;
+}
+.bodyQuienesSomos{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    font-size: large;
+    font-weight: bold;
+}
+.estamos{
+    font-family: Dancing Script;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .tituloSomos{
+        font-size: x-large;
+    }
+    .bodyQuienesSomos{
+        font-size: medium;
+    }
+    .estamos{
+        font-size: x-large;
+    }
+}
+
+/* Smartphones */
+@media (max-width:360px){ 
+    .tituloSomos{
+        font-size: large;
+    }
+    .bodyQuienesSomos{
+        font-size: small;
+    }
+    .estamos{
+        font-size: large;
+    }
+}

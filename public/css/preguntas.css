@@ -1,0 +1,44 @@
+.tituloPreguntas{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+    text-align: center;
+}
+.tituloPreguntas i{
+    color: pink;
+}
+.bodyPreguntas{
+    margin-left: 5%;
+    margin-right: 4%;
+    margin-top: 1%;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .tituloPreguntas{
+        font-size: x-large;
+    }
+    .bodyPreguntas{
+        font-size: medium;
+    }
+    .estamos{
+        font-size: x-large;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .tituloPreguntas{
+        font-size: large;
+    }
+    .bodyPreguntas{
+        font-size: small;
+    }
+    .estamos{
+        font-size: large;
+    }
+}

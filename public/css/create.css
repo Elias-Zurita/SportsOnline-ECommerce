@@ -89,9 +89,6 @@
 
 /* Tablets */
 @media (max-width:800px){ 
-    .createTitulo{
-        font-size: medium;
-    }
     .cajaPadreCreacion{
         display: flex;
         flex-direction: column;
@@ -119,6 +116,9 @@
 
 /* Smartphones */
 @media (max-width:480px){ 
+    .createTitulo{
+        font-size: medium;
+    }
     .cajaCreacionDer{
         width: 70%;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+<body>
+
+<%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+    <div class="tituloPreguntas">SUMATE A NUESTRO EQUIPO <i class="fas fa-hands-helping"></i></div>
+
+    <div class="completaCV">Completa los datos y envianos tu curriculum</div>
+
+    <div class="bodyTrabaja">
+       
+        <label>Nombre</label>
+        <input class="form-control">
+
+        <label>Apellido</label>
+        <input class="form-control">
+
+        <label>DNI</label>
+        <input class="form-control">
+
+        <label>Numero de teléfono</label>
+        <input class="form-control">
+
+        <label>Correo electrónico</label>
+        <input class="form-control">
+
+        <label>Codigo postal</label>
+        <input class="form-control">
+
+        <label>Ciudad</label>
+        <input class="form-control">
+
+        <label>Área que se postula</label>
+        <select class="form-select">
+            <option>Selecciona una opción</option>
+            <option>Administración</option>
+            <option>Ventas</option>
+            <option>Sistemas</option>
+            <option>Depósito</option>
+            <option>Atención al cliente</option>
+        </select>
+
+        <label>Archivo de tu curriculum </label>
+            <input type="file" class="form-control">
+
+        <br>
+
+        <div class="botonCV">
+            <a href="/"><button type="submit">ENVIAR!</button></a>
+        </div>
+
+    </div>
+
+    <div class="estamos">SportsOnline, estamos donde vos estés...</div>
+
+<%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
+
+</body>
+</html>

@@ -3,38 +3,30 @@
 
 <%- include('../partials/head.ejs') %>  <!--  Incluye el HEAD y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-<body>
-
 <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-    <main>
-
-        <h1>NUESTRAS SUCURSALES</h1>
-
-        <br>
-        
-        <div class="sucursal">
-            <div class="local">
-                <a href="https://www.google.com/maps/place/San+Rafael,+Mendoza/@-34.6162515,-68.3405987,16z/data=!4m5!3m4!1s0x967907fdb13d06a7:0xe0fb2796d473309d!8m2!3d-34.6128922!4d-68.3390622" target="_blank"><img src="\img\mapa.jpg" alt="mapa"></a>
-                <!--  El hipervinculo del mapa abre una nueva pestaña por el atributo target="_blank" -->
-            </div>
-            <div class="direccionLocal">
-                <p>MENDOZA</p>
-                
-                <p>Direccion: Avenida 9 de Julio 177,</p>
-                <p>San Rafael, Mendoza</p>
-                
-                <p>Horario de atencion:
-                Lun a Sab de 9 a 20 Hs</p>
-            </div>
+    <h1 class="tituloSucursales">NUESTRAS SUCURSALES <i class="fas fa-store"></i></h1>
+      
+    <div class="sucursalBody">
+        <div class="local">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26287.448354714477!2d-58.72465141809737!3d-34.55530125579985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbda6990007db%3A0x600454389e2a89ad!2sMu%C3%B1iz%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1663094603497!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <div class="direccionLocal">
+            <p>UBICACIÓN</p>
+            <dl>
+                <dt>DIRECCION:</dt>
+                    <div>Angel D'Elia 2000</div>
+                    <div>San Miguel, Muñiz</div>
+            </dl>     
+            <dl>
+                <dt>HORARIOS DE ATENCION:</dt>
+                    <div>Lun a Vie de 9 a 20 Hs</div>
+                    <div>Sab de 9 a 13 Hs</div>
+        </div>
+    </div>
         
-        <br>
-         
-            <h3>SportsOnline…estamos donde vos estes</h3>
-    </main>
+    <div class="estamos">SportsOnline, estamos donde vos estés...</div>
 
 <%- include('../partials/footer.ejs') %>  <!--  Incluye el FOOTER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
 
-</body>
 </html>

@@ -1,0 +1,35 @@
+.tituloEnvios{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+    text-align: center;
+}
+.bodyEnvios{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .tituloEnvios{
+        font-size: x-large;
+    }
+    .bodyEnvios{
+        font-size: medium;
+    }
+}
+
+/* Smartphones */
+@media (max-width:360px){ 
+    .tituloEnvios{
+        font-size: large;
+    }
+    .bodyEnvios{
+        font-size: small;
+    }
+}

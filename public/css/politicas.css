@@ -1,0 +1,38 @@
+.tituloPoliticas{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+    text-align: center;
+}
+.tituloPoliticas i{
+    color: goldenrod;
+}
+.bodyPoliticas{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .tituloPoliticas{
+        font-size: x-large;
+    }
+    .bodyPoliticas{
+        font-size: medium;
+    }
+}
+
+/* Smartphones */
+@media (max-width:360px){ 
+    .tituloPoliticas{
+        font-size: large;
+    }
+    .bodyPoliticas{
+        font-size: small;
+    }
+}

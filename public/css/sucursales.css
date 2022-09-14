@@ -1,20 +1,84 @@
-.sucursal{
-display: flex;
-align-items: center;
-width: 40%;
-margin: auto;
+.tituloSucursales{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Paytone One;
+    margin-top: 1%;
+    text-align: center;
 }
-
+.tituloSucursales i{
+    color: orangered;
+}
+.sucursalBody{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 1%;
+    font-size: large;
+    font-weight: bold;
+    padding: 1%;
+}
+.local{
+    width: 65%;
+    display: flex;
+}
+/* Mapa */
+iframe{
+    width: 100%;
+    height: 500px;
+}
 .direccionLocal{
     display: flex;
     flex-direction: column;
-    font-weight: bolder;
+    margin-left: 3%;
 }
 
-.local img{
-    width: 90%
+/* Laptops */
+@media (max-width:1200px){ 
+    /* Mapa */
+    iframe{
+        width: 100%;
+        height: 300px;
+    }
 }
 
-h1 {
-text-align: center;
+/* Laptops */
+@media (max-width:1000px){ 
+    .sucursalBody{
+        width: 90%;
+    }
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .direccionLocal{
+        font-size: medium;
+    }
+    .tituloSucursales{
+        font-size: x-large;
+    }
+}
+
+/* Tablets */
+@media (max-width:600px){ 
+    .sucursalBody{
+        flex-direction: column;
+        width: 90%;
+    }
+    .local{
+        width: 100%;
+    }
+    .direccionLocal{
+        width: 100%;
+        text-align: center;
+        margin-top: 5%;
+    }
+}
+
+/* Smartphones */
+@media (max-width:360px){ 
+    .tituloSucursales{
+        font-size: large;
+    }
 }

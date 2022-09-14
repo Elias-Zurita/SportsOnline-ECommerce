@@ -1,0 +1,81 @@
+.bodyTrabaja{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.bodyTrabaja label{
+    margin-top: 2%;
+}
+.completaCV{
+    font-size: x-large;
+    text-align: center;
+    margin-top: 1%;
+    font-weight: bold;
+}
+.area option{
+    font-weight: bold;
+}
+.botonCV{
+    text-align: center;
+    font-family: Franklin Gothic Heavy;
+    font-size: x-large;
+    font-weight: bold;
+}
+.botonCV button{
+    font-weight: bold;
+    width: 50%;
+    background-color: rgb(43, 210, 216);
+}
+.botonCV button:hover{
+    color: rgb(255, 255, 255);
+    background-color: orangered;
+    transform: scale(1);
+    border-radius: 50px;
+    transition: all 700ms ease; /* velocidad a la que se abre el campo de busqueda */
+}
+
+/* Laptops */
+@media (max-width:1000px){ 
+    .bodyTrabaja{
+        width: 80%;
+    }
+}
+
+/* Tablets */
+@media (max-width:800px){ 
+    .bodyTrabaja{
+        font-size: medium;
+    }
+    .bodyTrabaja input{
+        font-size: medium;
+    }
+    .completaCV{
+        font-size: large;
+    }
+    .botonCV{
+        font-size: x-large;
+    }
+}
+
+/* Smartphones */
+@media (max-width:480px){ 
+    .bodyTrabaja{
+        font-size: small;
+        width: 90%;
+    }
+    .bodyTrabaja input{
+        font-size: small;
+    }
+    .completaCV{
+        font-size: small;
+    }
+    .botonCV{
+        font-size: large;
+    }
+}
