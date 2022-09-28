@@ -111,7 +111,6 @@ body{
     width: 100%;
 }
 .cajaMarcas{
-    border: blue solid;
     margin-left: auto;
     margin-right: auto;  
     width: 100%;
@@ -130,7 +129,6 @@ body{
     transform: scale(1.1); 
 }
 .fotosMarcas div{
-    border: solid red;
     width: 100%;
     margin: 15px;
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
