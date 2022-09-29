@@ -20,10 +20,9 @@ body{
     font-family: Luckiest Guy;
     text-align: center;
     font-weight: bold;
-    color: hotpink;
     margin-bottom: 15px;
     animation-name: lanzamientosAnimacion;
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 @keyframes lanzamientosAnimacion{
