@@ -11,6 +11,8 @@ const cookies = require("cookie-parser") // Es una libreria que se usa para guar
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
+const marcasRoutes = require('./routes/marcasRoutes');
+const deportesRoutes = require('./routes/deportesRoutes');
 const productCartRoutes = require('./routes/productCartRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 
@@ -41,6 +43,8 @@ app.use(localsMiddleware);
 app.use('/', mainRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
+app.use("/brand", marcasRoutes);
+app.use("/sport", deportesRoutes);
 app.use("/productCart", productCartRoutes);
 app.use("/api", apiRoutes);
 

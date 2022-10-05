@@ -200,13 +200,13 @@ header{
 }
 .menuHorizontalHeader li:hover .menuVerticalHeader{
     display: block ; /* el menu aparece al hacer el hover */
-    background-color: #73ecf7;
+    background-color: #a1a1a1;
 }
-.menuVerticalHeader li a{
+.menuVerticalHeader a{
     display: block;
     color: black;
 }
-.menuVerticalHeader li a:hover{
+.menuVerticalHeader a:hover{
     color: rgb(243, 186, 31);
     background-color: black;
 }

@@ -46,30 +46,44 @@
     
         <ul class="menuHorizontalHeader">
             <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
-            <li><a href="">HOMBRE <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="/products/list/search?search=camiseta">Indumentaria</a></li>
-                    <li><a href="/products/list/search?search=botines">Calzado</a></li>
-                    <li><a href="">Accesorios</a></li>
-                </ul>
+            <li><a href="/brand/hombre">HOMBRE <i class="fas fa-angle-down"></i></a>
+                <div class="menuVerticalHeader">
+                    <div><a href="/brand/indumentaria/hombre"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
+                    <div><a href="/brand/calzado/hombre"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
+                </div>
             </li>
-            <li><a href="">MUJER <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Indumentaria</a></li>
-                    <li><a href="">Calzado</a></li>
-                    <li><a href="">Accesorios</a></li>
-                </ul>
+            <li><a href="/brand/mujer">MUJER <i class="fas fa-angle-down"></i></a>
+                <div class="menuVerticalHeader">
+                    <div><a href="/brand/indumentaria/mujer"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
+                    <div><a href="/brand/calzado/mujer"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
+                </div>
+            </li>
+            <li><a href="">MARCAS <i class="fas fa-angle-down"></i></a>
+                <div class="menuVerticalHeader">
+                    <div><a href="/brand/adidas"><i class="fas fa-arrow-alt-circle-right"></i> Adidas</a></div>
+                    <div><a href="/brand/nike"><i class="fas fa-arrow-alt-circle-right"></i> Nike</a></div>
+                    <div><a href="/brand/puma"><i class="fas fa-arrow-alt-circle-right"></i> Puma</a></div>
+                    <div><a href="/brand/babolat"><i class="fas fa-arrow-alt-circle-right"></i> Babolat</a></div>
+                    <div><a href="/brand/prince"><i class="fas fa-arrow-alt-circle-right"></i> Prince</a></div>
+                    <div><a href="/brand/fila"><i class="fas fa-arrow-alt-circle-right"></i> Fila</a></div>
+                    <div><a href="/brand/Vairo"><i class="fas fa-arrow-alt-circle-right"></i> Vairo</a></div>
+                    <div><a href="/brand/Wilson"><i class="fas fa-arrow-alt-circle-right"></i> Wilson</a></div>
+                    <div><a href="/brand/Umbro"><i class="fas fa-arrow-alt-circle-right"></i> Umbro</a></div>
+                    <div><a href="/brand/Topper"><i class="fas fa-arrow-alt-circle-right"></i> Topper</a></div>
+                    <div><a href="/brand/Head"><i class="fas fa-arrow-alt-circle-right"></i> Head</a></div>
+                    <div><a href="/brand/Nassau"><i class="fas fa-arrow-alt-circle-right"></i> Nassau</a></div>
+                </div>
             </li>
             <li><a href="">DEPORTES <i class="fas fa-angle-down"></i></a>
-                <ul class="menuVerticalHeader">
-                    <li><a href="">Futbol</a></li>
-                    <li><a href="">Tenis</a></li>
-                    <li><a href="">Paddle</a></li>
-                    <li><a href="">Running</a></li>
-                    <li><a href="">Hockey</a></li>
-                    <li><a href="">Training</a></li>
-                    <li><a href="">Voley</a></li>
-                </ul>
+                <div class="menuVerticalHeader">
+                    <div><a href="/sport/futbol"><i class="fas fa-futbol"></i> Futbol</a></div>
+                    <div><a href="/sport/tenis"><i class='fas fa-baseball-ball'></i> Tenis</a></div>
+                    <div><a href="/sport/paddle"><i class='fas fa-table-tennis'></i> Paddle</a></div>
+                    <div><a href="/sport/running"><i class="fas fa-running"></i> Running</a></div>
+                    <div><a href="/sport/hockey"><i class="fas fa-hockey-puck"></i> Hockey</a></div>
+                    <div><a href="/sport/training"><i class='fas fa-dumbbell'></i> Training</a></div>
+                    <div><a href="/sport/voley"><i class='fas fa-volleyball-ball'></i> Voley</a></div>
+                </div>
             </li>
         <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
             <li><a href="/products/create">CREAR PRODUCTOS</a></li> 

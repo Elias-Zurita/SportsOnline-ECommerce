@@ -66,7 +66,7 @@ const validations = {
         check('avatar')
             .custom((value, { req }) => { 
             let file = req.file;
-            let acceptedExtensions = ['.jpg', '.png', '.gif', 'jpeg']; // Tipos de archivos que se podran subir //            
+            let acceptedExtensions = ['.jpg', '.png', '.gif', 'jpeg', '.JPG', '.JPEG']; // Tipos de archivos que se podran subir //            
             if (!file) {
                 throw new Error("Debe de ser un archivo valido (JPG, JPEG, PNG, GIF)"); // Si no tengo un archivo envio ese msj //
             } else {
