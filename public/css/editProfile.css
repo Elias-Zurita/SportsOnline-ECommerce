@@ -72,6 +72,7 @@ color: rgba(224, 114, 24, 0.835);
     background-color: rgb(43, 210, 216);
     width: 35% ;
     border-radius: 50px;
+    border: none;
 }
 .botonEditProfile button:hover{
     color: rgb(255, 255, 255);

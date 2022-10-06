@@ -138,12 +138,13 @@
     font-size: x-large;
     margin-left: 8%;
     background-color: rgb(0, 187, 125);
+    border: none;
+    border-radius: 50px;
 }
 .cajaAgregarProducto button:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(4, 85, 58);
     transform: scale(1);
-    border-radius: 50px;
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */
 }
 .compartirRedes{

@@ -78,6 +78,8 @@
 .botonRegistrarse button{
    background-color: rgb(43, 210, 216);
     width: 20% ;
+    border: none;
+    border-radius: 50px;
 }
 .botonRegistrarse button:hover{
     color: rgb(255, 255, 255);

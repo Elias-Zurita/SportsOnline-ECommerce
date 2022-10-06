@@ -66,6 +66,7 @@ tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
     background-color:rgb(216, 43, 43);
     font-weight: bold;
     border-radius: 10%;
+    border: none;
 }
 .elimUsuarioList button:hover{
     color: rgb(255, 255, 255);

@@ -62,6 +62,7 @@
     background-color: #73ecf7;
     width: 25% ;
     border-radius: 50px;
+    border: none;
 } 
 .botonCreate button:hover{
     color: rgb(255, 255, 255);
