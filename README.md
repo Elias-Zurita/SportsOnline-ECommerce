@@ -12,9 +12,9 @@ Proyecto integrador realizado en Digital House.
 
 ## APP :computer:
 
-Para su ejecución local se debe clonar el proyecto desde https://github.com/Elias-Zurita/SportsOnline-ECommerce.git 
-Luego instale sus dependencias con npm install y corra por consola npm start
-Desde el browser (Google Chrome, Mozilla Firefox o Microsoft Edge) url http://localhost:3000.
+- Para su ejecución local se debe clonar el proyecto desde https://github.com/Elias-Zurita/SportsOnline-ECommerce.git 
+- Luego instale sus dependencias con npm install y corra por consola npm start
+- Desde el browser (Google Chrome, Mozilla Firefox o Microsoft Edge) url http://localhost:3000.
 
 ## ADMIN :man_mechanic:
 
