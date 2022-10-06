@@ -46,24 +46,17 @@
                   class="form-control <%= locals.errors && errors.direccion ? 'is-invalid' : null %>"
                   value="<%= usuario.direccion %>"> 
       
-              <label><i class="fas fa-paper-plane"></i> Codigo Postal:</label>
-                <input 
-                  type="text"
-                  name="codigo_postal"
-                  class="form-control <%= locals.errors && errors.codigo_postal ? 'is-invalid' : null %>"
-                  value="<%= usuario.codigo_postal %>"> 
-
             </div>
 
             <div class="cajaDerechaDatos">
               
-              <label><i class="fas fa-envelope"></i> Email: </label>
-                <input 
-                  type="email" 
-                  name="email"
-                  class="form-control"
-                  value="<%= usuario.email %>"> 
-            
+              <label><i class="fas fa-paper-plane"></i> Codigo Postal:</label>
+              <input 
+                type="text"
+                name="codigo_postal"
+                class="form-control <%= locals.errors && errors.codigo_postal ? 'is-invalid' : null %>"
+                value="<%= usuario.codigo_postal %>"> 
+              
               <label><i class="fas fa-mobile-alt"></i> Telefono:</label>
                 <input 
                   type="text"
