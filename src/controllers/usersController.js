@@ -61,7 +61,7 @@ const controller = {
             where: {
                 email: req.body.email 
             }
-        }).then(userToLogin => {    // NO ESTA FUNCIONANDO EL MIDDLEWARE USERLOGGED (RECORDARME)
+        }).then(userToLogin => {    
                 req.session.userLogged = userToLogin
                 if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
                     res.cookie("recordarUsuario", userToLogin.id, {maxAge: (1000 * 60) * 5} )    // la cookie va a dejar logueado al usuario por 5 minutos por mas que cierre el navegador

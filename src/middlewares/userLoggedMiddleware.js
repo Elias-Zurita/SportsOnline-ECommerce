@@ -1,7 +1,7 @@
 const db = require("../db/models")  // Requiere los modelos de la base de datos
 
 function userLoggedMiddleware(req, res, next){ 
-    if(!req.session.userLogged && req.cookies.email){
+    if(!req.session.userLogged && req.cookies.recordarUsuario){
         db.Usuario.findOne({
             where:{
                 id: req.cookies.recordarUsuario
@@ -15,4 +15,3 @@ function userLoggedMiddleware(req, res, next){
     }       
 }
 module.exports= userLoggedMiddleware;
-

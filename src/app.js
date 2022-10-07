@@ -1,8 +1,7 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
 const methodOverride = require('method-override'); // Es una libreria que se usa para que pueda utilizar los metodos PUT y DELETE (editar y eliminar) //
 const session = require("express-session") // Es una libreria que se usa para las sesiones (requiere instalacion) y guarda en el servidor 
 const cookies = require("cookie-parser") // Es una libreria que se usa para guardar en el navegador usado y en el servidor (en este caso lo uso para dejar logueado por un tiempo "X" al usuario)
@@ -16,9 +15,10 @@ const deportesRoutes = require('./routes/deportesRoutes');
 const productCartRoutes = require('./routes/productCartRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 
-var app = express();
-
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 const localsMiddleware = require("./middlewares/localsMiddleware")
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  // Define la ubicacion de la carpeta de views   //
@@ -28,7 +28,7 @@ app.use(methodOverride('_method')); // Usa el methodOverride. Para poder usarlo 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));  // captura la info que recibe desde un formulario con POST //
-app.use(cookieParser());
+app.use(cookies());
 app.use(express.static(path.join(__dirname, '../public'))); // Asi utiliza los archivos estaticos de public  //
 app.use(session({                 // Inicializacion de sesion
   secret:"Shh, es un secreto",
@@ -36,8 +36,8 @@ app.use(session({                 // Inicializacion de sesion
   saveUninitialized: false,       // Propiedades de session que se deben setear como false
 }))
 
+app.use(userLoggedMiddleware);
 app.use(localsMiddleware);
-
 
 // Las rutas siempre van despues de los middleware
 app.use('/', mainRoutes);
