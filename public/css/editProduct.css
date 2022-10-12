@@ -95,6 +95,7 @@
     background-color: #73ecf7;
     width: 100%;
     border-radius: 50px; 
+    border: none;
 }
 .botonGuardarEdicion button:hover {
     color: rgb(255, 255, 255);
@@ -114,12 +115,13 @@
 .botonEliminarProducto button {
     background-color: rgb(216, 43, 43);
     width: 100% ;
+    border: none;
+    border-radius: 50px;
 }
 .botonEliminarProducto button:hover {
     color: rgb(255, 255, 255);
     background-color: red;
     transform: scale(1);
-    border-radius: 50px;
     transition: all 900ms ease; /* velocidad a la que se abre el campo de busqueda */
 }
 

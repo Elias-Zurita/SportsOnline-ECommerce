@@ -201,11 +201,13 @@
 }
 .BotonDeEdición button{
     width: 15%;
-    background-color: rgba(255, 247, 134, 0.938);
+    background-color: rgba(255, 116, 52, 0.938);
+    border: none;
+    border-radius: 50px;
 }
 .BotonDeEdición :hover{
     color: rgb(255, 255, 255);
-    background-color: rgb(207, 139, 11);
+    background-color: rgb(11, 31, 207);
     transform: scale(1);
     border-radius: 50px;
     transition: all 0.6s ease; /* velocidad a la que se abre el campo de busqueda */

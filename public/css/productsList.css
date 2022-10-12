@@ -62,17 +62,18 @@ article.cajaDeProducto img{
     max-height: 200px;
     max-width: auto;
 }
-article.cajaDeProducto :hover{  /* hover interno de la caja */
+article.cajaDeProducto:hover{ /* hover exterior de la caja */
+    border: solid rgb(253, 114, 21);
+    border-radius: 20px 20px 20px 20px;
+}
+article.cajaDeProducto :hover{  /* hover interno de la caja, ya que el DOS PUNTOS :HOVER ESTA SEPARADO */
     transform: translateY(0%); /* deja todo lo interno del articulo sin moverse al hacer el hover */
-    box-shadow: 5px 5px 5px rgba(0,0,0,0); /* aplica 0 de sombra para que no sombree por seccion del articulo */
-    border-radius: 0px 0px 20px 20px;
-    border: none; /* deja lo interno sin bordes al hacer el hover */
 }
 .cajaFotoDeProducto{
     margin-left: auto;
     margin-right: auto;
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
-    border-radius: 20px 20px 0px 0px; /* aplico bordes arriba izq y der, abajo plano */
+    border-radius: 20px 20px 20px 20px; /* aplico bordes arriba izq y der, abajo plano */
     width: auto;
     height: 100%;
 }
@@ -85,9 +86,6 @@ article.cajaDeProducto:hover .imageProduct{  /* efecto de zoom (expande la escal
 .datosProducto{
     text-align: start;
     padding-left: 10px;
-}
-.datosProducto:hover{
-    background-color: rgba(0,0,0,0.7);
 }
 .deporteList{
     font-weight: bold;
