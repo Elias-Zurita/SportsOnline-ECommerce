@@ -19,7 +19,7 @@ module.exports =
     "password": "LVAjHwDwU7ZdMcQW3MwF",
     "database": "railway",
     "host": "containers-us-west-108.railway.app",
-    "port": "7257"
+    "port": "7257",
     "dialect": "mysql"
   }
 }
