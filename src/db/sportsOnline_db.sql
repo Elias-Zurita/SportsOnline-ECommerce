@@ -326,3 +326,6 @@ ADD FOREIGN KEY (usuario_id) REFERENCES usuario(id);
 -- Creacion de Foreign Key usuario
 ALTER TABLE usuario
 ADD FOREIGN KEY (perfil_id) REFERENCES perfil(id);
+
+alter table items
+    add imagen varchar(255) null;
