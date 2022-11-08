@@ -18,7 +18,8 @@ module.exports =
     "username": "root",
     "password": "LVAjHwDwU7ZdMcQW3MwF",
     "database": "railway",
-    "host": "containers-us-west-108.railway.app:7257",
+    "host": "containers-us-west-108.railway.app",
+    "port": "7257"
     "dialect": "mysql"
   }
 }
