@@ -201,6 +201,7 @@ header{
 .menuHorizontalHeader li:hover .menuVerticalHeader{
     display: block ; /* el menu aparece al hacer el hover */
     background-color: #a1a1a1;
+    z-index: 999999999;
 }
 .menuVerticalHeader a{
     display: block;

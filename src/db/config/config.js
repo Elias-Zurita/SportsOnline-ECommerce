@@ -16,9 +16,9 @@ module.exports =
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "LVAjHwDwU7ZdMcQW3MwF",
+    "database": "railway",
+    "host": "containers-us-west-108.railway.app:7257",
     "dialect": "mysql"
   }
 }
