@@ -70,13 +70,8 @@ module.exports = function(sequelize, dataTypes){
                 as: "Perfil",
                 foreignKey: "perfil_id"
             }),
-            /*
-            Usuario.hasMany(models.Ordenes,{   // el usuario tiene muchas ordenes
-                as:"Ordenes",                       
-                foreignKey:"usuario_id"
-            }),   blue nami no lo tiene */ 
             
-            Usuario.hasMany(models.Items,{   // el usuario tiene muchos items
+        Usuario.hasMany(models.Items,{   // el usuario tiene muchos items
                 as: "Items2",
                 foreignKey: "usuario_id"
             });

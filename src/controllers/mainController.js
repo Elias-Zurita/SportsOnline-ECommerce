@@ -4,7 +4,6 @@ const controller = {
     index: (req, res) =>{
         res.render('index')    // renderiza el index  
     },
-
     quienesSomos: (req,res)=>{
         res.render('footer/quienesSomos') // renderiza Quienes Somos
     },

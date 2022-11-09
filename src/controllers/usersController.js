@@ -29,7 +29,7 @@ const controller = {
             fecha_de_nacimiento:req.body.fecha_de_nacimiento,
             telefono:req.body.telefono,
             avatar: req.file.filename, 
-            perfil_id:2 // Por default todos los perfiles creados van a ser usuarios (clientes)
+            perfil_id:2 // Por default todos los perfiles creados van a tener perfil 2 (clientes)
             }).then(function(){            
             return res.redirect("/users/login");  // si no hay campos sin llenar redirecciona a login
             })
@@ -66,7 +66,7 @@ const controller = {
                 if (req.body.recordarUsuario) {  // Si se tildo el boton de recordarme (su name en el ejs es recordarUsuario)
                     res.cookie("recordarUsuario", userToLogin.id, {maxAge: (1000 * 60) * 5} )    // la cookie va a dejar logueado al usuario por 5 minutos por mas que cierre el navegador
                 }
-            return res.redirect ("/users/profile") // Accion que hace cuando la contraseña es correcta
+            return res.redirect ("/users/profile") // Redirecciona al perfil del usuario que se logueo
         })
     },
         
@@ -102,9 +102,7 @@ const controller = {
             codigo_postal:req.body.codigo_postal,
             fecha_de_nacimiento:req.body.fecha_de_nacimiento,
             direccion:req.body.direccion,
-            //avatar: req.file.filename, 
             avatar: req.file ? req.file.filename:req.session.userLogged.avatar, 
-            //avatar: req.file ? req.file.filename : req.session.usuarioLogueado.avatar, asi lo tiene mati
             telefono:req.body.telefono
         },{
             where: {

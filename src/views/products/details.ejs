@@ -35,7 +35,7 @@
                         <div class="talleProducto">
                                 Talle
                             <div class="cajaSelectora">
-                                <% if (producto.categoria_id == "4" || producto.categoria_id == "5" ){ %> <!-- si es categoria 4 o 5 (pelotas o raquetas) -->
+                                <% if ([4,5,12,13,14,15,16].includes(producto.categoria_id)){ %> <!-- si el id de categoria del producto incluye id:4 o 5 (pelotas o raquetas) -->
                                     <div>UNICO</div> <!-- No deja seleccionar el talle y muestra "UNICO" -->
                                     <% } else { %> 
                                 <select class= "selectTalleDetalle">
