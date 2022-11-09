@@ -37,7 +37,7 @@ router.get("/list",adminMiddleware, usersController.list);
 router.get("/edit/:id", authMiddleware, usersController.edit);
 
 // Procesa la edicion del perfil del usuario
-router.post("/edit/:id", authMiddleware, usersController.actualizar);
+router.post("/edit/:id",uploadFile.single("avatar"), authMiddleware, usersController.actualizar);
 
 // Eliminacion de usuario solo la puede realizar un administrador
 router.delete("/delete/:id",adminMiddleware, usersController.destroy);

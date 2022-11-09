@@ -7,7 +7,7 @@
 
     <%- include('../partials/header.ejs') %>  <!--  Incluye el HEADER y se usan los .. (dos puntos) para que salga de la carpeta user y vaya a partials -->
      
-    <form action="/users/edit/<%= usuario.id %>" method="POST" class="formularioLog">  
+    <form action="/users/edit/<%= usuario.id %>" method="POST" class="formularioLog" enctype="multipart/form-data">  <!-- enctype="multipart/form-data" es para poder actualizar ademas de la info la imagen  -->
 
       <h2 class="editProfileTitulo"><i class="fas fa-user-cog"></i> EDITA TUS DATOS</h2> 
 

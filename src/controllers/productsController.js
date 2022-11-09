@@ -108,6 +108,7 @@ const productsController = {
             genero_id: req.body.genero,
             deporte_id: req.body.deporte, // deporte es el name que tiene en el formulario de creacion y deporte_id es el nombre de la columna en el modelo
             marca_id: req.body.marca,
+            // imagen: req.file ? req.file.filename: producto.imagen,     FUNCIONA PERO CONDICIONA QUE SI O SI SE TIENE QUE EDITAR LA IMAGEN, SINO DA ERROR
             categoria_id: req.body.categoria
         },{ 
             where: {

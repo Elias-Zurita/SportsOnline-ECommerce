@@ -159,42 +159,6 @@ const validations = {
 
             return true; 
         })
-    ],
-
-    productEdit: [  // Esto no esta funcionando. Ni la vista ni el controller estan configurados todavia
-        check ("nombre")
-            .notEmpty() 
-            .withMessage("Tiene que escribir un nombre")
-            .bail()
-            .isLength({min:4}) 
-            .withMessage("El nombre debe tener al menos 4 caracteres"), 
-        check ("categoria")
-            .notEmpty()
-            .withMessage ("Tienes que seleccionar una categoria"),
-        check ("marca")
-            .notEmpty()
-            .withMessage ("Tienes que seleccionar una marca"),
-        check ("genero")
-            .notEmpty()
-            .withMessage ("Tienes que seleccionar un genero"),
-        check ("deporte")
-            .notEmpty()
-            .withMessage ("Tienes que seleccionar un deporte"),
-        check ("descripcion")
-            .notEmpty()
-            .withMessage("Tiene que escribir una descripcion")
-            .bail()
-            .isLength({min:10}) 
-            .withMessage("La descripcion debe tener al menos 10 caracteres"), 
-        check ("precio")
-            .notEmpty()
-            .withMessage("Tienes que escribir un precio")
-            .bail()
-            .isNumeric({no_symbols:true})
-            .withMessage("El precio solo puede ser numerico"), // valida que el precio sea numerico y no letras
-        check ("talle")
-            .notEmpty()
-            .withMessage("Tiene seleccionar un talle")
     ]
 }
 

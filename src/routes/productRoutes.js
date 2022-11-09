@@ -25,7 +25,7 @@ router.get("/list/search", productsController.buscar);
 router.get("/edit/:id", adminMiddleware, productsController.editar);
 
 // Procesa la edicion del producto
-router.post("/edit/:id", adminMiddleware, validations.productEdit, productsController.actualizar);
+router.post("/edit/:id", uploadFile.single("imagen"), adminMiddleware, productsController.actualizar);
 
 // Procesa la eliminacion del producto
 router.post("/delete/:id", adminMiddleware, productsController.eliminar);
