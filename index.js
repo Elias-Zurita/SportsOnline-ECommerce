@@ -7,16 +7,16 @@ const session = require("express-session") // Es una libreria que se usa para la
 const cookies = require("cookie-parser") // Es una libreria que se usa para guardar en el navegador usado y en el servidor (en este caso lo uso para dejar logueado por un tiempo "X" al usuario)
 
 // Routers (poner antes de los middlewares)
-const mainRoutes = require('./routes/mainRoutes');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-const marcasRoutes = require('./routes/marcasRoutes');
-const deportesRoutes = require('./routes/deportesRoutes');
-const productCartRoutes = require('./routes/productCartRoutes');
-const apiRoutes = require('./routes/apiRoutes');
+const mainRoutes = require('./src/routes/mainRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const productRoutes = require('./src/routes/productRoutes');
+const marcasRoutes = require('./src/routes/marcasRoutes');
+const deportesRoutes = require('./src/routes/deportesRoutes');
+const productCartRoutes = require('./src/routes/productCartRoutes');
+const apiRoutes = require('./src/routes/apiRoutes');
 
-const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
-const localsMiddleware = require("./middlewares/localsMiddleware")
+const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware")
+const localsMiddleware = require("./src/middlewares/localsMiddleware")
 
 const app = express();
 
