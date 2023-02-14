@@ -15,11 +15,11 @@ module.exports =
     "dialect": "mysql"
   },
   "production": {
-    "username": "epiz_33506231",
-    "password": "llOUt83AZuHu4I",
-    "database": "epiz_33506231_sportsonlineddbb",
-    "host": "sql106.epizy.com",
-    "port": "7257",
+    "username": "uok98q8eytclinmf",
+    "password": "7Ig2zSA4hPlSdJl12JQZ",
+    "database": "br0wcocayjps2mkjbera",
+    "host": "br0wcocayjps2mkjbera-mysql.services.clever-cloud.com",
+    "port": "3306",
     "dialect": "mysql"
   }
 }
