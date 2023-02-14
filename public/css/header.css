@@ -11,7 +11,6 @@ header{
     font-family: 'Exo 2',sans-serif;
     font-weight: bold;
     width: 100%;
-    cursor: pointer;
     padding: 4px 0;    
 }
 .caja-envios:hover{

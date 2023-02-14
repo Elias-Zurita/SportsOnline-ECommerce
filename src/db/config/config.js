@@ -15,10 +15,10 @@ module.exports =
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "LVAjHwDwU7ZdMcQW3MwF",
-    "database": "railway",
-    "host": "containers-us-west-108.railway.app",
+    "username": "epiz_33506231",
+    "password": "llOUt83AZuHu4I",
+    "database": "epiz_33506231_sportsonlineddbb",
+    "host": "sql106.epizy.com",
     "port": "7257",
     "dialect": "mysql"
   }
