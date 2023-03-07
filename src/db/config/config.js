@@ -24,8 +24,8 @@ module.exports =
     "host": "br0wcocayjps2mkjbera-mysql.services.clever-cloud.com",
     "port": "3306",
     "dialect": "mysql",
-    "pool": {
-      "max": "5"
+    pool: {
+      "max": 5
     }
   }
 }
