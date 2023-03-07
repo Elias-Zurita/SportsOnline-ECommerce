@@ -25,7 +25,7 @@ module.exports =
     "port": "3306",
     "dialect": "mysql",
     pool: {
-      "max": 5
+      max: 5
     }
   }
 }
