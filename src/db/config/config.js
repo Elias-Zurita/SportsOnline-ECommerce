@@ -7,7 +7,8 @@ module.exports =
     "password": null,
     "database": "sportsOnline_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectModule": "mysql2"
   },
   "test": {
     "username": "root",
@@ -23,9 +24,8 @@ module.exports =
     "host": "br0wcocayjps2mkjbera-mysql.services.clever-cloud.com",
     "port": "3306",
     "dialect": "mysql",
-    "dialectModule": "mysql2",
     "pool": {
-      max:5
+      "max": "5"
     }
   }
 }
