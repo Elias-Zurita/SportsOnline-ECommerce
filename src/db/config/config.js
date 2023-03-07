@@ -1,3 +1,5 @@
+const mysql2 = require("mysql2")
+
 module.exports = 
 {
   "development": {
@@ -5,7 +7,8 @@ module.exports =
     "password": null,
     "database": "sportsOnline_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectModule": mysql2
   },
   "test": {
     "username": "root",
