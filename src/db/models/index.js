@@ -9,15 +9,14 @@ const config = require(__dirname + '/../config/config.js')["production"];
 const db = {};
 
 let sequelize;
-sequelize = new Sequelize(config.database, config.username, config.password, {
-  host:config.host,
-  port: config.port,
-  dialect: config.dialect,
+sequelize = new Sequelize("br0wcocayjps2mkjbera", "uok98q8eytclinmf", "7Ig2zSA4hPlSdJl12JQZ", {
+  host:"br0wcocayjps2mkjbera-mysql.services.clever-cloud.com",
+  port: "3306",
+  dialect: "mysql",
   pool: { 
-    max: 5,
+    max: 4,
     min: 0,
-    acquire: 30000,
-    idle: 10000
+    idle: 15000
   }
 });
 /*
