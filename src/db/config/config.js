@@ -23,6 +23,12 @@ module.exports =
     "database": "br0wcocayjps2mkjbera",
     "host": "br0wcocayjps2mkjbera-mysql.services.clever-cloud.com",
     "port": "3306",
-    "dialect": "mysql"
+    "dialect": "mysql", 
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   }
 }
