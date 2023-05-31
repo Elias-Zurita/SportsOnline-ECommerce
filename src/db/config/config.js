@@ -8,7 +8,7 @@ module.exports =
     "database": "sportsOnline_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "dialectModule": mysql2
+    "dialectModule": "mysql2"
   },
   "test": {
     "username": "root",
