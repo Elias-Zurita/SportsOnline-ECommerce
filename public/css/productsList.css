@@ -42,7 +42,7 @@
 .bodyProductsList :hover{
     cursor: pointer; /* mouse en modo hipervinculo */
     transform: translateY(-5%); /* mueve la caja hacia arriba */
-    transition: 0.9s; /* para que la caja se desplaze suave hacia arriba */
+    transition: 0.8s ease-in-out; /* para que la caja se desplaze suave hacia arriba */
 }
 article.cajaDeProducto{
     color: rgb(0, 0, 0);
