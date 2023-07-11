@@ -118,9 +118,16 @@
                 <a href="\"><img src = "\img\Logo.jpg" alt="Logo de SportsOnline" class="logo"></a> <!-- hipervinculo al index -->
             </div>
 
-            <div class="botonComprasHeader">
-                <a class="nav-link" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-            </div>
+            <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
+                <div class="botonComprasHeader">
+                    <a class="nav-link" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
+                <div class="botonComprasHeader">
+                    <a class="nav-link" href="/users/login"><i class="fa-solid fa-person-running"></i></a>
+                </div>
+            <% } %>
+            
 
             <div class="barra-de-busqueda">
                 <form action= "/products/list/search" method="GET">
