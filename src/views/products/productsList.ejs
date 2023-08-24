@@ -21,7 +21,7 @@
 
         <div class="bodyProductsList">
             <% productos.forEach (function(producto){ %>  <!-- para cada producto -->
-                <a href="/products/detail/<%=producto.id %>">
+                <a href="/products/detail/<%=producto.id %>">    
                     <article class = "cajaDeProducto">
                         <div class="cajaFotoDeProducto">
                             <img src="/img/products/<%= producto.imagen %>" class="imageProduct" alt="Imagen del producto"> <!-- Foto del producto -->
@@ -31,15 +31,14 @@
                             <div class="deporteList"><%= producto.Deporte.nombre %></div>
                             <div class="nombreList"><%= producto.nombre %></div>  <!-- Nombre de producto segun id -->
                             <div class="precioList">$<%= producto.precio %></div>                           
+                            <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
+                                <div class="BotonDeEdicionList">
+                                    <a href="/products/edit/<%= producto.id %>"><button type=button class="botonEditList">EDITAR PRODUCTO</button></a>
+                                </div>
+                            <%}%>
                         </div>
-                        
-                        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->                           
-                            <div class="BotonDeEdicionList">
-                                <a href="/products/edit/<%= producto.id %>"><button type=button class="botonEditList">EDITAR PRODUCTO</button></a>
-                            </div>
-                        <%}%>
                     </article>
-                </a>
+                </a>        
             <% }) %>
         </div>
         

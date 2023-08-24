@@ -72,9 +72,9 @@ header{
     height: 100%;
 }
 .headerSinLoguear div :hover{
-    background-color:  #73ecf7;
-    color: white;
-    transition: 1s;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: rgb(240, 160, 12);
 }
 .iconoLoginTablet i{
     font-size: large;
@@ -128,9 +128,9 @@ header{
     color: black;
 }
 .headerLogueadoOpciones div :hover{
-    background-color:  #73ecf7;
-    color: white;
-    transition: 1s;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: rgb(240, 160, 12);
 }
 .busquedaResponsive{
     display: none;
@@ -170,12 +170,12 @@ header{
     display: block ; /* el menu aparece al hacer el hover */
     background-color: #a1a1a1;
     z-index: 999999999;
-    padding-left: 0.5%;
-    padding-right: 1.5%;
+    border-radius: 5px;
 }
 .menuVerticalHeader a{
     display: block;
     color: black;
+    padding: 0px 30px 0px 5px;
 }
 .menuVerticalHeader a:hover{
     color: rgb(243, 186, 31);

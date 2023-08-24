@@ -37,45 +37,34 @@
     width: 400px;   /* ancho que se expandira al pasar el cursor sobre la lupa */
 }
 .bodyProductsList{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* Apila las cajas sino entran en una misma fila respetando su ancho en px */
+    justify-content: center;
 }
-.bodyProductsList :hover{
-    cursor: pointer; /* mouse en modo hipervinculo */
-    transform: translateY(-5%); /* mueve la caja hacia arriba */
-    transition: 0.8s ease-in-out; /* para que la caja se desplaze suave hacia arriba */
-}
-article.cajaDeProducto{
+article{
+    transition: .5s ease-in-out;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    display: flex;
-    display: inline-block; /* se ponen en horizontal respetando los tamaños que le paso */
-    justify-content: space-around;
-    width: 14%;  /* El ancho en % determinará la cantidad de articulos por fila */
-    height: auto;
+    width: 250px; /* Ancho de las cajas a apilar */
     border-radius: 20px;
     margin: 15px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25); /* efecto sombra: lateral, vertical, manchado */
+    text-align: center;
+}
+article:hover{
+    transform: scale(1.1);  /* agranda la caja */
 }
 article.cajaDeProducto img{
-    width: 100%;   
-    height: auto;
+    height: 100%;
     max-height: 200px;
-    max-width: auto;
-}
-article.cajaDeProducto:hover{ /* hover exterior de la caja */
-    border: solid rgb(253, 114, 21);
-    border-radius: 20px 20px 20px 20px;
-}
-article.cajaDeProducto :hover{  /* hover interno de la caja, ya que el DOS PUNTOS :HOVER ESTA SEPARADO */
-    transform: translateY(0%); /* deja todo lo interno del articulo sin moverse al hacer el hover */
+    margin-right: auto;
+    margin-left: auto;
 }
 .cajaFotoDeProducto{
-    margin-left: auto;
-    margin-right: auto;
     overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
     border-radius: 20px 20px 20px 20px; /* aplico bordes arriba izq y der, abajo plano */
     width: auto;
-    height: 100%;
+    height: 60%;
 }
 .imageProduct{
     transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
@@ -85,101 +74,56 @@ article.cajaDeProducto:hover .imageProduct{  /* efecto de zoom (expande la escal
 }
 .datosProducto{
     text-align: start;
-    padding-left: 10px;
+    height: 40%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end; /* pone la info del producto abajo de todo en la caja del articulo */
 }
 .deporteList{
     font-weight: bold;
     font-family: Agency FB;
     font-size: large;
     color: black;
+    padding-left: 10px;
 }
 .nombreList{
     font-weight: bold;
     font-family: calibri;
     font-size: large;
     color: black;
+    padding-left: 10px;
 }
 .precioList{
     font-weight: bold;
     font-size: x-large;
     color: #229acd;
     font-family: Segoe UI Black;
+    padding-left: 10px;
+    text-align: center;
 }
 .botonEditList{
     background-color: rgba(236, 179, 24, 0.931);
     font-size: large;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 20px 20px;
     width: 100%;
     font-weight: bold;
 }
 .botonEditList button{
-    width: 70%;
+    width: 100%;
 }
 .botonEditList:hover{
     background-color: rgb(216, 74, 55);
 }
 
-/* Laptops */
-@media (max-width:1540px){ 
-    article.cajaDeProducto{
-        width: 20%;  /* El ancho en % determinará la cantidad de articulos por fila */
-    }
-}
-
-/* Laptops */
 @media (max-width:1056px){ 
-    article.cajaDeProducto{
-        width: 25%;  /* El ancho en % determinará la cantidad de articulos por fila */
-    }
     .cajaBuscardorListado{
-        border: springgreen solid;
         display: none;
     }
 }
 
-/* Laptops */
-@media (max-width:856px){ 
-    article.cajaDeProducto{
-        width: 25%;  /* El ancho en % determinará la cantidad de articulos por fila */
+@media (max-width:560px){ 
+article{
+        width: 300px;
     }
 }
-
-/* Tablets */
-@media (max-width:600px){ 
-    article.cajaDeProducto{
-        width: 40%;  /* El ancho en % determinará la cantidad de articulos por fila */
-    }
-}
-
-/* Smartphones */ 
-@media (max-width:480px){     
-    .deporteList{
-        font-size: medium;
-    }
-    .nombreList{
-        font-size: medium;
-    }
-    .precioList{
-        font-size: large;
-    }
-    .botonEditList{
-        font-size: medium;
-    }
-}
-
-/* Smartphones */ 
-@media (max-width:360px){     
-    .deporteList{
-        font-size: medium;
-    }
-    .nombreList{
-        font-size: small;
-    }
-    .precioList{
-        font-size: medium;
-    }
-    .botonEditList{
-        font-size: small;
-    }
-}
-
