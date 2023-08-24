@@ -37,6 +37,7 @@ tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
 .imgAvatarList{
     height: 100px;  
     border-radius:10px;
+    
 }
 .columnaAvatar{
     width: 13%;
