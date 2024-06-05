@@ -2,6 +2,10 @@ header{
     width: 100%;
     top: 0;
     left: 0;
+    padding: 0%;
+}
+.navbar{
+    padding: 0%
 }
 .caja-envios{
     text-align: center!important;
@@ -11,13 +15,9 @@ header{
     font-family: 'Exo 2',sans-serif;
     font-weight: bold;
     width: 100%;
-    padding: 4px 0;    
+    padding: 4px 0;   
 }
-.caja-envios:hover{
-    color: white;
-    transition: 0.9s;;
-}
-.main-header {
+.cajaLogoBuscadorSesion{
     display: flex;
     justify-content: space-between;
     align-items: center;  /* alinea los items (buscador, login, etc) en el centro respecto al plano vertical */
@@ -27,11 +27,18 @@ header{
     margin-right: auto;
     padding: 0 1% 0 1%;
 }
+.cajaBotonResponsive{ /*  BOTON RESPONSIVE */
+    display:none;
+    width: 20%;
+}
 .caja-logo{
     width: 13%;
 }
 .caja-logo img{
     width: 100%; 
+}
+.botonComprasHeader {
+    display: none
 }
 .barra-de-busqueda {
     text-align: center;
@@ -51,20 +58,11 @@ header{
     color: black;
     font-weight: bold;
 }
-.carritoTablet i{
-    font-size: large;
-    color: #73ecf7;
-    display: none;
-    border-radius: 100%;
-    background-color: black;
-    padding: 5px;
-}
-.carritoTablet {
-    margin-left: auto;
+.sesionHeader{
+    width: 20%;
 }
 .headerSinLoguear{
     text-align: end;
-    width: 15%;
     display: flex;
     flex-direction: column;
 }
@@ -74,9 +72,9 @@ header{
     height: 100%;
 }
 .headerSinLoguear div :hover{
-    background-color:  #73ecf7;
-    color: white;
-    transition: 1s;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: rgb(240, 160, 12);
 }
 .iconoLoginTablet i{
     font-size: large;
@@ -101,7 +99,6 @@ header{
 .headerLogueado{
     display: flex;
     align-items: center;  /*  Alinea imagen y textos en el plano vertical */
-    width: 19%;
     flex-direction: row;
     text-align: end;
 }
@@ -131,18 +128,16 @@ header{
     color: black;
 }
 .headerLogueadoOpciones div :hover{
-    background-color:  #73ecf7;
-    color: white;
-    transition: 1s;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: rgb(240, 160, 12);
 }
-.menuHeader{
-    color:black; 
-    width: 95%; 
-    justify-content: space-between;
+.busquedaResponsive{
+    display: none;
+}
+.container-fluid{
     font-size: larger;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0%;
+    padding: 0.5% 3% 0% 2%;
 }
 .menuHorizontalHeader{
     display: flex;
@@ -158,70 +153,33 @@ header{
 .menuHorizontalHeader a{
     color: black;
 }
-
 .menuHorizontalHeader > li > a{
     display: block;
 }
-.menuHeader label{
-    display: none;
+.menuHorizontalHeader > li > a:hover{
+    color: red;
+    transition:0.5s ease-in-out;
 }
-
-/* Subrayado de menu horizontal */
-
-.menuHorizontalHeader > li:hover{
-    display: inline-block; /* el subrayado va a ocupar solo el texto */
-    position: relative;
-}
-.menuHorizontalHeader > li::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px; /* grosor de la linea que hara el subtitulo */
-    bottom: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.6s ease-out;
-}
-.menuHorizontalHeader > li:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-/* Fin de subrayado de menu horizontal */
-
 .menuVerticalHeader{
     position: absolute;  /* cuando se despliega el listado no deforma la fila */
     display: none;
     list-style: none; /* quita el punto de lista */
-    width: 170px;
+    width: auto;
 }
 .menuHorizontalHeader li:hover .menuVerticalHeader{
     display: block ; /* el menu aparece al hacer el hover */
     background-color: #a1a1a1;
     z-index: 999999999;
+    border-radius: 5px;
 }
 .menuVerticalHeader a{
     display: block;
     color: black;
+    padding: 0px 30px 0px 5px;
 }
 .menuVerticalHeader a:hover{
     color: rgb(243, 186, 31);
     background-color: black;
-}
-.headerUserTablet{
-    display: none;
-}
-#res-menu{
-    display: none; /* oculta el checkbox */
-}
-#sign-one {
-    display: none; /* oculta la x */
-    color: red;
-}
-#sign-two {
-    display: none; /* oculta la hamburguesa */ 
 }
 
 /* Laptops */
@@ -230,7 +188,6 @@ header{
         width: 15%;
     }
     .headerLogueado{
-        width: 20%;
         font-size: small
     }
     .avatarHeader{
@@ -238,15 +195,6 @@ header{
     }
     .headerLogueadoOpciones{
         width: 100%;
-    }
-    #res-menu{
-        display: none; /* oculta el menu si no esta activo el menu hamburguesa */
-    }
-    #sign-one {
-        display: none; /* si el menu esta tildado oculta la x */
-    }
-    #sign-two {
-        display: none; /* si el menu esta tildado muestra la hamburguesa */ 
     }
     .menuHorizontalHeader{
         font-size: small;
@@ -258,118 +206,108 @@ header{
 
 /* Tablets */
 @media (max-width:800px){ 
-    .menuHeader label{
-        display: block;
-        margin-top: 3px;
-    }
-    .headerTablet{
-        display: flex;
-    }
-    .carritoTablet i{
-        display: block;
-    }
-    .iconoLoginTablet i{
-        display: block;
-    }
-    .sinLoguearTablet{
-        display: block;
-    }
-    .avatarHeader{
-        display: none;
-    }
-    .headerLogueadoOpciones{
-        display: none;
-    }
-    .headerSinLoguear{
+    .sesionHeader{
         display: none;
     }
     .caja-envios{
         font-size: small;
     }
-    .barra-de-busqueda {
+    .barra-de-busqueda{
+        display: none;
+    }
+    .cajaLogoBuscadorSesion{
+        display: flex;      
+        align-items: center;  /* alinea los items (buscador, login, etc) en el centro respecto al plano vertical */
+        padding: 0 1% 0 1%;
+    }
+    .cajaBotonResponsive{ /*  BOTON RESPONSIVE */
+        display:block;
+        width: 20%;
+    }
+    .offcanvas{  /* cuanto va a cubrir el menu desplegable lateral */
+        --bs-offcanvas-width: 100%; 
+    }
+    .offcanvas-title{
+        font-family: "Dancing Script";
+        color: white;
+        font-size:x-large;
+        font-weight: bold;
+    }
+    .offcanvas-title a{
+        color: white;
+    }
+    .navbar-toggler{
+        display:block;
+    }
+    .navbar-toggler i{
+        color: black;
+        font-size:xx-large;
+    }
+    .navbar-toggler{
+        width:60%
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-weight: bold;
+        color: white;
+    }
+    .caja-logo{
+        width: 70%;
         text-align: center;
-        width: 60%;
-        font-size: small;
     }
-    .barra-de-busqueda input {
-        padding: 5px 5px;  
+    .caja-logo img{
+        width: 50%;
     }
-    .headerLogueadoOpciones{
-        font-size: x-small;
+    .botonComprasHeader {
+        display: block;
+        width: 20%; 
+        text-align: end;
+        font-size:xx-large;
     }
-    .headerSinLoguear{
-        font-size: small;
+    .busquedaResponsive{
+        display:block;
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
     }
-    label #sign-one {
-        display: block; /* muestra la x */
-    }
-    .menuHeader .menuHorizontalHeader {
-        display: flex;
-        flex-direction: column;
+    .busquedaResponsive input{
         width: 100%;
-        background: rgb(45, 156, 142); 
-        text-align: start;
+        border-radius: 10px;
+        padding: 8px 8px;  /* agranda el input (campo de busqueda) alejando los bordes 10px vertical del texto que se ingresa */
+        font-weight: bold;
+        border: solid black;
+        border-width: 3px;
     }
-    .menuHeader .menuHorizontalHeader li {
-        display: block;
-        margin: 2px 0;
-        line-height: 30px;
-        border-bottom: 1px solid #EAEAEB;
+    .menuHorizontalHeader{
+        display: none;
     }
-    .menuHeader .menuHorizontalHeader li a {
-        font-size: small;
+    .avatarResponsive{
+        margin:3% 0 2% 0
     }
-    #res-menu:checked~ul {
-        left: 0;
-        display: none; /* oculta el menu si no esta activo el menu hamburguesa */
-    }
-    #res-menu:checked~label #sign-one {
-        display: none; /* si el menu esta tildado oculta la x */
-    }
-    #res-menu:checked~label #sign-two {
-        display: block; /* si el menu esta tildado muestra la hamburguesa */ 
-    }
-    .headerUserTablet{
-        display: block;
+    .avatarResponsive img {
+            width:60px;
+            border-radius: 100%;
     }
 }
 
 /* Smartphones */
 @media (max-width:480px){ 
     .caja-envios{
-        font-size: xx-small;
+        font-size: 12px;
     }
     .caja-logo{
-        width: 20%;
+        width: 40%;
     }
     .caja-logo img{
         width: 100%;
     }
-    .headerLogueado{
-        width: 22%;
-    }
-    .headerLogueadoOpciones{
-        width: 100%;
-        font-size: x-small;
-    }
-    .headerSinLoguear{
-        width: 22%;
-        font-size: x-small;
-    }
     .barra-de-busqueda{ 
-        width: 50%;
-        text-align: center;
-        margin-right: auto;
-        margin-left: auto;
+        display: none;
     }
     .barra-de-busqueda input{ 
         width: 100%;
         padding: 2px 2px;  
         font-size: xx-small;
-        
-    }
-    .main-header{
-        text-align: center;
-        justify-content: space-between;
     }
 }

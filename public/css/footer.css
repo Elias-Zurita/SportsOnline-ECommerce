@@ -14,7 +14,8 @@ footer {
     color: white
 }
 .cajas-footer a:hover{
-    color: rgba(8, 205, 240, 0.568);
+    color: rgb(240, 160, 12);
+    font-weight: bold;
 }
 .cajas-footer2 {
     justify-content: space-between;
@@ -26,7 +27,8 @@ footer {
     color: white;
 }
 .cajas-footer2 a:hover{
-    color: rgba(8, 205, 240, 0.568);
+    color: rgb(240, 160, 12);
+    font-weight: bold;
 }
 .parte1 {
     margin-top: 15px;

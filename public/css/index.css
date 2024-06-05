@@ -15,6 +15,11 @@ body{
     z-index: -1;  pone detras el carrousel PERO PIERDE FUNCIONALIDAD LOS BOTONES DE DESPLAZAMIENTO
 }
 */
+.d-block{
+    margin-top: 2%;
+    height: 550px; /* alto de la imagen del carousel */
+    object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+}
 .lanzamientos{
     font-size: xxx-large;
     font-family: Luckiest Guy;
@@ -131,9 +136,9 @@ body{
 .fotosMarcas img{
     width: 100%;
 }
-.fotosMarcas img:hover{
-    transition: 0.9s; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
+.fotosMarcas div:hover{
     transform: scale(1.1); 
+    transition: 1s ease-in-out; /* velocidad a la que la imagen va a hacer el zoom al pasar el mouse por el articulo */
 }
 .fotosMarcas{
     margin: 15px;
@@ -253,11 +258,6 @@ body{
 
 /* Tablets */
 @media (max-width:700px){ 
-    #carouselExampleIndicators{
-        transform: scale(1.2); 
-        overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
-        width: 91%;
-    }
     .lanzamientos{
         font-size: x-large;
     }

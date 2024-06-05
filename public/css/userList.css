@@ -35,7 +35,9 @@ tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
     text-align: center;
 }
 .imgAvatarList{
-    width:70%;  
+    height: 100px;  
+    border-radius:10px;
+    
 }
 .columnaAvatar{
     width: 13%;
@@ -162,6 +164,8 @@ tbody tr.filaUsuarios:hover{  /* efecto a la fila/reglon de usuario */
     .imgAvatarListTablet{
         width: 100%;
         max-height: 300px;
+        border-radius:10px;
+        
     }
     .avatarListTablet{
         margin-left: auto;

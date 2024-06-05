@@ -1,107 +1,218 @@
 <header>
     
-    <div class="caja-envios">
-        ENVÍO GRATIS a todo el país, en compras superiores a $30.000 <i class="fas fa-truck"></i>
-    </div>
-    
-    <div class="main-header">
-        <div class="caja-logo">
-            <a href="\"><img src = "\img\Logo.jpg" alt="Logo de SportsOnline" class="logo"></a> <!-- hipervinculo al index -->
+    <nav class="navbar navbar-dark bg">
+        <div class="caja-envios">
+            ENVÍO GRATIS a todo el país, en compras superiores a $30.000 <i class="fas fa-truck"></i>
+        </div>
+        
+        <div class="cajaLogoBuscadorSesion">
+         
+            <!---------- BOTON DE NAVEGACION RESPONSIVE ---------->
+            <div class="cajaBotonResponsive">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><a href="/">SportsOnline</a></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products/list">TODOS LOS PRODUCTOS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">HOMBRE</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="/brand/indumentaria/hombre"><i class="fas fa-tshirt"></i> Indumentaria</a></li>
+                                <li><a class="dropdown-item" href="/brand/calzado/hombre"><i class="fas fa-shoe-prints"></i> Calzado</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MUJER</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="/brand/indumentaria/mujer"><i class="fas fa-tshirt"></i> Indumentaria</a></li>
+                                <li><a class="dropdown-item" href="/brand/calzado/mujer"><i class="fas fa-shoe-prints"></i> Calzado</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MARCAS</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="/brand/adidas"><i class="fas fa-arrow-alt-circle-right"></i> Adidas</a></li>
+                                <li><a class="dropdown-item" href="/brand/nike"><i class="fas fa-arrow-alt-circle-right"></i> Nike</a></li>
+                                <li><a class="dropdown-item" href="/brand/puma"><i class="fas fa-arrow-alt-circle-right"></i> Puma</a></li>
+                                <li><a class="dropdown-item" href="/brand/babolat"><i class="fas fa-arrow-alt-circle-right"></i> Babolat</a></li>
+                                <li><a class="dropdown-item" href="/brand/prince"><i class="fas fa-arrow-alt-circle-right"></i> Prince</a></li>
+                                <li><a class="dropdown-item" href="/brand/fila"><i class="fas fa-arrow-alt-circle-right"></i> Fila</a></li>
+                                <li><a class="dropdown-item" href="/brand/Vairo"><i class="fas fa-arrow-alt-circle-right"></i> Vairo</a></li>
+                                <li><a class="dropdown-item" href="/brand/Wilson"><i class="fas fa-arrow-alt-circle-right"></i> Wilson</a></li>
+                                <li><a class="dropdown-item" href="/brand/Umbro"><i class="fas fa-arrow-alt-circle-right"></i> Umbro</a></li>
+                                <li><a class="dropdown-item" href="/brand/Topper"><i class="fas fa-arrow-alt-circle-right"></i> Topper</a></li>
+                                <li><a class="dropdown-item" href="/brand/Head"><i class="fas fa-arrow-alt-circle-right"></i> Head</a></li>
+                                <li><a class="dropdown-item" href="/brand/Nassau"><i class="fas fa-arrow-alt-circle-right"></i> Nassau</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">DEPORTES</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="/brand/indumentaria/mujer"><i class="fas fa-tshirt"></i> Indumentaria</a></li>
+                                <li><a class="dropdown-item" href="/brand/calzado/mujer"><i class="fas fa-shoe-prints"></i> Calzado</a></li>
+                                <li><a class="dropdown-item" href="/sport/futbol"><i class="fas fa-futbol"></i> Futbol</a></li>
+                                <li><a class="dropdown-item" href="/sport/tenis"><i class='fas fa-baseball-ball'></i> Tenis</a></li>
+                                <li><a class="dropdown-item" href="/sport/paddle"><i class='fas fa-table-tennis'></i> Paddle</a></li>
+                                <li><a class="dropdown-item" href="/sport/running"><i class="fas fa-running"></i> Running</a></li>
+                                <li><a class="dropdown-item" href="/sport/hockey"><i class="fas fa-hockey-puck"></i> Hockey</a></li>
+                                <li><a class="dropdown-item" href="/sport/training"><i class='fas fa-dumbbell'></i> Training</a></li>
+                                <li><a class="dropdown-item" href="/sport/voley"><i class='fas fa-volleyball-ball'></i> Voley</a></li>
+                            </ul>
+                        </li>
+                        
+                        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products/create">CREAR PRODUCTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/list">USUARIOS</a>
+                        </li>
+                        <%}%>
+                        
+                        <br>
+
+                        <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
+                        <li class="nav-item">
+                            <div class="avatarResponsive">
+                                <a href="/users/profile"><img src="/img/avatar/<%=usuario.avatar %>" class="imgHeaderAvatar"></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/profile"><%= usuario.nombre %> <%= usuario.apellido %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/logout">Cerrar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/productCart">Mis compras <i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                    
+                        <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/register">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/login">Iniciar sesión</a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            <!---------- FIN DEL BOTON DE NAVEGACION RESPONSIVE ---------->
+
+            <div class="caja-logo">
+                <a href="\"><img src = "\img\Logo.jpg" alt="Logo de SportsOnline" class="logo"></a> <!-- hipervinculo al index -->
+            </div>
+
+            <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
+                <div class="botonComprasHeader">
+                    <a class="nav-link" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
+                <div class="botonComprasHeader">
+                    <a class="nav-link" href="/users/login"><i class="fa-solid fa-person-running"></i></a>
+                </div>
+            <% } %>
+            
+
+            <div class="barra-de-busqueda">
+                <form action= "/products/list/search" method="GET">
+                    <input type="text" name= "search"  placeholder="¿Que estás buscando?" type="submit">
+                </form>
+            </div>
+
+            <div class="sesionHeader">
+                <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
+                    <div class="headerLogueado">
+                        <div class="avatarHeader">
+                            <a href="/users/profile"><img src="/img/avatar/<%=usuario.avatar %>" class="imgHeaderAvatar"></a>
+                        </div>
+                        <div class="headerLogueadoOpciones">
+                            <div><a href="/users/profile"><%= usuario.nombre %> <%= usuario.apellido %></a></div>
+                            <div><a href="/users/logout">Cerrar sesión</a></div>
+                            <div><a href="/productCart">Mis compras <i class="fas fa-shopping-cart"></i></a></div>  <!-- carrito de compras -->
+                        </div>
+                    </div>
+                <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
+                    <div class="iconoLoginTablet"><a href="/users/login"><i class="fas fa-user"></i></a></div>    
+                    <div class="headerSinLoguear">
+                        <div><a href="/users/register">Registrarse</a></div>
+                        <div><a href="/users/login">Iniciar sesión</a></div>
+                    </div>
+                <% } %>
+            </div>
+            
         </div>
 
-        <div class="barra-de-busqueda">
+        <div class="busquedaResponsive">
             <form action= "/products/list/search" method="GET">
                 <input type="text" name= "search"  placeholder="¿Que estás buscando?" type="submit">
             </form>
         </div>
 
-        <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
-            <div class="headerLogueado">
-                <div class="carritoTablet"><a href="/productCart"><i class="fas fa-shopping-cart"></i></a></div>
-                <div class="avatarHeader">
-                    <a href="/users/profile"><img src="/img/avatar/<%=usuario.avatar %>" class="imgHeaderAvatar"></a>
-                </div>
-                <div class="headerLogueadoOpciones">
-                    <div><a href="/users/profile"><%= usuario.nombre %> <%= usuario.apellido %></a></div>
-                    <div><a href="/users/logout">Cerrar sesión</a></div>
-                    <div><a href="/productCart">Mis compras <i class="fas fa-shopping-cart"></i></a></div>  <!-- carrito de compras -->
-                </div>
-            </div>
-        <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
-            <div class="iconoLoginTablet"><a href="/users/login"><i class="fas fa-user"></i></a></div>    
-            <div class="headerSinLoguear">
-                <div><a href="/users/register">Registrarse</a></div>
-                <div><a href="/users/login">Iniciar sesión</a></div>
-            </div>
-        <% } %>
-        
-    </div>
-      
-    <nav class="menuHeader">
-        <input type="checkbox" id="res-menu" checked>  <!-- checkbox para accionar "res-menu" (menu hamburguesa) -->
-        <label for="res-menu">
-            <i class="fa fa-bars" id="sign-two"></i> <!-- Menu hamburguesa -->
-            <i class="fas fa-window-close" id="sign-one"></i> <!-- X de cierre de menu hamburguesa -->
-        </label>
-    
-        <ul class="menuHorizontalHeader">
-            <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
-            <li><a href="/brand/hombre">HOMBRE <i class="fas fa-angle-down"></i></a>
-                <div class="menuVerticalHeader">
-                    <div><a href="/brand/indumentaria/hombre"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
-                    <div><a href="/brand/calzado/hombre"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
-                </div>
-            </li>
-            <li><a href="/brand/mujer">MUJER <i class="fas fa-angle-down"></i></a>
-                <div class="menuVerticalHeader">
-                    <div><a href="/brand/indumentaria/mujer"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
-                    <div><a href="/brand/calzado/mujer"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
-                </div>
-            </li>
-            <li><a href="">MARCAS <i class="fas fa-angle-down"></i></a>
-                <div class="menuVerticalHeader">
-                    <div><a href="/brand/adidas"><i class="fas fa-arrow-alt-circle-right"></i> Adidas</a></div>
-                    <div><a href="/brand/nike"><i class="fas fa-arrow-alt-circle-right"></i> Nike</a></div>
-                    <div><a href="/brand/puma"><i class="fas fa-arrow-alt-circle-right"></i> Puma</a></div>
-                    <div><a href="/brand/babolat"><i class="fas fa-arrow-alt-circle-right"></i> Babolat</a></div>
-                    <div><a href="/brand/prince"><i class="fas fa-arrow-alt-circle-right"></i> Prince</a></div>
-                    <div><a href="/brand/fila"><i class="fas fa-arrow-alt-circle-right"></i> Fila</a></div>
-                    <div><a href="/brand/Vairo"><i class="fas fa-arrow-alt-circle-right"></i> Vairo</a></div>
-                    <div><a href="/brand/Wilson"><i class="fas fa-arrow-alt-circle-right"></i> Wilson</a></div>
-                    <div><a href="/brand/Umbro"><i class="fas fa-arrow-alt-circle-right"></i> Umbro</a></div>
-                    <div><a href="/brand/Topper"><i class="fas fa-arrow-alt-circle-right"></i> Topper</a></div>
-                    <div><a href="/brand/Head"><i class="fas fa-arrow-alt-circle-right"></i> Head</a></div>
-                    <div><a href="/brand/Nassau"><i class="fas fa-arrow-alt-circle-right"></i> Nassau</a></div>
-                </div>
-            </li>
-            <li><a href="">DEPORTES <i class="fas fa-angle-down"></i></a>
-                <div class="menuVerticalHeader">
-                    <div><a href="/sport/futbol"><i class="fas fa-futbol"></i> Futbol</a></div>
-                    <div><a href="/sport/tenis"><i class='fas fa-baseball-ball'></i> Tenis</a></div>
-                    <div><a href="/sport/paddle"><i class='fas fa-table-tennis'></i> Paddle</a></div>
-                    <div><a href="/sport/running"><i class="fas fa-running"></i> Running</a></div>
-                    <div><a href="/sport/hockey"><i class="fas fa-hockey-puck"></i> Hockey</a></div>
-                    <div><a href="/sport/training"><i class='fas fa-dumbbell'></i> Training</a></div>
-                    <div><a href="/sport/voley"><i class='fas fa-volleyball-ball'></i> Voley</a></div>
-                </div>
-            </li>
-        <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
-            <li><a href="/products/create">CREAR PRODUCTOS</a></li> 
-            <li><a href="/users/list">USUARIOS</a></li>
-        <%}%>
-            <div class="headerUserTablet">
-                <% if (locals.usuario){ %> <!-- Si el usuario esta logueado muestra lo siguiente -->
-                    <li><a href="/users/profile"><%= usuario.nombre %> <%= usuario.apellido %></a></li>
-                    <li><a href="/users/logout">Cerrar sesión</a></li>
-                    <li><a href="/productCart">Mis compras <i class="fas fa-shopping-cart"></i></a></li>  <!-- carrito de compras -->     
-                <% } else { %>    <!-- Si no esta logueado muestra lo siguiente -->
-                    <div class="sinLoguearTablet">
-                        <li><a href="/users/register">Registrarse</a></li>
-                        <li><a href="/users/login">Iniciar sesión</a></li>
+        <div class="container-fluid">
+            <ul class="menuHorizontalHeader">
+                <li><a href="/products/list">TODOS LOS PRODUCTOS</a></li>
+                <li><a href="/brand/hombre">HOMBRE <i class="fas fa-angle-down"></i></a>
+                    <div class="menuVerticalHeader">
+                        <div><a href="/brand/indumentaria/hombre"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
+                        <div><a href="/brand/calzado/hombre"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
                     </div>
-                <% } %>
-            </div>
-        </ul>
+                </li>
+                <li><a href="/brand/mujer">MUJER <i class="fas fa-angle-down"></i></a>
+                    <div class="menuVerticalHeader">
+                        <div><a href="/brand/indumentaria/mujer"><i class="fas fa-tshirt"></i> Indumentaria</a></div>
+                        <div><a href="/brand/calzado/mujer"><i class="fas fa-shoe-prints"></i> Calzado</a></div>
+                    </div>
+                </li>
+                <li><a href="">MARCAS <i class="fas fa-angle-down"></i></a>
+                    <div class="menuVerticalHeader">
+                        <div><a href="/brand/adidas"><i class="fas fa-arrow-alt-circle-right"></i> Adidas</a></div>
+                        <div><a href="/brand/nike"><i class="fas fa-arrow-alt-circle-right"></i> Nike</a></div>
+                        <div><a href="/brand/puma"><i class="fas fa-arrow-alt-circle-right"></i> Puma</a></div>
+                        <div><a href="/brand/babolat"><i class="fas fa-arrow-alt-circle-right"></i> Babolat</a></div>
+                        <div><a href="/brand/prince"><i class="fas fa-arrow-alt-circle-right"></i> Prince</a></div>
+                        <div><a href="/brand/fila"><i class="fas fa-arrow-alt-circle-right"></i> Fila</a></div>
+                        <div><a href="/brand/Vairo"><i class="fas fa-arrow-alt-circle-right"></i> Vairo</a></div>
+                        <div><a href="/brand/Wilson"><i class="fas fa-arrow-alt-circle-right"></i> Wilson</a></div>
+                        <div><a href="/brand/Umbro"><i class="fas fa-arrow-alt-circle-right"></i> Umbro</a></div>
+                        <div><a href="/brand/Topper"><i class="fas fa-arrow-alt-circle-right"></i> Topper</a></div>
+                        <div><a href="/brand/Head"><i class="fas fa-arrow-alt-circle-right"></i> Head</a></div>
+                        <div><a href="/brand/Nassau"><i class="fas fa-arrow-alt-circle-right"></i> Nassau</a></div>
+                    </div>
+                </li>
+                <li><a href="">DEPORTES <i class="fas fa-angle-down"></i></a>
+                    <div class="menuVerticalHeader">
+                        <div><a href="/sport/futbol"><i class="fas fa-futbol"></i> Futbol</a></div>
+                        <div><a href="/sport/tenis"><i class='fas fa-baseball-ball'></i> Tenis</a></div>
+                        <div><a href="/sport/paddle"><i class='fas fa-table-tennis'></i> Paddle</a></div>
+                        <div><a href="/sport/running"><i class="fas fa-running"></i> Running</a></div>
+                        <div><a href="/sport/hockey"><i class="fas fa-hockey-puck"></i> Hockey</a></div>
+                        <div><a href="/sport/training"><i class='fas fa-dumbbell'></i> Training</a></div>
+                        <div><a href="/sport/voley"><i class='fas fa-volleyball-ball'></i> Voley</a></div>
+                    </div>
+                </li>
+                <% if (usuario.perfil_id == 1){ %> <!-- Si el usuario logueado es Administrador (perfil 1) puede ver esos botones -->
+                    <li><a href="/products/create">CREAR PRODUCTOS</a></li>
+                    <li><a href="/users/list">USUARIOS</a></li>
+                <%}%>
+            </ul>        
+        </div>
+
     </nav>
 
 </header>
